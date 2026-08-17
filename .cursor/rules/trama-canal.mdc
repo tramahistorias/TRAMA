@@ -47,5 +47,6 @@ IDs reales en `index.html` (`yt`). Luego borrar solo el `.mp4` renderizado. Cons
 - **Vercel y dominio propio:** solo cuando el canal esté en vía de monetizar (o ya monetice). Hasta entonces no se gasta en hosting ni DNS.
 - No montar Vercel “por si acaso”.
 - `subidas/` es cola local de YouTube: no va al sitio público.
-- Repo y GitHub Pages: en marcha (Ramón, 17 ago 2026 noche). Cuenta activa: `ramondelpozokids`. URL prevista: `https://ramondelpozokids.github.io/TRAMA/`. Sin Vercel ni dominio de pago.
+- Repo: `https://github.com/tramahistorias/TRAMA` (cuenta del canal, no `ramondelpozokids`).
+- GitHub Pages: `https://tramahistorias.github.io/TRAMA/`. Sin Vercel ni dominio de pago.
 - Calendario de subidas: `subidas/TRAMA-YouTube.ics` (25 Petrov, 27 Woodland, 29 Cooper, 10:00 Madrid).
