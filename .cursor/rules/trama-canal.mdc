@@ -1,0 +1,49 @@
+---
+description: Calendario del canal TRAMA, piezas publicadas y cómo elegir la siguiente.
+alwaysApply: true
+---
+
+# TRAMA — canal YouTube
+
+Ritmo **Arranque** (hasta que sea fácil 3-4 semanas): **2 Shorts + 1 vídeo / semana**. No subir de fase. No rellenar con noticias. Una investigación = web + vídeo o Short, no titular del día.
+
+## Esta semana (17–23 ago 2026) — CERRADA
+
+Lunes 17: 2 Shorts + 1 vídeo. **Mar–dom: nada.**
+
+| Pieza | Formato | Categoría | YouTube |
+|---|---|---|---|
+| Kodak inventó la cámara digital | Short | Empresas | `7JK106M1L6k` |
+| El invento que no parece un invento | Short | Inventos | `JCf59aq_Q-w` |
+| El rey del hielo | Vídeo | Dinero | `VKikVkIX-wQ` |
+
+## Cómo elegir (rotar categorías)
+
+No repetir categoría en la misma semana. No repetir la misma historia. Cubrir huecos antes que twins (otro Kodak, otro contenedor).
+
+Hueco fuerte: **Personas** (0 piezas). Luego Historia y Misterios.
+
+Ya gastado en arranque: Empresas, Inventos, Dinero.
+
+## Semana 24–30 ago 2026 — EN CARPETA (no subir hasta el día)
+
+Piezas y texto de Studio en `subidas/AAAA-MM-DD_...`. El nombre de la carpeta es el día de publicación.
+
+| Día | Carpeta | Formato | Categoría |
+|---|---|---|---|
+| Mar 25 | `subidas/2026-08-25_short-petrov` | Short | Historia |
+| Jue 27 | `subidas/2026-08-27_short-woodland` | Short | Personas |
+| Sáb 29 | `subidas/2026-08-29_video-cooper` | Vídeo | Misterios |
+
+Vídeo largo de verdad cuando se pueda (8–12 min). El hielo fue teaser de 1 min; no repetir esa duración como “largo”.
+
+## Al publicar
+
+IDs reales en `index.html` (`yt`). Luego borrar solo el `.mp4` renderizado. Conservar voces e imágenes. Título YouTube con tilde correcta (`inventó`). No inventar vistas. No usar ramondelpozorott.es.
+
+## Hosting
+
+- **Ahora (gratis):** GitHub + GitHub Pages. Sin dominio de pago.
+- **Vercel y dominio propio:** solo cuando el canal esté en vía de monetizar (o ya monetice). Hasta entonces no se gasta en hosting ni DNS.
+- No montar Vercel “por si acaso”.
+- `subidas/` es cola local de YouTube: no va al sitio público.

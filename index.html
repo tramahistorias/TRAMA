@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>TRAMA — Hay una historia detrás de todo</title>
+<meta name="description" content="Descubre las historias que cambiaron empresas, inventaron el futuro y transformaron el mundo. Tecnología, historia, empresas, inventos, personas y misterios.">
+<meta name="theme-color" content="#f3efe6">
+<link rel="canonical" href="./">
+<link rel="icon" type="image/png" href="public/logo.png">
+<link rel="apple-touch-icon" href="public/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TRAMA">
+<meta property="og:title" content="TRAMA — Hay una historia detrás de todo">
+<meta property="og:description" content="Descubre las historias que cambiaron empresas, inventaron el futuro y transformaron el mundo.">
+<meta property="og:image" content="media/og/trama.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ════════════════════════════════════════════════════════════
+   TRAMA V2 · DESIGN SYSTEM
+   Dirección artística: cinematográfica · editorial · clara
+   Lujo = composición + tipografía + espacio + contraste + ritmo
+   ════════════════════════════════════════════════════════════ */
+:root{
+  --bg:#f3efe6; --bg-2:#ebe6db; --bg-3:#e0dacd; --panel:#faf7f0;
+  --line:#d6d0c3; --hair:rgba(28,26,22,.09); --hair-2:rgba(28,26,22,.18);
+  --ink:#1c1a16; --paper:#1c1a16; --cream:#f4f0e8;
+  --silver:#5e5b54; --dim:#8a867c;
+  --gold:#9a7840; --gold-2:#7d5f2c; --gold-dim:rgba(154,120,64,.12);
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Archivo",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono","Courier New",monospace;
+  --nav-h:64px; --rad:3px;
+  --wrap:1320px; --gut:clamp(20px,4.4vw,60px);
+  --ease:cubic-bezier(.22,.61,.21,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.locked{overflow:hidden}
+::selection{background:var(--gold);color:var(--cream)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;color:inherit;background:none;border:0;cursor:pointer}
+input{font-family:inherit}
+:focus{outline:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
+.mono{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase}
+.dim{color:var(--dim)}
+.ic{display:inline-flex;width:1.05em;height:1.05em;flex:none}
+.ic svg{width:100%;height:100%}
+.skip{position:fixed;top:-60px;left:16px;z-index:400;background:var(--gold);color:#0a0a0c;padding:10px 18px;font-weight:600;transition:top .2s}
+.skip:focus{top:12px}
+body::after{display:none}
+
+/* ── Botones ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.7em;padding:1em 1.8em;font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;border-radius:var(--rad);transition:background .25s var(--ease),color .25s,border-color .25s,transform .25s;white-space:nowrap}
+.btn:active{transform:scale(.98)}
+.btn-solid{background:var(--ink);color:var(--cream)}
+.btn-solid:hover{background:#000}
+.btn-ghost{border:1px solid var(--hair-2);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-gold{border:1px solid var(--gold);color:var(--gold-2)}
+.btn-gold:hover{background:var(--gold-dim)}
+.btn[aria-pressed="true"] .i-plus{display:none}
+.btn:not([aria-pressed]) .i-check,.btn[aria-pressed="false"] .i-check{display:none}
+.btn[aria-pressed="true"]{border-color:var(--gold);color:var(--gold-2)}
+
+/* ── Chips ── */
+.chip{display:inline-flex;align-items:center;gap:.4em;padding:.42em .75em;background:rgba(8,8,10,.72);border:1px solid rgba(243,240,233,.12);border-radius:2px;color:#f3f0e9;font-size:.6rem}
+.chip-gold{border-color:rgba(201,168,106,.5);color:var(--gold-2)}
+.chip-trend{color:var(--gold-2)}
+.catlab{color:var(--gold);font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase}
+
+/* ── Navbar ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:300;height:var(--nav-h);display:flex;align-items:center;transition:background .35s,border-color .35s,color .35s;background:rgba(243,239,230,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--hair);color:var(--ink)}
+.nav.scrolled{background:rgba(243,239,230,.96)}
+body.route-home .nav{background:transparent;border-bottom-color:transparent;color:var(--cream);backdrop-filter:none}
+body.route-home .nav .logo{color:var(--cream)}
+body.route-home .nav-links a,body.route-home .nav-links .nlb,body.route-home .nbtn{color:rgba(243,240,233,.78)}
+body.route-home .nav-links a:hover,body.route-home .nav-links .nlb:hover,body.route-home .nbtn:hover{color:var(--cream);background:rgba(243,240,233,.08)}
+body.route-home .nav-links a.on{color:var(--cream)}
+body.route-home .nav.scrolled{background:rgba(243,239,230,.96);border-bottom-color:var(--hair);color:var(--ink);backdrop-filter:blur(16px)}
+body.route-home .nav.scrolled .logo{color:var(--ink)}
+body.route-home .nav.scrolled .nav-links a,body.route-home .nav.scrolled .nav-links .nlb,body.route-home .nav.scrolled .nbtn{color:var(--silver)}
+body.route-home .nav.scrolled .nav-links a:hover,body.route-home .nav.scrolled .nav-links .nlb:hover,body.route-home .nav.scrolled .nbtn:hover{color:var(--ink);background:rgba(28,26,22,.06)}
+body.route-home .nav.scrolled .nav-links a.on{color:var(--ink)}
+.nav-in{width:100%;max-width:1480px;margin:0 auto;padding:0 clamp(16px,3vw,44px);display:flex;align-items:center;gap:2.2rem}
+.logo{display:flex;align-items:center;flex:none;line-height:0}
+.logo img{height:52px;width:auto;object-fit:contain;filter:drop-shadow(0 1px 2px rgba(0,0,0,.18))}
+body.route-home .nav .logo img{filter:drop-shadow(0 0 10px rgba(227,205,157,.55)) drop-shadow(0 2px 8px rgba(0,0,0,.55))}
+body.route-home .nav.scrolled .logo img{filter:drop-shadow(0 1px 2px rgba(0,0,0,.18))}
+.nav-links{display:flex;gap:2.1rem;margin-left:.4rem}
+.nav-links a,.nav-links .nlb{font-size:.66rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--silver);padding:6px 0;position:relative;transition:color .25s;display:inline-block}
+.nav-links a:hover,.nav-links .nlb:hover{color:var(--ink)}
+.nav-links a.on{color:var(--ink)}
+.nav-links a.on::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:var(--gold)}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:.35rem}
+.nbtn{display:inline-flex;align-items:center;gap:.5em;padding:9px 11px;color:var(--silver);border-radius:var(--rad);transition:color .25s,background .25s;font-size:.66rem;letter-spacing:.16em}
+.nbtn:hover{color:var(--ink);background:rgba(28,26,22,.06)}
+.nbtn .badge{background:var(--gold);color:#0a0a0c;font-family:var(--mono);font-size:.58rem;min-width:1.4em;text-align:center;padding:.18em .32em;border-radius:2px}
+.cats-dd{position:relative}
+.cats-panel{position:absolute;top:calc(100% + 16px);left:-24px;width:min(580px,92vw);background:var(--bg-2);border:1px solid var(--hair-2);border-radius:var(--rad);padding:10px;display:none;grid-template-columns:1fr 1fr;gap:2px;box-shadow:0 30px 70px rgba(0,0,0,.55)}
+.cats-dd.open .cats-panel{display:grid}
+.cats-panel a{display:block;padding:15px 16px;border-radius:2px;transition:background .2s}
+.cats-panel a:hover{background:rgba(28,26,22,.05)}
+.cats-panel .cn{font-family:var(--serif);font-size:1.05rem;display:block}
+.cats-panel .cd{font-size:.72rem;color:var(--dim);display:block;margin-top:3px}
+
+/* ── Hero ── */
+.hero,.shero{color:var(--cream)}
+.hero .btn-solid,.shero .btn-solid{background:var(--cream);color:var(--ink)}
+.hero .btn-solid:hover,.shero .btn-solid:hover{background:#fff}
+.hero .btn-ghost,.shero .btn-ghost{color:var(--cream);border-color:rgba(243,240,233,.35)}
+.hero .btn-ghost:hover,.shero .btn-ghost:hover{border-color:var(--cream)}
+.hero .btn-gold,.shero .btn-gold{color:#e3cd9d}
+.hero .hero-tag,.shero .hero-tag,.hero .hero-meta,.shero .hero-meta,.hero .hero-count,.shero .crumbs{color:rgba(243,240,233,.78)}
+.hero .hbtn{color:rgba(243,240,233,.8);border-color:rgba(243,240,233,.28)}
+.hero .hbtn:hover{border-color:#c9a86a;color:#e3cd9d}
+.hero{position:relative;min-height:max(640px,96svh);display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.15s ease;animation:kenburns 28s var(--ease) infinite alternate}
+.hero-bg img.on{opacity:1}
+@keyframes kenburns{from{transform:scale(1.04)}to{transform:scale(1.13) translate(-1.4%,1%)}}
+.hero-shade{position:absolute;inset:0;background:
+  linear-gradient(to top,rgba(10,10,12,.97) 0%,rgba(10,10,12,.42) 44%,rgba(10,10,12,.16) 100%),
+  linear-gradient(90deg,rgba(10,10,12,.82) 0%,rgba(10,10,12,.22) 48%,transparent 74%)}
+.hero-in{position:relative;z-index:2;width:100%;max-width:var(--wrap);margin:0 auto;padding:0 var(--gut) clamp(68px,10vh,116px)}
+.hero-brand .hero-bg img{opacity:1;animation:none;object-position:72% 48%}
+.hero-brand .hero-shade{background:
+  linear-gradient(to top,rgba(8,8,10,.78) 0%,rgba(8,8,10,.18) 40%,rgba(8,8,10,.22) 100%),
+  linear-gradient(90deg,rgba(8,8,10,.74) 0%,rgba(8,8,10,.38) 26%,rgba(8,8,10,.08) 44%,transparent 60%)}
+.hero-copy{max-width:min(32rem,36vw)}
+.hero-mark{font-family:var(--serif);font-weight:600;font-size:.95rem;letter-spacing:.36em;color:#e3cd9d;margin-bottom:1.35rem}
+.hero-brand .hero-title{max-width:16ch}
+.hero-universe{margin-top:2.35rem;color:rgba(243,240,233,.52);letter-spacing:.14em;max-width:54ch;opacity:0;animation:fadeUp .8s var(--ease) .7s forwards}
+.hero .hero-scroll{color:rgba(243,240,233,.42)}
+.hero .hero-scroll:hover{color:#e3cd9d}
+.hero-kick{display:flex;align-items:center;gap:1em;color:#e3cd9d;margin-bottom:1.6rem}
+.hero-kick .dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-title{font-family:var(--serif);font-weight:500;font-size:clamp(2.5rem,6.6vw,5.9rem);line-height:1;letter-spacing:-.02em;max-width:14ch;text-wrap:balance}
+.hero-title .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.09em;margin-bottom:-.09em}
+.hero-title .w>span{display:inline-block;transform:translateY(118%);animation:wUp .95s var(--ease) forwards;animation-delay:calc(var(--i)*.05s)}
+@keyframes wUp{to{transform:translateY(0)}}
+.hero-tag{max-width:54ch;color:var(--silver);font-size:clamp(.95rem,1.4vw,1.12rem);margin-top:1.6rem;opacity:0;animation:fadeUp .8s var(--ease) .4s forwards}
+.hero-meta{display:flex;flex-wrap:wrap;gap:1.8em;color:var(--silver);margin-top:1.7rem;opacity:0;animation:fadeUp .8s var(--ease) .5s forwards}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem;opacity:0;animation:fadeUp .8s var(--ease) .6s forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero-side{position:absolute;right:clamp(16px,3.5vw,52px);bottom:clamp(60px,10vh,106px);z-index:3;display:flex;flex-direction:column;align-items:flex-end;gap:15px}
+.hero-count{color:var(--silver)}
+.hero-count b{color:var(--cream);font-weight:500}
+.hero-nav{display:flex;gap:8px}
+.hbtn{width:42px;height:42px;border:1px solid var(--hair-2);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--silver);transition:.25s;font-size:.88rem}
+.hbtn:hover{border-color:var(--gold);color:var(--gold-2)}
+.hero-prog{width:120px;height:1px;background:var(--hair-2);overflow:hidden}
+.hero-prog i{display:block;height:100%;background:var(--gold);width:0}
+.hero-prog i.run{animation:hprog 9s linear forwards}
+@keyframes hprog{to{width:100%}}
+.hero-scroll{position:absolute;left:clamp(20px,4.4vw,60px);bottom:22px;z-index:3;color:var(--dim);display:flex;align-items:center;gap:12px;cursor:pointer;background:none;border:0;padding:8px 0;font:inherit;letter-spacing:.16em}
+.hero-scroll:hover{color:#e3cd9d}
+.hero-scroll .sline{width:56px;height:1px;background:var(--hair-2);position:relative;overflow:hidden}
+.hero-scroll .sline::after{content:"";position:absolute;inset:0;background:var(--gold);transform:translateX(-100%);animation:slide 2.8s var(--ease) infinite}
+@keyframes slide{40%{transform:translateX(0)}100%{transform:translateX(102%)}}
+
+/* ── Ticker ── */
+.ticker{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);overflow:hidden}
+.ticker-track{display:flex;width:max-content;animation:tick 56s linear infinite;padding:13px 0}
+.ticker-track span{font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);padding:0 2.4rem;display:flex;align-items:center;gap:2.4rem}
+.ticker-track span::after{content:"·";color:var(--gold)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ── Secciones ── */
+.section{padding:clamp(72px,10vw,128px) 0}
+.section.tight{padding:clamp(44px,6vw,80px) 0}
+.shead{display:flex;align-items:baseline;gap:1.4rem;margin-bottom:clamp(30px,4vw,50px)}
+.shead .idx{color:var(--gold);font-family:var(--mono);font-size:.68rem;letter-spacing:.2em}
+.shead h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.65rem,3.4vw,2.6rem);letter-spacing:-.01em}
+.shead .rule{flex:1;height:1px;background:var(--hair);align-self:center}
+.shead a.more{color:var(--silver);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;transition:color .25s;white-space:nowrap}
+.shead a.more:hover{color:var(--gold-2)}
+[data-rv]{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .85s var(--ease)}
+[data-rv].in{opacity:1;transform:none}
+
+/* ── Imágenes / frames ── */
+.frame{position:relative;overflow:hidden;background:var(--bg-3);border-radius:var(--rad)}
+.frame::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,#ddd7cb 40%,#ece7dc 50%,#ddd7cb 60%);background-size:200% 100%;animation:shimmer 1.5s infinite}
+@keyframes shimmer{to{background-position:-200% 0}}
+.frame img{position:relative;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s ease,transform 1.1s var(--ease)}
+.frame img.ld{opacity:1}
+.scard:hover .frame img.ld,.titem:hover .frame img.ld,.shcard:hover .frame img.ld{transform:scale(1.045)}
+.ratio-16{aspect-ratio:16/9}
+.ratio-916{aspect-ratio:9/16}
+.ratio-34{aspect-ratio:3/4}
+.ratio-45{aspect-ratio:4/5}
+
+/* ── Cards editoriales ── */
+.sgrid{display:grid;gap:clamp(34px,4vw,52px) clamp(22px,2.8vw,36px)}
+.sgrid.g3{grid-template-columns:repeat(3,1fr)}
+.sgrid.g4{grid-template-columns:repeat(4,1fr)}
+.scard{display:flex;flex-direction:column;gap:18px}
+.scard-m{position:relative}
+.scard-m .frame{border:1px solid var(--hair)}
+.scard-m .chip{position:absolute;right:14px;top:14px}
+.scard-top{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.scard-t{font-family:var(--serif);font-weight:500;font-size:clamp(1.15rem,1.6vw,1.38rem);line-height:1.16;margin-top:10px;transition:color .25s}
+.scard:hover .scard-t{color:var(--gold-2)}
+.scard-d{color:var(--silver);font-size:.85rem;margin-top:9px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.scard-xl .scard-t{font-size:clamp(1.35rem,2vw,1.75rem)}
+.scard-xl .scard-d{-webkit-line-clamp:3;font-size:.9rem}
+
+/* ── Filas ── */
+.row{position:relative}
+.row-track{display:flex;gap:clamp(18px,2.2vw,28px);overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 4px 18px;scrollbar-width:none}
+.row-track::-webkit-scrollbar{display:none}
+.row-track>*{scroll-snap-align:start;flex:none}
+.rowbtns{position:absolute;top:-70px;right:0;display:flex;gap:8px}
+
+/* ── Tendencias (ranking editorial) ── */
+.titem{width:min(470px,80vw);display:flex;align-items:flex-end;position:relative;padding-left:clamp(40px,4.6vw,68px)}
+.tnum{font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(6.4rem,10.5vw,9.6rem);line-height:.76;color:transparent;-webkit-text-stroke:1px rgba(28,26,22,.22);position:absolute;left:0;bottom:78px;z-index:0;user-select:none;transition:-webkit-text-stroke-color .35s}
+.titem:hover .tnum{-webkit-text-stroke-color:var(--gold)}
+.tcard{position:relative;width:100%;z-index:1}
+.tcard .frame{border:1px solid var(--hair)}
+.tcard-g{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,10,.93) 0%,rgba(8,8,10,.12) 58%);border-radius:var(--rad)}
+.tcard-b,.shcard-b,.cat-tile .tb{color:#f4f0e8}
+.tcard-b .tm,.shcard-b .vm,.cat-tile p{color:rgba(243,240,233,.72)}
+.tcard-b h3{font-family:var(--serif);font-weight:500;font-size:1.22rem;line-height:1.18;margin-top:7px}
+.tcard-b .tm{margin-top:8px;color:var(--silver)}
+
+/* ── Shorts cards ── */
+.shcard{width:min(224px,52vw)}
+.shcard-m{position:relative}
+.shcard-m .frame{border:1px solid var(--hair)}
+.shcard-g{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,10,.9),transparent 54%)}
+.shcard-m .chip{position:absolute;top:12px;left:12px}
+.shcard-b{position:absolute;left:15px;right:15px;bottom:15px}
+.shcard-b h3{font-family:var(--serif);font-weight:500;font-size:1.02rem;line-height:1.22;margin-top:7px}
+.shcard-b .vm{display:block;margin-top:8px;color:var(--silver)}
+.shorts-intro{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(24px,5vw,84px);align-items:end;margin-bottom:clamp(30px,4vw,48px)}
+.shorts-intro p{color:var(--silver);max-width:46ch}
+.shorts-intro .big{font-family:var(--serif);font-size:clamp(1.75rem,3.4vw,2.8rem);font-weight:500;line-height:1.08;letter-spacing:-.01em}
+.shorts-intro .big em{font-style:italic;color:var(--gold)}
+
+/* ── Elección del editor ── */
+.ed-band{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,84px);align-items:center}
+.ed-band .frame{border:1px solid var(--hair)}
+.ed-quote{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.3rem,2.1vw,1.75rem);line-height:1.42;margin:1.3rem 0 1.8rem;color:var(--paper)}
+
+/* ── Newsletter ── */
+.news{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,96px);align-items:center;border-top:1px solid var(--hair);padding-top:clamp(56px,7vw,90px)}
+.news h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.7rem,3.2vw,2.7rem);line-height:1.1;letter-spacing:-.01em}
+.news .sub{color:var(--silver);margin-top:16px;max-width:42ch}
+.news .phil{font-family:var(--serif);font-style:italic;color:var(--dim);margin-top:22px;font-size:.95rem}
+.news form{display:flex;gap:10px}
+.news input{flex:1;background:var(--panel);border:1px solid var(--hair-2);border-radius:var(--rad);padding:0 18px;height:54px;color:var(--ink);font-size:.95rem;transition:border-color .25s}
+.news input::placeholder{color:var(--dim)}
+.news input:focus{border-color:var(--gold);outline:none}
+.news .priv{margin-top:14px;color:var(--dim);font-size:.66rem;letter-spacing:.1em}
+.news-ok{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--gold)}
+
+/* ── Footer ── */
+.footer{border-top:1px solid var(--hair);padding:clamp(60px,7vw,96px) 0 44px;background:var(--bg-2)}
+.f-top{display:flex;justify-content:space-between;align-items:flex-start;gap:3rem;flex-wrap:wrap;margin-bottom:clamp(48px,6vw,76px)}
+.f-mark{line-height:0}
+.f-mark img{height:clamp(96px,14vw,140px);width:auto;object-fit:contain}
+.f-claim{color:var(--dim);font-style:italic;font-family:var(--serif);margin-top:14px;font-size:1rem;max-width:24ch;line-height:1.5}
+.f-cols{display:grid;grid-template-columns:repeat(4,minmax(140px,1fr));gap:clamp(26px,4vw,60px);flex:1;min-width:min(580px,100%)}
+.f-cols h4{font-family:var(--mono);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-weight:500}
+.f-cols a{display:block;color:var(--silver);font-size:.88rem;padding:5px 0;transition:color .2s}
+.f-cols a:hover{color:var(--ink)}
+.f-bot{border-top:1px solid var(--hair);margin-top:clamp(44px,5vw,64px);padding-top:26px;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:var(--dim)}
+
+/* ── Página de historia ── */
+.shero{position:relative;min-height:max(560px,84svh);display:flex;align-items:flex-end;overflow:hidden}
+.shero-bg{position:absolute;inset:-12% 0}
+.shero-bg img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s}
+.shero-bg img.ld{opacity:1}
+.shero .hero-shade{background:linear-gradient(to top,rgba(10,10,12,1) 4%,rgba(10,10,12,.5) 46%,rgba(10,10,12,.28))}
+.crumbs{display:flex;gap:.9em;flex-wrap:wrap;color:var(--dim);margin-bottom:1.8rem}
+.crumbs a:hover{color:var(--gold-2)}
+.img-disc{color:var(--dim);max-width:62ch;margin:-.4rem 0 1.6rem;font-size:.82rem;line-height:1.55}
+.about-logo{width:min(280px,70vw);height:auto;margin:0 0 2.2rem;background:transparent}
+.ply-soon{position:relative;aspect-ratio:16/9;background:#000;border:1px solid var(--hair);border-radius:var(--rad);overflow:hidden;display:flex;align-items:flex-end}
+.ply-soon::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,10,.92) 0%,rgba(8,8,10,.45) 48%,rgba(8,8,10,.2) 100%)}
+.ply-soon .mx{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.ply-soon .mx.ld{opacity:.55}
+.ply-soon-in{position:relative;z-index:2;padding:clamp(22px,4vw,40px);max-width:42rem}
+.ply-soon-in p{color:rgba(243,240,233,.82);font-size:1.02rem;margin:10px 0 1.3rem;max-width:46ch}
+.contact-row a{color:var(--gold-2)}
+.contact-row a:hover{color:var(--ink)}
+.story-body{max-width:760px}
+.story-body .kick{color:var(--gold);display:block;margin-bottom:2rem}
+.story-body p{font-family:var(--serif);font-weight:400;font-size:clamp(1.05rem,1.5vw,1.22rem);line-height:1.78;color:#2c2924;margin-bottom:1.7em}
+.story-body p:first-of-type::first-letter{font-size:3.4em;float:left;line-height:.82;padding-right:.14em;color:var(--gold-2);font-weight:500}
+.pull{border-left:2px solid var(--gold);padding:.4em 0 .4em 1.7em;margin:2.6em 0;font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.42;color:var(--paper)}
+/* Cronología con raíl */
+.tl-rail{position:relative;margin-top:1.6rem;padding-left:36px}
+.tl-rail::before{content:"";position:absolute;left:5px;top:10px;bottom:10px;width:1px;background:var(--hair-2)}
+.tl-item{position:relative;padding:20px 0;border-bottom:1px solid var(--hair)}
+.tl-item:last-child{border-bottom:0}
+.tl-dot{position:absolute;left:-36px;top:29px;width:9px;height:9px;border-radius:50%;background:var(--bg);border:1px solid var(--gold)}
+.tl-yr{font-family:var(--mono);color:var(--gold);letter-spacing:.16em;font-size:.72rem}
+.tl-tx{color:var(--silver);font-size:.95rem;margin-top:7px;max-width:62ch;line-height:1.65}
+/* Ficha agrupada */
+.fgroup{margin-top:2rem}
+.fgroup .fg-l{display:block;margin-bottom:12px;color:var(--dim)}
+.ficha{display:flex;flex-wrap:wrap;gap:10px}
+.ficha a{border:1px solid var(--hair-2);border-radius:2px;padding:.6em 1em;font-size:.8rem;color:var(--silver);display:inline-flex;gap:.7em;align-items:baseline;transition:.25s}
+.ficha a:hover{border-color:var(--gold);color:var(--gold-2)}
+.ficha a .mono{color:var(--dim);font-size:.56rem}
+
+/* ── Reproductor ── */
+.ply-wrap{margin-top:clamp(36px,5vw,60px)}
+.ply{position:relative;aspect-ratio:16/9;background:#000;border:1px solid var(--hair);border-radius:var(--rad);overflow:hidden}
+.ply .mx{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s}
+.ply .mx.ld{opacity:.6}
+.ply.is-playing .mx.ld{opacity:.32}
+.ply-shade{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 30%,rgba(0,0,0,.55))}
+.ply-mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;z-index:3}
+.ply.started .ply-mid{display:none}
+.ply-big{width:94px;height:94px;border-radius:50%;background:var(--cream);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:1.6rem;transition:transform .35s var(--ease),background .25s;padding-left:6px}
+.ply-big:hover{transform:scale(1.07);background:#fff}
+.ply-resume{border:1px solid rgba(243,240,233,.3);padding:.85em 1.5em;border-radius:2px;color:#f4f0e8;transition:.25s}
+.ply-resume:hover{border-color:var(--gold);color:var(--gold-2)}
+.ply-demo{position:absolute;top:14px;left:14px;z-index:4;color:var(--dim);background:rgba(0,0,0,.5);padding:.5em .8em;border-radius:2px}
+.ply-bar{position:absolute;left:0;right:0;bottom:0;z-index:4;display:flex;align-items:center;gap:16px;padding:15px 18px;background:linear-gradient(to top,rgba(0,0,0,.85),transparent)}
+.ply-pp{color:#f4f0e8;font-size:1.1rem;display:flex}
+.ply-track{flex:1;height:14px;display:flex;align-items:center;cursor:pointer}
+.ply-track i{display:block;width:100%;height:2px;background:var(--hair-2);position:relative}
+.ply-track i::after{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--pw,0%);background:var(--gold)}
+.ply-time{color:rgba(243,240,233,.75)}
+.ply-frame{position:relative;aspect-ratio:16/9;background:#000;border:1px solid var(--hair);border-radius:var(--rad);overflow:hidden}
+.ply-frame iframe,.ply-frame video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.ply-frame video{object-fit:cover;background:#000}
+
+/* ── Shorts feed ── */
+body.route-shorts{background:var(--bg);color:var(--ink)}
+body.route-shorts .nav{background:rgba(243,239,230,.9)}
+body.route-shorts .footer{display:none}
+.feed{height:100dvh;overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none;background:var(--bg);color:var(--ink)}
+.feed::-webkit-scrollbar{display:none}
+.short{position:relative;height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--bg)}
+.short>img{display:none}
+.s-frame{position:relative;z-index:2;height:min(84dvh,820px);aspect-ratio:9/16;max-width:88vw;border:1px solid var(--hair-2);border-radius:8px;overflow:hidden;background:var(--bg-3)}
+.s-frame img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s}
+.s-frame img.ld{opacity:1}
+.s-frame video,.s-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:var(--bg-3)}
+.s-frame video{object-fit:cover}
+.short.s-yt .s-big,.short.s-yt .s-prog,.short.s-yt [data-act="short-play"]{display:none}
+.short.s-yt .s-shade,.short.s-yt .s-info{pointer-events:none}
+.short.s-yt .s-info a,.short.s-yt .s-rail{pointer-events:auto}
+.s-frame .s-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(243,239,230,.96) 0%,rgba(243,239,230,.78) 28%,rgba(243,239,230,.12) 52%,transparent 68%)}
+.s-info{position:absolute;left:22px;right:76px;bottom:24px;z-index:3;color:var(--ink)}
+.s-title{font-family:var(--serif);font-weight:500;font-size:clamp(1.35rem,2.6vw,1.85rem);line-height:1.14;margin-top:11px;letter-spacing:-.01em;color:var(--ink)}
+.s-sub{color:var(--silver);font-size:.88rem;margin-top:10px;max-width:40ch}
+.s-ctas{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px}
+.s-cta{display:inline-flex}
+.s-rail{position:absolute;right:16px;bottom:26px;z-index:3;display:flex;flex-direction:column;gap:12px}
+.s-rail button,.s-rail a{width:46px;height:46px;border-radius:50%;border:1px solid var(--hair-2);background:rgba(243,239,230,.92);color:var(--ink);display:flex;align-items:center;justify-content:center;transition:.25s;font-size:.95rem}
+.s-rail button:hover,.s-rail a:hover{border-color:var(--gold);color:var(--gold)}
+.s-prog{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(28,26,22,.12);z-index:4}
+.s-prog i{display:block;height:100%;width:0;background:var(--gold)}
+.short.playing .s-prog i{animation:sprog var(--sdur,40s) linear forwards}
+.short.paused .s-prog i{animation-play-state:paused}
+.s-frame:has(video) .s-prog i{animation:none!important}
+@keyframes sprog{to{width:100%}}
+.short.playing .s-big{opacity:0}
+.s-big{position:absolute;inset:0;margin:auto;width:78px;height:78px;border-radius:50%;background:rgba(243,239,230,.94);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:1.3rem;z-index:3;transition:opacity .3s,transform .3s;padding-left:5px}
+.feed-top{position:fixed;top:0;left:0;right:0;z-index:120;display:flex;justify-content:space-between;align-items:center;padding:0 clamp(16px,3vw,40px);height:var(--nav-h);pointer-events:none}
+.feed-top a,.feed-top .fcount{pointer-events:auto}
+.fback{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;color:var(--silver);display:flex;gap:.6em;align-items:center}
+.fback:hover{color:var(--gold)}
+.fcount{color:var(--dim)}
+.feed-side{position:fixed;right:clamp(14px,2.4vw,34px);top:50%;transform:translateY(-50%);z-index:120;display:flex;flex-direction:column;align-items:center;gap:14px}
+.feed-side .hbtn{background:rgba(243,239,230,.92);color:var(--ink);border-color:var(--hair-2)}
+.feed-side .hbtn:hover{border-color:var(--gold);color:var(--gold)}
+.fdots{display:flex;flex-direction:column;gap:8px;padding:8px 0}
+.fdots i{width:5px;height:5px;border-radius:50%;background:var(--hair-2);transition:.3s;cursor:pointer}
+.fdots i.on{background:var(--gold);transform:scale(1.4)}
+
+/* ── Buscador ── */
+.search-ov{position:fixed;inset:0;z-index:350;background:rgba(243,239,230,.97);opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s;overflow-y:auto}
+.search-ov.open{opacity:1;visibility:visible}
+.search-in{max-width:940px;margin:0 auto;padding:clamp(84px,12vh,144px) var(--gut) 84px}
+.search-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:2.8rem}
+.search-input{width:100%;background:transparent;border:0;border-bottom:1px solid var(--hair-2);color:var(--ink);font-family:var(--serif);font-weight:500;font-size:clamp(1.8rem,4.5vw,3rem);padding:10px 0 20px;letter-spacing:-.01em}
+.search-input::placeholder{color:#b5b0a4}
+.search-input:focus{border-color:var(--gold);outline:none}
+.sg-h{color:var(--gold);margin:2.6rem 0 1.1rem;display:flex;align-items:center;gap:1rem}
+.sg-h::after{content:"";flex:1;height:1px;background:var(--hair)}
+.sg-list{display:flex;flex-direction:column}
+.sr{display:flex;gap:20px;align-items:center;padding:15px 10px;border-radius:var(--rad);transition:background .2s}
+.sr:hover{background:rgba(28,26,22,.05)}
+.sr .thumb{width:96px;aspect-ratio:16/10;flex:none;overflow:hidden;border-radius:2px;background:var(--bg-3)}
+.sr .thumb.v{aspect-ratio:9/14;width:58px}
+.sr .thumb img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s}
+.sr .thumb img.ld{opacity:1}
+.sr h4{font-family:var(--serif);font-weight:500;font-size:1.08rem;line-height:1.25}
+.sr .mono{color:var(--dim);display:block;margin-top:6px;font-size:.58rem}
+.s-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:1.8rem}
+.s-chips button{border:1px solid var(--hair-2);border-radius:2px;padding:.75em 1.2em;color:var(--silver);font-size:.8rem;transition:.25s}
+.s-chips button:hover{border-color:var(--gold);color:var(--gold-2)}
+.s-empty{padding:3.6rem 0;color:var(--silver)}
+.s-empty .serif{font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--paper);display:block;margin-bottom:.8rem}
+
+/* ── Cabeceras de página ── */
+.phead{padding-top:calc(var(--nav-h) + clamp(52px,8vw,100px));padding-bottom:clamp(30px,4vw,52px)}
+.phead .catlab{display:block;margin-bottom:1.3rem}
+.phead h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.3rem,5.8vw,4.6rem);letter-spacing:-.018em;line-height:1.02}
+.phead .sub{color:var(--silver);margin-top:1.2rem;max-width:62ch;font-size:clamp(.95rem,1.3vw,1.08rem)}
+.phead .count{color:var(--dim);display:block;margin-top:1.8rem}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:2rem}
+.chips button{border:1px solid var(--hair-2);border-radius:2px;padding:.72em 1.2em;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--silver);transition:.25s}
+.chips button:hover{color:var(--ink);border-color:var(--ink)}
+.chips button.on{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.ent-grid{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:clamp(30px,5vw,76px);align-items:start;margin-top:1.8rem}
+.ent-card .frame{border:1px solid var(--hair)}
+.ent-card .era{color:var(--dim);display:block;margin-top:1.1rem}
+.cat-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.2vw,26px)}
+.cat-tile{position:relative;overflow:hidden;border-radius:var(--rad);border:1px solid var(--hair)}
+.cat-tile img{width:100%;height:100%;object-fit:cover;opacity:0;transition:transform 1s var(--ease),opacity .7s}
+.cat-tile img.ld{opacity:1}
+.cat-tile:hover img{transform:scale(1.06)}
+.cat-tile .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,10,.93) 8%,rgba(8,8,10,.12) 62%)}
+.cat-tile .tb{position:absolute;left:20px;right:20px;bottom:18px}
+.cat-tile h3{font-family:var(--serif);font-weight:500;font-size:1.55rem;margin-top:7px}
+.cat-tile p{color:rgba(243,240,233,.72);font-size:.78rem;margin-top:7px;line-height:1.5}
+
+/* ── Continuar viendo ── */
+.cw{width:min(330px,74vw)}
+.cw .pw{height:2px;background:var(--hair-2)}
+.cw .pw i{display:block;height:100%;background:var(--gold)}
+.cw .rm{color:var(--dim);margin-top:9px;display:flex;justify-content:space-between;gap:1rem}
+.cw .rm span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* ── Vacíos / pn ── */
+.empty{padding:clamp(64px,9vw,116px) 0;text-align:center}
+.empty .serif{font-family:var(--serif);font-style:italic;font-size:clamp(1.5rem,3vw,2.3rem);display:block;margin-bottom:1.1rem}
+.empty p{color:var(--silver);margin-bottom:2.2rem}
+.pn{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.pn a{padding:clamp(30px,4vw,48px) var(--gut);transition:background .3s}
+.pn a:hover{background:rgba(28,26,22,.04)}
+.pn a+a{border-left:1px solid var(--hair);text-align:right}
+.pn .mono{color:var(--dim)}
+.pn h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.15rem,2vw,1.55rem);margin-top:11px}
+.pn a:hover h3{color:var(--gold-2)}
+
+/* ── Toast / menú / tabbar ── */
+#toasts{position:fixed;bottom:26px;left:50%;transform:translateX(-50%);z-index:399;display:flex;flex-direction:column;gap:10px;align-items:center;pointer-events:none}
+.toast{background:var(--panel);border:1px solid var(--hair-2);border-left:2px solid var(--gold);color:var(--ink);padding:.95em 1.5em;border-radius:2px;font-size:.82rem;opacity:0;transform:translateY(12px);transition:.35s var(--ease)}
+.toast.on{opacity:1;transform:none}
+.menu-ov{position:fixed;inset:0;z-index:340;background:rgba(243,239,230,.98);opacity:0;visibility:hidden;transition:.35s;display:flex;flex-direction:column;justify-content:center;padding:0 clamp(24px,7vw,80px)}
+.menu-ov.open{opacity:1;visibility:visible}
+.menu-ov a.ml{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,7vw,3.2rem);padding:.34em 0;border-bottom:1px solid var(--hair);display:flex;justify-content:space-between;align-items:center;color:var(--ink)}
+.menu-ov a.ml .mono{color:var(--dim);font-size:.6rem}
+.menu-ov a.ml:hover{color:var(--gold)}
+.menu-close{position:absolute;top:16px;right:16px;font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;color:var(--silver);padding:10px}
+.tabbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:310;background:rgba(243,239,230,.96);border-top:1px solid var(--hair);padding:8px 0 calc(8px + env(safe-area-inset-bottom))}
+.tabbar a,.tabbar button{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--dim);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:6px 0}
+.tabbar a.on,.tabbar button:active{color:var(--gold)}
+.tabbar .ic{width:1.35em;height:1.35em}
+
+/* ── Responsive ── */
+@media (max-width:1100px){ .sgrid.g4{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:900px){
+  .nav-links{display:none}
+  .tabbar{display:flex}
+  body{padding-bottom:66px}
+  #toasts{bottom:86px}
+  .sgrid.g3,.sgrid.g4{grid-template-columns:repeat(2,1fr)}
+  .news,.ed-band{grid-template-columns:1fr}
+  .f-cols{grid-template-columns:repeat(2,1fr)}
+  .ent-grid{grid-template-columns:1fr}
+  .cat-tiles{grid-template-columns:repeat(2,1fr)}
+  .shorts-intro{grid-template-columns:1fr}
+  .hero-side{display:none}
+  .feed-side{display:none}
+  .rowbtns{display:none}
+  .hero-copy{max-width:34rem}
+}
+@media (max-width:640px){
+  /* Grids → filas deslizables tipo app */
+  .sgrid{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:18px;padding-bottom:12px;scrollbar-width:none}
+  .sgrid::-webkit-scrollbar{display:none}
+  .sgrid>*{flex:none;width:min(330px,82vw);scroll-snap-align:start}
+  .news form{flex-direction:column}
+  .pn{grid-template-columns:1fr}
+  .pn a+a{border-left:0;border-top:1px solid var(--hair);text-align:left}
+  .hero{min-height:90svh}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .hero-scroll{display:none}
+  .hero-copy{max-width:36rem}
+  .hero-brand .hero-bg img{object-position:58% 42%}
+  .hero-brand .hero-shade{background:
+    linear-gradient(to top,rgba(8,8,10,.92) 0%,rgba(8,8,10,.5) 48%,rgba(8,8,10,.42) 100%),
+    linear-gradient(90deg,rgba(8,8,10,.72) 0%,rgba(8,8,10,.28) 70%,transparent 100%)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  [data-rv]{opacity:1;transform:none}
+  .hero-title .w>span{transform:none}
+  .hero-tag,.hero-meta,.hero-cta,.hero-universe{opacity:1}
+  .hero-bg img{opacity:1}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="logo" href="#/" aria-label="TRAMA — Inicio"><img src="public/logo.png" width="45" height="52" alt="TRAMA"></a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#/historias" data-nav="historias">Historias</a>
+      <a href="#/shorts" data-nav="shorts">Shorts</a>
+      <span class="cats-dd" id="catsDD">
+        <button class="nlb" data-act="cats-toggle" aria-expanded="false">Categorías</button>
+        <div class="cats-panel" id="catsPanel" role="menu"></div>
+      </span>
+    </nav>
+    <div class="nav-right">
+      <a class="nbtn" href="https://www.youtube.com/@TRAMAhistorias" target="_blank" rel="noopener">YouTube</a>
+      <button class="nbtn" data-act="search-open" aria-label="Buscar en el archivo"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg></span></button>
+      <a class="nbtn" href="#/mi-lista" aria-label="Mi lista"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6.5 4h11v16.5L12 16.8l-5.5 3.7z"/></svg></span><span class="badge" id="listCount" hidden>0</span></a>
+      <button class="nbtn" data-act="menu-open" aria-label="Abrir menú" id="menuBtn" style="display:none">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="menu-ov" id="menuOv" role="dialog" aria-modal="true" aria-label="Menú">
+  <button class="menu-close" data-act="menu-close">CERRAR ✕</button>
+  <nav id="menuLinks"></nav>
+</div>
+
+<div class="search-ov" id="searchOv" role="dialog" aria-modal="true" aria-label="Buscador">
+  <div class="search-in">
+    <div class="search-top">
+      <span class="mono dim">ARCHIVO TRAMA — BÚSQUEDA</span>
+      <button class="nbtn" data-act="search-close" aria-label="Cerrar buscador">ESC ✕</button>
+    </div>
+    <input class="search-input" id="searchInput" type="search" placeholder="Historias, personas, empresas, inventos…" autocomplete="off" aria-label="Buscar en el archivo">
+    <div id="searchResults" aria-live="polite"></div>
+  </div>
+</div>
+
+<main id="main"></main>
+
+<div id="toasts" aria-live="polite"></div>
+
+<nav class="tabbar" aria-label="Navegación móvil">
+  <a href="#/" data-tab="/"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 11l8-7 8 7v9h-5.5v-6h-5v6H4z"/></svg></span>Inicio</a>
+  <a href="#/historias" data-tab="/historias"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="5" width="17" height="14" rx="1.5"/><path d="M7.5 5v14M16.5 5v14M3.5 9.5h4M3.5 14.5h4M16.5 9.5h4M16.5 14.5h4"/></svg></span>Historias</a>
+  <a href="#/shorts" data-tab="/shorts"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 3L5 13.5h5.5L11 21l8-10.5h-5.5z"/></svg></span>Shorts</a>
+  <button data-act="search-open" aria-label="Buscar"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg></span>Buscar</button>
+  <a href="#/mi-lista" data-tab="/mi-lista"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6.5 4h11v16.5L12 16.8l-5.5 3.7z"/></svg></span>Mi lista</a>
+</nav>
+
+<script>
+/* ══════════════════════════════════════════════════════════════════
+   TRAMA V2 · Arquitectura: CONTENT → DATA/SERVICES → UI → SEO/ANALYTICS
+   ─ El router, store, reproductor, feed y buscador de la V1 se conservan.
+   ─ Novedades V2: sistema MEDIA (assets reales + pósters de desarrollo),
+     hero de marca, ranking editorial, Elección del editor, cronología
+     con raíl, ficha agrupada, recomendación ponderada, eventos §38.
+   ⚠ DEMO: views/date/yt son placeholders marcados; los pósters generados
+     son el placeholder de desarrollo hasta cargar assets reales.
+   ══════════════════════════════════════════════════════════════════ */
+'use strict';
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const CLAIM = 'Hay una historia detrás de todo.';
+const PHILO = 'No coleccionamos vídeos. Archivamos las decisiones que hicieron el mundo.';
+const MEDIA_ROOT = 'media';
+const LOGO = 'public/logo.png';
+const YT_CHANNEL = 'https://www.youtube.com/@TRAMAhistorias';
+const YT_SHORTS = YT_CHANNEL+'/shorts';
+const ytShortHref = sh => sh.yt ? 'https://www.youtube.com/shorts/'+sh.yt : YT_SHORTS;
+const MAIL = 'tramahistorias@gmail.com';
+/* Producción: registrar aquí cada asset real (local/CDN/CMS) por clave.
+   La UI nunca cambia: media() resuelve automáticamente. */
+const ASSET_MAP = {
+  'hero-trama': MEDIA_ROOT+'/hero/trama-hero.jpg',
+  'trama': MEDIA_ROOT+'/hero/trama-hero.jpg',
+  'story-kodak-y-el-futuro-que-dejo-escapar': MEDIA_ROOT+'/stories/kodak/5.jpg',
+  'short-kodak-invento-la-camara-digital': MEDIA_ROOT+'/stories/kodak/1.jpg',
+  'ent-kodak': MEDIA_ROOT+'/stories/kodak/1.jpg',
+  'ent-steve-sasson': MEDIA_ROOT+'/stories/kodak/4.jpg',
+  'ent-camara-digital': MEDIA_ROOT+'/stories/kodak/3.jpg',
+  'ent-fotografia': MEDIA_ROOT+'/stories/kodak/3.jpg',
+  'story-la-caja-que-encogio-el-mundo': MEDIA_ROOT+'/stories/caja/5.jpg',
+  'short-el-invento-que-no-parece-un-invento': MEDIA_ROOT+'/stories/caja/1.jpg',
+  'ent-malcom-mclean': MEDIA_ROOT+'/stories/caja/2.jpg',
+  'ent-contenedor': MEDIA_ROOT+'/stories/caja/3.jpg',
+  'ent-logistica': MEDIA_ROOT+'/stories/caja/4.jpg',
+  'ent-comercio-global': MEDIA_ROOT+'/stories/caja/5.jpg',
+  'story-el-rey-del-hielo': MEDIA_ROOT+'/stories/hielo/5.jpg',
+  'ent-frederic-tudor': MEDIA_ROOT+'/stories/hielo/2.jpg',
+  'ent-cadena-de-frio': MEDIA_ROOT+'/stories/hielo/3.jpg',
+  'cat-dinero': MEDIA_ROOT+'/stories/hielo/1.jpg',
+  'cat-empresas': MEDIA_ROOT+'/stories/kodak/1.jpg',
+  'cat-inventos': MEDIA_ROOT+'/stories/caja/5.jpg',
+  'cat-personas': MEDIA_ROOT+'/cats/personas.jpg',
+  'cat-historia': MEDIA_ROOT+'/cats/historia.jpg',
+  'cat-misterios': MEDIA_ROOT+'/cats/misterios.jpg'
+};
+const SOCIAL = [['YouTube',YT_CHANNEL]];
+
+/* ═══════════ CONTENT ═══════════ */
+const CATS = {
+  dinero:{name:'Dinero', desc:'Fortunas, crisis, estafas, inversiones y grandes decisiones.', seed:'cat-dinero'},
+  empresas:{name:'Empresas', desc:'Empresarios, fracasos, adquisiciones y guerras empresariales.', seed:'cat-empresas'},
+  inventos:{name:'Inventos', desc:'Tecnología, descubrimientos y productos que lo cambiaron todo.', seed:'cat-inventos'},
+  personas:{name:'Personas', desc:'Empresarios, inventores, científicos y personajes extraordinarios.', seed:'cat-personas'},
+  historia:{name:'Historia', desc:'Acontecimientos, decisiones y momentos que giraron el mundo.', seed:'cat-historia'},
+  misterios:{name:'Misterios', desc:'Historias que todavía generan preguntas.', seed:'cat-misterios'}
+};
+const STORIES = [
+{slug:'kodak-y-el-futuro-que-dejo-escapar', cat:'empresas', title:'Kodak — La empresa que inventó el futuro digital',
+ tagline:'Si Kodak ayudó a inventar el futuro digital, ¿por qué no consiguió dominarlo?',
+ desc:'En 1975, en Rochester, Steve Sasson construyó uno de los primeros prototipos de cámara digital. Kodak no ignoró aquel aparato. El problema fue otro: el futuro que anunciaba no se parecía al negocio que la había hecho indispensable.',
+ durMin:24, durSec:1440, date:'2026-06-12', views:0, yt:null,
+ flags:['featured','editors'], tags:['fotografía','innovación','disrupción'], sources:['USPTO · Patente 4.131.919','Kodak · solicitud de Chapter 11, enero de 2012'],
+ entities:['kodak','steve-sasson','george-eastman','camara-digital','fotografia'],
+ body:[
+ 'Kodak no nació como una empresa de cámaras. Nació como una empresa de memoria. En 1888 George Eastman puso en el mercado un aparato simple y una frase que todavía explica el siglo XX: usted aprieta el botón; nosotros hacemos el resto. El resto era el carrete, la química, el papel. Cada fotografía dejaba un rastro de consumo. Ese rastro era el negocio.',
+ 'El modelo era elegante y voraz. La cámara podía ser accesible porque el beneficio estaba en lo que ocurría después: revelar, copiar, repetir. Kodak no vendía un instante. Vendía la infraestructura invisible de todos los instantes. Durante décadas, fotografiar el mundo y comprar Kodak fueron casi la misma acción.',
+ 'En 1975, en los laboratorios de Rochester, un ingeniero llamado Steve Sasson construyó un prototipo distinto. Usaba un sensor CCD, grababa la imagen en una cinta de casete, tardaba unos veintitrés segundos y devolvía en un televisor una imagen en blanco y negro de unos diez mil píxeles. No consumía carrete. No consumía papel. No se parecía a Kodak.',
+ 'La pregunta que aquella máquina planteaba no era técnica. Era existencial: si la fotografía deja de ser química, ¿qué queda de una empresa cuyo beneficio es químico? Kodak no metió el prototipo en un cajón y apagó la luz. Registró la patente. Siguió investigando. Llegó a fabricar y vender cámaras digitales. En algunos años del nuevo siglo incluso lideró ese mercado en Estados Unidos. Lo digital no fue un secreto. Fue un dilema.',
+ 'El dilema tenía forma de cuenta de resultados. El carrete, el papel y los químicos seguían pagando los dividendos. Las cámaras digitales se vendían, pero no alimentaban la máquina de revelado. Cada unidad digital era, a la vez, un producto y una amenaza. Kodak financió el futuro con una mano y protegió el presente con la otra. Esa tensión no es estupidez: es lo que ocurre cuando una innovación verdadera canibaliza el negocio que la hace posible.',
+ 'Mientras tanto el mercado se movió más rápido que el organigrama. Sony, Canon, Nikon y Fuji empujaron el sensor. Después el teléfono convirtió la cámara en una función, no en un aparato. Las fotos dejaron de revelarse. Se copiaron. Se enviaron. Se olvidaron. El volumen de imágenes explotó; el margen de Kodak se evaporó. No fue que el mundo dejara de fotografiar. Fue que dejó de pagar por fotografiar como Kodak había enseñado a pagar.',
+ 'En enero de 2012 Kodak se acogió al Chapter 11. No desapareció. Salió del concurso al año siguiente, reorganizada: impresión comercial, packaging, química, patentes. La empresa que había puesto una cámara en cada casa siguió existiendo, pero ya no era el centro del gesto de hacer una foto. El futuro digital que había ayudado a construir se había ido a vivir a otra parte.',
+ 'Esta historia no pregunta si Kodak vio venir lo digital. Pregunta algo más incómodo: qué ocurre cuando una organización inventa el mañana y descubre que el mañana no puede mantener el edificio que la sostiene. Kodak no fracasó por no imaginar el futuro. Fracasó, en parte, por imaginarlo demasiado bien.'],
+ quote:'Kodak no ignoró lo digital. Lo digital ignoró el modelo que había hecho rica a Kodak.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son fotografías históricas. Son reconstrucciones visuales del laboratorio, el prototipo y el periodo. No representan un documento de archivo.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/kodak/1.jpg', alt:'Reconstrucción visual. Un ingeniero toma notas junto al prototipo de cámara digital en un laboratorio de Kodak.'},
+  {src:MEDIA_ROOT+'/stories/kodak/2.jpg', alt:'Reconstrucción visual. Trabajo sobre el prototipo de cámara digital en un banco de laboratorio.'},
+  {src:MEDIA_ROOT+'/stories/kodak/3.jpg', alt:'Reconstrucción visual. Prototipo de cámara digital: chasis, objetivo y circuitos al descubierto.'},
+  {src:MEDIA_ROOT+'/stories/kodak/4.jpg', alt:'Reconstrucción visual. Ajuste del cableado interno del prototipo.'},
+  {src:MEDIA_ROOT+'/stories/kodak/5.jpg', alt:'Reconstrucción visual. El prototipo ante un monitor; la primera imagen digital aparece en pantalla.'}
+ ],
+ timeline:[['1888','George Eastman lanza la cámara Kodak: el beneficio no está en el aparato, sino en el carrete, la química y el papel.'],['1975','Steve Sasson construye en Rochester uno de los primeros prototipos de cámara digital: sensor CCD, cinta de casete, unos 23 segundos por imagen.'],['1978','Se concede la patente estadounidense 4.131.919 sobre el sistema de captura electrónica de imágenes.'],['2001–2005','Kodak comercializa cámaras digitales a gran escala. El carrete sigue siendo el centro de beneficio; el sensor, el dilema.'],['ENE 2012','Kodak se acoge al Chapter 11. El mercado de la fotografía cotidiana ya no pasa por el revelado.'],['2013','La empresa sale del concurso reorganizada. Kodak continúa; el gesto de fotografiar el mundo, no.']]},
+{slug:'la-guerra-de-las-corrientes', cat:'historia', title:'La guerra de las corrientes',
+ tagline:'Edison tenía la fama. Westinghouse tenía a Tesla. Y el mundo, literalmente, tuvo que elegir cómo iluminarse.',
+ desc:'En la década de 1880 dos sistemas eléctricos se disputaron el futuro: la corriente continua de Edison y la corriente alterna de Tesla y Westinghouse.',
+ durMin:31, durSec:1860, date:'2026-08-01', views:1800000, yt:null,
+ flags:['featured'], tags:['energía','electricidad','rivalidad'], sources:['Archivos Nikola Tesla, Belgrado','Exposición Universal de Chicago, 1893'],
+ entities:['nikola-tesla','thomas-edison','westinghouse','general-electric','corriente-alterna','energia'],
+ body:[
+ 'Edison había inventado no solo una bombilla sino un sistema completo: generadores, cableado, contadores. Su imperio dependía de la corriente continua. Cuando un joven ingeniero serbio llamado Nikola Tesla le propuso un sistema radicalmente distinto basado en corriente alterna, Edison no discutió la idea: despidió al hombre.',
+ 'Tesla acabó aliándose con George Westinghouse, el único industrial con fábricas y ambición suficientes para desafiar al inventor más famoso del planeta. La campaña de Edison fue feroz: demostraciones públicas, presión política y un invento macabro —la silla eléctrica— alimentado con corriente alterna para asociarla con la muerte.',
+ 'Pero la física no entiende de propaganda. La corriente alterna viajaba cientos de kilómetros; la continua, apenas un par. Cuando Westinghouse iluminó la Exposición de Chicago de 1893 y después aprovechó las cataratas del Niágara para electrificar Buffalo, la guerra terminó sin tratado de paz.',
+ 'Hoy cada enchufe del planeta es un monumento involuntario a Tesla y una ironía para Edison: el hombre que electrificó el mundo perdió el sistema que lo haría posible.'],
+ quote:'Edison ganó todos los titulares. Tesla ganó todos los enchufes.',
+ timeline:[['1882','Edison inaugura la central de Pearl Street en Nueva York con corriente continua.'],['1888','Tesla patenta el sistema de corriente alterna. Westinghouse compra las licencias.'],['1893','La corriente alterna ilumina la Exposición Universal de Chicago ante 27 millones de visitantes.'],['1895','La central del Niágara demuestra que la electricidad puede viajar decenas de kilómetros.']]},
+{slug:'el-hombre-que-detuvo-el-mundo', cat:'historia', title:'El hombre que detuvo el mundo',
+ tagline:'Veintiséis de septiembre de 1983. Cinco misiles en la pantalla. Y un solo hombre entre la pantalla y el botón.',
+ desc:'Stanislav Petrov era el oficial de guardia del sistema de alerta nuclear soviético cuando el ordenador anunció un ataque estadounidense. Decidió no creer a la máquina.',
+ durMin:18, durSec:1080, date:'2026-02-26', views:3100000, yt:null,
+ flags:['featured','new'], tags:['guerra fría','decisiones','nuclear'], sources:['Entrevistas S. Petrov, 2004–2013','Archivos desclasificados CIA'],
+ entities:['stanislav-petrov','guerra-fria'],
+ body:[
+ 'El protocolo era inequívoco: si el sistema de satélites detectaba lanzamiento de misiles, el oficial de guardia debía informar al Estado Mayor, y el Estado Mayor, recomendar la respuesta. Aquella noche, el sistema detectó uno. Luego dos. Luego cinco.',
+ 'Petrov tenía minutos. Su formación le decía que confiara en la máquina; su instinto le susurraba una anomalía: si Estados Unidos iniciara una guerra nuclear, no lanzaría cinco misiles. Lanzaría cientos. Clasificó la alerta como fallo del sistema. Y esperó.',
+ 'No pasó nada. Nunca pasó nada. Los satélites habían confundido el reflejo del sol sobre nubes altas con estelas de lanzamiento. Petrov no recibió condecoraciones: recibió una reprimenda leve y una jubilación silenciosa. El mundo nunca supo su nombre hasta veinte años después.',
+ 'La lección incómoda de esta historia no es sobre tecnología. Es sobre el instante exacto en que desobedecer a un sistema perfecto fue el acto más responsable posible.'],
+ quote:'El protocolo decía «informe». La conciencia dijo «espere». Esa pausa fue la paz.',
+ timeline:[['1983','La URSS vive su año más tenso: derribo del KAL-007 y ejercicio Able Archer de la OTAN.'],['26 SEP 1983','El sistema Oko detecta cinco lanzamientos. Petrov los declara falsa alarma.'],['2004','La historia se hace pública. Petrov recibe el premio «Ciudadano del Mundo».']]},
+{slug:'tulipanes-de-oro-la-primera-gran-burbuja', cat:'dinero', title:'Tulipanes de oro: la primera gran burbuja',
+ tagline:'En 1637, un bulbo de tulipán llegó a costar lo mismo que una casa en Ámsterdam. Hasta que dejó de costarlo.',
+ desc:'Holanda inventó el mercado financiero moderno y, de propina, su primera locura colectiva. La fiebre de los tulipanes sigue siendo el espejo de todas las burbujas posteriores.',
+ durMin:21, durSec:1260, date:'2025-11-20', views:1100000, yt:null,
+ flags:['editors'], tags:['burbujas','especulación','Países Bajos'], sources:['Archivos notariales de Haarlem, 1636–1637'],
+ entities:['burbujas','comercio-global'],
+ body:[
+ 'El tulipán llegó a Europa desde el Imperio otomano como una rareza botánica. En la Holanda del siglo XVII, la nación más comercial del mundo, esa rareza se convirtió en activo: los bulbos se compraban antes de florecer, se revendían sobre el papel y se negociaban en tabernas, fuera del horario de las bolsas oficiales.',
+ 'El mecanismo era hipnótico. Un bulbo de la variedad Semper Augustus llegó a pagarse al precio de una casa con canal incluido. Los contratos cambiaban de manos diez veces en una semana sin que nadie viera jamás la flor. El negocio ya no era el tulipán: era la creencia de que mañana alguien pagaría más.',
+ 'En febrero de 1637, una subasta rutinaria en Haarlem quedó desierta. Bastó eso. En días, los precios cayeron más de un noventa por ciento. Notarios, artesanos y regentes descubrieron a la vez que poseían promesas que nadie quería comprar.',
+ 'Cada generación redescubre esta historia con un disfraz nuevo: acciones, inmobiliario, criptomonedas. El activo cambia; la gramática de la fiebre, jamás.'],
+ quote:'No se vendían flores. Se vendía la certeza de que otro pagaría más mañana.',
+ timeline:[['1593','Primeros tulipanes documentados en los jardines de Leiden.'],['1634–36','El comercio se dispara: contratos revendidos decenas de veces.'],['FEB 1637','La subasta de Haarlem queda desierta. El mercado colapsa en días.']]},
+{slug:'enron-los-arquitectos-del-humo', cat:'dinero', title:'Enron: los arquitectos del humo',
+ tagline:'La empresa más admirada de América no vendía energía: vendía contabilidad. Y durante años, nadie quiso mirar dentro.',
+ desc:'Enron pasó de compañía de gas a símbolo de la nueva economía… y luego al mayor escándalo financiero de su época. Una autopsia del fraude perfecto.',
+ durMin:26, durSec:1560, date:'2026-01-15', views:1600000, yt:null,
+ flags:['trending'], tags:['fraude','auditoría','Wall Street'], sources:['SEC · Expediente Enron, 2001'],
+ entities:['enron','jeff-skilling','fraude'],
+ body:[
+ 'Enron nació como un gasoducto y murió como una idea: la de que los beneficios son una cuestión de imaginación contable. Su dirección construyó cientos de sociedades fantasma cuyo único propósito era esconder deuda y convirtió esa arquitectura en relato.',
+ 'El truco maestro se llamaba «mark-to-market»: apuntar como beneficio presente el valor teórico de contratos a veinte años. Si el negocio salía mal, nadie lo veía, porque el beneficio ya se había anotado el primer día. Los analistas aplaudían la transparencia de una empresa cuyo corazón era una caja negra.',
+ 'La caída fue geológica: de noventa dólares por acción a veintiséis centavos en dieciocho meses. Veinte mil empleados perdieron su empleo y, en muchos casos, sus ahorros. Arthur Andersen, auditora centenaria, desapareció con ella.',
+ 'Enron no fue un accidente: fue un sistema de incentivos funcionando exactamente como estaba diseñado.'],
+ quote:'Cuando el producto de una empresa es su propia contabilidad, la bancarrota ya está escrita.',
+ timeline:[['1985','Nace Enron de la fusión de dos gasistas.'],['1997–2000','Expansión agresiva y contabilidad mark-to-market.'],['DIC 2001','Quiebra: 60.000 millones de dólares evaporados.']]},
+{slug:'la-caja-que-encogio-el-mundo', cat:'inventos', title:'La caja que encogió el mundo',
+ tagline:'No tiene chips, ni motor, ni software. Es una caja de acero. Y sin ella no existiría la globalización.',
+ desc:'Malcom McLean, un camionero de Carolina del Norte, se hizo una pregunta en un muelle: ¿y si el camión entero sube al barco? El verdadero invento no fue el acero. Fue dejar de mover las cosas dos veces.',
+ durMin:19, durSec:1140, date:'2026-07-02', views:0, yt:null,
+ flags:['new','editors'], tags:['logística','globalización','transporte'], sources:['Marc Levinson, «The Box», 2006'],
+ entities:['malcom-mclean','contenedor','logistica','comercio-global'],
+ body:[
+ 'Antes del contenedor, un puerto era un oficio. Estibadores subían sacos, barriles y cajas sueltas durante días. Más de la mitad del coste de enviar mercancía no estaba en el mar: estaba en el muelle, en cada saco que alguien volvía a tocar. El mundo se movía a hombros.',
+ 'Malcom McLean conducía camiones en Carolina del Norte. En 1937, según el relato que luego se hizo canónico, esperó horas en un puerto mientras su algodón se descargaba pieza a pieza para volver a cargarse en un barco. La pregunta no era náutica. Era de paciencia: ¿por qué manejar la misma cosa dos veces?',
+ 'La respuesta tardó casi veinte años. McLean no inventó una caja bonita. Inventó un sistema: el camión, el muelle y el barco tenían que hablar el mismo idioma. En abril de 1956, un petrolero reconvertido llamado Ideal X zarpó de Newark hacia Houston con cincuenta y ocho cajas de acero idénticas sobre cubierta. Levinson recoge la comparación que McLean hizo del coste: dieciséis centavos por tonelada frente a casi seis dólares del método tradicional.',
+ 'Nadie aplaudió una revolución. Los estibadores vieron una amenaza. Las navieras vieron un experimento. Los puertos no estaban hechos para aquella geometría. El verdadero invento llegó después, cuando las medidas de la caja se volvieron universales: entonces grúas, trenes, camiones y muelles del planeta se rediseñaron alrededor de un rectángulo.',
+ 'En 1966 el contenedor cruzó el Atlántico como servicio regular. El flete se hundió. Las fábricas pudieron alejarse de los puertos. El objeto barato de otro continente dejó de ser una rareza. La globalización que solemos contar con tratados y banderas tiene una pieza de acero en el centro, opaca, apilable, invisible cuando funciona.',
+ 'Cada cosa comprada a precio de saldo contiene, sin que se vea, esa caja. McLean no aceleró los barcos. Dejó de mover las mercancías dos veces. El mundo encogió porque el puerto, por fin, dejó de ser un cuello de botella hecho de hombros.'],
+ quote:'La pregunta no era cómo mover barcos más rápido. Era cómo dejar de mover las cosas dos veces.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son fotografías históricas. Son reconstrucciones visuales del muelle, el Ideal X y el periodo. No representan un documento de archivo.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/caja/1.jpg', alt:'Reconstrucción visual. El Ideal X en un muelle de Newark: cajas de acero idénticas sobre cubierta, 1956.'},
+  {src:MEDIA_ROOT+'/stories/caja/2.jpg', alt:'Reconstrucción visual. Un hombre observa la carga en el muelle mientras se maneja un contenedor.'},
+  {src:MEDIA_ROOT+'/stories/caja/3.jpg', alt:'Reconstrucción visual. Detalle del acero corrugado y el cierre de un contenedor.'},
+  {src:MEDIA_ROOT+'/stories/caja/4.jpg', alt:'Reconstrucción visual. Una pluma de 1956 iza una caja de acero hacia la cubierta.'},
+  {src:MEDIA_ROOT+'/stories/caja/5.jpg', alt:'Reconstrucción visual. El buque en mar abierto, con las cajas alineadas sobre cubierta.'}
+ ],
+ timeline:[['1937','McLean espera en un muelle a que su carga se manipule pieza a pieza. La pregunta queda plantada: ¿por qué dos veces?'],['26 ABR 1956','El Ideal X zarpa de Newark a Houston con 58 contenedores.'],['1966','Primer servicio transatlántico regular en contenedor. El flete cae; el mapa industrial se mueve.'],['1968','ISO 668: las medidas de la caja se estandarizan. El mundo se rediseña alrededor de ella.']]},
+{slug:'las-rayas-que-gobiernan-el-mundo', cat:'inventos', title:'Las rayas que gobiernan el mundo',
+ tagline:'Nació en la arena, inspirado en código Morse. Hoy se escanea miles de millones de veces al día.',
+ desc:'El código de barras parece trivial y es una de las infraestructuras más poderosas del comercio. La historia de las líneas que aprendieron a contar.',
+ durMin:16, durSec:960, date:'2025-09-18', views:760000, yt:null,
+ flags:['trending'], tags:['retail','datos','automatización'], sources:['USPTO · Patente 2.612.994'],
+ entities:['norman-woodland','codigo-de-barras','gran-consumo'],
+ body:[
+ 'La semilla fue un encargo prosaico: un director de supermercado pidió un sistema para leer el producto en caja sin teclear nada. A Norman Joseph Woodland se le ocurrió la respuesta sentado en una playa de Florida: dibujó líneas en la arena, como un código Morse ensanchado.',
+ 'La patente llegó en 1952, pero la tecnología láser para leerla aún no existía. El 26 de junio de 1974, en un supermercado de Troy, Ohio, un paquete de chicles Wrigley se convirtió en el primer producto de la historia escaneado en una caja.',
+ 'El código de barras hizo algo más profundo que acelerar colas: convirtió cada objeto en un dato. Inventario en tiempo real, reposición automática, logística global: todo cuelga de esas líneas.',
+ 'Es la infraestructura perfecta: invisible, universal y tan fiable que nadie la nota. Hasta que un lector falla y el mundo moderno hace cola.'],
+ quote:'Woodland dibujó líneas en la arena. Medio siglo después, esas líneas contaban el mundo entero.',
+ timeline:[['1948','Un supermercado pide automatizar la caja. Woodland acepta el reto.'],['1952','Patente del código de barras. La tecnología de lectura aún no existe.'],['JUN 1974','Primer escaneo comercial: chicles Wrigley en Troy, Ohio.']]},
+{slug:'xerox-parc-el-laboratorio-que-regalo-el-manana', cat:'empresas', title:'Xerox PARC: el laboratorio que regaló el mañana',
+ tagline:'Inventaron el ratón, la interfaz gráfica, el Ethernet y la impresión láser. Y vieron, desde la ventana, cómo otros construían imperios con sus piezas.',
+ desc:'En Palo Alto, un grupo de genios sin fecha de entrega construyó el ordenador personal una década antes de que el mundo supiera que lo quería.',
+ durMin:28, durSec:1680, date:'2026-04-03', views:1300000, yt:null,
+ flags:['editors'], tags:['Silicon Valley','informática','innovación'], sources:['Hiltzik, «Dealers of Lightning», 1999'],
+ entities:['xerox','alan-kay','interfaz-grafica'],
+ body:[
+ 'Xerox dominaba un negocio tan rentable que sus ejecutivos decían que las fotocopiadoras «se alquilaban solas». Con ese colchón, en 1970 crearon PARC: un laboratorio en Palo Alto con la misión declarada de «arquitectar el futuro» y sin ninguna obligación de venderlo.',
+ 'Allí, en apenas cinco años, Alan Kay imaginó el ordenador como herramienta personal, se construyó el Alto —ventanas, iconos y ratón—, nació el Ethernet y la impresora láser hizo rentable el invento. PARC había fabricado, pieza a pieza, el despacho del futuro.',
+ 'El problema nunca fue técnico. La empresa que más sabía de papel no supo ver una pantalla.',
+ 'Años después, un joven visitante de Apple vio esas mismas ventanas y ratones. El resto —Macintosh, Windows, la era personal— es la historia de PARC contada con otra firma.'],
+ quote:'PARC no fracasó en inventar el futuro. Fracasó en algo más difícil: convencer a su propio presente.',
+ timeline:[['1970','Xerox funda PARC en Palo Alto con carta blanca.'],['1973','Nace el Alto: ventanas, iconos, ratón y Ethernet.'],['1979','Steve Jobs visita PARC. Cuatro años después llega el Macintosh.']]},
+{slug:'el-rey-del-hielo', cat:'dinero', title:'El rey del hielo',
+ tagline:'No inventó el frío. Inventó cómo venderlo al otro lado del mundo, antes de que se derritiera.',
+ desc:'Frederic Tudor cargó hielo de los estanques de Boston hacia el trópico. El primer viaje fue un fracaso. La fortuna llegó cuando el mundo aprendió a pagar por algo que, hasta entonces, era solo invierno.',
+ durMin:1, durSec:60, date:'2026-08-17', views:0, yt:'VKikVkIX-wQ',
+ flags:['featured','new','editors'], tags:['comercio','logística','siglo XIX'], sources:['Gavin Weightman, «The Frozen Water Trade»','Harvard Business School · Tudor Ice Company records'],
+ entities:['frederic-tudor','cadena-de-frio','comercio-global'],
+ body:[
+  'El invierno de Nueva Inglaterra era un residuo. Los estanques se congelaban, los caminos se cerraban y el frío no servía para nada... excepto para esperar a que se fuera. En 1806, un bostoniano de veintitrés años llamado Frederic Tudor apostó lo contrario: que el hielo de un estanque podía ser mercancía. Cargó un barco rumbo a Martinica. Gran parte del cargamento no llegó. El que llegó no encontró quién lo comprara. La idea parecía una broma cara.',
+  'Tudor no vendía un bloque. Vendía tiempo. La posibilidad de que la carne, la bebida o un enfermo febril no tuvieran que rendirse al calor del mismo día. Eso exigía dos inventos a la vez. Uno era técnico: serrín, paja, almacenes de muros gruesos, un barco tratado como nevera. El otro era comercial: convencer a un trópico de que el frío valía dinero. Sin demanda, el hielo era solo agua aplazada.',
+  'Los primeros años fueron deuda, burla y más viajes. Tudor insistió en los diarios de a bordo y en los libros de cuentas. Fue construyendo una red: cortar el hielo en invierno, aislarlo, cruzar el Atlántico, guardarlo a la llegada. El producto no se fabricaba. Se movía. La fortuna, si llegaba, nacería de ganar una carrera contra el deshielo.',
+  'En 1833 el bergantín Tuscany zarpó de Boston hacia Calcuta con un cargamento de hielo de Nueva Inglaterra. Cruzó el mundo una mercancía que, por definición, no debería haber sobrevivido al trópico. El desembarco no fue un milagro: fue aislamiento, ruta y un mercado que Tudor había ido educando durante décadas. El estanque de Massachusetts había encontrado un precio en la India.',
+  'Tudor murió rico, en 1864. El oficio que había montado —cortar, empacar, enviar— empleó a miles de personas en la costa este de Estados Unidos. No era todavía la cadena de frío de las vacunas y los supermercados. Era su antecedente comercial: el frío como infraestructura, no como clima. Cuando llegó la máquina de hacer hielo, el estanque dejó de ser un imperio. Quedó la lección.',
+  'Esta historia no pregunta si Tudor fue un visionario simpático. Pregunta de dónde sale una fortuna cuando el producto se derrite. A veces no se inventa una cosa nueva. Se inventa cómo mover lo que ya existe, a tiempo, y cobrar por ello.'],
+ quote:'No vendía hielo: vendía la idea de que el verano podía posponerse.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son fotografías históricas. Son reconstrucciones visuales de la cosecha, el barco y el comercio de hielo. No representan un documento de archivo.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/hielo/1.jpg', alt:'Reconstrucción visual. Cosecha de hielo en un estanque de Nueva Inglaterra, siglo XIX.'},
+  {src:MEDIA_ROOT+'/stories/hielo/2.jpg', alt:'Reconstrucción visual. Carga de bloques de hielo en un velero en un puerto de Nueva Inglaterra.'},
+  {src:MEDIA_ROOT+'/stories/hielo/3.jpg', alt:'Reconstrucción visual. Bodega de un barco: hielo aislado con serrín y madera.'},
+  {src:MEDIA_ROOT+'/stories/hielo/4.jpg', alt:'Reconstrucción visual. Descarga de hielo en un puerto tropical, junto a un almacén de muros gruesos.'},
+  {src:MEDIA_ROOT+'/stories/hielo/5.jpg', alt:'Reconstrucción visual. El hielo servido en un bar del siglo XIX: el frío convertido en lujo cotidiano.'}
+ ],
+ timeline:[['1806','Tudor envía hielo de Boston a Martinica. El cargamento se derrite; el mercado aún no existe.'],['AÑOS SIGUIENTES','Aislamiento con serrín, almacenes en destino y una demanda que hay que inventar.'],['1833','El Tuscany llega a Calcuta con hielo de Nueva Inglaterra.'],['1864','Muere Tudor. El comercio de hielo natural sigue hasta que la refrigeración mecánica lo sustituye.']]},
+{slug:'db-cooper-el-hombre-que-se-evaporo', cat:'misterios', title:'El hombre que se evaporó',
+ tagline:'Secuestró un avión, pidió 200.000 dólares, saltó de noche sobre un bosque… y jamás volvió a existir.',
+ desc:'El 24 de noviembre de 1971, un pasajero educado de traje oscuro hizo el atraco más elegante de la historia y desapareció. El FBI cerró el caso 45 años después sin un sospechoso firme.',
+ durMin:22, durSec:1320, date:'2026-05-21', views:2100000, yt:null,
+ flags:['featured','trending'], tags:['aviación','casos abiertos','EE. UU.'], sources:['FBI · Expediente NORJAK, cerrado 2016'],
+ entities:['d-b-cooper','misterios'],
+ body:[
+ 'El hombre que compró el billete como «Dan Cooper» pidió un bourbon con soda y entregó una nota a la azafata: llevaba una bomba en el maletín. Lo que pidió después fue casi burocrático: 200.000 dólares en billetes sin marcar y cuatro paracaídas.',
+ 'En Seattle intercambió a los rehenes por el dinero, hizo repostar el avión y ordenó volar bajo y lento hacia México. Sobre los bosques de Washington, con tormenta, abrió la escalera trasera del Boeing 727 y saltó al vacío. Nunca más se supo de él.',
+ 'El FBI entrevistó a más de mil sospechosos. En 1980 un niño encontró por casualidad cinco mil ochocientos dólares del rescate enterrados junto al río Columbia. Fue casi todo lo que el caso produjo jamás.',
+ 'En 2016 el FBI cerró oficialmente el expediente. D. B. Cooper sigue siendo el único secuestro aéreo no resuelto de la historia de Estados Unidos.'],
+ quote:'El misterio no es dónde cayó. Es cómo alguien puede dejar de existir sin dejar de estar en todas partes.',
+ timeline:[['24 NOV 1971','Cooper secuestra el vuelo 305 de Northwest Orient.'],['1971–80','El FBI sigue más de 800 pistas sin detener a nadie.'],['1980','Un niño halla parte del rescate junto al río Columbia.'],['2016','El FBI cierra el caso NORJAK. El misterio sigue abierto.']]}
+];
+const ENTITIES = [
+ {type:'persona', slug:'steve-sasson', name:'Steve Sasson', era:'1950 —', seed:'ent-sasson', blurb:'Ingeniero de Kodak que construyó en 1975 uno de los primeros prototipos de cámara digital.'},
+ {type:'persona', slug:'george-eastman', name:'George Eastman', era:'1854 – 1932', seed:'ent-eastman', blurb:'Fundador de Kodak. Democratizó la fotografía con el carrete.'},
+ {type:'persona', slug:'malcom-mclean', name:'Malcom McLean', era:'1913 – 2001', seed:'ent-mclean', blurb:'Camionero de Carolina del Norte. Hizo que el camión, el muelle y el barco hablaran el mismo idioma.'},
+ {type:'persona', slug:'stanislav-petrov', name:'Stanislav Petrov', era:'1939 – 2017', seed:'ent-petrov', blurb:'Oficial soviético de alerta temprana. En 1983 desobedeció a su propio ordenador.'},
+ {type:'persona', slug:'frederic-tudor', name:'Frederic Tudor', era:'1783 – 1864', seed:'ent-tudor', blurb:'Bostoniano. Convirtió el invierno de Nueva Inglaterra en mercancía y lo vendió en el trópico.'},
+ {type:'persona', slug:'nikola-tesla', name:'Nikola Tesla', era:'1856 – 1943', seed:'ent-tesla', blurb:'Su sistema de corriente alterna ganó la guerra de las corrientes.'},
+ {type:'persona', slug:'thomas-edison', name:'Thomas Edison', era:'1847 – 1931', seed:'ent-edison', blurb:'Llevó la luz eléctrica a las ciudades y convirtió la invención en industria.'},
+ {type:'persona', slug:'norman-woodland', name:'Norman Joseph Woodland', era:'1921 – 2012', seed:'ent-woodland', blurb:'Coinventor del código de barras. Dibujó la idea en la arena.'},
+ {type:'persona', slug:'jeff-skilling', name:'Jeffrey Skilling', era:'1953 —', seed:'ent-skilling', blurb:'Consejero delegado de Enron. Arquitecto intelectual de su contabilidad.'},
+ {type:'persona', slug:'alan-kay', name:'Alan Kay', era:'1940 —', seed:'ent-kay', blurb:'Pionero de la informática personal en Xerox PARC.'},
+ {type:'persona', slug:'d-b-cooper', name:'D. B. Cooper', era:'Identidad desconocida', seed:'ent-cooper', blurb:'El secuestrador aéreo que nunca fue identificado.'},
+ {type:'empresa', slug:'kodak', name:'Kodak', era:'1888 —', seed:'ent-kodak', blurb:'De la fotografía química a la digital: ayudó a inventar piezas del futuro que no llegó a dominar.'},
+ {type:'empresa', slug:'xerox', name:'Xerox', era:'1906 —', seed:'ent-xerox', blurb:'Dominó la fotocopia y financió PARC, el laboratorio que inventó el futuro que otros comercializaron.'},
+ {type:'empresa', slug:'enron', name:'Enron', era:'1985 – 2001', seed:'ent-enron', blurb:'De compañía de gas a símbolo del fraude corporativo.'},
+ {type:'empresa', slug:'westinghouse', name:'Westinghouse Electric', era:'1886 —', seed:'ent-westinghouse', blurb:'Apostó por la corriente alterna de Tesla y derrotó al sistema de Edison.'},
+ {type:'empresa', slug:'general-electric', name:'General Electric', era:'1892 —', seed:'ent-ge', blurb:'Heredera del imperio eléctrico de Edison.'},
+ {type:'invento', slug:'camara-digital', name:'La cámara digital', era:'1975', seed:'ent-camdigi', blurb:'Uno de los primeros prototipos: sensor CCD, cinta de casete y una imagen que tardaba 23 segundos.'},
+ {type:'invento', slug:'contenedor', name:'El contenedor marítimo', era:'1956', seed:'ent-container', blurb:'Una caja de acero estandarizada. La pieza física de la globalización.'},
+ {type:'invento', slug:'codigo-de-barras', name:'El código de barras', era:'1952 · 1974', seed:'ent-barcode', blurb:'Líneas que convirtieron cada objeto en un dato.'},
+ {type:'invento', slug:'corriente-alterna', name:'La corriente alterna', era:'1888', seed:'ent-ac', blurb:'El sistema que permitió llevar la electricidad a cualquier distancia.'},
+ {type:'invento', slug:'interfaz-grafica', name:'La interfaz gráfica', era:'1973', seed:'ent-gui', blurb:'Ventanas, iconos y ratón. Nació en el Alto de Xerox PARC.'},
+ {type:'invento', slug:'cadena-de-frio', name:'El comercio de hielo', era:'1806 —', seed:'ent-cold', blurb:'Antes de la máquina de frío: cortar, aislar y enviar el invierno como si fuera un producto.'},
+ {type:'tema', slug:'fotografia', name:'Fotografía', era:'Tema', seed:'ent-foto', blurb:'De la química a los sensores: la industria de la memoria.'},
+ {type:'tema', slug:'energia', name:'Energía', era:'Tema', seed:'ent-energy', blurb:'Quién produce, quién distribuye y quién decide cómo se enciende el mundo.'},
+ {type:'tema', slug:'guerra-fria', name:'Guerra Fría', era:'Tema', seed:'ent-coldwar', blurb:'Cuatro décadas al borde del abismo.'},
+ {type:'tema', slug:'burbujas', name:'Burbujas financieras', era:'Tema', seed:'ent-bubble', blurb:'La gramática repetida de la euforia.'},
+ {type:'tema', slug:'fraude', name:'Fraude', era:'Tema', seed:'ent-fraud', blurb:'Cuando la contabilidad se convierte en el producto.'},
+ {type:'tema', slug:'logistica', name:'Logística', era:'Tema', seed:'ent-log', blurb:'Las infraestructuras invisibles que mueven el mundo físico.'},
+ {type:'tema', slug:'comercio-global', name:'Comercio global', era:'Tema', seed:'ent-trade', blurb:'Rutas, cajas y contratos: cómo se tejió la economía mundial.'},
+ {type:'tema', slug:'gran-consumo', name:'Gran consumo', era:'Tema', seed:'ent-retail', blurb:'Supermercados, datos y la vida cotidiana de las cosas.'},
+ {type:'tema', slug:'misterios', name:'Misterios sin resolver', era:'Tema', seed:'ent-mystery', blurb:'Expedientes que la historia dejó abiertos.'}
+];
+const SHORTS = [
+ {slug:'kodak-invento-la-camara-digital', story:'kodak-y-el-futuro-que-dejo-escapar', title:'Kodak inventó la cámara digital', desc:'1975. Un prototipo. 23 segundos. Y una pregunta que no era técnica: qué queda de Kodak si la foto deja de ser química.', dur:34, views:0, yt:'7JK106M1L6k'},
+ {slug:'el-invento-que-no-parece-un-invento', story:'la-caja-que-encogio-el-mundo', title:'El invento que no parece un invento', desc:'Una caja de acero. Sin chip. Y el mundo entero se rediseñó alrededor de ella.', dur:34, views:0, yt:'JCf59aq_Q-w'}
+];
+
+/* ═══════════ DATA / SERVICES ═══════════ */
+const S = Object.fromEntries(STORIES.map(s=>[s.slug,s]));
+const E = Object.fromEntries(ENTITIES.map(e=>[e.slug,e]));
+const ENT_PATH = {persona:'personas', empresa:'empresas', invento:'inventos', tema:'temas'};
+const ENT_LBL = {persona:'Persona', empresa:'Empresa', invento:'Invento', tema:'Tema'};
+const CATALOG = {}; (function(){ let n=0; STORIES.forEach(s=>CATALOG['story-'+s.slug]=String(++n).padStart(3,'0')); SHORTS.forEach(s=>CATALOG['short-'+s.slug]=String(++n).padStart(3,'0')); ENTITIES.forEach(e=>CATALOG['ent-'+e.slug]=String(++n).padStart(3,'0')); })();
+
+const store = { get(k,fb){ try{const v=localStorage.getItem('trama.'+k); return v?JSON.parse(v):fb}catch(e){return fb} }, set(k,v){ try{localStorage.setItem('trama.'+k,JSON.stringify(v))}catch(e){} } };
+const myList = new Set(store.get('mylist',[]));
+const App = { player:null, heroTimer:null, archState:{cat:'todas',fmt:'todos'}, pendingScroll:null };
+const Analytics = { q:[], track(e,p={}){ this.q.push({e,p,t:Date.now()}) } };
+
+/* Recomendación ponderada: entidades > categoría > tags */
+function relatedStories(st,n=4){
+  const scored = STORIES.filter(x=>x.slug!==st.slug).map(x=>{
+    const shared = x.entities.filter(e=>st.entities.includes(e)).length;
+    const tags = x.tags.filter(t=>st.tags.includes(t)).length;
+    return {x, score: shared*3 + (x.cat===st.cat?2:0) + tags*1.5};
+  }).filter(r=>r.score>0).sort((a,b)=>b.score-a.score);
+  const out = scored.slice(0,n).map(r=>r.x);
+  if(out.length<n) STORIES.filter(x=>x.slug!==st.slug && !out.includes(x)).slice(0,n-out.length).forEach(x=>out.push(x));
+  return out;
+}
+function relatedEntities(slug){ const mine=entityStories(slug); const acc={};
+  mine.forEach(st=>st.entities.forEach(k=>{ if(k!==slug&&E[k]) acc[k]=(acc[k]||0)+1 }));
+  return Object.entries(acc).sort((a,b)=>b[1]-a[1]).slice(0,10).map(([k])=>E[k]); }
+const entityStories = slug => STORIES.filter(s=>s.entities.includes(slug));
+const entityShorts = slug => SHORTS.filter(sh=>S[sh.story]&&S[sh.story].entities.includes(slug));
+const storyShorts = slug => SHORTS.filter(sh=>sh.story===slug);
+const catShorts = c => SHORTS.filter(sh=>S[sh.story].cat===c);
+const contList = () => Object.entries(store.get('progress',{})).map(([slug,v])=>({s:S[slug],v})).filter(x=>x.s&&(x.s.video||x.s.yt)&&x.v.pct>1&&x.v.pct<95).sort((a,b)=>b.v.at-a.v.at).slice(0,8);
+function saveProgress(slug,t,d){ if(!d)return; const p=store.get('progress',{}); p[slug]={t:Math.floor(t),d,pct:t/d*100,at:Date.now()}; store.set('progress',p) }
+
+/* ═══════════ MEDIA — sistema central de imágenes ═══════════
+   Resolución: ASSET_MAP (producción) → póster editorial (desarrollo).
+   Un único punto de lógica: src, alt, dimensiones, lazy/eager, fallback. */
+function hash(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
+function rng(seed){return ()=>{seed=Math.imul(seed^seed>>>15,seed|1);seed^=seed+Math.imul(seed^seed>>>7,seed|61);return((seed^seed>>>14)>>>0)/4294967296}}
+function itemForKey(key){
+  if(key.startsWith('story-')){const s=S[key.slice(6)];return s&&{title:s.title,cat:s.cat}}
+  if(key.startsWith('short-')){const sh=SHORTS.find(x=>x.slug===key.slice(6));return sh&&{title:sh.title,cat:S[sh.story].cat}}
+  if(key.startsWith('ent-')){const e=E[key.slice(4)];return e&&{title:e.name,cat:null}}
+  if(key.startsWith('cat-')){const c=CATS[key.slice(4)];return c&&{title:c.name,cat:key.slice(4)}}
+}
+const P_CACHE={};
+function poster(key,W,H){
+  const ck=key+'|'+W+'x'+H; if(P_CACHE[ck])return P_CACHE[ck];
+  const it=itemForKey(key)||{title:'TRAMA',cat:null};
+  const r=rng(hash(key));
+  const M={dinero:mDinero,empresas:mEmpresas,inventos:mInventos,personas:mPersonas,historia:mHistoria,misterios:mMisterios};
+  const mo=(it.cat&&M[it.cat]?M[it.cat]:mPersonas)(r,W,H);
+  const glyph=(it.title.replace(/^(El|La|Los|Las|Un|Una)\s+/i,'').charAt(0)||'T').toUpperCase();
+  const lbl=key.startsWith('ent-')?(ENT_LBL[E[key.slice(4)]?E[key.slice(4)].type:'tema']||'EXPEDIENTE'):(key.startsWith('cat-')?'CATEGORÍA':'EXP. '+(CATALOG[key]||'000'));
+  const fs=Math.max(9,W*0.013);
+  const svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+W+'" height="'+H+'" viewBox="0 0 '+W+' '+H+'">'
+   +'<defs><radialGradient id="bg" cx="28%" cy="18%" r="110%"><stop offset="0" stop-color="#17171d"/><stop offset="0.55" stop-color="#0d0d11"/><stop offset="1" stop-color="#08080a"/></radialGradient>'
+   +'<filter id="gr"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.05 0"/></filter></defs>'
+   +'<rect width="'+W+'" height="'+H+'" fill="url(#bg)"/>'+mo
+   +'<text x="'+(W*0.055)+'" y="'+(H*0.84)+'" font-family="Georgia,serif" font-size="'+(H*0.54)+'" font-style="italic" fill="rgba(243,240,233,0.06)">'+glyph+'</text>'
+   +'<rect x="'+(W*0.045).toFixed(1)+'" y="'+(H*0.06).toFixed(1)+'" width="'+(W*0.91).toFixed(1)+'" height="'+(H*0.88).toFixed(1)+'" fill="none" stroke="rgba(243,240,233,0.09)"/>'
+   +'<text x="'+(W*0.065)+'" y="'+(H*0.925)+'" font-family="Courier New,monospace" font-size="'+fs+'" letter-spacing="'+(fs*0.3)+'" fill="rgba(243,240,233,0.55)">TRAMA · '+lbl.toUpperCase()+'</text>'
+   +'<text x="'+(W*0.935)+'" y="'+(H*0.925)+'" text-anchor="end" font-family="Courier New,monospace" font-size="'+fs+'" fill="rgba(201,168,106,0.8)">'+(it.cat?CATS[it.cat].name.toUpperCase():'ARCHIVO')+'</text>'
+   +'<rect width="'+W+'" height="'+H+'" filter="url(#gr)"/></svg>';
+  return P_CACHE[ck]='data:image/svg+xml,'+encodeURIComponent(svg);
+}
+function mDinero(r,W,H){const n=10;let pts=[],y=H*(0.55+r()*0.15);for(let i=0;i<=n;i++){y=Math.max(H*0.22,Math.min(H*0.82,y+(r()-0.5)*H*0.22));pts.push([(W*i/n),y])}let o='';for(let i=1;i<6;i++){o+='<line x1="0" y1="'+(H*i/6).toFixed(1)+'" x2="'+W+'" y2="'+(H*i/6).toFixed(1)+'" stroke="rgba(243,240,233,0.04)"/>'}o+='<polyline points="'+pts.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ')+'" fill="none" stroke="rgba(243,240,233,0.18)" stroke-width="1.4"/>';const lp=pts[pts.length-1];o+='<circle cx="'+lp[0].toFixed(1)+'" cy="'+lp[1].toFixed(1)+'" r="3.4" fill="#c9a86a" opacity="0.8"/>';return o}
+function mEmpresas(r,W,H){const s=H*0.42;let o='';for(let i=0;i<3;i++){const off=i*H*0.09+r()*8;o+='<rect x="'+(W*0.55-s/2+off).toFixed(1)+'" y="'+(H*0.32-s/2-off*0.6).toFixed(1)+'" width="'+s.toFixed(1)+'" height="'+s.toFixed(1)+'" fill="none" stroke="rgba(243,240,233,'+(0.15-i*0.035).toFixed(2)+')" stroke-width="1.2"/>'}o+='<line x1="'+(W*0.12)+'" y1="'+(H*0.78)+'" x2="'+(W*0.5)+'" y2="'+(H*0.78)+'" stroke="#c9a86a" opacity="0.55" stroke-width="1.4"/>';return o}
+function mInventos(r,W,H){const cx=W*(0.6+r()*0.12),cy=H*0.44;let o='';for(let i=1;i<=4;i++){o+='<circle cx="'+cx.toFixed(1)+'" cy="'+cy.toFixed(1)+'" r="'+(H*0.09*i).toFixed(1)+'" fill="none" stroke="rgba(243,240,233,'+(0.17-i*0.03).toFixed(2)+')" stroke-width="1.1"/>'}o+='<line x1="'+(cx-H*0.42).toFixed(1)+'" y1="'+(cy+H*0.42).toFixed(1)+'" x2="'+(cx+H*0.1).toFixed(1)+'" y2="'+(cy-H*0.1).toFixed(1)+'" stroke="#c9a86a" opacity="0.5" stroke-width="1.2"/>';return o}
+function mPersonas(r,W,H){const cx=W*0.62,cy=H*0.42,rr=H*0.24;let o='<circle cx="'+cx+'" cy="'+cy+'" r="'+rr+'" fill="none" stroke="rgba(243,240,233,0.16)" stroke-width="1.3"/>';o+='<circle cx="'+(cx+rr*0.7).toFixed(1)+'" cy="'+(cy-rr*0.7).toFixed(1)+'" r="3.2" fill="#c9a86a" opacity="0.8"/>';for(let i=0;i<4;i++){const x=W*(0.12+i*0.055);o+='<line x1="'+x+'" y1="'+(H*0.62)+'" x2="'+x+'" y2="'+(H*0.62+H*(0.1+r()*0.12)).toFixed(1)+'" stroke="rgba(243,240,233,0.08)"/>'}return o}
+function mHistoria(r,W,H){let o='';for(let i=0;i<7;i++){const y=H*(0.24+i*0.09);o+='<line x1="'+(W*0.08)+'" y1="'+y+'" x2="'+(W*0.92)+'" y2="'+y+'" stroke="rgba(243,240,233,'+(i%3?0.05:0.1)+')"/>'}o+='<rect x="'+(W*(0.3+r()*0.3)).toFixed(1)+'" y="'+(H*(0.24+2*0.09)-2)+'" width="26" height="4" fill="#c9a86a" opacity="0.7"/>';return o}
+function mMisterios(r,W,H){let o='';for(let i=0;i<12;i++)for(let j=0;j<7;j++){const q=r();if(q<0.55)continue;o+='<circle cx="'+(W*0.1+i*(W*0.8/11)).toFixed(1)+'" cy="'+(H*0.2+j*(H*0.6/6)).toFixed(1)+'" r="1.6" fill="rgba(243,240,233,'+(0.05+q*0.14).toFixed(2)+')"/>'}o+='<circle cx="'+(W*0.68)+'" cy="'+(H*0.44)+'" r="3.4" fill="#c9a86a" opacity="0.85"/>';return o}
+function assetUrl(key,w,h,force){ const real=ASSET_MAP[key]; return (real&&!force)?real:poster(key,w,h) }
+window.__mediaFallback=(key,w,h)=>poster(key,w,h);
+function esc(s){return String(s).replace(/"/g,'&quot;')}
+function media(key,o={}){
+  const w=o.w||640,h=o.h||360,src=assetUrl(key,w,h);
+  return '<img class="mx '+(o.cls||'')+'" src="'+src+'" width="'+w+'" height="'+h+'" alt="'+esc(o.alt||'')+'" loading="'+(o.eager?'eager':'lazy')+'" decoding="async"'+(o.eager?' fetchpriority="high"':'')+' onload="this.classList.add(\'ld\')" onerror="this.onerror=null;this.src=window.__mediaFallback(\''+key+'\','+w+','+h+')">';
+}
+
+/* ═══════════ UI HELPERS ═══════════ */
+const $=s=>document.querySelector(s);
+const IC={
+ play:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>',
+ pause:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h3.4v14H7zM13.6 5H17v14h-3.4z"/></svg>',
+ plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 5v14M5 12h14"/></svg>',
+ check:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4.5 12.5l5 5L19.5 7"/></svg>',
+ share:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 15V4M8.5 7.5L12 4l3.5 3.5"/><path d="M5 12v8h14v-8"/></svg>',
+ yt:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12.2s-.2-4.1-1-5.8c-.5-1-1.5-1.7-2.6-1.8C17.2 4.3 12 4.3 12 4.3h0s-5.2 0-7.4.3c-1.1.1-2.1.8-2.6 1.8-.8 1.7-1 5.8-1 5.8s.2 4.1 1 5.8c.5 1 1.5 1.6 2.6 1.8 2.2.3 7.4.3 7.4.3s5.2 0 7.4-.3c1.1-.2 2.1-.8 2.6-1.8.8-1.7 1-5.8 1-5.8zM9.8 15.5V8.9l6.3 3.3-6.3 3.3z"/></svg>',
+ left:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 5l-7 7 7 7"/></svg>',
+ right:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 5l7 7-7 7"/></svg>',
+ up:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 15l7-7 7 7"/></svg>',
+ down:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 9l7 7 7-7"/></svg>'};
+const ic=n=>'<span class="ic" aria-hidden="true">'+IC[n]+'</span>';
+const toast=m=>{const t=document.createElement('div');t.className='toast';t.textContent=m;$('#toasts').appendChild(t);requestAnimationFrame(()=>t.classList.add('on'));setTimeout(()=>{t.classList.remove('on');setTimeout(()=>t.remove(),450)},2600)};
+async function shareLink(href){const url=location.origin+location.pathname+(href||location.hash);try{await navigator.clipboard.writeText(url);toast('Enlace copiado al portapapeles')}catch(e){toast(url)}Analytics.track('share',{url:location.hash})}
+function toggleList(slug){const has=myList.has(slug);has?myList.delete(slug):myList.add(slug);store.set('mylist',[...myList]);toast(has?'Retirado de tu lista':'Guardado en tu lista');updateListUI();Analytics.track(has?'remove_story':'save_story',{slug});if(location.hash.startsWith('#/mi-lista'))route()}
+function updateListUI(){document.querySelectorAll('[data-list]').forEach(b=>b.setAttribute('aria-pressed',myList.has(b.dataset.list)));const c=$('#listCount');c.textContent=myList.size;c.hidden=!myList.size}
+function scramble(el,txt){if(RM){el.textContent=txt;return}const ch='ABCDEFGHIKLMNOPRSTUVXZ0123456789·—/';let f=0,total=Math.max(16,txt.length+8);clearInterval(el._si);el._si=setInterval(()=>{f++;const done=Math.floor((f/total)*txt.length);el.textContent=txt.slice(0,done)+Array.from({length:Math.min(txt.length-done,5)},()=>ch[Math.random()*ch.length|0]).join('');if(done>=txt.length){clearInterval(el._si);el.textContent=txt}},32)}
+function splitWords(el){const t=el.textContent.trim();el.setAttribute('aria-label',t);el.innerHTML=t.split(/\s+/).map((w,i)=>'<span class="w" style="--i:'+i+'" aria-hidden="true"><span>'+w+'</span></span>').join(' ')}
+let rvIO=null;
+function revealInit(){const els=document.querySelectorAll('[data-rv]:not(.rv-done)');if(RM){els.forEach(e=>e.classList.add('in','rv-done'));return}if(!rvIO)rvIO=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in','rv-done');rvIO.unobserve(x.target)}}),{rootMargin:'0px 0px -6% 0px'});els.forEach(e=>rvIO.observe(e))}
+function setMeta(title,desc,ld,ogKey){
+  document.title=title;
+  document.querySelector('meta[name="description"]').setAttribute('content',desc);
+  document.querySelector('meta[property="og:title"]').setAttribute('content',title);
+  document.querySelector('meta[property="og:description"]').setAttribute('content',desc);
+  if(ogKey)document.querySelector('meta[property="og:image"]').setAttribute('content',ASSET_MAP[ogKey]||MEDIA_ROOT+'/og/'+ogKey+'.jpg');
+  let cl=document.querySelector('link[rel="canonical"]');if(cl)cl.setAttribute('href',location.origin+location.pathname+location.hash);
+  const old=document.getElementById('ldjson');old&&old.remove();
+  if(ld){const s=document.createElement('script');s.type='application/ld+json';s.id='ldjson';s.textContent=JSON.stringify(ld);document.head.appendChild(s)}
+}
+const isoDur=s=>'PT'+Math.floor(s/60)+'M'+(s%60)+'S';
+function ldStory(st){const base=location.origin+location.pathname;return {"@context":"https://schema.org","@graph":[
+ {"@type":"VideoObject","name":st.title,"description":st.desc,"duration":isoDur(st.durSec),"thumbnailUrl":ASSET_MAP['story-'+st.slug]||MEDIA_ROOT+'/og/story-'+st.slug+'.jpg',"uploadDate":st.date},
+ {"@type":"Article","headline":st.title,"description":st.desc,"datePublished":st.date,"author":{"@type":"Organization","name":"TRAMA"}},
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":base+"#/"},{"@type":"ListItem","position":2,"name":CATS[st.cat].name,"item":base+"#/categorias/"+st.cat},{"@type":"ListItem","position":3,"name":st.title}]}]}}
+function ldEntity(en){const t=en.type==='persona'?'Person':en.type==='empresa'?'Organization':en.type==='invento'?'CreativeWork':'DefinedTerm';return {"@context":"https://schema.org","@type":t,"name":en.name,"description":en.blurb}}
+const fmtViews=v=>v>=1e6?(v/1e6).toFixed(1).replace('.',',')+' M':Math.round(v/1e3)+' K';
+const fmtT=s=>Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0');
+const fmtDate=d=>new Date(d+'T12:00:00').toLocaleDateString('es-ES',{month:'short',year:'numeric'}).replace('.','').toUpperCase();
+const year=d=>d.slice(0,4);
+
+/* ═══════════ COMPONENTES ═══════════ */
+const storyCard=(s,opts={})=>`
+<a class="scard ${opts.xl?'scard-xl':''}" data-rv ${opts.related?'data-act="related"':''} href="#/historias/${s.slug}">
+  <div class="scard-m frame ratio-16">${media('story-'+s.slug,{w:opts.xl?1120:720,h:opts.xl?630:405,alt:s.title})}
+    ${s.flags.includes('new')?'<span class="chip chip-gold mono new">NUEVO</span>':''}
+  </div>
+  <div>
+    <div class="scard-top"><span class="catlab">${CATS[s.cat].name.toUpperCase()}</span><span class="mono dim">${fmtDate(s.date)}</span></div>
+    <h3 class="scard-t">${s.title}</h3>
+    <p class="scard-d">${s.desc}</p>
+  </div>
+</a>`;
+const shortCard=sh=>{const st=S[sh.story];return `
+<a class="shcard" data-rv href="#/shorts/${sh.slug}">
+  <div class="shcard-m frame ratio-916">${media('short-'+sh.slug,{w:486,h:864,alt:sh.title})}
+    <span class="chip mono">${sh.dur}S</span>
+    <div class="shcard-g"></div>
+    <div class="shcard-b"><span class="catlab">SHORT · ${CATS[st.cat].name.toUpperCase()}</span><h3>${sh.title}</h3>${sh.views?'<span class="vm mono dim">'+fmtViews(sh.views)+' VIS.</span>':''}</div>
+  </div>
+</a>`};
+const trendItem=(s,i)=>`
+<a class="titem" data-rv href="#/historias/${s.slug}">
+  <span class="tnum" aria-hidden="true">${i+1}</span>
+  <div class="tcard frame ratio-16">${media('story-'+s.slug,{w:760,h:428,alt:s.title})}
+    <div class="tcard-g"></div>
+    <div class="tcard-b"><span class="catlab">${CATS[s.cat].name.toUpperCase()} · <span class="chip-trend">▲ TENDENCIA</span></span><h3>${s.title}</h3><span class="tm mono dim">${fmtDate(s.date)}</span></div>
+  </div>
+</a>`;
+const secHead=(idx,title,moreHref,moreTxt)=>`
+<div class="shead" data-rv>${idx?'<span class="idx">'+idx+'</span>':''}<h2>${title}</h2><span class="rule"></span>${moreHref?'<a class="more" href="'+moreHref+'">'+(moreTxt||'Ver todo')+' →</a>':''}</div>`;
+const row=items=>'<div class="row"><div class="rowbtns"><button class="hbtn" data-rowbtn="-1" aria-label="Anterior">'+ic('left')+'</button><button class="hbtn" data-rowbtn="1" aria-label="Siguiente">'+ic('right')+'</button></div><div class="row-track">'+items+'</div></div>';
+const entityChip=en=>'<a href="#/'+ENT_PATH[en.type]+'/'+en.slug+'">'+en.name+'<span class="mono">'+en.era.toUpperCase()+'</span></a>';
+
+/* ═══════════ VISTAS ═══════════ */
+function mount(html,meta){$('#main').innerHTML=html;if(meta)setMeta(meta.t,meta.d,meta.ld,meta.og);window.scrollTo(0,0);revealInit();Analytics.track('page_view',{hash:location.hash||'#/'})}
+
+/* ── HOME ── */
+function viewHome(){
+  const used=new Set();
+  const take=(arr,n)=>{const out=[];for(const s of arr){if(used.has(s.slug))continue;out.push(s);used.add(s.slug);if(out.length>=n)break}return out};
+  const cw=contList();cw.forEach(({s})=>used.add(s.slug));
+  const primeras=take(['kodak-y-el-futuro-que-dejo-escapar','la-caja-que-encogio-el-mundo','el-rey-del-hielo'].map(sl=>S[sl]).filter(Boolean),3);
+  const trend=[];
+  const destacados=take(STORIES.filter(s=>s.durMin>=20).sort((a,b)=>b.date.localeCompare(a.date)),3);
+  const edBand=take(STORIES.filter(s=>s.flags.includes('editors')),1)[0];
+  mount(`
+  <section class="hero hero-brand" id="hero">
+    <div class="hero-bg"><img class="on" src="${MEDIA_ROOT}/hero/trama-hero.jpg" alt="Archivo de TRAMA: un recinto en penumbra con instrumentos, documentos y estanterías donde cada objeto guarda una historia." width="1920" height="1080" fetchpriority="high" decoding="async"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-in">
+      <div class="hero-copy">
+        <p class="hero-mark">TRAMA</p>
+        <h1 class="hero-title" id="heroTitle">Hay una historia detrás de todo.</h1>
+        <p class="hero-tag">Descubre las historias que cambiaron empresas, inventaron el futuro y transformaron el mundo.</p>
+        <div class="hero-cta">
+          <a class="btn btn-solid" href="#/historias">DESCUBRIR HISTORIAS</a>
+        </div>
+        <p class="hero-universe mono">TECNOLOGÍA · HISTORIA · EMPRESAS · INVENTOS · PERSONAS · MISTERIOS</p>
+      </div>
+    </div>
+    <button type="button" class="hero-scroll mono" data-act="hero-down" aria-label="Bajar a las historias">DESLIZA<span class="sline" aria-hidden="true"></span></button>
+  </section>
+
+  ${cw.length?`<section class="section tight wrap">${secHead('','Continúa donde lo dejaste')}
+    <div class="row"><div class="row-track">${cw.map(({s,v})=>`
+      <a class="cw" data-rv href="#/historias/${s.slug}">
+        <div class="frame ratio-16">${media('story-'+s.slug,{w:640,h:360,alt:s.title})}</div>
+        <div class="pw"><i style="width:${Math.min(99,Math.round(v.pct))}%"></i></div>
+        <div class="rm mono"><span>${s.title.toUpperCase()}</span><span>${Math.round(v.pct)}%</span></div>
+      </a>`).join('')}</div></div></section>`:''}
+
+  ${primeras.length?`<section class="section ${cw.length?'tight':''} wrap">${secHead('','Historias','#/historias')}
+    <div class="sgrid g3">${primeras.map(s=>storyCard(s,{xl:true})).join('')}</div>
+  </section>`:''}
+
+  ${trend.length?`<section class="section wrap">${secHead('','Ahora están viendo')}
+    ${row(trend.map(trendItem).join(''))}
+  </section>`:''}
+
+  ${destacados.length?`<section class="section wrap">${secHead('','Otras investigaciones','#/documentales')}
+    <div class="sgrid g3">${destacados.map(s=>storyCard(s,{xl:true})).join('')}</div>
+  </section>`:''}
+
+  <section class="section wrap">${secHead('','Shorts','#/shorts','Ver todos')}
+    <div class="shorts-intro" data-rv>
+      <p class="big">Historias de un minuto.<br><em>Documentales de una vida.</em></p>
+      <p>Los dos primeros Shorts ya están en YouTube y aquí: Kodak y el contenedor. Cada uno abre la historia completa.</p>
+    </div>
+    ${row(SHORTS.map(shortCard).join(''))}
+  </section>
+
+  <section class="section wrap">${secHead('','Explorar por tema','#/categorias','Todas')}
+    <div class="cat-tiles">${Object.entries(CATS).map(([k,c])=>`
+    <a class="cat-tile ratio-45" data-rv href="#/categorias/${k}">${media('cat-'+k,{w:560,h:700,alt:c.name})}<div class="ov"></div>
+    <div class="tb"><span class="catlab">${STORIES.filter(s=>s.cat===k).length} HISTORIAS</span><h3>${c.name}</h3><p>${c.desc}</p></div></a>`).join('')}</div>
+  </section>
+
+  ${edBand?`<section class="section wrap">${secHead('','Elección del editor')}
+    <div class="ed-band" data-rv>
+      <a class="frame ratio-16" href="#/historias/${edBand.slug}" aria-label="${edBand.title}">${media('story-'+edBand.slug,{w:1200,h:675,alt:edBand.title})}</a>
+      <div>
+        <span class="catlab">${CATS[edBand.cat].name.toUpperCase()}</span>
+        <h3 style="font-family:var(--serif);font-weight:500;font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.08;margin-top:14px;letter-spacing:-.01em">${edBand.title}</h3>
+        <p class="ed-quote">«${edBand.quote}»</p>
+        <a class="btn btn-gold" href="#/historias/${edBand.slug}">${ic('play')} VER HISTORIA</a>
+      </div>
+    </div>
+  </section>`:''}
+
+  <section class="section tight wrap" id="news">
+    <div class="news" data-rv>
+      <div>
+        <span class="catlab">NEWSLETTER</span>
+        <h2 style="margin-top:16px">Una historia que merece la pena conocer</h2>
+        <p class="sub">Una historia extraordinaria directamente en tu correo. Sin ruido: solo el hilo de la próxima gran historia.</p>
+        <p class="phil">«${PHILO}»</p>
+      </div>
+      <div>
+        <form id="newsForm" novalidate>
+          <input type="email" name="email" placeholder="tu@correo.com" aria-label="Correo electrónico" required>
+          <button class="btn btn-gold" type="submit">QUIERO CONOCERLA</button>
+        </form>
+        <p class="priv mono">NO TE LLENAMOS EL CORREO · PUEDES DEJAR DE RECIBIRLA CUANDO QUIERAS</p>
+      </div>
+    </div>
+  </section>`,
+  {t:'TRAMA — '+CLAIM,d:'Descubre las historias que cambiaron empresas, inventaron el futuro y transformaron el mundo.',og:'trama',
+   ld:{"@context":"https://schema.org","@type":"WebSite","name":"TRAMA","potentialAction":{"@type":"SearchAction","target":location.origin+location.pathname+"#/buscar?q={search_term_string}","query-input":"required name=search_term_string"}}});
+  splitWords($('#heroTitle'));
+  if(App.pendingScroll==='news'){setTimeout(()=>$('#news').scrollIntoView({behavior:RM?'auto':'smooth'}),80);App.pendingScroll=null}
+}
+
+/* ── ARCHIVO ── */
+function viewArchive(mode){
+  App.archState={cat:'todas',fmt:mode==='doc'?'largo':'todos'};
+  mount(`<div class="wrap"><header class="phead" data-rv>
+    <span class="catlab">ARCHIVO${mode==='doc'?' · LARGA DURACIÓN':''}</span>
+    <h1>${mode==='doc'?'Documentales':'Historias'}</h1>
+    <p class="sub">${mode==='doc'?'Piezas de veinte minutos o más: investigaciones largas, montadas como documental clásico.':'Todo el archivo de TRAMA: cada historia, cada categoría, cada hilo del relato.'}</p>
+    <div class="chips" id="archChips" role="tablist" aria-label="Filtrar por categoría"></div>
+    <span class="count mono" id="archCount"></span>
+  </header>
+  <section class="section tight"><div class="sgrid g3" id="archGrid"></div></section></div>`,
+  {t:(mode==='doc'?'Documentales':'Historias')+' — TRAMA',d:'Archivo TRAMA: dinero, empresas, inventos, personas, historia y misterios.',og:'trama'});
+  renderArchive();
+}
+function renderArchive(){
+  const st=App.archState,cats=['todas',...Object.keys(CATS)];
+  $('#archChips').innerHTML=cats.map(c=>'<button data-act="chip" data-cat="'+c+'" class="'+(st.cat===c?'on':'')+'" role="tab" aria-selected="'+(st.cat===c)+'">'+(c==='todas'?'Todas':CATS[c].name)+'</button>').join('');
+  let list=[...STORIES].sort((a,b)=>b.date.localeCompare(a.date));
+  if(st.cat!=='todas')list=list.filter(s=>s.cat===st.cat);
+  if(st.fmt==='largo')list=list.filter(s=>s.durMin>=20);
+  $('#archCount').textContent=list.length+' PIEZAS EN EL ARCHIVO';
+  $('#archGrid').innerHTML=list.length?list.map(s=>storyCard(s)).join(''):'<div class="empty" style="grid-column:1/-1"><span class="serif">Nada por aquí… todavía.</span><p>Prueba con otra categoría.</p></div>';
+  revealInit();
+}
+
+/* ── CATEGORÍAS ── */
+function viewCatIndex(){
+  mount(`<div class="wrap"><header class="phead" data-rv><span class="catlab">CLASIFICACIÓN</span><h1>Categorías</h1><p class="sub">Seis maneras de entrar en el archivo. Elige un hilo y tira de él.</p></header>
+  <section class="section tight"><div class="cat-tiles">${Object.entries(CATS).map(([k,c])=>`
+    <a class="cat-tile ratio-45" data-rv href="#/categorias/${k}">${media('cat-'+k,{w:560,h:700,alt:c.name})}<div class="ov"></div>
+    <div class="tb"><span class="catlab">${STORIES.filter(s=>s.cat===k).length} HISTORIAS</span><h3>${c.name}</h3><p>${c.desc}</p></div></a>`).join('')}</div></section></div>`,
+  {t:'Categorías — TRAMA',d:'Dinero, empresas, inventos, personas, historia y misterios.',og:'trama'});
+}
+function viewCategory(slug){
+  const c=CATS[slug];if(!c)return view404();
+  const list=STORIES.filter(s=>s.cat===slug).sort((a,b)=>b.date.localeCompare(a.date)),sh=catShorts(slug);
+  mount(`<div class="wrap"><header class="phead" data-rv><span class="catlab">CATEGORÍA</span><h1>${c.name}</h1><p class="sub">${c.desc}</p><span class="count mono">${list.length} PIEZAS</span></header>
+  <section class="section tight"><div class="sgrid g3">${list.map(s=>storyCard(s)).join('')}</div></section>
+  ${sh.length?'<section class="section tight">'+secHead('','Shorts de '+c.name,'#/shorts')+row(sh.map(shortCard).join(''))+'</section>':''}</div>`,
+  {t:c.name+' — TRAMA',d:c.desc,og:'cat-'+slug});
+}
+
+/* ── HISTORIA ── */
+function viewStory(slug){
+  const st=S[slug];if(!st)return view404();
+  const rel=relatedStories(st,4),shs=storyShorts(slug);
+  const idx=STORIES.indexOf(st),prev=STORIES[idx-1],next=STORIES[idx+1]||STORIES[0];
+  const groups=[['persona','PERSONAS'],['empresa','EMPRESAS'],['invento','INVENTOS'],['tema','TEMAS']];
+  mount(`
+  <header class="shero">
+    <div class="shero-bg" data-plx>${media('story-'+st.slug,{w:1920,h:1080,alt:st.title,eager:true})}</div>
+    <div class="hero-shade"></div>
+    <div class="hero-in">
+      <nav class="crumbs mono" aria-label="Migas de pan"><a href="#/">INICIO</a><span>/</span><a href="#/categorias/${st.cat}">${CATS[st.cat].name.toUpperCase()}</a><span>/</span><span style="color:var(--silver)">${st.title.toUpperCase()}</span></nav>
+      <div class="hero-kick"><span class="dot"></span><span class="mono">${st.video||st.yt?'VÍDEO':'HISTORIA'} · ${CATS[st.cat].name.toUpperCase()} · ${year(st.date)}</span></div>
+      <h1 class="hero-title" id="storyTitle">${st.title}</h1>
+      <p class="hero-tag">${st.tagline}</p>
+      <div class="hero-meta mono"><span>${fmtDate(st.date)}</span>${st.views?'<span>'+fmtViews(st.views)+' REPRODUCCIONES</span>':''}</div>
+      <div class="hero-cta">
+        <button class="btn btn-solid" data-act="goto-player">${ic('play')} ${st.video||st.yt?'VER VÍDEO':'VER DOCUMENTAL'}</button>
+        <a class="btn btn-ghost" href="${YT_CHANNEL}" target="_blank" rel="noopener">YOUTUBE</a>
+        <button class="btn btn-ghost" data-list="${st.slug}" aria-pressed="${myList.has(st.slug)}"><span class="ic i-plus" aria-hidden="true">${IC.plus}</span><span class="ic i-check" aria-hidden="true">${IC.check}</span> MI LISTA</button>
+        <button class="btn btn-ghost" data-act="share">${ic('share')} COMPARTIR</button>
+      </div>
+    </div>
+  </header>
+  <section class="wrap ply-wrap" id="player"><div id="playerBox"></div></section>
+  ${st.images&&st.images.length?`<section class="section tight wrap">${secHead('',st.imagesTitle||'Imágenes')}
+    ${st.imagesNote?'<p class="img-disc">'+st.imagesNote+'</p>':''}
+    <div class="sgrid g3">${st.images.map(im=>'<div class="frame ratio-16" data-rv><img class="mx" src="'+im.src+'" width="720" height="405" alt="'+esc(im.alt)+'" loading="lazy" decoding="async" onload="this.classList.add(\'ld\')"></div>').join('')}</div></section>`:''}
+  <section class="section wrap"><div class="story-body" data-rv>
+    <span class="kick mono">LA HISTORIA</span>
+    ${st.body.map(p=>'<p>'+p+'</p>').join('')}
+    <blockquote class="pull">«${st.quote}»</blockquote>
+    <span class="kick mono" style="margin-top:2.6rem">CRONOLOGÍA</span>
+    <div class="tl-rail">${st.timeline.map(t=>'<div class="tl-item"><span class="tl-dot"></span><div class="tl-yr">'+t[0]+'</div><p class="tl-tx">'+t[1]+'</p></div>').join('')}</div>
+  </div></section>
+  <section class="section tight wrap" data-rv>
+    <div class="shead"><span class="idx">FICHA</span><h2>Personas, empresas e hilos de esta historia</h2><span class="rule"></span></div>
+    ${groups.map(([ty,lbl])=>{const items=st.entities.map(k=>E[k]).filter(e=>e&&e.type===ty);return items.length?'<div class="fgroup"><span class="fg-l mono">'+lbl+'</span><div class="ficha">'+items.map(entityChip).join('')+'</div></div>':''}).join('')}
+    ${st.sources.length?'<p class="mono dim" style="margin-top:2.4rem">FUENTES · '+st.sources.join(' · ')+'</p>':''}
+  </section>
+  <section class="section tight wrap rel-next">${secHead('','También te puede interesar')}
+    <div class="sgrid g4">${rel.map(s=>storyCard(s,{related:true})).join('')}</div>
+  </section>
+  ${shs.length?'<section class="section tight wrap">'+secHead('','El Short','#/shorts/'+(shs[0]?shs[0].slug:''))+row(shs.map(shortCard).join(''))+'</section>':''}
+  <nav class="pn" aria-label="Más historias">
+    <a href="#/historias/${prev.slug}"><span class="mono">← ANTERIOR</span><h3>${prev.title}</h3></a>
+    <a href="#/historias/${next.slug}"><span class="mono">SIGUIENTE →</span><h3>${next.title}</h3></a>
+  </nav>`,
+  {t:st.title+' — TRAMA',d:st.desc,ld:ldStory(st),og:'story-'+st.slug});
+  splitWords($('#storyTitle'));
+  buildPlayer(st);
+  store.set('recent',[slug,...store.get('recent',[]).filter(x=>x!==slug)].slice(0,12));
+}
+function buildPlayer(st){
+  const root=$('#playerBox');App.player=null;
+  if(st.yt){root.innerHTML='<div class="ply-frame"><iframe src="https://www.youtube-nocookie.com/embed/'+st.yt+'?rel=0" title="'+esc(st.title)+'" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';return}
+  if(st.video){
+    root.innerHTML='<div class="ply-frame"><video src="'+st.video+'" poster="'+assetUrl('story-'+st.slug,1600,900)+'" controls playsinline preload="metadata"></video></div>';
+    const vid=root.querySelector('video');
+    if(vid){vid.addEventListener('timeupdate',()=>saveProgress(st.slug,vid.currentTime,vid.duration));vid.addEventListener('ended',()=>saveProgress(st.slug,vid.duration,vid.duration))}
+    return
+  }
+  root.innerHTML=`
+  <div class="ply-soon">
+    ${media('story-'+st.slug,{w:1600,h:900,alt:'',eager:true})}
+    <div class="ply-soon-in">
+      <span class="catlab">DOCUMENTAL</span>
+      <p>Esta historia se publicará en el canal de YouTube de TRAMA. La investigación ya está en la web; el montaje, en camino.</p>
+      <a class="btn btn-solid" href="${YT_CHANNEL}" target="_blank" rel="noopener">IR AL CANAL TRAMA</a>
+    </div>
+  </div>`;
+}
+
+/* ── SHORTS ── */
+function viewShorts(param){
+  const start=Math.max(0,SHORTS.findIndex(s=>s.slug===param));
+  mount(`
+  <div class="feed-top"><a class="fback" href="#/">${ic('left')} SALIR DE SHORTS</a><span class="fcount mono" id="fcount">01 / ${String(SHORTS.length).padStart(2,'0')}</span></div>
+  <div class="feed" id="feed" tabindex="0" aria-label="Feed de Shorts">
+    ${SHORTS.map((sh,i)=>{const st=S[sh.story];const frame=sh.yt?`<iframe src="https://www.youtube-nocookie.com/embed/${sh.yt}?rel=0&modestbranding=1" title="${esc(sh.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`:sh.src?`<video src="${sh.src}" poster="${assetUrl('short-'+sh.slug,720,1280)}" playsinline loop preload="${i===start?'auto':'metadata'}" disablepictureinpicture></video>`:media('short-'+sh.slug,{w:720,h:1280,alt:sh.title,eager:i===start});return `
+    <article class="short${sh.yt?' s-yt':''}" data-si="${i}" style="--sdur:${sh.dur}s">
+      ${media('short-'+sh.slug,{w:360,h:640,alt:'',cls:'bg',eager:i===start})}
+      <div class="s-frame">${frame}<div class="s-shade"></div>
+        <button class="s-big" data-act="short-play" aria-label="Reproducir short">${ic('play')}</button>
+        <div class="s-info">
+          <span class="catlab">SHORT · ${CATS[st.cat].name.toUpperCase()} · ${sh.dur}S</span>
+          <h2 class="s-title">${sh.title}</h2>
+          <p class="s-sub">${sh.desc}</p>
+          <div class="s-ctas">
+            <a class="btn btn-gold s-cta" href="#/historias/${sh.story}" data-act="s2s">VER HISTORIA COMPLETA →</a>
+            <a class="btn btn-ghost s-cta" href="${ytShortHref(sh)}" target="_blank" rel="noopener">VER EN YOUTUBE</a>
+          </div>
+        </div>
+        <div class="s-rail">
+          <button data-act="short-play" aria-label="Reproducir o pausar">${ic('play')}</button>
+          <a href="${ytShortHref(sh)}" target="_blank" rel="noopener" aria-label="Ver en YouTube">${ic('yt')}</a>
+          <button data-act="share" data-href="#/shorts/${sh.slug}" aria-label="Compartir">${ic('share')}</button>
+        </div>
+        <div class="s-prog"><i></i></div>
+      </div>
+    </article>`}).join('')}
+  </div>
+  <div class="feed-side">
+    <button class="hbtn" data-act="feed-nav" data-dir="-1" aria-label="Short anterior">${ic('up')}</button>
+    <div class="fdots">${SHORTS.map((_,i)=>'<i data-dot="'+i+'" class="'+(i===start?'on':'')+'" tabindex="0" role="button" aria-label="Ir al short '+(i+1)+'"></i>').join('')}</div>
+    <button class="hbtn" data-act="feed-nav" data-dir="1" aria-label="Short siguiente">${ic('down')}</button>
+  </div>`,
+  {t:'Shorts — TRAMA',d:'Shorts verticales de TRAMA: un minuto por historia, cada uno con su documental completo detrás.',og:'trama'});
+  const feed=$('#feed');
+  if(start>0)feed.scrollTo({top:start*feed.clientHeight,behavior:'auto'});
+  const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){const i=+x.target.dataset.si;
+    $('#fcount').textContent=String(i+1).padStart(2,'0')+' / '+String(SHORTS.length).padStart(2,'0');
+    document.querySelectorAll('.fdots i').forEach((d,di)=>d.classList.toggle('on',di===i));
+    document.querySelectorAll('.short').forEach(s=>{if(s!==x.target){s.classList.remove('playing','paused');const v=s.querySelector('video');if(v){v.pause();try{v.currentTime=0}catch(e){}}}});
+    x.target.querySelector('img:not(.bg)')?.classList.add('ld');
+    const vid=x.target.querySelector('video');
+    if(vid){playShortVid(vid);x.target.classList.add('playing');x.target.classList.remove('paused')}
+    Analytics.track('short_view',{slug:SHORTS[i].slug});
+  }}),{root:feed,threshold:.6});
+  document.querySelectorAll('.short').forEach(s=>{
+    io.observe(s);
+    const vid=s.querySelector('video'), bar=s.querySelector('.s-prog i');
+    if(vid&&bar){vid.addEventListener('timeupdate',()=>{if(vid.duration)bar.style.width=(vid.currentTime/vid.duration*100)+'%'});bar.style.animation='none'}
+  });
+}
+function playShortVid(vid){
+  if(!vid)return;
+  vid.muted=false;vid.volume=1;
+  const p=vid.play();
+  if(p&&p.catch)p.catch(()=>{vid.muted=true;vid.play().catch(()=>{})});
+}
+function toggleShort(sh){const vid=sh.querySelector('video');const on=sh.classList.toggle('playing');sh.classList.remove('paused');if(!on){sh.classList.add('paused');if(vid)vid.pause()}else playShortVid(vid);Analytics.track(on?'short_play':'short_pause',{slug:SHORTS[+sh.dataset.si].slug})}
+function feedNav(dir){const feed=$('#feed');if(!feed)return;const idx=Math.round(feed.scrollTop/feed.clientHeight);const nx=Math.max(0,Math.min(SHORTS.length-1,idx+dir));feed.scrollTo({top:nx*feed.clientHeight,behavior:RM?'auto':'smooth'})}
+
+/* ── ENTIDADES ── */
+function viewEntity(type,slug){
+  const en=E[slug];if(!en||ENT_PATH[en.type]!==type)return view404();
+  const sts=entityStories(slug),shs=entityShorts(slug),relE=relatedEntities(slug);
+  mount(`
+  <div class="wrap"><header class="phead" data-rv>
+    <span class="catlab">${ENT_LBL[en.type].toUpperCase()} · EXPEDIENTE ${CATALOG['ent-'+slug]||''}</span>
+    <div class="ent-grid">
+      <div class="ent-card"><div class="frame ratio-34">${media('ent-'+slug,{w:540,h:720,alt:en.name,eager:true})}</div></div>
+      <div>
+        <h1>${en.name}</h1>
+        <span class="era mono">${en.era}</span>
+        <p class="sub">${en.blurb}</p>
+        <span class="count mono" style="display:block;margin-top:1.8rem">${sts.length} HISTORIAS · ${shs.length} SHORTS</span>
+      </div>
+    </div>
+  </header>
+  ${sts.length?'<section class="section tight">'+secHead('','Aparece en')+('<div class="sgrid g3">'+sts.map(s=>storyCard(s)).join('')+'</div>')+'</section>':''}
+  ${shs.length?'<section class="section tight">'+secHead('','Shorts relacionados')+row(shs.map(shortCard).join(''))+'</section>':''}
+  ${relE.length?'<section class="section tight" data-rv>'+secHead('','Conectado con')+'<div class="ficha">'+relE.map(entityChip).join('')+'</div></section>':''}
+  </div>`,
+  {t:en.name+' — TRAMA',d:en.blurb,ld:ldEntity(en),og:'ent-'+slug});
+}
+
+/* ── MI LISTA / SOBRE / LEGAL / 404 ── */
+function viewMyList(){
+  const list=[...myList].map(s=>S[s]).filter(Boolean);
+  mount(`<div class="wrap"><header class="phead" data-rv><span class="catlab">GUARDADO LOCALMENTE · SIN CUENTA</span><h1>Mi lista</h1><span class="count mono">${list.length} PIEZAS GUARDADAS</span></header>
+  <section class="section tight">${list.length?'<div class="sgrid g3">'+list.map(s=>storyCard(s)).join('')+'</div>':'<div class="empty"><span class="serif">Tu lista está vacía.</span><p>Cuando algo te atrape, pulsa «Añadir a mi lista». Se guarda en este dispositivo — sin registro, sin cuenta.</p><a class="btn btn-gold" href="#/historias">EXPLORAR EL ARCHIVO</a></div>'}</section></div>`,
+  {t:'Mi lista — TRAMA',d:'Tus historias guardadas en TRAMA.'});
+}
+function viewAbout(){
+  mount(`<div class="wrap" style="max-width:820px"><header class="phead" data-rv>
+    <img class="about-logo" src="${LOGO}" width="240" height="280" alt="TRAMA — Hay una historia detrás de todo.">
+    <span class="catlab">TRAMA · SOBRE</span>
+    <h1>${CLAIM}</h1>
+  </header>
+  <section class="story-body" data-rv>
+    <p>TRAMA es una marca editorial audiovisual. Contamos historias reales, fascinantes y poco conocidas: empresas, inventos, personas, decisiones, éxitos, fracasos y misterios. No hacemos resúmenes. Investigamos, escribimos y montamos cada pieza como un documental.</p>
+    <p>La web es el archivo. YouTube es uno de los motores de audiencia. Una sola investigación debe poder convertirse en historia escrita, documental, Shorts e imágenes, y conectar con otras historias. Tira de cualquier hilo y el archivo responde.</p>
+    <blockquote class="pull">«${PHILO}»</blockquote>
+    <p class="contact-row mono dim">CANAL · <a href="${YT_CHANNEL}" target="_blank" rel="noopener">YOUTUBE.COM/@TRAMAHISTORIAS</a></p>
+    <p class="contact-row mono dim" style="margin-top:.8rem">CORREO · <a href="mailto:${MAIL}">${MAIL}</a></p>
+  </section></div>`,{t:'Sobre — TRAMA',d:'Qué es TRAMA y por qué existe.'});
+}
+function viewLegal(page){
+  const T={privacidad:['Privacidad','Tu lista y tu progreso se guardan únicamente en tu dispositivo (localStorage). No se cargan rastreadores de terceros ni se recogen datos personales en esta versión.'],cookies:['Cookies','Esta versión no utiliza cookies de seguimiento. Solo almacenamiento local técnico para tus preferencias de visualización.'],terminos:['Términos','Documento pendiente de redacción legal definitiva. Los documentales de TRAMA se publican en YouTube (@TRAMAhistorias) y se enlazan desde esta web.']};
+  const[t,b]=T[page]||['Documento','Contenido pendiente.'];
+  mount(`<div class="wrap" style="max-width:760px"><header class="phead" data-rv><span class="catlab">LEGAL</span><h1>${t}</h1></header><section class="story-body" data-rv><p>${b}</p><p class="mono dim">ÚLTIMA ACTUALIZACIÓN · AGOSTO 2026</p></section></div>`,{t:t+' — TRAMA',d:b});
+}
+function view404(){
+  mount(`<div class="empty" style="padding-top:calc(var(--nav-h) + 12vh)"><span class="serif">Esta historia aún no existe en el archivo.</span><p>Puede que el enlace haya cambiado de sitio. El archivo, no.</p><a class="btn btn-gold" href="#/">VOLVER AL INICIO</a></div>`,
+  {t:'Página no encontrada — TRAMA',d:'La página buscada no existe.'});
+}
+
+/* ── BUSCADOR ── */
+const SEARCH_IDX=[
+ ...STORIES.map(s=>({kind:'historia',label:'HISTORIA · '+CATS[s.cat].name.toUpperCase(),title:s.title,sub:s.desc,href:'#/historias/'+s.slug,seed:'story-'+s.slug,hay:(s.title+' '+s.desc+' '+CATS[s.cat].name+' '+s.tags.join(' ')+' '+s.entities.map(e=>E[e]?E[e].name:'').join(' ')).toLowerCase()})),
+ ...ENTITIES.map(e=>({kind:'entidad',label:ENT_LBL[e.type].toUpperCase(),title:e.name,sub:e.blurb,href:'#/'+ENT_PATH[e.type]+'/'+e.slug,seed:'ent-'+e.slug,hay:(e.name+' '+e.blurb).toLowerCase()})),
+ ...SHORTS.map(s=>({kind:'short',label:'SHORT · '+s.dur+'S',title:s.title,sub:s.desc,href:'#/shorts/'+s.slug,seed:'short-'+s.slug,hay:(s.title+' '+s.desc).toLowerCase()}))
+];
+function openSearch(){$('#searchOv').classList.add('open');document.body.classList.add('locked');setTimeout(()=>$('#searchInput').focus(),80);renderSearch('')}
+function closeSearch(){$('#searchOv').classList.remove('open');document.body.classList.remove('locked')}
+function renderSearch(q){
+  const box=$('#searchResults');q=q.trim().toLowerCase();
+  if(!q){box.innerHTML='<span class="sg-h mono">EXPLORA EL ARCHIVO</span><div class="s-chips">'+['Kodak','Tesla','Burbujas','Contenedor','Petrov','Fraude','Misterios'].map(c=>'<button data-q="'+c+'">'+c+'</button>').join('')+'</div>';return}
+  const hits=SEARCH_IDX.map(it=>{const i=it.hay.indexOf(q);return i<0?null:{it,score:it.title.toLowerCase().startsWith(q)?3:i===0?2:1}}).filter(Boolean).sort((a,b)=>b.score-a.score);
+  if(!hits.length){box.innerHTML='<div class="s-empty"><span class="serif">Nada con «'+q+'»… todavía.</span>Prueba con una persona, una empresa o un tema: el archivo es más profundo de lo que parece.</div>';return}
+  const groups=[['historia','01 · HISTORIAS'],['entidad','02 · PERSONAS · EMPRESAS · INVENTOS · TEMAS'],['short','03 · SHORTS']];
+  box.innerHTML=groups.map(([k,label])=>{const g=hits.filter(h=>h.it.kind===k).slice(0,6);if(!g.length)return'';
+    return '<span class="sg-h mono">'+label+'</span><div class="sg-list">'+g.map(h=>'<a class="sr" href="'+h.it.href+'" data-act="search-go"><span class="thumb'+(h.it.kind==='short'?' v':'')+'">'+media(h.it.seed,{w:h.it.kind==='short'?168:264,h:h.it.kind==='short'?252:165,alt:''})+'</span><span><h4>'+h.it.title+'</h4><span class="mono">'+h.it.label+'</span></span></a>').join('')+'</div>'}).join('');
+  if(q.length>=3)Analytics.track('search',{q,n:hits.length});
+}
+
+/* ── ROUTER ── */
+function route(){
+  App.player&&App.player.save&&App.player.save();App.player=null;
+  clearInterval(App.heroTimer);
+  const path=((location.hash||'#/').slice(1).split('?')[0])||'/';
+  let m;
+  if(path==='/')viewHome();
+  else if(path==='/historias')viewArchive();
+  else if(path==='/documentales')viewArchive('doc');
+  else if((m=path.match(/^\/historias\/([\w-]+)$/)))viewStory(m[1]);
+  else if(path==='/shorts')viewShorts();
+  else if((m=path.match(/^\/shorts\/([\w-]+)$/)))viewShorts(m[1]);
+  else if(path==='/categorias')viewCatIndex();
+  else if((m=path.match(/^\/categorias\/([\w-]+)$/)))viewCategory(m[1]);
+  else if((m=path.match(/^\/(personas|empresas|inventos|temas)\/([\w-]+)$/)))viewEntity(m[1],m[2]);
+  else if(path==='/mi-lista')viewMyList();
+  else if(path==='/sobre')viewAbout();
+  else if((m=path.match(/^\/legal\/([\w-]+)$/)))viewLegal(m[1]);
+  else view404();
+  document.body.classList.toggle('route-shorts',path.startsWith('/shorts'));
+  document.body.classList.toggle('route-home',path==='/');
+  setActive(path);revealInit();updateListUI();
+}
+function setActive(path){
+  document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('on',a.dataset.nav==='historias'?path.startsWith('/historias'):a.dataset.nav==='shorts'&&path.startsWith('/shorts')));
+  document.querySelectorAll('[data-tab]').forEach(a=>{const t=a.dataset.tab;a.classList.toggle('on',t==='/'?path==='/':path.startsWith(t))});
+}
+
+/* ── EVENTOS GLOBALES ── */
+document.addEventListener('click',e=>{
+  const t=e.target;
+  const dd=$('#catsDD');if(dd&&dd.classList.contains('open')&&!t.closest('#catsDD')){dd.classList.remove('open');dd.querySelector('button').setAttribute('aria-expanded','false')}
+  let b;
+  if(b=t.closest('[data-rowbtn]')){const track=b.closest('.row').querySelector('.row-track');track.scrollBy({left:track.clientWidth*.85*(+b.dataset.rowbtn),behavior:RM?'auto':'smooth'});return}
+  if(b=t.closest('[data-list]')){toggleList(b.dataset.list);return}
+  if(b=t.closest('[data-dot]')){const f=$('#feed');f&&f.scrollTo({top:(+b.dataset.dot)*f.clientHeight,behavior:RM?'auto':'smooth'});return}
+  if(b=t.closest('[data-act]')){
+    const act=b.dataset.act;
+    if(act==='search-open')openSearch();
+    if(act==='search-close')closeSearch();
+    if(act==='search-go')closeSearch();
+    if(act==='menu-open'){$('#menuOv').classList.add('open');document.body.classList.add('locked')}
+    if(act==='menu-close'||b.classList.contains('ml')){$('#menuOv').classList.remove('open');document.body.classList.remove('locked')}
+    if(act==='cats-toggle'){const on=dd.classList.toggle('open');b.setAttribute('aria-expanded',on)}
+    if(act==='chip'){App.archState.cat=b.dataset.cat;renderArchive()}
+    if(act==='goto-player'){$('#player').scrollIntoView({behavior:RM?'auto':'smooth'});setTimeout(()=>App.player&&App.player.toggle(),RM?0:600)}
+    if(act==='ply-toggle')App.player&&App.player.toggle();
+    if(act==='ply-resume'){$('#player').scrollIntoView({behavior:RM?'auto':'smooth'});App.player&&App.player.resume()}
+    if(act==='ply-seek'){const r=b.getBoundingClientRect();App.player&&App.player.seek((e.clientX-r.left)/r.width)}
+    if(act==='short-play'){const sh=b.closest('.short');sh&&toggleShort(sh)}
+    if(act==='feed-nav')feedNav(+b.dataset.dir);
+    if(act==='share')shareLink(b.dataset.href);
+    if(act==='s2s')Analytics.track('short_to_story',{story:b.getAttribute('href')});
+    if(act==='related')Analytics.track('related_story_click',{to:b.getAttribute('href')});
+    if(act==='hero-down'){const hero=$('#hero');if(!hero)return;const navH=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'))||64;scrollTo({top:hero.getBoundingClientRect().bottom+scrollY-navH,behavior:RM?'auto':'smooth'})}
+    if(act==='goto-news'){e.preventDefault();if(location.hash==='#/'||location.hash===''){$('#news').scrollIntoView({behavior:RM?'auto':'smooth'})}else{App.pendingScroll='news';location.hash='#/'}}
+    return;
+  }
+});
+document.addEventListener('submit',e=>{
+  if(e.target.id==='newsForm'){e.preventDefault();
+    const em=e.target.email.value.trim();
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){toast('Revisa el correo electrónico');return}
+    store.set('newsletter',{email:em,at:Date.now()});
+    e.target.outerHTML='<p class="news-ok">Bienvenido al archivo. La primera historia está en camino.</p>';
+    location.href='mailto:'+MAIL+'?subject='+encodeURIComponent('Newsletter TRAMA')+'&body='+encodeURIComponent('Quiero recibir las historias de TRAMA.\n\nCorreo: '+em);
+    Analytics.track('newsletter_submit')}
+});
+let searchTmr=null;
+document.addEventListener('input',e=>{if(e.target.id==='searchInput'){clearTimeout(searchTmr);searchTmr=setTimeout(()=>renderSearch(e.target.value),90)}});
+document.addEventListener('keydown',e=>{
+  const typing=/INPUT|TEXTAREA/.test(e.target.tagName);
+  if(e.key==='/'&&!typing){e.preventDefault();openSearch()}
+  if(e.key==='Escape'){closeSearch();$('#menuOv').classList.remove('open');document.body.classList.remove('locked');const dd=$('#catsDD');dd&&dd.classList.remove('open')}
+  if(e.target.id==='searchInput'&&e.key==='Enter'){const f=document.querySelector('.sr');if(f)f.click()}
+  if(document.body.classList.contains('route-shorts')&&!typing){
+    if(e.key==='ArrowDown'){e.preventDefault();feedNav(1)}
+    if(e.key==='ArrowUp'){e.preventDefault();feedNav(-1)}
+    if(e.key===' '){e.preventDefault();const f=$('#feed');const i=Math.round(f.scrollTop/f.clientHeight);const sh=document.querySelector('.short[data-si="'+i+'"]');sh&&toggleShort(sh)}}
+});
+let navTick=false;
+addEventListener('scroll',()=>{
+  $('#nav').classList.toggle('scrolled',scrollY>24);
+  if(!navTick&&!RM){navTick=true;requestAnimationFrame(()=>{const el=document.querySelector('[data-plx]');if(el){const r=el.getBoundingClientRect();el.style.transform='translate3d(0,'+Math.max(-70,Math.min(70,-r.top*.12))+'px,0)'}navTick=false})}
+},{passive:true});
+addEventListener('hashchange',route);
+addEventListener('beforeunload',()=>{App.player&&App.player.save&&App.player.save()});
+
+/* ── INIT ── */
+$('#catsPanel').innerHTML=Object.entries(CATS).map(([k,c])=>'<a role="menuitem" href="#/categorias/'+k+'"><span class="cn">'+c.name+'</span><span class="cd">'+c.desc+'</span></a>').join('');
+$('#menuLinks').innerHTML=[['#/','Inicio','01'],['#/historias','Historias','02'],['#/documentales','Documentales','03'],['#/shorts','Shorts','04'],['#/categorias','Categorías','05'],['#/mi-lista','Mi lista','06'],['#/sobre','Sobre','07']].map(l=>'<a class="ml" href="'+l[0]+'">'+l[1]+'<span class="mono">'+l[2]+'</span></a>').join('');
+(function(){const f=document.querySelector('.footer-html');if(!f)return})();
+document.body.insertAdjacentHTML('beforeend','<footer class="footer"><div class="wrap"><div class="f-top"><div><div class="f-mark"><img src="'+LOGO+'" width="120" height="140" alt="TRAMA"></div><p class="f-claim">«'+CLAIM+'»</p></div><div class="f-cols"><div><h4>Explora</h4><a href="#/historias">Historias</a><a href="#/documentales">Documentales</a><a href="#/shorts">Shorts</a><a href="#/categorias">Categorías</a><a href="#/mi-lista">Mi lista</a></div><div><h4>Sobre</h4><a href="#/sobre">Sobre nosotros</a><a href="#/" data-act="goto-news">Newsletter</a><a href="mailto:'+MAIL+'">Contacto</a></div><div><h4>Legal</h4><a href="#/legal/privacidad">Privacidad</a><a href="#/legal/cookies">Cookies</a><a href="#/legal/terminos">Términos</a></div><div><h4>Social</h4>'+SOCIAL.map(s=>'<a href="'+s[1]+'" target="_blank" rel="noopener">'+s[0]+'</a>').join('')+'<a href="mailto:'+MAIL+'">'+MAIL+'</a></div></div></div><div class="f-bot"><span class="mono">© 2026 TRAMA — UN ARCHIVO VIVO DE HISTORIAS</span><span class="mono dim">'+PHILO.toUpperCase()+'</span></div></div></footer>');
+if(innerWidth<=900)$('#menuBtn').style.display='inline-flex';
+addEventListener('resize',()=>{$('#menuBtn').style.display=innerWidth<=900?'inline-flex':'none'});
+route();
+</script>
+</body>
+</html>
