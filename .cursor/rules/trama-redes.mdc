@@ -1,0 +1,24 @@
+---
+description: Tras cada YouTube de TRAMA, preparar y republicar en TikTok e Instagram Reels.
+alwaysApply: true
+---
+
+# TRAMA — YouTube también a TikTok e Instagram
+
+Cuentas de marca (no mezclar con Facebook personal de Ramón):
+
+- YouTube: `https://www.youtube.com/@TRAMAhistorias`
+- Instagram: `https://www.instagram.com/tramahistorias/`
+- TikTok: `https://www.tiktok.com/@tramahistorias`
+
+No hay publicación automática por API. Instagram Graph exige Página de Facebook; Ramón no quiere unir su Facebook a TRAMA. El agente **no puede** pulsar el selector de archivos de Windows ni loguear Google en el navegador de Cursor (pantalla negra).
+
+## Cada vez que se publica un Short o vídeo en YouTube
+
+1. Guardar ID en `index.html`. Conservar stills y `vo`. El `.mp4` de YouTube se puede borrar después; para redes **re-render 1080×1920** con `subidas/_render.py`.
+2. Carpeta `subidas/_repost-ig-tt/` (o la de la pieza): `nombre.mp4` vertical + `TEXTOS.txt` (título, 2–4 líneas, «Hay una historia detrás de todo.», `#TRAMA`).
+3. Abrir **Chrome** (no Cursor): TikTok Studio `https://www.tiktok.com/tiktokstudio/upload` y Instagram `https://www.instagram.com/tramahistorias/` → Crear → Reel.
+4. Comprobar privacidad TikTok: no dejar **Solo yo** si debe ser público.
+5. Avatar: `public/avatar-ig.png` / `subidas/_repost-ig-tt/avatar-ig.jpg` — fondo crema **opaco**. Un PNG transparente Instagram lo rellena de negro.
+
+Facebook Página: no. No «Crear cuenta nueva» con nombre TRAMA.

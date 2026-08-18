@@ -466,6 +466,7 @@ body.route-shorts .footer{display:none}
 .tabbar .ic{width:1.35em;height:1.35em}
 
 /* ── Responsive ── */
+@media (max-width:1180px){ .nbtn-extra{display:none} }
 @media (max-width:1100px){ .sgrid.g4{grid-template-columns:repeat(3,1fr)} }
 @media (max-width:900px){
   .nav-links{display:none}
@@ -526,6 +527,8 @@ body.route-shorts .footer{display:none}
     </nav>
     <div class="nav-right">
       <a class="nbtn" href="https://www.youtube.com/@TRAMAhistorias" target="_blank" rel="noopener">YouTube</a>
+      <a class="nbtn nbtn-extra" href="https://www.instagram.com/tramahistorias/" target="_blank" rel="noopener">Instagram</a>
+      <a class="nbtn nbtn-extra" href="https://www.tiktok.com/@tramahistorias" target="_blank" rel="noopener">TikTok</a>
       <button class="nbtn" data-act="search-open" aria-label="Buscar en el archivo"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg></span></button>
       <a class="nbtn" href="#/mi-lista" aria-label="Mi lista"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6.5 4h11v16.5L12 16.8l-5.5 3.7z"/></svg></span><span class="badge" id="listCount" hidden>0</span></a>
       <button class="nbtn" data-act="menu-open" aria-label="Abrir menú" id="menuBtn" style="display:none">☰</button>
@@ -580,6 +583,8 @@ const LOGO = 'public/logo.png';
 const YT_CHANNEL = 'https://www.youtube.com/@TRAMAhistorias';
 const YT_SHORTS = YT_CHANNEL+'/shorts';
 const ytShortHref = sh => sh.yt ? 'https://www.youtube.com/shorts/'+sh.yt : YT_SHORTS;
+const IG = 'https://www.instagram.com/tramahistorias/';
+const TT = 'https://www.tiktok.com/@tramahistorias';
 const MAIL = 'tramahistorias@gmail.com';
 /* Producción: registrar aquí cada asset real (local/CDN/CMS) por clave.
    La UI nunca cambia: media() resuelve automáticamente. */
@@ -608,7 +613,7 @@ const ASSET_MAP = {
   'cat-historia': MEDIA_ROOT+'/cats/historia.jpg',
   'cat-misterios': MEDIA_ROOT+'/cats/misterios.jpg'
 };
-const SOCIAL = [['YouTube',YT_CHANNEL]];
+const SOCIAL = [['YouTube',YT_CHANNEL],['Instagram',IG],['TikTok',TT]];
 
 /* ═══════════ CONTENT ═══════════ */
 const CATS = {
@@ -1293,9 +1298,11 @@ function viewAbout(){
   </header>
   <section class="story-body" data-rv>
     <p>TRAMA es una marca editorial audiovisual. Contamos historias reales, fascinantes y poco conocidas: empresas, inventos, personas, decisiones, éxitos, fracasos y misterios. No hacemos resúmenes. Investigamos, escribimos y montamos cada pieza como un documental.</p>
-    <p>La web es el archivo. YouTube es uno de los motores de audiencia. Una sola investigación debe poder convertirse en historia escrita, documental, Shorts e imágenes, y conectar con otras historias. Tira de cualquier hilo y el archivo responde.</p>
+    <p>La web es el archivo. YouTube, Instagram y TikTok son motores de audiencia. Una sola investigación debe poder convertirse en historia escrita, documental, Shorts e imágenes, y conectar con otras historias. Tira de cualquier hilo y el archivo responde.</p>
     <blockquote class="pull">«${PHILO}»</blockquote>
-    <p class="contact-row mono dim">CANAL · <a href="${YT_CHANNEL}" target="_blank" rel="noopener">YOUTUBE.COM/@TRAMAHISTORIAS</a></p>
+    <p class="contact-row mono dim">YOUTUBE · <a href="${YT_CHANNEL}" target="_blank" rel="noopener">YOUTUBE.COM/@TRAMAHISTORIAS</a></p>
+    <p class="contact-row mono dim" style="margin-top:.8rem">INSTAGRAM · <a href="${IG}" target="_blank" rel="noopener">INSTAGRAM.COM/TRAMAHISTORIAS</a></p>
+    <p class="contact-row mono dim" style="margin-top:.8rem">TIKTOK · <a href="${TT}" target="_blank" rel="noopener">TIKTOK.COM/@TRAMAHISTORIAS</a></p>
     <p class="contact-row mono dim" style="margin-top:.8rem">CORREO · <a href="mailto:${MAIL}">${MAIL}</a></p>
   </section></div>`,{t:'Sobre — TRAMA',d:'Qué es TRAMA y por qué existe.'});
 }
@@ -1418,7 +1425,7 @@ addEventListener('beforeunload',()=>{App.player&&App.player.save&&App.player.sav
 
 /* ── INIT ── */
 $('#catsPanel').innerHTML=Object.entries(CATS).map(([k,c])=>'<a role="menuitem" href="#/categorias/'+k+'"><span class="cn">'+c.name+'</span><span class="cd">'+c.desc+'</span></a>').join('');
-$('#menuLinks').innerHTML=[['#/','Inicio','01'],['#/historias','Historias','02'],['#/documentales','Documentales','03'],['#/shorts','Shorts','04'],['#/categorias','Categorías','05'],['#/mi-lista','Mi lista','06'],['#/sobre','Sobre','07']].map(l=>'<a class="ml" href="'+l[0]+'">'+l[1]+'<span class="mono">'+l[2]+'</span></a>').join('');
+$('#menuLinks').innerHTML=[['#/','Inicio','01'],['#/historias','Historias','02'],['#/documentales','Documentales','03'],['#/shorts','Shorts','04'],['#/categorias','Categorías','05'],['#/mi-lista','Mi lista','06'],['#/sobre','Sobre','07']].map(l=>'<a class="ml" href="'+l[0]+'">'+l[1]+'<span class="mono">'+l[2]+'</span></a>').join('')+SOCIAL.map(s=>'<a class="ml" href="'+s[1]+'" target="_blank" rel="noopener">'+s[0]+'<span class="mono">↗</span></a>').join('');
 (function(){const f=document.querySelector('.footer-html');if(!f)return})();
 document.body.insertAdjacentHTML('beforeend','<footer class="footer"><div class="wrap"><div class="f-top"><div><div class="f-mark"><img src="'+LOGO+'" width="120" height="140" alt="TRAMA"></div><p class="f-claim">«'+CLAIM+'»</p></div><div class="f-cols"><div><h4>Explora</h4><a href="#/historias">Historias</a><a href="#/documentales">Documentales</a><a href="#/shorts">Shorts</a><a href="#/categorias">Categorías</a><a href="#/mi-lista">Mi lista</a></div><div><h4>Sobre</h4><a href="#/sobre">Sobre nosotros</a><a href="#/" data-act="goto-news">Newsletter</a><a href="mailto:'+MAIL+'">Contacto</a></div><div><h4>Legal</h4><a href="#/legal/privacidad">Privacidad</a><a href="#/legal/cookies">Cookies</a><a href="#/legal/terminos">Términos</a></div><div><h4>Social</h4>'+SOCIAL.map(s=>'<a href="'+s[1]+'" target="_blank" rel="noopener">'+s[0]+'</a>').join('')+'<a href="mailto:'+MAIL+'">'+MAIL+'</a></div></div></div><div class="f-bot"><span class="mono">© 2026 TRAMA — UN ARCHIVO VIVO DE HISTORIAS</span><span class="mono dim">'+PHILO.toUpperCase()+'</span></div></div></footer>');
 if(innerWidth<=900)$('#menuBtn').style.display='inline-flex';
