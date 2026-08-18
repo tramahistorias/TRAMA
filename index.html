@@ -297,6 +297,16 @@ body.route-home .nav.scrolled .logo img{filter:drop-shadow(0 1px 2px rgba(0,0,0,
 .story-body .kick{color:var(--gold);display:block;margin-bottom:2rem}
 .story-body p{font-family:var(--serif);font-weight:400;font-size:clamp(1.05rem,1.5vw,1.22rem);line-height:1.78;color:#2c2924;margin-bottom:1.7em}
 .story-body p:first-of-type::first-letter{font-size:3.4em;float:left;line-height:.82;padding-right:.14em;color:var(--gold-2);font-weight:500}
+.legal-body p:first-of-type::first-letter{font-size:inherit;float:none;line-height:inherit;padding:0;color:inherit;font-weight:inherit}
+.legal-body h2{font-family:var(--serif);font-weight:500;font-size:1.28rem;margin:2.1em 0 .7em;letter-spacing:-.01em}
+.legal-body ul{margin:0 0 1.5em 1.15em;color:#2c2924;line-height:1.7;font-size:.95rem}
+.legal-body li{margin-bottom:.4em}
+.legal-body a{color:var(--gold-2)}
+.sitemap{display:grid;gap:clamp(28px,4vw,48px);padding-bottom:4rem}
+.sitemap h2{font-family:var(--serif);font-weight:500;font-size:1.35rem;margin:0 0 .8rem}
+.sitemap a{display:block;padding:.55rem 0;border-bottom:1px solid var(--hair);color:var(--ink);font-size:.92rem}
+.sitemap a:hover{color:var(--gold-2)}
+.sitemap .sm-k{font-size:.62rem;letter-spacing:.16em;color:var(--dim);display:block;margin-bottom:.35rem}
 .pull{border-left:2px solid var(--gold);padding:.4em 0 .4em 1.7em;margin:2.6em 0;font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.42;color:var(--paper)}
 /* Cronología con raíl */
 .tl-rail{position:relative;margin-top:1.6rem;padding-left:36px}
@@ -339,14 +349,13 @@ body.route-home .nav.scrolled .logo img{filter:drop-shadow(0 1px 2px rgba(0,0,0,
 .ply-frame video{object-fit:cover;background:#000}
 
 /* ── Shorts feed ── */
-body.route-shorts{background:var(--bg);color:var(--ink)}
-body.route-shorts .nav{background:rgba(243,239,230,.9)}
-body.route-shorts .footer{display:none}
-.feed{height:100dvh;overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none;background:var(--bg);color:var(--ink)}
-.feed::-webkit-scrollbar{display:none}
-.short{position:relative;height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--bg)}
+body.route-shorts{background:var(--bg);color:var(--ink);padding-bottom:0}
+body.route-shorts .nav{background:rgba(243,239,230,.96)}
+body.route-shorts .footer{display:block}
+.feed{padding:calc(var(--nav-h) + 12px) 0 28px;background:var(--bg);color:var(--ink)}
+.short{position:relative;min-height:0;display:flex;align-items:center;justify-content:center;padding:12px 0 36px;background:var(--bg)}
 .short>img{display:none}
-.s-frame{position:relative;z-index:2;height:min(84dvh,820px);aspect-ratio:9/16;max-width:88vw;border:1px solid var(--hair-2);border-radius:8px;overflow:hidden;background:var(--bg-3)}
+.s-frame{position:relative;z-index:2;height:min(72dvh,760px);aspect-ratio:9/16;max-width:88vw;border:1px solid var(--hair-2);border-radius:8px;overflow:hidden;background:var(--bg-3)}
 .s-frame img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s}
 .s-frame img.ld{opacity:1}
 .s-frame video,.s-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:var(--bg-3)}
@@ -371,7 +380,7 @@ body.route-shorts .footer{display:none}
 @keyframes sprog{to{width:100%}}
 .short.playing .s-big{opacity:0}
 .s-big{position:absolute;inset:0;margin:auto;width:78px;height:78px;border-radius:50%;background:rgba(243,239,230,.94);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:1.3rem;z-index:3;transition:opacity .3s,transform .3s;padding-left:5px}
-.feed-top{position:fixed;top:0;left:0;right:0;z-index:120;display:flex;justify-content:space-between;align-items:center;padding:0 clamp(16px,3vw,40px);height:var(--nav-h);pointer-events:none}
+.feed-top{display:none}
 .feed-top a,.feed-top .fcount{pointer-events:auto}
 .fback{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;color:var(--silver);display:flex;gap:.6em;align-items:center}
 .fback:hover{color:var(--gold)}
@@ -586,6 +595,7 @@ const ytShortHref = sh => sh.yt ? 'https://www.youtube.com/shorts/'+sh.yt : YT_S
 const IG = 'https://www.instagram.com/tramahistorias/';
 const TT = 'https://www.tiktok.com/@tramahistorias';
 const MAIL = 'tramahistorias@gmail.com';
+const SITE = 'https://tramahistorias.github.io/TRAMA/';
 /* Producción: registrar aquí cada asset real (local/CDN/CMS) por clave.
    La UI nunca cambia: media() resuelve automáticamente. */
 const ASSET_MAP = {
@@ -1243,6 +1253,7 @@ function viewShorts(param){
           <div class="s-ctas">
             <a class="btn btn-gold s-cta" href="#/historias/${sh.story}" data-act="s2s">VER HISTORIA COMPLETA →</a>
             <a class="btn btn-ghost s-cta" href="${ytShortHref(sh)}" target="_blank" rel="noopener">VER EN YOUTUBE</a>
+            <a class="btn btn-ghost s-cta" href="#/">VOLVER AL INICIO</a>
           </div>
         </div>
         <div class="s-rail">
@@ -1260,22 +1271,21 @@ function viewShorts(param){
     <button class="hbtn" data-act="feed-nav" data-dir="1" aria-label="Short siguiente">${ic('down')}</button>
   </div>`,
   {t:'Shorts — TRAMA',d:'Shorts verticales de TRAMA: un minuto por historia, cada uno con su documental completo detrás.',og:'trama'});
-  const feed=$('#feed');
-  if(start>0)feed.scrollTo({top:start*feed.clientHeight,behavior:'auto'});
   const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){const i=+x.target.dataset.si;
-    $('#fcount').textContent=String(i+1).padStart(2,'0')+' / '+String(SHORTS.length).padStart(2,'0');
+    const fc=$('#fcount');if(fc)fc.textContent=String(i+1).padStart(2,'0')+' / '+String(SHORTS.length).padStart(2,'0');
     document.querySelectorAll('.fdots i').forEach((d,di)=>d.classList.toggle('on',di===i));
     document.querySelectorAll('.short').forEach(s=>{if(s!==x.target){s.classList.remove('playing','paused');const v=s.querySelector('video');if(v){v.pause();try{v.currentTime=0}catch(e){}}}});
     x.target.querySelector('img:not(.bg)')?.classList.add('ld');
     const vid=x.target.querySelector('video');
     if(vid){playShortVid(vid);x.target.classList.add('playing');x.target.classList.remove('paused')}
     Analytics.track('short_view',{slug:SHORTS[i].slug});
-  }}),{root:feed,threshold:.6});
+  }}),{threshold:.55});
   document.querySelectorAll('.short').forEach(s=>{
     io.observe(s);
     const vid=s.querySelector('video'), bar=s.querySelector('.s-prog i');
     if(vid&&bar){vid.addEventListener('timeupdate',()=>{if(vid.duration)bar.style.width=(vid.currentTime/vid.duration*100)+'%'});bar.style.animation='none'}
   });
+  if(start>0)document.querySelector('.short[data-si="'+start+'"]')?.scrollIntoView({block:'center'});
 }
 function playShortVid(vid){
   if(!vid)return;
@@ -1284,7 +1294,12 @@ function playShortVid(vid){
   if(p&&p.catch)p.catch(()=>{vid.muted=true;vid.play().catch(()=>{})});
 }
 function toggleShort(sh){const vid=sh.querySelector('video');const on=sh.classList.toggle('playing');sh.classList.remove('paused');if(!on){sh.classList.add('paused');if(vid)vid.pause()}else playShortVid(vid);Analytics.track(on?'short_play':'short_pause',{slug:SHORTS[+sh.dataset.si].slug})}
-function feedNav(dir){const feed=$('#feed');if(!feed)return;const idx=Math.round(feed.scrollTop/feed.clientHeight);const nx=Math.max(0,Math.min(SHORTS.length-1,idx+dir));feed.scrollTo({top:nx*feed.clientHeight,behavior:RM?'auto':'smooth'})}
+function feedNav(dir){
+  const on=document.querySelector('.fdots i.on');
+  const i=on?[...document.querySelectorAll('.fdots i')].indexOf(on):0;
+  const nx=Math.max(0,Math.min(SHORTS.length-1,i+dir));
+  document.querySelector('.short[data-si="'+nx+'"]')?.scrollIntoView({behavior:RM?'auto':'smooth',block:'center'});
+}
 
 /* ── ENTIDADES ── */
 function viewEntity(type,slug){
@@ -1313,7 +1328,7 @@ function viewEntity(type,slug){
 /* ── MI LISTA / SOBRE / LEGAL / 404 ── */
 function viewMyList(){
   const list=[...myList].map(s=>S[s]).filter(Boolean);
-  mount(`<div class="wrap"><header class="phead" data-rv><span class="catlab">GUARDADO LOCALMENTE · SIN CUENTA</span><h1>Mi lista</h1><span class="count mono">${list.length} PIEZAS GUARDADAS</span></header>
+  mount(`<div class="wrap"><header class="phead" data-rv><span class="catlab">GUARDADO EN ESTE NAVEGADOR · SIN CUENTA</span><h1>Mi lista</h1><p class="sub">Es tu marcador privado: pulsas «Mi lista» en una historia y queda aquí, solo en este dispositivo. TRAMA no tiene cuentas ni nube. Si cambias de móvil o borras datos del sitio, la lista se pierde. Los vídeos siguen en YouTube, Instagram y TikTok; esto no los guarda.</p><span class="count mono">${list.length} PIEZAS GUARDADAS</span></header>
   <section class="section tight">${list.length?'<div class="sgrid g3">'+list.map(s=>storyCard(s)).join('')+'</div>':'<div class="empty"><span class="serif">Tu lista está vacía.</span><p>Cuando algo te atrape, pulsa «Añadir a mi lista». Se guarda en este dispositivo — sin registro, sin cuenta.</p><a class="btn btn-gold" href="#/historias">EXPLORAR EL ARCHIVO</a></div>'}</section></div>`,
   {t:'Mi lista — TRAMA',d:'Tus historias guardadas en TRAMA.'});
 }
@@ -1334,9 +1349,79 @@ function viewAbout(){
   </section></div>`,{t:'Sobre — TRAMA',d:'Qué es TRAMA y por qué existe.'});
 }
 function viewLegal(page){
-  const T={privacidad:['Privacidad','Tu lista y tu progreso se guardan únicamente en tu dispositivo (localStorage). No se cargan rastreadores de terceros ni se recogen datos personales en esta versión.'],cookies:['Cookies','Esta versión no utiliza cookies de seguimiento. Solo almacenamiento local técnico para tus preferencias de visualización.'],terminos:['Términos','Documento pendiente de redacción legal definitiva. Los documentales de TRAMA se publican en YouTube (@TRAMAhistorias) y se enlazan desde esta web.']};
-  const[t,b]=T[page]||['Documento','Contenido pendiente.'];
-  mount(`<div class="wrap" style="max-width:760px"><header class="phead" data-rv><span class="catlab">LEGAL</span><h1>${t}</h1></header><section class="story-body" data-rv><p>${b}</p><p class="mono dim">ÚLTIMA ACTUALIZACIÓN · AGOSTO 2026</p></section></div>`,{t:t+' — TRAMA',d:b});
+  const T={
+    aviso:{t:'Aviso legal',d:'Identificación del titular, objeto del sitio y condiciones de uso de TRAMA.',html:`
+      <h2>1. Datos identificativos</h2>
+      <p>En cumplimiento de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico (LSSI-CE), se informa de los siguientes datos:</p>
+      <ul>
+        <li>Denominación: TRAMA (marca editorial audiovisual).</li>
+        <li>Actividad: archivo web de investigaciones y enlace a piezas audiovisuales publicadas en YouTube, Instagram y TikTok.</li>
+        <li>Sitio web: <a href="${SITE}">tramahistorias.github.io/TRAMA/</a></li>
+        <li>Correo de contacto: <a href="mailto:${MAIL}">${MAIL}</a></li>
+        <li>Alojamiento: GitHub Pages (GitHub, Inc.). El dominio de publicación es el que facilita GitHub para este repositorio.</li>
+      </ul>
+      <p>El titular es una persona física que explota la marca TRAMA. Los datos identificativos completos se facilitarán a las autoridades competentes que los requieran. El canal preferente de contacto es el correo anterior.</p>
+      <h2>2. Objeto</h2>
+      <p>Este sitio es un archivo editorial: historias escritas, imágenes de apoyo y enlaces a documentales y Shorts. No es una tienda. No se venden productos ni se recogen pagos a través de estas páginas.</p>
+      <h2>3. Condiciones de uso</h2>
+      <p>El acceso es libre y gratuito. El usuario se compromete a no usar el sitio de forma ilícita, a no alterar su funcionamiento y a no extraer contenidos de forma masiva o automatizada que perjudique el archivo.</p>
+      <h2>4. Propiedad intelectual</h2>
+      <p>Los textos, el diseño, el logotipo y las reconstrucciones visuales de TRAMA están protegidos. Las marcas, nombres y hechos históricos citados pertenecen a sus titulares. Las imágenes de apoyo se presentan como reconstrucciones visuales cuando así se indica en la ficha; no son, en esos casos, documentos de archivo.</p>
+      <p>Queda prohibida la reproducción, distribución o comunicación pública de los textos y el montaje de TRAMA sin autorización, salvo los usos permitidos por la ley (cita, crítica, información).</p>
+      <h2>5. Enlaces a terceros</h2>
+      <p>Los vídeos se reproducen o enlazan desde YouTube, Instagram y TikTok. Esos servicios tienen sus propias condiciones. TRAMA no controla sus cookies, anuncios ni políticas de privacidad. El usuario accede a ellos bajo su responsabilidad.</p>
+      <h2>6. Exclusión de responsabilidad</h2>
+      <p>Se procura la exactitud de las investigaciones. Los textos se basan en fuentes citadas en cada ficha. TRAMA no garantiza que la información sea exhaustiva ni que los servicios de terceros (reproductores, redes, GitHub Pages) estén siempre disponibles.</p>
+      <h2>7. Protección de datos</h2>
+      <p>El tratamiento de datos, si lo hay, se describe en la <a href="#/legal/privacidad">política de privacidad</a>. El uso de cookies, en la <a href="#/legal/cookies">política de cookies</a>.</p>
+      <h2>8. Legislación y fuero</h2>
+      <p>Este aviso se rige por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales del domicilio del titular, salvo que la normativa de consumidores disponga otro fuero.</p>
+    `},
+    privacidad:{t:'Privacidad',d:'Cómo trata TRAMA los datos en este sitio.',html:`
+      <p>Esta web no pide registro ni cuenta. No hay área de usuarios en el servidor.</p>
+      <h2>Qué se guarda en tu dispositivo</h2>
+      <p>La lista («Mi lista») y el progreso de reproducción se guardan solo en tu navegador (localStorage). No se envían a TRAMA. Si boras los datos del sitio, esa información desaparece.</p>
+      <h2>Correo</h2>
+      <p>Si escribes a <a href="mailto:${MAIL}">${MAIL}</a> o te suscribes al aviso de newsletter del pie, trataremos la dirección solo para responderte o, si lo has pedido, avisarte de nuevas piezas. No se cede a terceros con fines comerciales.</p>
+      <h2>Terceros</h2>
+      <p>Al pulsar «Ver en YouTube» o cargar un reproductor embebido, YouTube (Google) puede tratar datos según su política. Lo mismo ocurre si sales a Instagram o TikTok. Esos tratamientos no los controla TRAMA.</p>
+      <h2>Derechos</h2>
+      <p>Puedes solicitar acceso, rectificación o supresión de los datos que nos hayas enviado por correo, escribiendo a <a href="mailto:${MAIL}">${MAIL}</a>. El responsable es el titular identificado en el <a href="#/legal/aviso">aviso legal</a>.</p>
+    `},
+    cookies:{t:'Cookies',d:'Uso de cookies y almacenamiento local en TRAMA.',html:`
+      <p>Este sitio no instala cookies de seguimiento, analítica propia ni publicidad.</p>
+      <h2>Almacenamiento técnico</h2>
+      <p>Se usa almacenamiento local del navegador (localStorage) para recordar tu lista y el punto de reproducción. Es estrictamente necesario para esas funciones. No requiere consentimiento de cookies de marketing.</p>
+      <h2>Al ir a YouTube u otras redes</h2>
+      <p>Los reproductores y enlaces de YouTube, Instagram y TikTok pueden colocar cookies de esos servicios. Configúralas en cada plataforma. Puedes ver las piezas en sus sitios oficiales sin pasar por el embebido.</p>
+      <p>Más información sobre el titular: <a href="#/legal/aviso">aviso legal</a>.</p>
+    `},
+    terminos:{t:'Términos',d:'Condiciones de uso del archivo TRAMA.',html:`
+      <p>El uso de este sitio implica la aceptación de este texto, del <a href="#/legal/aviso">aviso legal</a> y de las políticas de <a href="#/legal/privacidad">privacidad</a> y <a href="#/legal/cookies">cookies</a>.</p>
+      <h2>Contenido</h2>
+      <p>Las investigaciones, títulos y montajes de TRAMA se publican en YouTube (<a href="${YT_CHANNEL}" target="_blank" rel="noopener">@TRAMAhistorias</a>) y se archivan aquí. Las imágenes de apoyo pueden ser reconstrucciones visuales; no se presentan como fotografía de archivo cuando la ficha lo advierte.</p>
+      <h2>Mi lista</h2>
+      <p>Es una función local, sin cuenta. TRAMA no puede recuperar tu lista si cambias de dispositivo o de navegador.</p>
+      <h2>Modificaciones</h2>
+      <p>TRAMA puede actualizar estos términos. La fecha de revisión figura al pie de cada documento legal.</p>
+    `}
+  };
+  const x=T[page==='aviso-legal'?'aviso':page]; if(!x)return view404();
+  mount(`<div class="wrap" style="max-width:760px"><header class="phead" data-rv><span class="catlab">LEGAL</span><h1>${x.t}</h1></header><section class="story-body legal-body" data-rv>${x.html}<p class="mono dim">ÚLTIMA ACTUALIZACIÓN · AGOSTO 2026</p></section></div>`,{t:x.t+' — TRAMA',d:x.d});
+}
+function viewSitemap(){
+  const sm=(title,items)=>'<div><h2>'+title+'</h2>'+items.map(([h,l])=>'<a href="'+h+'"'+(String(h).indexOf('http')===0?' target="_blank" rel="noopener"':'')+'>'+l+'</a>').join('')+'</div>';
+  const html='<div class="sitemap">'+[
+    sm('Sitio',[['#/','Inicio'],['#/historias','Historias'],['#/documentales','Documentales'],['#/shorts','Shorts'],['#/categorias','Categorías'],['#/mi-lista','Mi lista'],['#/sobre','Sobre nosotros']]),
+    sm('Categorías',Object.entries(CATS).map(([k,c])=>['#/categorias/'+k,c.name])),
+    sm('Historias',STORIES.map(s=>['#/historias/'+s.slug,s.title])),
+    sm('Shorts',SHORTS.map(s=>['#/shorts/'+s.slug,s.title])),
+    sm('Personas, empresas, inventos y temas',ENTITIES.map(e=>['#/'+ENT_PATH[e.type]+'/'+e.slug,e.name+' · '+ENT_LBL[e.type]])),
+    sm('Legal',[['#/legal/aviso','Aviso legal'],['#/legal/privacidad','Privacidad'],['#/legal/cookies','Cookies'],['#/legal/terminos','Términos'],['#/mapa-del-sitio','Mapa del sitio']]),
+    sm('Redes',SOCIAL.map(([n,u])=>[u,n]))
+  ].join('')+'</div>';
+  mount(`<div class="wrap"><header class="phead" data-rv><span class="catlab">ARCHIVO</span><h1>Mapa del sitio</h1><p class="sub">Todas las rutas públicas de TRAMA. El archivo crece; este mapa también.</p></header>${html}</div>`,
+  {t:'Mapa del sitio — TRAMA',d:'Índice de páginas, historias, Shorts y documentos legales de TRAMA.'});
 }
 function view404(){
   mount(`<div class="empty" style="padding-top:calc(var(--nav-h) + 12vh)"><span class="serif">Esta historia aún no existe en el archivo.</span><p>Puede que el enlace haya cambiado de sitio. El archivo, no.</p><a class="btn btn-gold" href="#/">VOLVER AL INICIO</a></div>`,
@@ -1379,6 +1464,7 @@ function route(){
   else if((m=path.match(/^\/(personas|empresas|inventos|temas)\/([\w-]+)$/)))viewEntity(m[1],m[2]);
   else if(path==='/mi-lista')viewMyList();
   else if(path==='/sobre')viewAbout();
+  else if(path==='/mapa-del-sitio')viewSitemap();
   else if((m=path.match(/^\/legal\/([\w-]+)$/)))viewLegal(m[1]);
   else view404();
   document.body.classList.toggle('route-shorts',path.startsWith('/shorts'));
@@ -1397,7 +1483,7 @@ document.addEventListener('click',e=>{
   let b;
   if(b=t.closest('[data-rowbtn]')){const track=b.closest('.row').querySelector('.row-track');track.scrollBy({left:track.clientWidth*.85*(+b.dataset.rowbtn),behavior:RM?'auto':'smooth'});return}
   if(b=t.closest('[data-list]')){toggleList(b.dataset.list);return}
-  if(b=t.closest('[data-dot]')){const f=$('#feed');f&&f.scrollTo({top:(+b.dataset.dot)*f.clientHeight,behavior:RM?'auto':'smooth'});return}
+  if(b=t.closest('[data-dot]')){document.querySelector('.short[data-si="'+b.dataset.dot+'"]')?.scrollIntoView({behavior:RM?'auto':'smooth',block:'center'});return}
   if(b=t.closest('[data-act]')){
     const act=b.dataset.act;
     if(act==='search-open')openSearch();
@@ -1454,7 +1540,7 @@ addEventListener('beforeunload',()=>{App.player&&App.player.save&&App.player.sav
 $('#catsPanel').innerHTML=Object.entries(CATS).map(([k,c])=>'<a role="menuitem" href="#/categorias/'+k+'"><span class="cn">'+c.name+'</span><span class="cd">'+c.desc+'</span></a>').join('');
 $('#menuLinks').innerHTML=[['#/','Inicio','01'],['#/historias','Historias','02'],['#/documentales','Documentales','03'],['#/shorts','Shorts','04'],['#/categorias','Categorías','05'],['#/mi-lista','Mi lista','06'],['#/sobre','Sobre','07']].map(l=>'<a class="ml" href="'+l[0]+'">'+l[1]+'<span class="mono">'+l[2]+'</span></a>').join('')+SOCIAL.map(s=>'<a class="ml" href="'+s[1]+'" target="_blank" rel="noopener">'+s[0]+'<span class="mono">↗</span></a>').join('');
 (function(){const f=document.querySelector('.footer-html');if(!f)return})();
-document.body.insertAdjacentHTML('beforeend','<footer class="footer"><div class="wrap"><div class="f-top"><div><div class="f-mark"><img src="'+LOGO+'" width="120" height="140" alt="TRAMA"></div><p class="f-claim">«'+CLAIM+'»</p></div><div class="f-cols"><div><h4>Explora</h4><a href="#/historias">Historias</a><a href="#/documentales">Documentales</a><a href="#/shorts">Shorts</a><a href="#/categorias">Categorías</a><a href="#/mi-lista">Mi lista</a></div><div><h4>Sobre</h4><a href="#/sobre">Sobre nosotros</a><a href="#/" data-act="goto-news">Newsletter</a><a href="mailto:'+MAIL+'">Contacto</a></div><div><h4>Legal</h4><a href="#/legal/privacidad">Privacidad</a><a href="#/legal/cookies">Cookies</a><a href="#/legal/terminos">Términos</a></div><div><h4>Social</h4>'+SOCIAL.map(s=>'<a href="'+s[1]+'" target="_blank" rel="noopener">'+s[0]+'</a>').join('')+'<a href="mailto:'+MAIL+'">'+MAIL+'</a></div></div></div><div class="f-bot"><span class="mono">© 2026 TRAMA — UN ARCHIVO VIVO DE HISTORIAS</span><span class="mono dim">'+PHILO.toUpperCase()+'</span></div></div></footer>');
+document.body.insertAdjacentHTML('beforeend','<footer class="footer"><div class="wrap"><div class="f-top"><div><div class="f-mark"><img src="'+LOGO+'" width="120" height="140" alt="TRAMA"></div><p class="f-claim">«'+CLAIM+'»</p></div><div class="f-cols"><div><h4>Explora</h4><a href="#/historias">Historias</a><a href="#/documentales">Documentales</a><a href="#/shorts">Shorts</a><a href="#/categorias">Categorías</a><a href="#/mi-lista">Mi lista</a></div><div><h4>Sobre</h4><a href="#/sobre">Sobre nosotros</a><a href="#/" data-act="goto-news">Newsletter</a><a href="mailto:'+MAIL+'">Contacto</a></div><div><h4>Legal</h4><a href="#/legal/aviso">Aviso legal</a><a href="#/legal/privacidad">Privacidad</a><a href="#/legal/cookies">Cookies</a><a href="#/legal/terminos">Términos</a><a href="#/mapa-del-sitio">Mapa del sitio</a></div><div><h4>Social</h4>'+SOCIAL.map(s=>'<a href="'+s[1]+'" target="_blank" rel="noopener">'+s[0]+'</a>').join('')+'<a href="mailto:'+MAIL+'">'+MAIL+'</a></div></div></div><div class="f-bot"><span class="mono">© 2026 TRAMA — UN ARCHIVO VIVO DE HISTORIAS</span><span class="mono dim">'+PHILO.toUpperCase()+'</span></div></div></footer>');
 if(innerWidth<=900)$('#menuBtn').style.display='inline-flex';
 addEventListener('resize',()=>{$('#menuBtn').style.display=innerWidth<=900?'inline-flex':'none'});
 route();

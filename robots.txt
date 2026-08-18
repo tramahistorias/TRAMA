@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tramahistorias.github.io/TRAMA/sitemap.xml
