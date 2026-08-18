@@ -6,15 +6,17 @@
 <title>TRAMA — Hay una historia detrás de todo</title>
 <meta name="description" content="Descubre las historias que cambiaron empresas, inventaron el futuro y transformaron el mundo. Tecnología, historia, empresas, inventos, personas y misterios.">
 <meta name="theme-color" content="#f3efe6">
-<link rel="canonical" href="./">
+<link rel="canonical" href="https://tramahistorias.github.io/TRAMA/">
 <link rel="icon" type="image/png" href="public/logo.png">
 <link rel="apple-touch-icon" href="public/logo.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="TRAMA">
+<meta property="og:url" content="https://tramahistorias.github.io/TRAMA/">
 <meta property="og:title" content="TRAMA — Hay una historia detrás de todo">
 <meta property="og:description" content="Descubre las historias que cambiaron empresas, inventaron el futuro y transformaron el mundo.">
-<meta property="og:image" content="media/og/trama.jpg">
+<meta property="og:image" content="https://tramahistorias.github.io/TRAMA/media/og/trama.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tramahistorias.github.io/TRAMA/media/og/trama.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -528,7 +530,7 @@ body.route-shorts .footer{display:block}
     <a class="logo" href="#/" aria-label="TRAMA — Inicio"><img src="public/logo.png" width="45" height="52" alt="TRAMA"></a>
     <nav class="nav-links" aria-label="Principal">
       <a href="#/historias" data-nav="historias">Historias</a>
-      <a href="#/shorts" data-nav="shorts">Shorts</a>
+      <a href="#/shorts" data-nav="shorts">Cortos</a>
       <span class="cats-dd" id="catsDD">
         <button class="nlb" data-act="cats-toggle" aria-expanded="false">Categorías</button>
         <div class="cats-panel" id="catsPanel" role="menu"></div>
@@ -568,7 +570,7 @@ body.route-shorts .footer{display:block}
 <nav class="tabbar" aria-label="Navegación móvil">
   <a href="#/" data-tab="/"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 11l8-7 8 7v9h-5.5v-6h-5v6H4z"/></svg></span>Inicio</a>
   <a href="#/historias" data-tab="/historias"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="5" width="17" height="14" rx="1.5"/><path d="M7.5 5v14M16.5 5v14M3.5 9.5h4M3.5 14.5h4M16.5 9.5h4M16.5 14.5h4"/></svg></span>Historias</a>
-  <a href="#/shorts" data-tab="/shorts"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 3L5 13.5h5.5L11 21l8-10.5h-5.5z"/></svg></span>Shorts</a>
+  <a href="#/shorts" data-tab="/shorts"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 3L5 13.5h5.5L11 21l8-10.5h-5.5z"/></svg></span>Cortos</a>
   <button data-act="search-open" aria-label="Buscar"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg></span>Buscar</button>
   <a href="#/mi-lista" data-tab="/mi-lista"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6.5 4h11v16.5L12 16.8l-5.5 3.7z"/></svg></span>Mi lista</a>
 </nav>
@@ -580,8 +582,8 @@ body.route-shorts .footer{display:block}
    ─ Novedades V2: sistema MEDIA (assets reales + pósters de desarrollo),
      hero de marca, ranking editorial, Elección del editor, cronología
      con raíl, ficha agrupada, recomendación ponderada, eventos §38.
-   ⚠ DEMO: views/date/yt son placeholders marcados; los pósters generados
-     son el placeholder de desarrollo hasta cargar assets reales.
+   Las vistas solo se muestran con cifras reales. Sin vídeo de YouTube,
+     la ficha es historia escrita; el montaje se anuncia como en camino.
    ══════════════════════════════════════════════════════════════════ */
 'use strict';
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -665,7 +667,7 @@ const STORIES = [
 {slug:'kodak-y-el-futuro-que-dejo-escapar', cat:'empresas', title:'Kodak — La empresa que inventó el futuro digital',
  tagline:'Si Kodak ayudó a inventar el futuro digital, ¿por qué no consiguió dominarlo?',
  desc:'En 1975, en Rochester, Steve Sasson construyó uno de los primeros prototipos de cámara digital. Kodak no ignoró aquel aparato. El problema fue otro: el futuro que anunciaba no se parecía al negocio que la había hecho indispensable.',
- durMin:24, durSec:1440, date:'2026-06-12', views:0, yt:null,
+ durMin:10, durSec:600, date:'2026-06-12', views:0, yt:null,
  flags:['featured','editors'], tags:['fotografía','innovación','disrupción'], sources:['USPTO · Patente 4.131.919','Kodak · solicitud de Chapter 11, enero de 2012'],
  entities:['kodak','steve-sasson','george-eastman','camara-digital','fotografia'],
  body:[
@@ -691,7 +693,7 @@ const STORIES = [
 {slug:'la-guerra-de-las-corrientes', cat:'historia', title:'La guerra de las corrientes',
  tagline:'Edison tenía la fama. Westinghouse tenía a Tesla. Y el mundo, literalmente, tuvo que elegir cómo iluminarse.',
  desc:'En la década de 1880 dos sistemas eléctricos se disputaron el futuro: la corriente continua de Edison y la corriente alterna de Tesla y Westinghouse.',
- durMin:31, durSec:1860, date:'2026-08-01', views:1800000, yt:null,
+ durMin:8, durSec:480, date:'2026-08-01', views:0, yt:null,
  flags:['featured'], tags:['energía','electricidad','rivalidad'], sources:['Archivos Nikola Tesla, Belgrado','Exposición Universal de Chicago, 1893'],
  entities:['nikola-tesla','thomas-edison','westinghouse','general-electric','corriente-alterna','energia'],
  body:[
@@ -704,8 +706,8 @@ const STORIES = [
 {slug:'el-hombre-que-detuvo-el-mundo', cat:'historia', title:'El hombre que detuvo el mundo',
  tagline:'Veintiséis de septiembre de 1983. Cinco misiles en la pantalla. Y un solo hombre entre la pantalla y el botón.',
  desc:'Stanislav Petrov era el oficial de guardia del sistema de alerta nuclear soviético cuando el ordenador anunció un ataque estadounidense. Decidió no creer a la máquina.',
- durMin:18, durSec:1080, date:'2026-02-26', views:3100000, yt:null,
- flags:['featured','new'], tags:['guerra fría','decisiones','nuclear'], sources:['Entrevistas S. Petrov, 2004–2013','Archivos desclasificados CIA'],
+ durMin:6, durSec:360, date:'2026-02-26', views:0, yt:null,
+ flags:['featured'], tags:['guerra fría','decisiones','nuclear'], sources:['Entrevistas S. Petrov, 2004–2013','Archivos desclasificados CIA'],
  entities:['stanislav-petrov','guerra-fria'],
  body:[
  'El protocolo era inequívoco: si el sistema de satélites detectaba lanzamiento de misiles, el oficial de guardia debía informar al Estado Mayor, y el Estado Mayor, recomendar la respuesta. Aquella noche, el sistema detectó uno. Luego dos. Luego cinco.',
@@ -717,7 +719,7 @@ const STORIES = [
 {slug:'tulipanes-de-oro-la-primera-gran-burbuja', cat:'dinero', title:'Tulipanes de oro: la primera gran burbuja',
  tagline:'En 1637, un bulbo de tulipán llegó a costar lo mismo que una casa en Ámsterdam. Hasta que dejó de costarlo.',
  desc:'Holanda inventó el mercado financiero moderno y, de propina, su primera locura colectiva. La fiebre de los tulipanes sigue siendo el espejo de todas las burbujas posteriores.',
- durMin:21, durSec:1260, date:'2025-11-20', views:1100000, yt:null,
+ durMin:7, durSec:420, date:'2026-08-18', views:0, yt:null,
  flags:['editors'], tags:['burbujas','especulación','Países Bajos'], sources:['Archivos notariales de Haarlem, 1636–1637'],
  entities:['burbujas','comercio-global'],
  body:[
@@ -730,8 +732,8 @@ const STORIES = [
 {slug:'enron-los-arquitectos-del-humo', cat:'dinero', title:'Enron: los arquitectos del humo',
  tagline:'La empresa más admirada de América no vendía energía: vendía contabilidad. Y durante años, nadie quiso mirar dentro.',
  desc:'Enron pasó de compañía de gas a símbolo de la nueva economía… y luego al mayor escándalo financiero de su época. Una autopsia del fraude perfecto.',
- durMin:26, durSec:1560, date:'2026-01-15', views:1600000, yt:null,
- flags:['trending'], tags:['fraude','auditoría','Wall Street'], sources:['SEC · Expediente Enron, 2001'],
+ durMin:7, durSec:420, date:'2026-08-18', views:0, yt:null,
+ flags:[], tags:['fraude','auditoría','Wall Street'], sources:['SEC · Expediente Enron, 2001'],
  entities:['enron','jeff-skilling','fraude'],
  body:[
  'Enron nació como un gasoducto y murió como una idea: la de que los beneficios son una cuestión de imaginación contable. Su dirección construyó cientos de sociedades fantasma cuyo único propósito era esconder deuda y convirtió esa arquitectura en relato.',
@@ -743,7 +745,7 @@ const STORIES = [
 {slug:'la-caja-que-encogio-el-mundo', cat:'inventos', title:'La caja que encogió el mundo',
  tagline:'No tiene chips, ni motor, ni software. Es una caja de acero. Y sin ella no existiría la globalización.',
  desc:'Malcom McLean, un camionero de Carolina del Norte, se hizo una pregunta en un muelle: ¿y si el camión entero sube al barco? El verdadero invento no fue el acero. Fue dejar de mover las cosas dos veces.',
- durMin:19, durSec:1140, date:'2026-07-02', views:0, yt:null,
+ durMin:8, durSec:480, date:'2026-07-02', views:0, yt:null,
  flags:['new','editors'], tags:['logística','globalización','transporte'], sources:['Marc Levinson, «The Box», 2006'],
  entities:['malcom-mclean','contenedor','logistica','comercio-global'],
  body:[
@@ -764,11 +766,11 @@ const STORIES = [
   {src:MEDIA_ROOT+'/stories/caja/5.jpg', alt:'Reconstrucción visual. El buque en mar abierto, con las cajas alineadas sobre cubierta.'}
  ],
  timeline:[['1937','McLean espera en un muelle a que su carga se manipule pieza a pieza. La pregunta queda plantada: ¿por qué dos veces?'],['26 ABR 1956','El Ideal X zarpa de Newark a Houston con 58 contenedores.'],['1966','Primer servicio transatlántico regular en contenedor. El flete cae; el mapa industrial se mueve.'],['1968','ISO 668: las medidas de la caja se estandarizan. El mundo se rediseña alrededor de ella.']]},
-{slug:'las-rayas-que-gobiernan-el-mundo', cat:'inventos', title:'Las rayas que gobiernan el mundo',
+{slug:'las-rayas-que-gobiernan-el-mundo', cat:'personas', title:'Las rayas que gobiernan el mundo',
  tagline:'Nació en la arena, inspirado en código Morse. Hoy se escanea miles de millones de veces al día.',
- desc:'El código de barras parece trivial y es una de las infraestructuras más poderosas del comercio. La historia de las líneas que aprendieron a contar.',
- durMin:16, durSec:960, date:'2025-09-18', views:760000, yt:null,
- flags:['trending'], tags:['retail','datos','automatización'], sources:['USPTO · Patente 2.612.994'],
+ desc:'Norman Joseph Woodland dibujó en una playa de Florida las líneas que hoy leen el comercio entero. El código de barras parece trivial. Es una de las infraestructuras más poderosas del siglo XX.',
+ durMin:6, durSec:360, date:'2026-08-18', views:0, yt:null,
+ flags:['featured','editors'], tags:['retail','datos','automatización'], sources:['USPTO · Patente 2.612.994'],
  entities:['norman-woodland','codigo-de-barras','gran-consumo'],
  body:[
  'La semilla fue un encargo prosaico: un director de supermercado pidió un sistema para leer el producto en caja sin teclear nada. A Norman Joseph Woodland se le ocurrió la respuesta sentado en una playa de Florida: dibujó líneas en la arena, como un código Morse ensanchado.',
@@ -776,11 +778,20 @@ const STORIES = [
  'El código de barras hizo algo más profundo que acelerar colas: convirtió cada objeto en un dato. Inventario en tiempo real, reposición automática, logística global: todo cuelga de esas líneas.',
  'Es la infraestructura perfecta: invisible, universal y tan fiable que nadie la nota. Hasta que un lector falla y el mundo moderno hace cola.'],
  quote:'Woodland dibujó líneas en la arena. Medio siglo después, esas líneas contaban el mundo entero.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son fotografías históricas. Son reconstrucciones visuales de Woodland, la playa y el código. No representan un documento de archivo.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/woodland/1.jpg', alt:'Reconstrucción visual. Líneas del código de barras a gran escala.'},
+  {src:MEDIA_ROOT+'/stories/woodland/2.jpg', alt:'Reconstrucción visual. Norman Joseph Woodland, el hombre que dibujó el código en la arena.'},
+  {src:MEDIA_ROOT+'/stories/woodland/3.jpg', alt:'Reconstrucción visual. Un supermercado y el gesto cotidiano de escanear.'},
+  {src:MEDIA_ROOT+'/stories/woodland/4.jpg', alt:'Reconstrucción visual. Detalle de las rayas que convierten un objeto en un dato.'},
+  {src:MEDIA_ROOT+'/stories/woodland/5.jpg', alt:'Reconstrucción visual. La playa donde Woodland ensanchó el código Morse.'}
+ ],
  timeline:[['1948','Un supermercado pide automatizar la caja. Woodland acepta el reto.'],['1952','Patente del código de barras. La tecnología de lectura aún no existe.'],['JUN 1974','Primer escaneo comercial: chicles Wrigley en Troy, Ohio.']]},
 {slug:'xerox-parc-el-laboratorio-que-regalo-el-manana', cat:'empresas', title:'Xerox PARC: el laboratorio que regaló el mañana',
  tagline:'Inventaron el ratón, la interfaz gráfica, el Ethernet y la impresión láser. Y vieron, desde la ventana, cómo otros construían imperios con sus piezas.',
  desc:'En Palo Alto, un grupo de genios sin fecha de entrega construyó el ordenador personal una década antes de que el mundo supiera que lo quería.',
- durMin:28, durSec:1680, date:'2026-04-03', views:1300000, yt:null,
+ durMin:8, durSec:480, date:'2026-08-18', views:0, yt:null,
  flags:['editors'], tags:['Silicon Valley','informática','innovación'], sources:['Hiltzik, «Dealers of Lightning», 1999'],
  entities:['xerox','alan-kay','interfaz-grafica'],
  body:[
@@ -817,16 +828,18 @@ const STORIES = [
 {slug:'db-cooper-el-hombre-que-se-evaporo', cat:'misterios', title:'El hombre que se evaporó',
  tagline:'Secuestró un avión, pidió 200.000 dólares, saltó de noche sobre un bosque… y jamás volvió a existir.',
  desc:'El 24 de noviembre de 1971, un pasajero educado de traje oscuro hizo el atraco más elegante de la historia y desapareció. El FBI cerró el caso 45 años después sin un sospechoso firme.',
- durMin:22, durSec:1320, date:'2026-05-21', views:2100000, yt:null,
- flags:['featured','trending'], tags:['aviación','casos abiertos','EE. UU.'], sources:['FBI · Expediente NORJAK, cerrado 2016'],
+ durMin:4, durSec:233, date:'2026-08-29', views:0, yt:null,
+ flags:['featured'], tags:['aviación','casos abiertos','EE. UU.'], sources:['FBI · Expediente NORJAK, cerrado 8 de julio de 2016'],
  entities:['d-b-cooper','misterios'],
  body:[
- 'El hombre que compró el billete como «Dan Cooper» pidió un bourbon con soda y entregó una nota a la azafata: llevaba una bomba en el maletín. Lo que pidió después fue casi burocrático: 200.000 dólares en billetes sin marcar y cuatro paracaídas.',
- 'En Seattle intercambió a los rehenes por el dinero, hizo repostar el avión y ordenó volar bajo y lento hacia México. Sobre los bosques de Washington, con tormenta, abrió la escalera trasera del Boeing 727 y saltó al vacío. Nunca más se supo de él.',
- 'El FBI entrevistó a más de mil sospechosos. En 1980 un niño encontró por casualidad cinco mil ochocientos dólares del rescate enterrados junto al río Columbia. Fue casi todo lo que el caso produjo jamás.',
- 'En 2016 el FBI cerró oficialmente el expediente. D. B. Cooper sigue siendo el único secuestro aéreo no resuelto de la historia de Estados Unidos.'],
+ 'El 24 de noviembre de 1971, víspera de Acción de Gracias, un hombre pagó en efectivo un billete de Portland a Seattle. En el talón escribió un nombre corriente: Dan Cooper. Traje oscuro, corbata, maletín. Pidió un bourbon con soda. Nada en aquel gesto anunciaba un secuestro.',
+ 'A poco de despegar el vuelo 305 de Northwest Orient, entregó una nota a una azafata: llevaba una bomba en el maletín. Lo que pidió después no parecía el delirio de un pirata: doscientos mil dólares en billetes de veinte, sin marcar, y cuatro paracaídas. Dos principales. Dos de reserva. Como si hubiera estudiado el procedimiento.',
+ 'En Seattle canjeó a los pasajeros por el dinero y los paracaídas. Dejó a bordo a la tripulación. Hizo repostar. Y dio instrucciones de vuelo tan precisas que aún hoy se leen como un manual: rumbo sur, hacia México; diez mil pies; baja velocidad; flaps extendidos; tren de aterrizaje abajo. Quería un avión lento. Quería una puerta.',
+ 'Esa puerta era la escalera trasera de un Boeing 727. Pocos aviones de línea permitían abrirla en vuelo. Cooper lo sabía. Sobre el suroeste de Washington, de noche, con tormenta, la escalera bajó. Cuando el avión aterrizó en Reno, Cooper ya no estaba. El asiento vacío era todo el escenario.',
+ 'La prensa deformó el nombre. Dan Cooper se convirtió en D. B. Cooper. El FBI abrió el expediente NORJAK, registró los números de serie de cada billete y entrevistó a más de mil sospechosos. En febrero de 1980, un niño encontró en una playa del río Columbia unos cinco mil ochocientos dólares del rescate. Fue casi todo lo que el caso produjo.',
+ 'El 8 de julio de 2016 el FBI cerró el expediente sin un sospechoso firme. Cooper sigue siendo el único secuestro aéreo comercial no resuelto de Estados Unidos. El misterio no es solo dónde cayó. Es cómo alguien puede dejar de existir sin dejar de estar en todas partes.'],
  quote:'El misterio no es dónde cayó. Es cómo alguien puede dejar de existir sin dejar de estar en todas partes.',
- timeline:[['24 NOV 1971','Cooper secuestra el vuelo 305 de Northwest Orient.'],['1971–80','El FBI sigue más de 800 pistas sin detener a nadie.'],['1980','Un niño halla parte del rescate junto al río Columbia.'],['2016','El FBI cierra el caso NORJAK. El misterio sigue abierto.']]}
+ timeline:[['24 NOV 1971','Cooper secuestra el vuelo 305 de Northwest Orient, Portland–Seattle.'],['NOCHE DEL 24','Salto desde la escalera trasera del 727, entre Seattle y Reno.'],['FEB 1980','Brian Ingram halla parte del rescate en el río Columbia.'],['8 JUL 2016','El FBI cierra el caso NORJAK. El misterio sigue abierto.']]}
 ];
 const ENTITIES = [
  {type:'persona', slug:'steve-sasson', name:'Steve Sasson', era:'1950 —', seed:'ent-sasson', blurb:'Ingeniero de Kodak que construyó en 1975 uno de los primeros prototipos de cámara digital.'},
@@ -967,21 +980,31 @@ function scramble(el,txt){if(RM){el.textContent=txt;return}const ch='ABCDEFGHIKL
 function splitWords(el){const t=el.textContent.trim();el.setAttribute('aria-label',t);el.innerHTML=t.split(/\s+/).map((w,i)=>'<span class="w" style="--i:'+i+'" aria-hidden="true"><span>'+w+'</span></span>').join(' ')}
 let rvIO=null;
 function revealInit(){const els=document.querySelectorAll('[data-rv]:not(.rv-done)');if(RM){els.forEach(e=>e.classList.add('in','rv-done'));return}if(!rvIO)rvIO=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in','rv-done');rvIO.unobserve(x.target)}}),{rootMargin:'0px 0px -6% 0px'});els.forEach(e=>rvIO.observe(e))}
+function absUrl(p){
+  if(!p)return SITE;
+  if(/^https?:\/\//i.test(p))return p;
+  return SITE+String(p).replace(/^\.\//,'').replace(/^\//,'');
+}
 function setMeta(title,desc,ld,ogKey){
   document.title=title;
   document.querySelector('meta[name="description"]').setAttribute('content',desc);
   document.querySelector('meta[property="og:title"]').setAttribute('content',title);
   document.querySelector('meta[property="og:description"]').setAttribute('content',desc);
-  if(ogKey)document.querySelector('meta[property="og:image"]').setAttribute('content',ASSET_MAP[ogKey]||MEDIA_ROOT+'/og/'+ogKey+'.jpg');
-  let cl=document.querySelector('link[rel="canonical"]');if(cl)cl.setAttribute('href',location.origin+location.pathname+location.hash);
+  const ou=document.querySelector('meta[property="og:url"]');if(ou)ou.setAttribute('content',SITE.replace(/\/$/,'')+'/'+(location.hash||''));
+  const img=absUrl(ogKey?(ASSET_MAP[ogKey]||MEDIA_ROOT+'/og/'+ogKey+'.jpg'):'media/og/trama.jpg');
+  document.querySelector('meta[property="og:image"]').setAttribute('content',img);
+  const tw=document.querySelector('meta[name="twitter:image"]');if(tw)tw.setAttribute('content',img);
+  let cl=document.querySelector('link[rel="canonical"]');if(cl)cl.setAttribute('href',location.origin+location.pathname+(location.hash||''));
   const old=document.getElementById('ldjson');old&&old.remove();
   if(ld){const s=document.createElement('script');s.type='application/ld+json';s.id='ldjson';s.textContent=JSON.stringify(ld);document.head.appendChild(s)}
 }
 const isoDur=s=>'PT'+Math.floor(s/60)+'M'+(s%60)+'S';
-function ldStory(st){const base=location.origin+location.pathname;return {"@context":"https://schema.org","@graph":[
- {"@type":"VideoObject","name":st.title,"description":st.desc,"duration":isoDur(st.durSec),"thumbnailUrl":ASSET_MAP['story-'+st.slug]||MEDIA_ROOT+'/og/story-'+st.slug+'.jpg',"uploadDate":st.date},
- {"@type":"Article","headline":st.title,"description":st.desc,"datePublished":st.date,"author":{"@type":"Organization","name":"TRAMA"}},
- {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":base+"#/"},{"@type":"ListItem","position":2,"name":CATS[st.cat].name,"item":base+"#/categorias/"+st.cat},{"@type":"ListItem","position":3,"name":st.title}]}]}}
+function ldStory(st){const base=location.origin+location.pathname;const graph=[
+ {"@type":"Article","headline":st.title,"description":st.desc,"datePublished":st.date,"author":{"@type":"Person","name":"Ramón del Pozo"},"publisher":{"@type":"Organization","name":"TRAMA"}},
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":base+"#/"},{"@type":"ListItem","position":2,"name":CATS[st.cat].name,"item":base+"#/categorias/"+st.cat},{"@type":"ListItem","position":3,"name":st.title}]}
+];
+ if(st.yt)graph.unshift({"@type":"VideoObject","name":st.title,"description":st.desc,"duration":isoDur(st.durSec),"thumbnailUrl":absUrl(ASSET_MAP['story-'+st.slug]||MEDIA_ROOT+'/og/story-'+st.slug+'.jpg'),"uploadDate":st.date,"embedUrl":"https://www.youtube.com/embed/"+st.yt});
+ return {"@context":"https://schema.org","@graph":graph}}
 function ldEntity(en){const t=en.type==='persona'?'Person':en.type==='empresa'?'Organization':en.type==='invento'?'CreativeWork':'DefinedTerm';return {"@context":"https://schema.org","@type":t,"name":en.name,"description":en.blurb}}
 const fmtViews=v=>v>=1e6?(v/1e6).toFixed(1).replace('.',',')+' M':Math.round(v/1e3)+' K';
 const fmtT=s=>Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0');
@@ -1005,7 +1028,7 @@ const shortCard=sh=>{const st=S[sh.story];return `
   <div class="shcard-m frame ratio-916">${media('short-'+sh.slug,{w:486,h:864,alt:sh.title})}
     <span class="chip mono">${sh.dur}S</span>
     <div class="shcard-g"></div>
-    <div class="shcard-b"><span class="catlab">SHORT · ${CATS[st.cat].name.toUpperCase()}</span><h3>${sh.title}</h3>${sh.views?'<span class="vm mono dim">'+fmtViews(sh.views)+' VIS.</span>':''}</div>
+    <div class="shcard-b"><span class="catlab">1 MIN · ${CATS[st.cat].name.toUpperCase()}</span><h3>${sh.title}</h3>${sh.views?'<span class="vm mono dim">'+fmtViews(sh.views)+' VIS.</span>':''}</div>
   </div>
 </a>`};
 const trendItem=(s,i)=>`
@@ -1031,7 +1054,7 @@ function viewHome(){
   const cw=contList();cw.forEach(({s})=>used.add(s.slug));
   const primeras=take(['kodak-y-el-futuro-que-dejo-escapar','la-caja-que-encogio-el-mundo','el-rey-del-hielo'].map(sl=>S[sl]).filter(Boolean),3);
   const trend=[];
-  const destacados=take(STORIES.filter(s=>s.durMin>=20).sort((a,b)=>b.date.localeCompare(a.date)),3);
+  const destacados=take(STORIES.slice().sort((a,b)=>b.date.localeCompare(a.date)),3);
   const edBand=take(STORIES.filter(s=>s.flags.includes('editors')),1)[0];
   mount(`
   <section class="hero hero-brand" id="hero">
@@ -1071,10 +1094,10 @@ function viewHome(){
     <div class="sgrid g3">${destacados.map(s=>storyCard(s,{xl:true})).join('')}</div>
   </section>`:''}
 
-  <section class="section wrap">${secHead('','Shorts','#/shorts','Ver todos')}
+  <section class="section wrap">${secHead('','Cortos','#/shorts','Ver todos')}
     <div class="shorts-intro" data-rv>
-      <p class="big">Historias de un minuto.<br><em>Documentales de una vida.</em></p>
-      <p>Los dos primeros Shorts ya están en YouTube y aquí: Kodak y el contenedor. Cada uno abre la historia completa.</p>
+      <p class="big">Historias de un minuto.<br><em>La ficha completa está en el archivo.</em></p>
+      <p>En YouTube se llaman Shorts: vídeos verticales de un minuto. Aquí están Kodak y el contenedor. Cada uno abre la historia escrita.</p>
     </div>
     ${row(SHORTS.map(shortCard).join(''))}
   </section>
@@ -1100,17 +1123,17 @@ function viewHome(){
   <section class="section tight wrap" id="news">
     <div class="news" data-rv>
       <div>
-        <span class="catlab">NEWSLETTER</span>
+        <span class="catlab">CORREO</span>
         <h2 style="margin-top:16px">Una historia que merece la pena conocer</h2>
-        <p class="sub">Una historia extraordinaria directamente en tu correo. Sin ruido: solo el hilo de la próxima gran historia.</p>
+        <p class="sub">Escríbenos a TRAMA. Se abre tu correo: no hay lista automática ni envíos masivos. Cuando haya newsletter de verdad, lo diremos aquí.</p>
         <p class="phil">«${PHILO}»</p>
       </div>
       <div>
         <form id="newsForm" novalidate>
           <input type="email" name="email" placeholder="tu@correo.com" aria-label="Correo electrónico" required>
-          <button class="btn btn-gold" type="submit">QUIERO CONOCERLA</button>
+          <button class="btn btn-gold" type="submit">ESCRIBIR A TRAMA</button>
         </form>
-        <p class="priv mono">NO TE LLENAMOS EL CORREO · PUEDES DEJAR DE RECIBIRLA CUANDO QUIERAS</p>
+        <p class="priv mono">SE ABRE TU CORREO · SIN LISTA AUTOMÁTICA</p>
       </div>
     </div>
   </section>`,
@@ -1124,9 +1147,9 @@ function viewHome(){
 function viewArchive(mode){
   App.archState={cat:'todas',fmt:mode==='doc'?'largo':'todos'};
   mount(`<div class="wrap"><header class="phead" data-rv>
-    <span class="catlab">ARCHIVO${mode==='doc'?' · LARGA DURACIÓN':''}</span>
+    <span class="catlab">ARCHIVO${mode==='doc'?' · INVESTIGACIÓN':''}</span>
     <h1>${mode==='doc'?'Documentales':'Historias'}</h1>
-    <p class="sub">${mode==='doc'?'Piezas de veinte minutos o más: investigaciones largas, montadas como documental clásico.':'Todo el archivo de TRAMA: cada historia, cada categoría, cada hilo del relato.'}</p>
+    <p class="sub">${mode==='doc'?'Investigaciones largas del archivo. El texto está aquí; el vídeo se añade cuando sale en el canal.':'Todo el archivo de TRAMA: cada historia, cada categoría, cada hilo del relato.'}</p>
     <div class="chips" id="archChips" role="tablist" aria-label="Filtrar por categoría"></div>
     <span class="count mono" id="archCount"></span>
   </header>
@@ -1139,7 +1162,7 @@ function renderArchive(){
   $('#archChips').innerHTML=cats.map(c=>'<button data-act="chip" data-cat="'+c+'" class="'+(st.cat===c?'on':'')+'" role="tab" aria-selected="'+(st.cat===c)+'">'+(c==='todas'?'Todas':CATS[c].name)+'</button>').join('');
   let list=[...STORIES].sort((a,b)=>b.date.localeCompare(a.date));
   if(st.cat!=='todas')list=list.filter(s=>s.cat===st.cat);
-  if(st.fmt==='largo')list=list.filter(s=>s.durMin>=20);
+  if(st.fmt==='largo')list=list.filter(s=>(s.body&&s.body.length>=4));
   $('#archCount').textContent=list.length+' PIEZAS EN EL ARCHIVO';
   $('#archGrid').innerHTML=list.length?list.map(s=>storyCard(s)).join(''):'<div class="empty" style="grid-column:1/-1"><span class="serif">Nada por aquí… todavía.</span><p>Prueba con otra categoría.</p></div>';
   revealInit();
@@ -1157,8 +1180,8 @@ function viewCategory(slug){
   const c=CATS[slug];if(!c)return view404();
   const list=STORIES.filter(s=>s.cat===slug).sort((a,b)=>b.date.localeCompare(a.date)),sh=catShorts(slug);
   mount(`<div class="wrap"><header class="phead" data-rv><span class="catlab">CATEGORÍA</span><h1>${c.name}</h1><p class="sub">${c.desc}</p><span class="count mono">${list.length} PIEZAS</span></header>
-  <section class="section tight"><div class="sgrid g3">${list.map(s=>storyCard(s)).join('')}</div></section>
-  ${sh.length?'<section class="section tight">'+secHead('','Shorts de '+c.name,'#/shorts')+row(sh.map(shortCard).join(''))+'</section>':''}</div>`,
+  <section class="section tight"><div class="sgrid g3">${list.length?list.map(s=>storyCard(s)).join(''):'<div class="empty" style="grid-column:1/-1"><span class="serif">Nada por aquí… todavía.</span><p>Esta categoría se irá llenando con las piezas del canal.</p></div>'}</div></section>
+  ${sh.length?'<section class="section tight">'+secHead('','Cortos de '+c.name,'#/shorts')+row(sh.map(shortCard).join(''))+'</section>':''}</div>`,
   {t:c.name+' — TRAMA',d:c.desc,og:'cat-'+slug});
 }
 
@@ -1174,12 +1197,12 @@ function viewStory(slug){
     <div class="hero-shade"></div>
     <div class="hero-in">
       <nav class="crumbs mono" aria-label="Migas de pan"><a href="#/">INICIO</a><span>/</span><a href="#/categorias/${st.cat}">${CATS[st.cat].name.toUpperCase()}</a><span>/</span><span style="color:var(--silver)">${st.title.toUpperCase()}</span></nav>
-      <div class="hero-kick"><span class="dot"></span><span class="mono">${st.video||st.yt?'VÍDEO':'HISTORIA'} · ${CATS[st.cat].name.toUpperCase()} · ${year(st.date)}</span></div>
+      <div class="hero-kick"><span class="dot"></span><span class="mono">${st.yt||st.video?'VÍDEO':'HISTORIA'} · ${CATS[st.cat].name.toUpperCase()} · ${year(st.date)}</span></div>
       <h1 class="hero-title" id="storyTitle">${st.title}</h1>
       <p class="hero-tag">${st.tagline}</p>
       <div class="hero-meta mono"><span>${fmtDate(st.date)}</span>${st.views?'<span>'+fmtViews(st.views)+' REPRODUCCIONES</span>':''}</div>
       <div class="hero-cta">
-        <button class="btn btn-solid" data-act="goto-player">${ic('play')} ${st.video||st.yt?'VER VÍDEO':'VER DOCUMENTAL'}</button>
+        ${st.yt||st.video?'<button class="btn btn-solid" data-act="goto-player">'+ic('play')+' VER VÍDEO</button>':'<button class="btn btn-solid" data-act="goto-story">LEER HISTORIA</button>'}
         <a class="btn btn-ghost" href="${YT_CHANNEL}" target="_blank" rel="noopener">YOUTUBE</a>
         <button class="btn btn-ghost" data-list="${st.slug}" aria-pressed="${myList.has(st.slug)}"><span class="ic i-plus" aria-hidden="true">${IC.plus}</span><span class="ic i-check" aria-hidden="true">${IC.check}</span> MI LISTA</button>
         <button class="btn btn-ghost" data-act="share">${ic('share')} COMPARTIR</button>
@@ -1205,7 +1228,7 @@ function viewStory(slug){
   <section class="section tight wrap rel-next">${secHead('','También te puede interesar')}
     <div class="sgrid g4">${rel.map(s=>storyCard(s,{related:true})).join('')}</div>
   </section>
-  ${shs.length?'<section class="section tight wrap">'+secHead('','El Short','#/shorts/'+(shs[0]?shs[0].slug:''))+row(shs.map(shortCard).join(''))+'</section>':''}
+  ${shs.length?'<section class="section tight wrap">'+secHead('','El corto de un minuto','#/shorts/'+(shs[0]?shs[0].slug:''))+row(shs.map(shortCard).join(''))+'</section>':''}
   <nav class="pn" aria-label="Más historias">
     <a href="#/historias/${prev.slug}"><span class="mono">← ANTERIOR</span><h3>${prev.title}</h3></a>
     <a href="#/historias/${next.slug}"><span class="mono">SIGUIENTE →</span><h3>${next.title}</h3></a>
@@ -1228,8 +1251,8 @@ function buildPlayer(st){
   <div class="ply-soon">
     ${media('story-'+st.slug,{w:1600,h:900,alt:'',eager:true})}
     <div class="ply-soon-in">
-      <span class="catlab">DOCUMENTAL</span>
-      <p>Esta historia se publicará en el canal de YouTube de TRAMA. La investigación ya está en la web; el montaje, en camino.</p>
+      <span class="catlab">EN EL CANAL</span>
+      <p>Esta historia se publicará en YouTube. La investigación ya está en la web; el montaje, en camino.</p>
       <a class="btn btn-solid" href="${YT_CHANNEL}" target="_blank" rel="noopener">IR AL CANAL TRAMA</a>
     </div>
   </div>`;
@@ -1239,15 +1262,15 @@ function buildPlayer(st){
 function viewShorts(param){
   const start=Math.max(0,SHORTS.findIndex(s=>s.slug===param));
   mount(`
-  <div class="feed-top"><a class="fback" href="#/">${ic('left')} SALIR DE SHORTS</a><span class="fcount mono" id="fcount">01 / ${String(SHORTS.length).padStart(2,'0')}</span></div>
-  <div class="feed" id="feed" tabindex="0" aria-label="Feed de Shorts">
+  <div class="feed-top"><a class="fback" href="#/">${ic('left')} SALIR DE CORTOS</a><span class="fcount mono" id="fcount">01 / ${String(SHORTS.length).padStart(2,'0')}</span></div>
+  <div class="feed" id="feed" tabindex="0" aria-label="Cortos: vídeos de un minuto">
     ${SHORTS.map((sh,i)=>{const st=S[sh.story];const frame=sh.yt?`<iframe src="https://www.youtube-nocookie.com/embed/${sh.yt}?rel=0&modestbranding=1" title="${esc(sh.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`:sh.src?`<video src="${sh.src}" poster="${assetUrl('short-'+sh.slug,720,1280)}" playsinline loop preload="${i===start?'auto':'metadata'}" disablepictureinpicture></video>`:media('short-'+sh.slug,{w:720,h:1280,alt:sh.title,eager:i===start});return `
     <article class="short${sh.yt?' s-yt':''}" data-si="${i}" style="--sdur:${sh.dur}s">
       ${media('short-'+sh.slug,{w:360,h:640,alt:'',cls:'bg',eager:i===start})}
       <div class="s-frame">${frame}<div class="s-shade"></div>
-        <button class="s-big" data-act="short-play" aria-label="Reproducir short">${ic('play')}</button>
+        <button class="s-big" data-act="short-play" aria-label="Reproducir corto">${ic('play')}</button>
         <div class="s-info">
-          <span class="catlab">SHORT · ${CATS[st.cat].name.toUpperCase()} · ${sh.dur}S</span>
+          <span class="catlab">1 MINUTO · ${CATS[st.cat].name.toUpperCase()} · ${sh.dur}S</span>
           <h2 class="s-title">${sh.title}</h2>
           <p class="s-sub">${sh.desc}</p>
           <div class="s-ctas">
@@ -1266,11 +1289,11 @@ function viewShorts(param){
     </article>`}).join('')}
   </div>
   <div class="feed-side">
-    <button class="hbtn" data-act="feed-nav" data-dir="-1" aria-label="Short anterior">${ic('up')}</button>
-    <div class="fdots">${SHORTS.map((_,i)=>'<i data-dot="'+i+'" class="'+(i===start?'on':'')+'" tabindex="0" role="button" aria-label="Ir al short '+(i+1)+'"></i>').join('')}</div>
-    <button class="hbtn" data-act="feed-nav" data-dir="1" aria-label="Short siguiente">${ic('down')}</button>
+    <button class="hbtn" data-act="feed-nav" data-dir="-1" aria-label="Corto anterior">${ic('up')}</button>
+    <div class="fdots">${SHORTS.map((_,i)=>'<i data-dot="'+i+'" class="'+(i===start?'on':'')+'" tabindex="0" role="button" aria-label="Ir al corto '+(i+1)+'"></i>').join('')}</div>
+    <button class="hbtn" data-act="feed-nav" data-dir="1" aria-label="Corto siguiente">${ic('down')}</button>
   </div>`,
-  {t:'Shorts — TRAMA',d:'Shorts verticales de TRAMA: un minuto por historia, cada uno con su documental completo detrás.',og:'trama'});
+  {t:'Cortos — TRAMA',d:'Vídeos de un minuto de TRAMA. En YouTube se llaman Shorts. Cada uno abre la historia completa.',og:'trama'});
   const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){const i=+x.target.dataset.si;
     const fc=$('#fcount');if(fc)fc.textContent=String(i+1).padStart(2,'0')+' / '+String(SHORTS.length).padStart(2,'0');
     document.querySelectorAll('.fdots i').forEach((d,di)=>d.classList.toggle('on',di===i));
@@ -1314,12 +1337,12 @@ function viewEntity(type,slug){
         <h1>${en.name}</h1>
         <span class="era mono">${en.era}</span>
         <p class="sub">${en.blurb}</p>
-        <span class="count mono" style="display:block;margin-top:1.8rem">${sts.length} HISTORIAS · ${shs.length} SHORTS</span>
+        <span class="count mono" style="display:block;margin-top:1.8rem">${sts.length} HISTORIAS · ${shs.length} CORTOS</span>
       </div>
     </div>
   </header>
   ${sts.length?'<section class="section tight">'+secHead('','Aparece en')+('<div class="sgrid g3">'+sts.map(s=>storyCard(s)).join('')+'</div>')+'</section>':''}
-  ${shs.length?'<section class="section tight">'+secHead('','Shorts relacionados')+row(shs.map(shortCard).join(''))+'</section>':''}
+  ${shs.length?'<section class="section tight">'+secHead('','Cortos relacionados')+row(shs.map(shortCard).join(''))+'</section>':''}
   ${relE.length?'<section class="section tight" data-rv>'+secHead('','Conectado con')+'<div class="ficha">'+relE.map(entityChip).join('')+'</div></section>':''}
   </div>`,
   {t:en.name+' — TRAMA',d:en.blurb,ld:ldEntity(en),og:'ent-'+slug});
@@ -1340,7 +1363,7 @@ function viewAbout(){
   </header>
   <section class="story-body" data-rv>
     <p>TRAMA es una marca editorial audiovisual. Contamos historias reales, fascinantes y poco conocidas: empresas, inventos, personas, decisiones, éxitos, fracasos y misterios. No hacemos resúmenes. Investigamos, escribimos y montamos cada pieza como un documental.</p>
-    <p>La web es el archivo. YouTube, Instagram y TikTok son motores de audiencia. Una sola investigación debe poder convertirse en historia escrita, documental, Shorts e imágenes, y conectar con otras historias. Tira de cualquier hilo y el archivo responde.</p>
+    <p>La web es el archivo. YouTube, Instagram y TikTok son motores de audiencia. Una investigación se convierte en historia escrita, en un vídeo y en un corto de un minuto (en YouTube se llama Short). Tira de cualquier hilo y el archivo responde.</p>
     <blockquote class="pull">«${PHILO}»</blockquote>
     <p class="contact-row mono dim">YOUTUBE · <a href="${YT_CHANNEL}" target="_blank" rel="noopener">YOUTUBE.COM/@TRAMAHISTORIAS</a></p>
     <p class="contact-row mono dim" style="margin-top:.8rem">INSTAGRAM · <a href="${IG}" target="_blank" rel="noopener">INSTAGRAM.COM/TRAMAHISTORIAS</a></p>
@@ -1354,15 +1377,16 @@ function viewLegal(page){
       <h2>1. Datos identificativos</h2>
       <p>En cumplimiento de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico (LSSI-CE), se informa de los siguientes datos:</p>
       <ul>
-        <li>Denominación: TRAMA (marca editorial audiovisual).</li>
+        <li>Titular: Ramón del Pozo (persona física).</li>
+        <li>Marca: TRAMA (archivo editorial audiovisual).</li>
         <li>Actividad: archivo web de investigaciones y enlace a piezas audiovisuales publicadas en YouTube, Instagram y TikTok.</li>
         <li>Sitio web: <a href="${SITE}">tramahistorias.github.io/TRAMA/</a></li>
         <li>Correo de contacto: <a href="mailto:${MAIL}">${MAIL}</a></li>
-        <li>Alojamiento: GitHub Pages (GitHub, Inc.). El dominio de publicación es el que facilita GitHub para este repositorio.</li>
+        <li>Alojamiento: GitHub Pages (GitHub, Inc.).</li>
       </ul>
-      <p>El titular es una persona física que explota la marca TRAMA. Los datos identificativos completos se facilitarán a las autoridades competentes que los requieran. El canal preferente de contacto es el correo anterior.</p>
+      <p>El NIF y el domicilio se facilitarán a las autoridades competentes que los requieran. No se publican aquí. El canal preferente de contacto es el correo anterior.</p>
       <h2>2. Objeto</h2>
-      <p>Este sitio es un archivo editorial: historias escritas, imágenes de apoyo y enlaces a documentales y Shorts. No es una tienda. No se venden productos ni se recogen pagos a través de estas páginas.</p>
+      <p>Este sitio es un archivo editorial: historias escritas, imágenes de apoyo y enlaces a vídeos y cortos de un minuto. No es una tienda. No se venden productos ni se recogen pagos a través de estas páginas.</p>
       <h2>3. Condiciones de uso</h2>
       <p>El acceso es libre y gratuito. El usuario se compromete a no usar el sitio de forma ilícita, a no alterar su funcionamiento y a no extraer contenidos de forma masiva o automatizada que perjudique el archivo.</p>
       <h2>4. Propiedad intelectual</h2>
@@ -1382,7 +1406,7 @@ function viewLegal(page){
       <h2>Qué se guarda en tu dispositivo</h2>
       <p>La lista («Mi lista») y el progreso de reproducción se guardan solo en tu navegador (localStorage). No se envían a TRAMA. Si boras los datos del sitio, esa información desaparece.</p>
       <h2>Correo</h2>
-      <p>Si escribes a <a href="mailto:${MAIL}">${MAIL}</a> o te suscribes al aviso de newsletter del pie, trataremos la dirección solo para responderte o, si lo has pedido, avisarte de nuevas piezas. No se cede a terceros con fines comerciales.</p>
+      <p>Si escribes a <a href="mailto:${MAIL}">${MAIL}</a>, trataremos la dirección solo para responderte. No hay lista de correo automática ni cesión a terceros con fines comerciales.</p>
       <h2>Terceros</h2>
       <p>Al pulsar «Ver en YouTube» o cargar un reproductor embebido, YouTube (Google) puede tratar datos según su política. Lo mismo ocurre si sales a Instagram o TikTok. Esos tratamientos no los controla TRAMA.</p>
       <h2>Derechos</h2>
@@ -1412,16 +1436,16 @@ function viewLegal(page){
 function viewSitemap(){
   const sm=(title,items)=>'<div><h2>'+title+'</h2>'+items.map(([h,l])=>'<a href="'+h+'"'+(String(h).indexOf('http')===0?' target="_blank" rel="noopener"':'')+'>'+l+'</a>').join('')+'</div>';
   const html='<div class="sitemap">'+[
-    sm('Sitio',[['#/','Inicio'],['#/historias','Historias'],['#/documentales','Documentales'],['#/shorts','Shorts'],['#/categorias','Categorías'],['#/mi-lista','Mi lista'],['#/sobre','Sobre nosotros']]),
+    sm('Sitio',[['#/','Inicio'],['#/historias','Historias'],['#/documentales','Documentales'],['#/shorts','Cortos (un minuto)'],['#/categorias','Categorías'],['#/mi-lista','Mi lista'],['#/sobre','Sobre nosotros']]),
     sm('Categorías',Object.entries(CATS).map(([k,c])=>['#/categorias/'+k,c.name])),
     sm('Historias',STORIES.map(s=>['#/historias/'+s.slug,s.title])),
-    sm('Shorts',SHORTS.map(s=>['#/shorts/'+s.slug,s.title])),
+    sm('Cortos',SHORTS.map(s=>['#/shorts/'+s.slug,s.title])),
     sm('Personas, empresas, inventos y temas',ENTITIES.map(e=>['#/'+ENT_PATH[e.type]+'/'+e.slug,e.name+' · '+ENT_LBL[e.type]])),
     sm('Legal',[['#/legal/aviso','Aviso legal'],['#/legal/privacidad','Privacidad'],['#/legal/cookies','Cookies'],['#/legal/terminos','Términos'],['#/mapa-del-sitio','Mapa del sitio']]),
     sm('Redes',SOCIAL.map(([n,u])=>[u,n]))
   ].join('')+'</div>';
   mount(`<div class="wrap"><header class="phead" data-rv><span class="catlab">ARCHIVO</span><h1>Mapa del sitio</h1><p class="sub">Todas las rutas públicas de TRAMA. El archivo crece; este mapa también.</p></header>${html}</div>`,
-  {t:'Mapa del sitio — TRAMA',d:'Índice de páginas, historias, Shorts y documentos legales de TRAMA.'});
+  {t:'Mapa del sitio — TRAMA',d:'Índice de páginas, historias, cortos y documentos legales de TRAMA.'});
 }
 function view404(){
   mount(`<div class="empty" style="padding-top:calc(var(--nav-h) + 12vh)"><span class="serif">Esta historia aún no existe en el archivo.</span><p>Puede que el enlace haya cambiado de sitio. El archivo, no.</p><a class="btn btn-gold" href="#/">VOLVER AL INICIO</a></div>`,
@@ -1432,7 +1456,7 @@ function view404(){
 const SEARCH_IDX=[
  ...STORIES.map(s=>({kind:'historia',label:'HISTORIA · '+CATS[s.cat].name.toUpperCase(),title:s.title,sub:s.desc,href:'#/historias/'+s.slug,seed:'story-'+s.slug,hay:(s.title+' '+s.desc+' '+CATS[s.cat].name+' '+s.tags.join(' ')+' '+s.entities.map(e=>E[e]?E[e].name:'').join(' ')).toLowerCase()})),
  ...ENTITIES.map(e=>({kind:'entidad',label:ENT_LBL[e.type].toUpperCase(),title:e.name,sub:e.blurb,href:'#/'+ENT_PATH[e.type]+'/'+e.slug,seed:'ent-'+e.slug,hay:(e.name+' '+e.blurb).toLowerCase()})),
- ...SHORTS.map(s=>({kind:'short',label:'SHORT · '+s.dur+'S',title:s.title,sub:s.desc,href:'#/shorts/'+s.slug,seed:'short-'+s.slug,hay:(s.title+' '+s.desc).toLowerCase()}))
+ ...SHORTS.map(s=>({kind:'short',label:'1 MIN · '+s.dur+'S',title:s.title,sub:s.desc,href:'#/shorts/'+s.slug,seed:'short-'+s.slug,hay:(s.title+' '+s.desc+' corto short minuto').toLowerCase()}))
 ];
 function openSearch(){$('#searchOv').classList.add('open');document.body.classList.add('locked');setTimeout(()=>$('#searchInput').focus(),80);renderSearch('')}
 function closeSearch(){$('#searchOv').classList.remove('open');document.body.classList.remove('locked')}
@@ -1441,7 +1465,7 @@ function renderSearch(q){
   if(!q){box.innerHTML='<span class="sg-h mono">EXPLORA EL ARCHIVO</span><div class="s-chips">'+['Kodak','Tesla','Burbujas','Contenedor','Petrov','Fraude','Misterios'].map(c=>'<button data-q="'+c+'">'+c+'</button>').join('')+'</div>';return}
   const hits=SEARCH_IDX.map(it=>{const i=it.hay.indexOf(q);return i<0?null:{it,score:it.title.toLowerCase().startsWith(q)?3:i===0?2:1}}).filter(Boolean).sort((a,b)=>b.score-a.score);
   if(!hits.length){box.innerHTML='<div class="s-empty"><span class="serif">Nada con «'+q+'»… todavía.</span>Prueba con una persona, una empresa o un tema: el archivo es más profundo de lo que parece.</div>';return}
-  const groups=[['historia','01 · HISTORIAS'],['entidad','02 · PERSONAS · EMPRESAS · INVENTOS · TEMAS'],['short','03 · SHORTS']];
+  const groups=[['historia','01 · HISTORIAS'],['entidad','02 · PERSONAS · EMPRESAS · INVENTOS · TEMAS'],['short','03 · CORTOS']];
   box.innerHTML=groups.map(([k,label])=>{const g=hits.filter(h=>h.it.kind===k).slice(0,6);if(!g.length)return'';
     return '<span class="sg-h mono">'+label+'</span><div class="sg-list">'+g.map(h=>'<a class="sr" href="'+h.it.href+'" data-act="search-go"><span class="thumb'+(h.it.kind==='short'?' v':'')+'">'+media(h.it.seed,{w:h.it.kind==='short'?168:264,h:h.it.kind==='short'?252:165,alt:''})+'</span><span><h4>'+h.it.title+'</h4><span class="mono">'+h.it.label+'</span></span></a>').join('')+'</div>'}).join('');
   if(q.length>=3)Analytics.track('search',{q,n:hits.length});
@@ -1494,6 +1518,7 @@ document.addEventListener('click',e=>{
     if(act==='cats-toggle'){const on=dd.classList.toggle('open');b.setAttribute('aria-expanded',on)}
     if(act==='chip'){App.archState.cat=b.dataset.cat;renderArchive()}
     if(act==='goto-player'){$('#player').scrollIntoView({behavior:RM?'auto':'smooth'});setTimeout(()=>App.player&&App.player.toggle(),RM?0:600)}
+    if(act==='goto-story'){const el=document.querySelector('.story-body');el&&el.scrollIntoView({behavior:RM?'auto':'smooth'})}
     if(act==='ply-toggle')App.player&&App.player.toggle();
     if(act==='ply-resume'){$('#player').scrollIntoView({behavior:RM?'auto':'smooth'});App.player&&App.player.resume()}
     if(act==='ply-seek'){const r=b.getBoundingClientRect();App.player&&App.player.seek((e.clientX-r.left)/r.width)}
@@ -1512,7 +1537,7 @@ document.addEventListener('submit',e=>{
     const em=e.target.email.value.trim();
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){toast('Revisa el correo electrónico');return}
     store.set('newsletter',{email:em,at:Date.now()});
-    e.target.outerHTML='<p class="news-ok">Bienvenido al archivo. La primera historia está en camino.</p>';
+    e.target.outerHTML='<p class="news-ok">Se ha abierto tu correo. Si no, escribe a '+MAIL+'.</p>';
     location.href='mailto:'+MAIL+'?subject='+encodeURIComponent('Newsletter TRAMA')+'&body='+encodeURIComponent('Quiero recibir las historias de TRAMA.\n\nCorreo: '+em);
     Analytics.track('newsletter_submit')}
 });
@@ -1538,9 +1563,9 @@ addEventListener('beforeunload',()=>{App.player&&App.player.save&&App.player.sav
 
 /* ── INIT ── */
 $('#catsPanel').innerHTML=Object.entries(CATS).map(([k,c])=>'<a role="menuitem" href="#/categorias/'+k+'"><span class="cn">'+c.name+'</span><span class="cd">'+c.desc+'</span></a>').join('');
-$('#menuLinks').innerHTML=[['#/','Inicio','01'],['#/historias','Historias','02'],['#/documentales','Documentales','03'],['#/shorts','Shorts','04'],['#/categorias','Categorías','05'],['#/mi-lista','Mi lista','06'],['#/sobre','Sobre','07']].map(l=>'<a class="ml" href="'+l[0]+'">'+l[1]+'<span class="mono">'+l[2]+'</span></a>').join('')+SOCIAL.map(s=>'<a class="ml" href="'+s[1]+'" target="_blank" rel="noopener">'+s[0]+'<span class="mono">↗</span></a>').join('');
+$('#menuLinks').innerHTML=[['#/','Inicio','01'],['#/historias','Historias','02'],['#/documentales','Documentales','03'],['#/shorts','Cortos','04'],['#/categorias','Categorías','05'],['#/mi-lista','Mi lista','06'],['#/sobre','Sobre','07']].map(l=>'<a class="ml" href="'+l[0]+'">'+l[1]+'<span class="mono">'+l[2]+'</span></a>').join('')+SOCIAL.map(s=>'<a class="ml" href="'+s[1]+'" target="_blank" rel="noopener">'+s[0]+'<span class="mono">↗</span></a>').join('');
 (function(){const f=document.querySelector('.footer-html');if(!f)return})();
-document.body.insertAdjacentHTML('beforeend','<footer class="footer"><div class="wrap"><div class="f-top"><div><div class="f-mark"><img src="'+LOGO+'" width="120" height="140" alt="TRAMA"></div><p class="f-claim">«'+CLAIM+'»</p></div><div class="f-cols"><div><h4>Explora</h4><a href="#/historias">Historias</a><a href="#/documentales">Documentales</a><a href="#/shorts">Shorts</a><a href="#/categorias">Categorías</a><a href="#/mi-lista">Mi lista</a></div><div><h4>Sobre</h4><a href="#/sobre">Sobre nosotros</a><a href="#/" data-act="goto-news">Newsletter</a><a href="mailto:'+MAIL+'">Contacto</a></div><div><h4>Legal</h4><a href="#/legal/aviso">Aviso legal</a><a href="#/legal/privacidad">Privacidad</a><a href="#/legal/cookies">Cookies</a><a href="#/legal/terminos">Términos</a><a href="#/mapa-del-sitio">Mapa del sitio</a></div><div><h4>Social</h4>'+SOCIAL.map(s=>'<a href="'+s[1]+'" target="_blank" rel="noopener">'+s[0]+'</a>').join('')+'<a href="mailto:'+MAIL+'">'+MAIL+'</a></div></div></div><div class="f-bot"><span class="mono">© 2026 TRAMA — UN ARCHIVO VIVO DE HISTORIAS</span><span class="mono dim">'+PHILO.toUpperCase()+'</span></div></div></footer>');
+document.body.insertAdjacentHTML('beforeend','<footer class="footer"><div class="wrap"><div class="f-top"><div><div class="f-mark"><img src="'+LOGO+'" width="120" height="140" alt="TRAMA"></div><p class="f-claim">«'+CLAIM+'»</p></div><div class="f-cols"><div><h4>Explora</h4><a href="#/historias">Historias</a><a href="#/documentales">Documentales</a><a href="#/shorts">Cortos</a><a href="#/categorias">Categorías</a><a href="#/mi-lista">Mi lista</a></div><div><h4>Sobre</h4><a href="#/sobre">Sobre nosotros</a><a href="#/" data-act="goto-news">Escribir</a><a href="mailto:'+MAIL+'">Contacto</a></div><div><h4>Legal</h4><a href="#/legal/aviso">Aviso legal</a><a href="#/legal/privacidad">Privacidad</a><a href="#/legal/cookies">Cookies</a><a href="#/legal/terminos">Términos</a><a href="#/mapa-del-sitio">Mapa del sitio</a></div><div><h4>Social</h4>'+SOCIAL.map(s=>'<a href="'+s[1]+'" target="_blank" rel="noopener">'+s[0]+'</a>').join('')+'<a href="mailto:'+MAIL+'">'+MAIL+'</a></div></div></div><div class="f-bot"><span class="mono">© 2026 TRAMA — UN ARCHIVO VIVO DE HISTORIAS</span><span class="mono dim">'+PHILO.toUpperCase()+'</span></div></div></footer>');
 if(innerWidth<=900)$('#menuBtn').style.display='inline-flex';
 addEventListener('resize',()=>{$('#menuBtn').style.display=innerWidth<=900?'inline-flex':'none'});
 route();
