@@ -1,14 +1,16 @@
 ---
-description: Voz de narración de TRAMA (Elvira). No usar Álvaro ni clonar otras voces.
+description: Una sola voz por etapa. Ahora Álvaro; Elvira guardada para un cambio de golpe.
 alwaysApply: true
 ---
 
 # TRAMA — voz de los vídeos
 
-Narración: **Microsoft Edge neural `es-ES-ElviraNeural`** (español de España). Misma familia que la guía LSE de BOOKIA (`es.mp3`).
+**Ahora (canal en marcha):** `es-ES-AlvaroNeural`, `rate="-8%"`. Es la de Kodak, el contenedor y el hielo.
 
-Referencia local (no va a GitHub): `subidas/_voz/referencia-lse-es.mp3`  
-Muestra TRAMA: `subidas/_voz/muestra-elvira.mp3`  
-Helper: `subidas/_tts.py` · ritmo `rate="-8%"`.
+**Guardada para cambiar de golpe (no a mitad de calendario):** `es-ES-ElviraNeural`, misma familia que la guía LSE de BOOKIA.
 
-No usar `es-ES-AlvaroNeural` ni otras voces. No clonar la voz de una persona. Kodak, el contenedor y el hielo ya están publicados con la voz anterior: no se re-suben. Petrov, Woodland y Cooper (aún no en YouTube) se narran con Elvira.
+- Referencia: `subidas/_voz/referencia-lse-es.mp3`
+- Muestra Elvira: `subidas/_voz/muestra-elvira.mp3`
+- Helper: `subidas/_tts.py` (hoy apunta a Álvaro)
+
+No mezclar voces en la misma semana ni una semana Álvaro y la siguiente Elvira. El cambio a Elvira solo cuando Ramón lo diga para **todas** las piezas nuevas a partir de esa fecha. No clonar otras voces. No re-subir lo ya publicado.
