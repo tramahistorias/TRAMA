@@ -361,9 +361,9 @@ body.route-shorts .nav{background:rgba(243,239,230,.96)}
 body.route-shorts .footer{display:block}
 .feed{padding:calc(var(--nav-h) + 20px) var(--gut) 48px;background:var(--bg);color:var(--ink)}
 .short{position:relative;min-height:0;display:flex;align-items:center;justify-content:center;padding:28px 0 40px;background:var(--bg)}
-.short>img{display:none}
-.s-stage{width:min(1080px,100%);display:grid;grid-template-columns:auto minmax(260px,1fr);gap:clamp(28px,4.5vw,64px);align-items:center}
-.s-frame{position:relative;z-index:2;height:min(54dvh,480px);aspect-ratio:9/16;width:auto;max-width:100%;border:1px solid var(--hair-2);border-radius:6px;overflow:hidden;background:var(--bg-3);justify-self:end}
+.short>.bg,.short>picture.bg,.short>img.bg{display:none!important}
+.s-stage{width:min(1120px,100%);display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,.9fr);gap:clamp(24px,4vw,56px);align-items:center}
+.s-frame{position:relative;z-index:2;width:100%;height:auto;aspect-ratio:16/9;max-height:none;border:1px solid var(--hair-2);border-radius:6px;overflow:hidden;background:#111;justify-self:stretch}
 .s-frame img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s}
 .s-frame img.ld{opacity:1}
 .s-frame video,.s-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:var(--bg-3)}
@@ -495,9 +495,9 @@ body.route-shorts .footer{display:block}
   .shorts-intro{grid-template-columns:1fr}
   .hero-side{display:none}
   .feed-side{display:none}
-  .s-stage{grid-template-columns:1fr;justify-items:center;gap:22px}
-  .s-frame{height:min(48dvh,420px);justify-self:center}
-  .s-copy{width:min(420px,100%);padding:0 2px}
+  .s-stage{grid-template-columns:1fr;justify-items:stretch;gap:22px}
+  .s-frame{height:auto;justify-self:stretch}
+  .s-copy{width:100%;max-width:42rem;padding:0 2px}
   .rowbtns{display:none}
   .hero-copy{max-width:34rem}
 }
@@ -1393,7 +1393,6 @@ function viewShorts(param){
   <div class="feed" id="feed" tabindex="0" aria-label="Cortos: vídeos de un minuto">
     ${SHORTS.map((sh,i)=>{const st=S[sh.story];const frame=sh.yt?`<iframe src="https://www.youtube-nocookie.com/embed/${sh.yt}?rel=0&modestbranding=1" title="${esc(sh.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`:sh.src?`<video src="${sh.src}" poster="${assetUrl('short-'+sh.slug,720,1280)}" playsinline loop preload="${i===start?'auto':'metadata'}" disablepictureinpicture></video>`:media('short-'+sh.slug,{w:720,h:1280,alt:sh.title,eager:i===start});return `
     <article class="short${sh.yt?' s-yt':''}" data-si="${i}" style="--sdur:${sh.dur}s">
-      ${media('short-'+sh.slug,{w:360,h:640,alt:'',cls:'bg',eager:i===start})}
       <div class="s-stage">
         <div class="s-frame">${frame}
           <button class="s-big" data-act="short-play" aria-label="Reproducir corto">${ic('play')}</button>
