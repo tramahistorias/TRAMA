@@ -240,7 +240,7 @@ body.route-home .nav.scrolled .logo img{filter:drop-shadow(0 1px 2px rgba(0,0,0,
 .tcard-b .tm{margin-top:8px;color:var(--silver)}
 
 /* ── Shorts cards ── */
-.shcard{width:min(224px,52vw)}
+.shcard{width:min(248px,58vw)}
 .shcard-m{position:relative}
 .shcard-m .frame{border:1px solid var(--hair)}
 .shcard-g{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,10,.9),transparent 54%)}
@@ -359,26 +359,23 @@ body.route-home .nav.scrolled .logo img{filter:drop-shadow(0 1px 2px rgba(0,0,0,
 body.route-shorts{background:var(--bg);color:var(--ink);padding-bottom:0}
 body.route-shorts .nav{background:rgba(243,239,230,.96)}
 body.route-shorts .footer{display:block}
-.feed{padding:calc(var(--nav-h) + 12px) 0 28px;background:var(--bg);color:var(--ink)}
-.short{position:relative;min-height:0;display:flex;align-items:center;justify-content:center;padding:12px 0 36px;background:var(--bg)}
+.feed{padding:calc(var(--nav-h) + 20px) var(--gut) 48px;background:var(--bg);color:var(--ink)}
+.short{position:relative;min-height:0;display:flex;align-items:center;justify-content:center;padding:28px 0 40px;background:var(--bg)}
 .short>img{display:none}
-.s-frame{position:relative;z-index:2;height:min(72dvh,760px);aspect-ratio:9/16;max-width:88vw;border:1px solid var(--hair-2);border-radius:8px;overflow:hidden;background:var(--bg-3)}
+.s-stage{width:min(1080px,100%);display:grid;grid-template-columns:auto minmax(260px,1fr);gap:clamp(28px,4.5vw,64px);align-items:center}
+.s-frame{position:relative;z-index:2;height:min(54dvh,480px);aspect-ratio:9/16;width:auto;max-width:100%;border:1px solid var(--hair-2);border-radius:6px;overflow:hidden;background:var(--bg-3);justify-self:end}
 .s-frame img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s}
 .s-frame img.ld{opacity:1}
 .s-frame video,.s-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:var(--bg-3)}
 .s-frame video{object-fit:cover}
 .short.s-yt .s-big,.short.s-yt .s-prog,.short.s-yt [data-act="short-play"]{display:none}
-.short.s-yt .s-shade,.short.s-yt .s-info{pointer-events:none}
-.short.s-yt .s-info a,.short.s-yt .s-rail{pointer-events:auto}
-.s-frame .s-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(243,239,230,.96) 0%,rgba(243,239,230,.78) 28%,rgba(243,239,230,.12) 52%,transparent 68%)}
-.s-info{position:absolute;left:22px;right:76px;bottom:24px;z-index:3;color:var(--ink)}
-.s-title{font-family:var(--serif);font-weight:500;font-size:clamp(1.35rem,2.6vw,1.85rem);line-height:1.14;margin-top:11px;letter-spacing:-.01em;color:var(--ink)}
-.s-sub{color:var(--silver);font-size:.88rem;margin-top:10px;max-width:40ch}
-.s-ctas{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px}
+.s-frame .s-shade{display:none}
+.s-copy{max-width:36rem}
+.s-title{font-family:var(--serif);font-weight:500;font-size:clamp(1.55rem,2.4vw,2.15rem);line-height:1.16;margin-top:12px;letter-spacing:-.02em;color:var(--ink)}
+.s-sub{color:var(--silver);font-size:.98rem;line-height:1.55;margin-top:14px;max-width:42ch}
+.s-ctas{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
 .s-cta{display:inline-flex}
-.s-rail{position:absolute;right:16px;bottom:26px;z-index:3;display:flex;flex-direction:column;gap:12px}
-.s-rail button,.s-rail a{width:46px;height:46px;border-radius:50%;border:1px solid var(--hair-2);background:rgba(243,239,230,.92);color:var(--ink);display:flex;align-items:center;justify-content:center;transition:.25s;font-size:.95rem}
-.s-rail button:hover,.s-rail a:hover{border-color:var(--gold);color:var(--gold)}
+.s-rail{display:none}
 .s-prog{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(28,26,22,.12);z-index:4}
 .s-prog i{display:block;height:100%;width:0;background:var(--gold)}
 .short.playing .s-prog i{animation:sprog var(--sdur,40s) linear forwards}
@@ -498,6 +495,9 @@ body.route-shorts .footer{display:block}
   .shorts-intro{grid-template-columns:1fr}
   .hero-side{display:none}
   .feed-side{display:none}
+  .s-stage{grid-template-columns:1fr;justify-items:center;gap:22px}
+  .s-frame{height:min(48dvh,420px);justify-self:center}
+  .s-copy{width:min(420px,100%);padding:0 2px}
   .rowbtns{display:none}
   .hero-copy{max-width:34rem}
 }
@@ -624,13 +624,18 @@ const ASSET_MAP = {
   'story-el-rey-del-hielo': MEDIA_ROOT+'/stories/hielo/5.jpg',
   'ent-frederic-tudor': MEDIA_ROOT+'/stories/hielo/2.jpg',
   'ent-cadena-de-frio': MEDIA_ROOT+'/stories/hielo/3.jpg',
-  'story-la-guerra-de-las-corrientes': MEDIA_ROOT+'/stories/corrientes/5.jpg',
-  'ent-nikola-tesla': MEDIA_ROOT+'/stories/corrientes/5.jpg',
-  'ent-thomas-edison': MEDIA_ROOT+'/stories/corrientes/5.jpg',
-  'ent-westinghouse': MEDIA_ROOT+'/stories/corrientes/5.jpg',
+  'story-la-guerra-de-las-corrientes': MEDIA_ROOT+'/stories/corrientes/3.jpg',
+  'ent-nikola-tesla': MEDIA_ROOT+'/stories/corrientes/2.jpg',
+  'ent-thomas-edison': MEDIA_ROOT+'/stories/corrientes/1.jpg',
+  'ent-westinghouse': MEDIA_ROOT+'/stories/corrientes/4.jpg',
   'ent-general-electric': MEDIA_ROOT+'/stories/corrientes/5.jpg',
-  'ent-corriente-alterna': MEDIA_ROOT+'/stories/corrientes/5.jpg',
-  'ent-energia': MEDIA_ROOT+'/stories/corrientes/5.jpg',
+  'ent-corriente-alterna': MEDIA_ROOT+'/stories/corrientes/4.jpg',
+  'ent-energia': MEDIA_ROOT+'/stories/corrientes/3.jpg',
+  'story-la-vacuna-que-no-se-patento': MEDIA_ROOT+'/stories/salk/3.jpg',
+  'ent-jonas-salk': MEDIA_ROOT+'/stories/salk/1.jpg',
+  'ent-vacuna-polio': MEDIA_ROOT+'/stories/salk/4.jpg',
+  'story-mary-celeste-el-barco-que-llego-vacio': MEDIA_ROOT+'/stories/celeste/1.jpg',
+  'ent-mary-celeste': MEDIA_ROOT+'/stories/celeste/2.jpg',
   'story-el-hombre-que-detuvo-el-mundo': MEDIA_ROOT+'/stories/petrov/1.jpg',
   'ent-stanislav-petrov': MEDIA_ROOT+'/stories/petrov/2.jpg',
   'ent-guerra-fria': MEDIA_ROOT+'/stories/petrov/3.jpg',
@@ -699,7 +704,7 @@ const STORIES = [
 {slug:'la-guerra-de-las-corrientes', cat:'historia', title:'La guerra de las corrientes',
  tagline:'Edison tenía la fama. Westinghouse tenía a Tesla. Y el mundo, literalmente, tuvo que elegir cómo iluminarse.',
  desc:'En la década de 1880 dos sistemas eléctricos se disputaron el futuro: la corriente continua de Edison y la corriente alterna de Tesla y Westinghouse.',
- durMin:8, durSec:480, date:'2026-08-01', views:0, yt:null,
+ durMin:1, durSec:50, date:'2026-08-19', views:0, yt:null,
  flags:['featured'], tags:['energía','electricidad','rivalidad'], sources:['Archivos Nikola Tesla, Belgrado','Exposición Universal de Chicago, 1893'],
  entities:['nikola-tesla','thomas-edison','westinghouse','general-electric','corriente-alterna','energia'],
  body:[
@@ -708,6 +713,15 @@ const STORIES = [
  'Pero la física no entiende de propaganda. La corriente alterna viajaba cientos de kilómetros; la continua, apenas un par. Cuando Westinghouse iluminó la Exposición de Chicago de 1893 y después aprovechó las cataratas del Niágara para electrificar Buffalo, la guerra terminó sin tratado de paz.',
  'Hoy cada enchufe del planeta es un monumento involuntario a Tesla y una ironía para Edison: el hombre que electrificó el mundo perdió el sistema que lo haría posible.'],
  quote:'Edison ganó todos los titulares. Tesla ganó todos los enchufes.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son fotografías históricas. Son reconstrucciones visuales de la central, el taller, Chicago y el Niágara. No representan un documento de archivo.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/corrientes/1.jpg', alt:'Reconstrucción visual. Una central de corriente continua en los años ochenta del siglo XIX.'},
+  {src:MEDIA_ROOT+'/stories/corrientes/2.jpg', alt:'Reconstrucción visual. Bobinas y chispa: la apuesta por la corriente alterna.'},
+  {src:MEDIA_ROOT+'/stories/corrientes/3.jpg', alt:'Reconstrucción visual. Chicago, 1893: la ciudad se enciende con alterna.'},
+  {src:MEDIA_ROOT+'/stories/corrientes/4.jpg', alt:'Reconstrucción visual. Generadores junto al Niágara: la electricidad ya viaja.'},
+  {src:MEDIA_ROOT+'/stories/corrientes/5.jpg', alt:'Reconstrucción visual. Un laboratorio de alta tensión de finales del siglo XIX.'}
+ ],
  timeline:[['1882','Edison inaugura la central de Pearl Street en Nueva York con corriente continua.'],['1888','Tesla patenta el sistema de corriente alterna. Westinghouse compra las licencias.'],['1893','La corriente alterna ilumina la Exposición Universal de Chicago ante 27 millones de visitantes.'],['1895','La central del Niágara demuestra que la electricidad puede viajar decenas de kilómetros.']]},
 {slug:'el-hombre-que-detuvo-el-mundo', cat:'historia', title:'El hombre que detuvo el mundo',
  tagline:'Veintiséis de septiembre de 1983. Cinco misiles en la pantalla. Y un solo hombre entre la pantalla y el botón.',
@@ -721,33 +735,64 @@ const STORIES = [
  'No pasó nada. Nunca pasó nada. Los satélites habían confundido el reflejo del sol sobre nubes altas con estelas de lanzamiento. Petrov no recibió condecoraciones: recibió una reprimenda leve y una jubilación silenciosa. El mundo nunca supo su nombre hasta veinte años después.',
  'La lección incómoda de esta historia no es sobre tecnología. Es sobre el instante exacto en que desobedecer a un sistema perfecto fue el acto más responsable posible.'],
  quote:'El protocolo decía «informe». La conciencia dijo «espere». Esa pausa fue la paz.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son fotografías del búnker. Son reconstrucciones visuales de la sala de alerta, la pantalla y el periodo. No representan un documento de archivo.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/petrov/1.jpg', alt:'Reconstrucción visual. La sala de alerta temprana y una pantalla que no debería mentir.'},
+  {src:MEDIA_ROOT+'/stories/petrov/2.jpg', alt:'Reconstrucción visual. Un oficial de guardia entre el protocolo y la duda.'},
+  {src:MEDIA_ROOT+'/stories/petrov/3.jpg', alt:'Reconstrucción visual. Cinco marcas en el radar: demasiado pocas para ser una guerra.'},
+  {src:MEDIA_ROOT+'/stories/petrov/4.jpg', alt:'Reconstrucción visual. El frío de 1983: cables, mapas y una decisión que no cabe en un manual.'},
+  {src:MEDIA_ROOT+'/stories/petrov/5.jpg', alt:'Reconstrucción visual. Después de la noche: el mundo sigue, y el nombre tarda veinte años.'}
+ ],
  timeline:[['1983','La URSS vive su año más tenso: derribo del KAL-007 y ejercicio Able Archer de la OTAN.'],['26 SEP 1983','El sistema Oko detecta cinco lanzamientos. Petrov los declara falsa alarma.'],['2004','La historia se hace pública. Petrov recibe el premio «Ciudadano del Mundo».']]},
 {slug:'tulipanes-de-oro-la-primera-gran-burbuja', cat:'dinero', title:'Tulipanes de oro: la primera gran burbuja',
  tagline:'En 1637, un bulbo de tulipán llegó a costar lo mismo que una casa en Ámsterdam. Hasta que dejó de costarlo.',
  desc:'Holanda inventó el mercado financiero moderno y, de propina, su primera locura colectiva. La fiebre de los tulipanes sigue siendo el espejo de todas las burbujas posteriores.',
- durMin:7, durSec:420, date:'2026-08-18', views:0, yt:null,
+ durMin:1, durSec:52, date:'2026-09-08', views:0, yt:null,
  flags:['editors'], tags:['burbujas','especulación','Países Bajos'], sources:['Archivos notariales de Haarlem, 1636–1637'],
  entities:['burbujas','comercio-global'],
  body:[
- 'El tulipán llegó a Europa desde el Imperio otomano como una rareza botánica. En la Holanda del siglo XVII, la nación más comercial del mundo, esa rareza se convirtió en activo: los bulbos se compraban antes de florecer, se revendían sobre el papel y se negociaban en tabernas, fuera del horario de las bolsas oficiales.',
+ 'El tulipán llegó a Europa desde el Imperio otomano como una rareza botánica. En 1593 ya florecía en los jardines de Leiden. En la Holanda del siglo XVII —la nación más comercial del mundo— esa rareza dejó de ser un adorno y se convirtió en activo: los bulbos se compraban antes de florecer, se revendían sobre el papel y se negociaban en tabernas, fuera del horario de las bolsas oficiales.',
  'El mecanismo era hipnótico. Un bulbo de la variedad Semper Augustus llegó a pagarse al precio de una casa con canal incluido. Los contratos cambiaban de manos diez veces en una semana sin que nadie viera jamás la flor. El negocio ya no era el tulipán: era la creencia de que mañana alguien pagaría más.',
- 'En febrero de 1637, una subasta rutinaria en Haarlem quedó desierta. Bastó eso. En días, los precios cayeron más de un noventa por ciento. Notarios, artesanos y regentes descubrieron a la vez que poseían promesas que nadie quería comprar.',
- 'Cada generación redescubre esta historia con un disfraz nuevo: acciones, inmobiliario, criptomonedas. El activo cambia; la gramática de la fiebre, jamás.'],
+ 'Esa creencia tenía forma legal. Había quien compraba el bulbo. Había quien compraba el derecho a comprarlo más tarde. El papel circulaba más rápido que la tierra. Notarios, artesanos y regentes se sentaron a la misma mesa. La fiebre no distinguía oficio: distinguía quién llegaba a tiempo de venderle el contrato al siguiente.',
+ 'En febrero de 1637, una subasta rutinaria en Haarlem quedó desierta. Bastó eso. En días, los precios cayeron más de un noventa por ciento. Lo que la víspera valía una casa pasó a valer una promesa que nadie quería honrar. El mercado no se desinfló con un decreto. Se desinfló con una silla vacía.',
+ 'La leyenda posterior hinchó la ruina: no fue el fin de la República, ni de Ámsterdam. Fue algo más útil para nosotros. Fue el primer ensayo, bien documentado, de una gramática que el capitalismo no ha dejado de repetir: un objeto escaso, un relato de escasez, y un precio que ya no mira al objeto.',
+ 'Cada generación redescubre esta historia con un disfraz nuevo: acciones, suelo, criptomonedas. El activo cambia. La fiebre, no. Se sigue vendiendo la certeza de que otro pagará más mañana.'],
  quote:'No se vendían flores. Se vendía la certeza de que otro pagaría más mañana.',
- timeline:[['1593','Primeros tulipanes documentados en los jardines de Leiden.'],['1634–36','El comercio se dispara: contratos revendidos decenas de veces.'],['FEB 1637','La subasta de Haarlem queda desierta. El mercado colapsa en días.']]},
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son fotografías históricas. Son reconstrucciones visuales de Leiden, el canal, el papel y la subasta vacía. No representan un documento de archivo.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/tulipanes/1.jpg', alt:'Reconstrucción visual. El jardín de Leiden donde el tulipán dejó de ser rareza otomana.'},
+  {src:MEDIA_ROOT+'/stories/tulipanes/2.jpg', alt:'Reconstrucción visual. Un canal holandés y, en una ventana, la flor que valía una casa.'},
+  {src:MEDIA_ROOT+'/stories/tulipanes/3.jpg', alt:'Reconstrucción visual. En la taberna se intercambiaban contratos, no flores.'},
+  {src:MEDIA_ROOT+'/stories/tulipanes/4.jpg', alt:'Reconstrucción visual. Haarlem, febrero de 1637: la subasta queda desierta.'},
+  {src:MEDIA_ROOT+'/stories/tulipanes/5.jpg', alt:'Reconstrucción visual. Mercaderes, monedas y un bulbo tratado como lingote.'}
+ ],
+ timeline:[['1593','Primeros tulipanes documentados en los jardines de Leiden.'],['1634–36','El comercio se dispara: contratos revendidos decenas de veces sin ver la flor.'],['FEB 1637','Una subasta rutinaria en Haarlem queda desierta. El mercado colapsa en días.'],['DESPUÉS','La República sigue. Queda el manual: la primera gran burbuja de la que tenemos acta.']]},
 {slug:'enron-los-arquitectos-del-humo', cat:'dinero', title:'Enron: los arquitectos del humo',
  tagline:'La empresa más admirada de América no vendía energía: vendía contabilidad. Y durante años, nadie quiso mirar dentro.',
  desc:'Enron pasó de compañía de gas a símbolo de la nueva economía… y luego al mayor escándalo financiero de su época. Una autopsia del fraude perfecto.',
- durMin:7, durSec:420, date:'2026-08-18', views:0, yt:null,
- flags:[], tags:['fraude','auditoría','Wall Street'], sources:['SEC · Expediente Enron, 2001'],
+ durMin:4, durSec:223, date:'2026-09-26', views:0, yt:null,
+ flags:['editors'], tags:['fraude','auditoría','Wall Street'], sources:['SEC · Expediente Enron, 2001','Informe del comité especial de la junta de Enron, 2002'],
  entities:['enron','jeff-skilling','fraude'],
  body:[
- 'Enron nació como un gasoducto y murió como una idea: la de que los beneficios son una cuestión de imaginación contable. Su dirección construyó cientos de sociedades fantasma cuyo único propósito era esconder deuda y convirtió esa arquitectura en relato.',
- 'El truco maestro se llamaba «mark-to-market»: apuntar como beneficio presente el valor teórico de contratos a veinte años. Si el negocio salía mal, nadie lo veía, porque el beneficio ya se había anotado el primer día. Los analistas aplaudían la transparencia de una empresa cuyo corazón era una caja negra.',
- 'La caída fue geológica: de noventa dólares por acción a veintiséis centavos en dieciocho meses. Veinte mil empleados perdieron su empleo y, en muchos casos, sus ahorros. Arthur Andersen, auditora centenaria, desapareció con ella.',
- 'Enron no fue un accidente: fue un sistema de incentivos funcionando exactamente como estaba diseñado.'],
+ 'Enron nació como un gasoducto y murió como una idea: la de que los beneficios son una cuestión de imaginación contable. En 1985, de la fusión de dos compañías de gas, salió una empresa de Houston que quería dejar de ser tubería y convertirse en mercado. La energía, decía el relato, ya no se transportaba: se negociaba.',
+ 'Su dirección construyó cientos de sociedades fantasma cuyo único propósito era esconder deuda y convirtió esa arquitectura en prestigio. Wall Street no vio un laberinto. Vio innovación. Durante años Enron ocupó listas de «empresas más admiradas». El producto no era el gas. Era la certeza de que los números cuadraban porque alguien los había cuadrado.',
+ 'El truco maestro se llamaba mark-to-market: apuntar como beneficio presente el valor teórico de contratos a veinte años. Si el negocio salía mal, nadie lo veía, porque el beneficio ya se había anotado el primer día. Los analistas aplaudían la transparencia de una empresa cuyo corazón era una caja negra.',
+ 'La auditora Arthur Andersen firmaba las cuentas. El consejo recibía explicaciones que sonaban a ingeniería financiera de vanguardia. Quien preguntaba demasiado quedaba fuera del relato. El sistema de incentivos —bonus, opciones, ranking interno— no falló. Hizo exactamente lo que estaba diseñado para hacer: premiar el número, no el tubo.',
+ 'La caída fue geológica: de unos noventa dólares por acción a veintiséis centavos en dieciocho meses. En diciembre de 2001 Enron se acogió al concurso. Veinte mil empleados perdieron el trabajo y, en muchos casos, los ahorros que la empresa les había animado a dejar en sus propias acciones. Andersen, auditora centenaria, desapareció con ella.',
+ 'Enron no fue un accidente de un villano suelto. Fue un organigrama. Cuando el producto de una empresa es su propia contabilidad, la bancarrota ya está escrita. Solo faltaba la fecha.'],
  quote:'Cuando el producto de una empresa es su propia contabilidad, la bancarrota ya está escrita.',
- timeline:[['1985','Nace Enron de la fusión de dos gasistas.'],['1997–2000','Expansión agresiva y contabilidad mark-to-market.'],['DIC 2001','Quiebra: 60.000 millones de dólares evaporados.']]},
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son fotografías del expediente. Son reconstrucciones visuales de torres, salas de juntas, pantallas y el vacío de 2001. No representan un documento de archivo.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/enron/1.jpg', alt:'Reconstrucción visual. Houston al anochecer: torres de cristal donde la energía se volvió relato.'},
+  {src:MEDIA_ROOT+'/stories/enron/2.jpg', alt:'Reconstrucción visual. Una sala de juntas y el mapa de cajas vacías: deuda con otro nombre.'},
+  {src:MEDIA_ROOT+'/stories/enron/3.jpg', alt:'Reconstrucción visual. Pantallas de 1999: el beneficio se anota antes de que el contrato exista.'},
+  {src:MEDIA_ROOT+'/stories/enron/4.jpg', alt:'Reconstrucción visual. Diciembre de 2001: cajas, cables y una oficina que ya no factura.'},
+  {src:MEDIA_ROOT+'/stories/enron/5.jpg', alt:'Reconstrucción visual. El teléfono, el toro y la fe de que los números eran el negocio.'}
+ ],
+ timeline:[['1985','Nace Enron de la fusión de dos gasistas en Houston.'],['1997–2000','Expansión agresiva, mark-to-market y sociedades para esconder deuda.'],['OCT 2001','La prensa y la SEC empujan la caja negra a la luz.'],['DIC 2001','Quiebra. Decenas de miles de millones evaporados; Andersen cae con ella.']]},
 {slug:'la-caja-que-encogio-el-mundo', cat:'inventos', title:'La caja que encogió el mundo',
  tagline:'No tiene chips, ni motor, ni software. Es una caja de acero. Y sin ella no existiría la globalización.',
  desc:'Malcom McLean, un camionero de Carolina del Norte, se hizo una pregunta en un muelle: ¿y si el camión entero sube al barco? El verdadero invento no fue el acero. Fue dejar de mover las cosas dos veces.',
@@ -845,7 +890,68 @@ const STORIES = [
  'La prensa deformó el nombre. Dan Cooper se convirtió en D. B. Cooper. El FBI abrió el expediente NORJAK, registró los números de serie de cada billete y entrevistó a más de mil sospechosos. En febrero de 1980, un niño encontró en una playa del río Columbia unos cinco mil ochocientos dólares del rescate. Fue casi todo lo que el caso produjo.',
  'El 8 de julio de 2016 el FBI cerró el expediente sin un sospechoso firme. Cooper sigue siendo el único secuestro aéreo comercial no resuelto de Estados Unidos. El misterio no es solo dónde cayó. Es cómo alguien puede dejar de existir sin dejar de estar en todas partes.'],
  quote:'El misterio no es dónde cayó. Es cómo alguien puede dejar de existir sin dejar de estar en todas partes.',
- timeline:[['24 NOV 1971','Cooper secuestra el vuelo 305 de Northwest Orient, Portland–Seattle.'],['NOCHE DEL 24','Salto desde la escalera trasera del 727, entre Seattle y Reno.'],['FEB 1980','Brian Ingram halla parte del rescate en el río Columbia.'],['8 JUL 2016','El FBI cierra el caso NORJAK. El misterio sigue abierto.']]}
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son fotografías del caso. Son reconstrucciones visuales del vuelo, la escalera y el bosque. No representan un documento de archivo.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/cooper/1.jpg', alt:'Reconstrucción visual. Un pasajero de traje en un Boeing 727, víspera de Acción de Gracias.'},
+  {src:MEDIA_ROOT+'/stories/cooper/2.jpg', alt:'Reconstrucción visual. El maletín, el asiento y una nota que no parece un delirio.'},
+  {src:MEDIA_ROOT+'/stories/cooper/3.jpg', alt:'Reconstrucción visual. La cabina: rumbo, altitud y una puerta que no debería abrirse.'},
+  {src:MEDIA_ROOT+'/stories/cooper/4.jpg', alt:'Reconstrucción visual. La escalera trasera del 727, abierta sobre el bosque de noche.'},
+  {src:MEDIA_ROOT+'/stories/cooper/5.jpg', alt:'Reconstrucción visual. El asiento vacío al aterrizar en Reno.'},
+  {src:MEDIA_ROOT+'/stories/cooper/6.jpg', alt:'Reconstrucción visual. El río Columbia: años después, una parte del rescate bajo la arena.'}
+ ],
+ timeline:[['24 NOV 1971','Cooper secuestra el vuelo 305 de Northwest Orient, Portland–Seattle.'],['NOCHE DEL 24','Salto desde la escalera trasera del 727, entre Seattle y Reno.'],['FEB 1980','Brian Ingram halla parte del rescate en el río Columbia.'],['8 JUL 2016','El FBI cierra el caso NORJAK. El misterio sigue abierto.']]},
+{slug:'la-vacuna-que-no-se-patento', cat:'personas', title:'La vacuna que no se patentó',
+ tagline:'Tenía la vacuna de la polio. Le preguntaron quién la poseía. Dijo que la gente. Como el sol.',
+ desc:'Jonas Salk no vendió el vial. En 1955 anunció una vacuna y rechazó patentarla. El virus que llenaba los hospitales empezó a retirarse. Él no se hizo rico con aquello.',
+ durMin:1, durSec:33, date:'2026-08-20', views:0, yt:null,
+ flags:['new','editors'], tags:['medicina','polio','siglo XX'], sources:['March of Dimes · archivo Salk, 1955','Smithsonian · National Museum of American History'],
+ entities:['jonas-salk','vacuna-polio'],
+ body:[
+ 'En los años cincuenta la poliomielitis no era un dato: era un verano. Piscinas cerradas, padres asustados, salas con pulmones de acero. Jonas Salk, en Pittsburgh, buscaba una vacuna de virus inactivado: enseñar al cuerpo el enemigo sin dejarlo circular.',
+ 'El doce de abril de 1955 se anunció que funcionaba. La pregunta siguiente no fue médica. Fue de propiedad. ¿De quién es el vial? Salk contestó con una frase que todavía circula: no se puede patentar el sol. No hubo un monopolio sobre aquella fórmula. La producción se extendió.',
+ 'La polio no desapareció en un día. Retrocedió. Los hospitales se vaciaron de aquello que los había definido. Salk siguió en el laboratorio y en el instituto que lleva su nombre. No cobró un canon por cada brazo pinchado.',
+ 'Esta historia no pide un santo. Pide una decisión: cuando un invento puede salvar a millones, a veces el negocio es no convertirlo en negocio.'],
+ quote:'Le preguntaron quién poseía la vacuna. Dijo que la gente. Como el sol.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son fotografías de archivo médico. Son reconstrucciones del laboratorio, la sala de prensa y el gesto de vacunar. No representan un documento clínico.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/salk/1.jpg', alt:'Reconstrucción visual. Laboratorio de los años cincuenta: el vial se cocina en cristal, no en un despacho de patentes.'},
+  {src:MEDIA_ROOT+'/stories/salk/2.jpg', alt:'Reconstrucción visual. Un pasillo de hospital y los pulmones de acero que la vacuna iba a dejar obsoletos.'},
+  {src:MEDIA_ROOT+'/stories/salk/3.jpg', alt:'Reconstrucción visual. 1955: microfonía, flashes y un anuncio que no se vendió al mejor postor.'},
+  {src:MEDIA_ROOT+'/stories/salk/4.jpg', alt:'Reconstrucción visual. El gesto cotidiano de vacunar, sin marca en el vial.'},
+  {src:MEDIA_ROOT+'/stories/salk/5.jpg', alt:'Reconstrucción visual. Un patio vacío: la polio ya no organiza el verano.'}
+ ],
+ timeline:[['1952','Pico de polio en Estados Unidos. Salk ensaya la vacuna inactivada.'],['12 ABR 1955','Se anuncia que la vacuna funciona. Salk rechaza patentarla.'],['AÑOS SIGUIENTES','La enfermedad retrocede allí donde llega la campaña de inmunización.']]},
+{slug:'mary-celeste-el-barco-que-llego-vacio', cat:'misterios', title:'Mary Celeste: el barco que llegó vacío',
+ tagline:'Iba a Génova. Lo encontraron en medio del Atlántico, marinero, con la carga… y sin nadie.',
+ desc:'El 4 de diciembre de 1872 el Dei Gratia avistó la Mary Celeste. El bote salvavidas faltaba. La tripulación también. Gibraltar no cerró el caso. El barco volvió a navegar. Ellos, no.',
+ durMin:4, durSec:211, date:'2026-08-22', views:0, yt:null,
+ flags:['featured','new'], tags:['mar','casos abiertos','siglo XIX'], sources:['National Archives (UK) · Gibraltar Vice-Admiralty, 1873','Paul Begg, «Mary Celeste: The Greatest Mystery of the Sea»'],
+ entities:['mary-celeste','misterios'],
+ body:[
+ 'El cuatro de diciembre de mil ochocientos setenta y dos, el bergantín Dei Gratia avistó otra vela en el Atlántico. Se llamaba Mary Celeste. Iba hacia Gibraltar. Las velas no estaban puestas como deben. Nadie contestó al grito.',
+ 'Subieron a bordo. El barco no se hundía. En la cabina había platos, una máquina de coser, el diario. En la bodega, barriles de alcohol comercial, casi todos intactos. Faltaba el bote. Faltaba la gente.',
+ 'El capitán era Benjamin Briggs. Viajaba con su mujer, su hija y siete hombres. Habían zarpado de Nueva York el siete de noviembre rumbo a Génova. El último asiento del diario es del veinticinco de noviembre, cerca de las Azores. Después, nada.',
+ 'No había sangre ni signos claros de motín. Un barco marinero, vacío, avanzando solo. El Dei Gratia lo llevó a Gibraltar. Seguros, jueces, rumores: piratas, un barril que goteaba, un mar que se tragó el bote. Cada teoría explica una pieza y deja hueca la siguiente.',
+ 'En mil ochocientos setenta y tres la corte no resolvió el misterio. La Mary Celeste volvió a navegar. En mil ochocientos ochenta y cinco la encallaron en Haití para un fraude de seguros. El casco murió de una estafa. Las diez almas de 1872 no aparecieron.',
+ 'El misterio no es que el mar se trague gente. Es que a veces deja el barco.'],
+ quote:'El misterio no es que el mar se trague gente. Es que a veces deja el barco.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son fotografías del pecio. Son reconstrucciones del Atlántico, la cubierta vacía y Gibraltar. No representan un documento de archivo.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/celeste/1.jpg', alt:'Reconstrucción visual. Un bergantín de 1872 en un Atlántico gris, sin nadie en cubierta.'},
+  {src:MEDIA_ROOT+'/stories/celeste/2.jpg', alt:'Reconstrucción visual. El timón sujeto y la cubierta mojada: el barco sigue, la gente no.'},
+  {src:MEDIA_ROOT+'/stories/celeste/3.jpg', alt:'Reconstrucción visual. La cabina: platos, sillas apartadas, nadie.'},
+  {src:MEDIA_ROOT+'/stories/celeste/4.jpg', alt:'Reconstrucción visual. El diario de navegación se detiene. El océano, no.'},
+  {src:MEDIA_ROOT+'/stories/celeste/5.jpg', alt:'Reconstrucción visual. Los pescantes vacíos: faltaba el bote.'},
+  {src:MEDIA_ROOT+'/stories/celeste/6.jpg', alt:'Reconstrucción visual. El Dei Gratia avista una vela que no responde.'},
+  {src:MEDIA_ROOT+'/stories/celeste/7.jpg', alt:'Reconstrucción visual. La bodega: barriles de alcohol, casi intactos.'},
+  {src:MEDIA_ROOT+'/stories/celeste/8.jpg', alt:'Reconstrucción visual. Niebla atlántica: un casco puede desaparecer a diez metros.'},
+  {src:MEDIA_ROOT+'/stories/celeste/9.jpg', alt:'Reconstrucción visual. Gibraltar, 1873: papeles, mapas y ninguna sentencia que cierre el caso.'},
+  {src:MEDIA_ROOT+'/stories/celeste/10.jpg', alt:'Reconstrucción visual. El Atlántico vacío: a veces el mar se queda el cuerpo y deja la nave.'}
+ ],
+ timeline:[['7 NOV 1872','La Mary Celeste zarpa de Nueva York hacia Génova con diez personas a bordo.'],['25 NOV 1872','Última entrada del diario, cerca de las Azores.'],['4 DIC 1872','El Dei Gratia la encuentra abandonada.'],['1873','La corte de Gibraltar no resuelve el misterio.'],['1885','El casco muere en Haití, encallado para un fraude de seguros.']]}
 ];
 const ENTITIES = [
  {type:'persona', slug:'steve-sasson', name:'Steve Sasson', era:'1950 —', seed:'ent-sasson', blurb:'Ingeniero de Kodak que construyó en 1975 uno de los primeros prototipos de cámara digital.'},
@@ -858,18 +964,21 @@ const ENTITIES = [
  {type:'persona', slug:'norman-woodland', name:'Norman Joseph Woodland', era:'1921 – 2012', seed:'ent-woodland', blurb:'Coinventor del código de barras. Dibujó la idea en la arena.'},
  {type:'persona', slug:'jeff-skilling', name:'Jeffrey Skilling', era:'1953 —', seed:'ent-skilling', blurb:'Consejero delegado de Enron. Arquitecto intelectual de su contabilidad.'},
  {type:'persona', slug:'alan-kay', name:'Alan Kay', era:'1940 —', seed:'ent-kay', blurb:'Pionero de la informática personal en Xerox PARC.'},
+ {type:'persona', slug:'jonas-salk', name:'Jonas Salk', era:'1914 – 1995', seed:'ent-salk', blurb:'Médico. Anunció la vacuna de la polio en 1955 y rechazó patentarla.'},
  {type:'persona', slug:'d-b-cooper', name:'D. B. Cooper', era:'Identidad desconocida', seed:'ent-cooper', blurb:'El secuestrador aéreo que nunca fue identificado.'},
  {type:'empresa', slug:'kodak', name:'Kodak', era:'1888 —', seed:'ent-kodak', blurb:'De la fotografía química a la digital: ayudó a inventar piezas del futuro que no llegó a dominar.'},
  {type:'empresa', slug:'xerox', name:'Xerox', era:'1906 —', seed:'ent-xerox', blurb:'Dominó la fotocopia y financió PARC, el laboratorio que inventó el futuro que otros comercializaron.'},
  {type:'empresa', slug:'enron', name:'Enron', era:'1985 – 2001', seed:'ent-enron', blurb:'De compañía de gas a símbolo del fraude corporativo.'},
  {type:'empresa', slug:'westinghouse', name:'Westinghouse Electric', era:'1886 —', seed:'ent-westinghouse', blurb:'Apostó por la corriente alterna de Tesla y derrotó al sistema de Edison.'},
  {type:'empresa', slug:'general-electric', name:'General Electric', era:'1892 —', seed:'ent-ge', blurb:'Heredera del imperio eléctrico de Edison.'},
+ {type:'invento', slug:'vacuna-polio', name:'La vacuna de la polio', era:'1955', seed:'ent-polio', blurb:'Virus inactivado. Salk no la convirtió en monopolio.'},
  {type:'invento', slug:'camara-digital', name:'La cámara digital', era:'1975', seed:'ent-camdigi', blurb:'Uno de los primeros prototipos: sensor CCD, cinta de casete y una imagen que tardaba 23 segundos.'},
  {type:'invento', slug:'contenedor', name:'El contenedor marítimo', era:'1956', seed:'ent-container', blurb:'Una caja de acero estandarizada. La pieza física de la globalización.'},
  {type:'invento', slug:'codigo-de-barras', name:'El código de barras', era:'1952 · 1974', seed:'ent-barcode', blurb:'Líneas que convirtieron cada objeto en un dato.'},
  {type:'invento', slug:'corriente-alterna', name:'La corriente alterna', era:'1888', seed:'ent-ac', blurb:'El sistema que permitió llevar la electricidad a cualquier distancia.'},
  {type:'invento', slug:'interfaz-grafica', name:'La interfaz gráfica', era:'1973', seed:'ent-gui', blurb:'Ventanas, iconos y ratón. Nació en el Alto de Xerox PARC.'},
  {type:'invento', slug:'cadena-de-frio', name:'El comercio de hielo', era:'1806 —', seed:'ent-cold', blurb:'Antes de la máquina de frío: cortar, aislar y enviar el invierno como si fuera un producto.'},
+ {type:'tema', slug:'mary-celeste', name:'Mary Celeste', era:'1872', seed:'ent-celeste', blurb:'Bergantín encontrado vacío en el Atlántico. El caso no se cerró.'},
  {type:'tema', slug:'fotografia', name:'Fotografía', era:'Tema', seed:'ent-foto', blurb:'De la química a los sensores: la industria de la memoria.'},
  {type:'tema', slug:'energia', name:'Energía', era:'Tema', seed:'ent-energy', blurb:'Quién produce, quién distribuye y quién decide cómo se enciende el mundo.'},
  {type:'tema', slug:'guerra-fria', name:'Guerra Fría', era:'Tema', seed:'ent-coldwar', blurb:'Cuatro décadas al borde del abismo.'},
@@ -1043,7 +1152,7 @@ const storyCard=(s,opts={})=>`
 </a>`;
 const shortCard=sh=>{const st=S[sh.story];return `
 <a class="shcard" data-rv href="#/shorts/${sh.slug}">
-  <div class="shcard-m frame ratio-916">${media('short-'+sh.slug,{w:486,h:864,alt:sh.title})}
+  <div class="shcard-m frame ratio-34">${media('short-'+sh.slug,{w:486,h:648,alt:sh.title})}
     <span class="chip mono">${sh.dur}S</span>
     <div class="shcard-g"></div>
     <div class="shcard-b"><span class="catlab">1 MIN · ${CATS[st.cat].name.toUpperCase()}</span><h3>${sh.title}</h3>${sh.views?'<span class="vm mono dim">'+fmtViews(sh.views)+' VIS.</span>':''}</div>
@@ -1285,24 +1394,21 @@ function viewShorts(param){
     ${SHORTS.map((sh,i)=>{const st=S[sh.story];const frame=sh.yt?`<iframe src="https://www.youtube-nocookie.com/embed/${sh.yt}?rel=0&modestbranding=1" title="${esc(sh.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`:sh.src?`<video src="${sh.src}" poster="${assetUrl('short-'+sh.slug,720,1280)}" playsinline loop preload="${i===start?'auto':'metadata'}" disablepictureinpicture></video>`:media('short-'+sh.slug,{w:720,h:1280,alt:sh.title,eager:i===start});return `
     <article class="short${sh.yt?' s-yt':''}" data-si="${i}" style="--sdur:${sh.dur}s">
       ${media('short-'+sh.slug,{w:360,h:640,alt:'',cls:'bg',eager:i===start})}
-      <div class="s-frame">${frame}<div class="s-shade"></div>
-        <button class="s-big" data-act="short-play" aria-label="Reproducir corto">${ic('play')}</button>
-        <div class="s-info">
+      <div class="s-stage">
+        <div class="s-frame">${frame}
+          <button class="s-big" data-act="short-play" aria-label="Reproducir corto">${ic('play')}</button>
+          <div class="s-prog"><i></i></div>
+        </div>
+        <div class="s-copy">
           <span class="catlab">1 MINUTO · ${CATS[st.cat].name.toUpperCase()} · ${sh.dur}S</span>
           <h2 class="s-title">${sh.title}</h2>
           <p class="s-sub">${sh.desc}</p>
           <div class="s-ctas">
             <a class="btn btn-gold s-cta" href="#/historias/${sh.story}" data-act="s2s">VER HISTORIA COMPLETA →</a>
             <a class="btn btn-ghost s-cta" href="${ytShortHref(sh)}" target="_blank" rel="noopener">VER EN YOUTUBE</a>
-            <a class="btn btn-ghost s-cta" href="#/">VOLVER AL INICIO</a>
+            <button class="btn btn-ghost s-cta" data-act="share" data-href="#/shorts/${sh.slug}">COMPARTIR</button>
           </div>
         </div>
-        <div class="s-rail">
-          <button data-act="short-play" aria-label="Reproducir o pausar">${ic('play')}</button>
-          <a href="${ytShortHref(sh)}" target="_blank" rel="noopener" aria-label="Ver en YouTube">${ic('yt')}</a>
-          <button data-act="share" data-href="#/shorts/${sh.slug}" aria-label="Compartir">${ic('share')}</button>
-        </div>
-        <div class="s-prog"><i></i></div>
       </div>
     </article>`}).join('')}
   </div>

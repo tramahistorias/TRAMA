@@ -1,16 +1,27 @@
 ---
-description: Una sola voz por etapa. Ahora Álvaro; Elvira guardada para un cambio de golpe.
+description: Voces TRAMA: semanas Álvaro/Elvira; si hay dos voces en la pieza, las dos.
 alwaysApply: true
 ---
 
 # TRAMA — voz de los vídeos
 
-**Ahora (canal en marcha):** `es-ES-AlvaroNeural`, `rate="-8%"`. Es la de Kodak, el contenedor y el hielo.
+## Una voz (narrador)
 
-**Guardada para cambiar de golpe (no a mitad de calendario):** `es-ES-ElviraNeural`, misma familia que la guía LSE de BOOKIA.
+Por **semana de publicación** (lunes a domingo, Madrid). Arranque lunes **17 ago 2026** = semana 0.
 
-- Referencia: `subidas/_voz/referencia-lse-es.mp3`
-- Muestra Elvira: `subidas/_voz/muestra-elvira.mp3`
-- Helper: `subidas/_tts.py` (hoy apunta a Álvaro)
+| Semana | Fechas (2026) | Voz | Piezas |
+|---|---|---|---|
+| 0 par | 17–23 ago | Álvaro `es-ES-AlvaroNeural` | Kodak, contenedor, hielo |
+| 1 impar | 24–30 ago | Elvira `es-ES-ElviraNeural` | Petrov 25, Woodland 27, Cooper 29 |
+| 2 par | 31 ago – 6 sep | Álvaro | esa tanda |
+| 3 impar | 7–13 sep | Elvira | … |
 
-No mezclar voces en la misma semana ni una semana Álvaro y la siguiente Elvira. El cambio a Elvira solo cuando Ramón lo diga para **todas** las piezas nuevas a partir de esa fecha. No clonar otras voces. No re-subir lo ya publicado.
+No mezclar narradores distintos en piezas de una sola voz de la misma semana.
+
+## Dos voces (diálogo, dos personajes)
+
+En **el mismo** Short o vídeo: **Álvaro y Elvira**. No se busca una tercera voz. No se usa solo la de esa semana.
+
+Helper: `subidas/_tts.py` — `voice_for_folder` (una voz) o `speak_duo` (las dos). Ritmo `rate="-8%"`.
+
+Referencia Elvira: `subidas/_voz/referencia-lse-es.mp3`. No clonar personas. No re-subir lo ya publicado.

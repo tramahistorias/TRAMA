@@ -7,15 +7,20 @@ alwaysApply: true
 
 Ritmo **Arranque** (hasta que sea fácil 3-4 semanas): **2 Shorts + 1 vídeo / semana**. No subir de fase. No rellenar con noticias. Una investigación = web + vídeo o Short, no titular del día.
 
-## Esta semana (17–23 ago 2026) — CERRADA
+## Esta semana (17–23 ago 2026) — Álvaro · más piezas (hueco lun–vie)
 
-Lunes 17: 2 Shorts + 1 vídeo. **Mar–dom: nada.**
+Lunes 17 ya salió. Mié 19, jue 20 y sáb 22 tapan el silencio hasta Petrov (25). Categorías distintas a Empresas/Inventos/Dinero.
 
-| Pieza | Formato | Categoría | YouTube |
+| Pieza | Formato | Categoría | YouTube / carpeta |
 |---|---|---|---|
 | Kodak inventó la cámara digital | Short | Empresas | `7JK106M1L6k` |
 | El invento que no parece un invento | Short | Inventos | `JCf59aq_Q-w` |
 | El rey del hielo | Vídeo | Dinero | `VKikVkIX-wQ` |
+| Guerra de las corrientes | Short | Historia | `subidas/2026-08-19_short-corrientes` |
+| La vacuna que no se patentó | Short | Personas | `subidas/2026-08-20_short-salk` |
+| Mary Celeste | Vídeo ~4 min, 10 stills | Misterios | `subidas/2026-08-22_video-celeste` |
+
+No adelantar Petrov, Woodland ni Cooper (Elvira, 25–29).
 
 ## Cómo elegir (rotar categorías)
 
@@ -33,9 +38,31 @@ Piezas y texto de Studio en `subidas/AAAA-MM-DD_...`. El nombre de la carpeta es
 |---|---|---|---|
 | Mar 25 | `subidas/2026-08-25_short-petrov` | Short | Historia |
 | Jue 27 | `subidas/2026-08-27_short-woodland` | Short | Personas |
-| Sáb 29 | `subidas/2026-08-29_video-cooper` | Vídeo | Misterios |
+| Sáb 29 | `subidas/2026-08-29_video-cooper` | Vídeo ~4 min (16:9) | Misterios |
 
-Vídeo largo de verdad cuando se pueda (8–12 min). El hielo fue teaser de 1 min; no repetir esa duración como “largo”.
+Voz de esa semana: **Elvira**. Si una pieza futura lleva dos voces, Álvaro + Elvira (regla `trama-voz`).
+
+## Semana 7–13 sep 2026 — EN CARPETA (Elvira)
+
+Hueco del jueves 10: falta 1 Short de **otra** categoría (no Dinero). No subir tulipanes y Enron la misma semana: las dos son Dinero.
+
+| Día | Carpeta | Formato | Categoría |
+|---|---|---|---|
+| Mar 8 | `subidas/2026-09-08_short-tulipanes` | Short | Dinero |
+| Jue 10 | *(pendiente)* | Short | no Dinero |
+| Sáb 12 | *(pendiente)* | Vídeo 16:9 >3 min | no Dinero |
+
+Woodland (Personas) ya está en web y en cola del 27 ago: no se rehace.
+
+## Semana 21–27 sep 2026 — EN CARPETA (Elvira)
+
+| Día | Carpeta | Formato | Categoría |
+|---|---|---|---|
+| Sáb 26 | `subidas/2026-09-26_video-enron` | Vídeo ~4 min (16:9) | Dinero |
+
+Faltan los 2 Shorts de esa semana (categorías distintas a Dinero).
+
+Un vídeo de TRAMA: **horizontal 16:9 y más de 3 minutos**. Por debajo es teaser (el hielo, 1 min). 8–12 min es el formato documental cuando haya montaje; no rellenar. 8 min solo hace falta para anuncios a mitad cuando el canal ya cobre.
 
 ## Al publicar
 
