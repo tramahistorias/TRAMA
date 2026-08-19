@@ -625,6 +625,7 @@ const ASSET_MAP = {
   'ent-frederic-tudor': MEDIA_ROOT+'/stories/hielo/2.jpg',
   'ent-cadena-de-frio': MEDIA_ROOT+'/stories/hielo/3.jpg',
   'story-la-guerra-de-las-corrientes': MEDIA_ROOT+'/stories/corrientes/3.jpg',
+  'short-edison-contra-tesla': MEDIA_ROOT+'/stories/corrientes/3.jpg',
   'ent-nikola-tesla': MEDIA_ROOT+'/stories/corrientes/2.jpg',
   'ent-thomas-edison': MEDIA_ROOT+'/stories/corrientes/1.jpg',
   'ent-westinghouse': MEDIA_ROOT+'/stories/corrientes/4.jpg',
@@ -704,7 +705,7 @@ const STORIES = [
 {slug:'la-guerra-de-las-corrientes', cat:'historia', title:'La guerra de las corrientes',
  tagline:'Edison tenía la fama. Westinghouse tenía a Tesla. Y el mundo, literalmente, tuvo que elegir cómo iluminarse.',
  desc:'En la década de 1880 dos sistemas eléctricos se disputaron el futuro: la corriente continua de Edison y la corriente alterna de Tesla y Westinghouse.',
- durMin:1, durSec:50, date:'2026-08-19', views:0, yt:null,
+ durMin:1, durSec:50, date:'2026-08-19', views:0, yt:'vwVcmv6XShg',
  flags:['featured'], tags:['energía','electricidad','rivalidad'], sources:['Archivos Nikola Tesla, Belgrado','Exposición Universal de Chicago, 1893'],
  entities:['nikola-tesla','thomas-edison','westinghouse','general-electric','corriente-alterna','energia'],
  body:[
@@ -990,6 +991,7 @@ const ENTITIES = [
  {type:'tema', slug:'misterios', name:'Misterios sin resolver', era:'Tema', seed:'ent-mystery', blurb:'Expedientes que la historia dejó abiertos.'}
 ];
 const SHORTS = [
+ {slug:'edison-contra-tesla', story:'la-guerra-de-las-corrientes', title:'Edison contra Tesla: la guerra de las corrientes', desc:'Edison tenía la fama. Westinghouse tenía a Tesla. Y el mundo tuvo que elegir cómo iluminarse.', dur:50, views:0, yt:'vwVcmv6XShg'},
  {slug:'kodak-invento-la-camara-digital', story:'kodak-y-el-futuro-que-dejo-escapar', title:'Kodak inventó la cámara digital', desc:'1975. Un prototipo. 23 segundos. Y una pregunta que no era técnica: qué queda de Kodak si la foto deja de ser química.', dur:34, views:0, yt:'7JK106M1L6k'},
  {slug:'el-invento-que-no-parece-un-invento', story:'la-caja-que-encogio-el-mundo', title:'El invento que no parece un invento', desc:'Una caja de acero. Sin chip. Y el mundo entero se rediseñó alrededor de ella.', dur:34, views:0, yt:'JCf59aq_Q-w'}
 ];
