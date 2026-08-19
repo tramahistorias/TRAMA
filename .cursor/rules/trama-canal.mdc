@@ -64,6 +64,10 @@ Faltan los 2 Shorts de esa semana (categorías distintas a Dinero).
 
 Un vídeo de TRAMA: **horizontal 16:9 y más de 3 minutos**. Por debajo es teaser (el hielo, 1 min). 8–12 min es el formato documental cuando haya montaje; no rellenar. 8 min solo hace falta para anuncios a mitad cuando el canal ya cobre.
 
+## Cortos en la web — compactos (hecho 19 ago 2026)
+
+Un reproductor 16:9 pequeño (ancho máx. ~420px) + texto; debajo rejilla `.s-catalog`. Inicio: tarjetas 16:9 ~188px, título debajo. No volver al feed de un embed enorme por Short.
+
 ## Al publicar
 
 IDs reales en `index.html` (`yt`). Conservar voces e imágenes. Título YouTube con tilde correcta (`inventó`). No inventar vistas. No usar ramondelpozorott.es.

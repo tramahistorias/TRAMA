@@ -234,20 +234,19 @@ body.route-home .nav.scrolled .logo img{filter:drop-shadow(0 1px 2px rgba(0,0,0,
 .tcard{position:relative;width:100%;z-index:1}
 .tcard .frame{border:1px solid var(--hair)}
 .tcard-g{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,10,.93) 0%,rgba(8,8,10,.12) 58%);border-radius:var(--rad)}
-.tcard-b,.shcard-b,.cat-tile .tb{color:#f4f0e8}
-.tcard-b .tm,.shcard-b .vm,.cat-tile p{color:rgba(243,240,233,.72)}
+.tcard-b,.cat-tile .tb{color:#f4f0e8}
+.tcard-b .tm,.cat-tile p{color:rgba(243,240,233,.72)}
 .tcard-b h3{font-family:var(--serif);font-weight:500;font-size:1.22rem;line-height:1.18;margin-top:7px}
 .tcard-b .tm{margin-top:8px;color:var(--silver)}
 
-/* ── Shorts cards ── */
-.shcard{width:min(248px,58vw)}
+/* ── Shorts cards (fila Inicio: 16:9 compacto) ── */
+.shcard{width:min(188px,46vw)}
 .shcard-m{position:relative}
 .shcard-m .frame{border:1px solid var(--hair)}
-.shcard-g{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,10,.9),transparent 54%)}
-.shcard-m .chip{position:absolute;top:12px;left:12px}
-.shcard-b{position:absolute;left:15px;right:15px;bottom:15px}
-.shcard-b h3{font-family:var(--serif);font-weight:500;font-size:1.02rem;line-height:1.22;margin-top:7px}
-.shcard-b .vm{display:block;margin-top:8px;color:var(--silver)}
+.shcard-m .chip{position:absolute;top:8px;left:8px}
+.shcard h3{font-family:var(--serif);font-weight:500;font-size:.92rem;line-height:1.22;margin-top:8px;color:var(--ink)}
+.shcard .sh-meta{display:block;margin-top:5px;color:var(--dim)}
+.shcard:hover h3{color:var(--gold-2)}
 .shorts-intro{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(24px,5vw,84px);align-items:end;margin-bottom:clamp(30px,4vw,48px)}
 .shorts-intro p{color:var(--silver);max-width:46ch}
 .shorts-intro .big{font-family:var(--serif);font-size:clamp(1.75rem,3.4vw,2.8rem);font-weight:500;line-height:1.08;letter-spacing:-.01em}
@@ -355,27 +354,28 @@ body.route-home .nav.scrolled .logo img{filter:drop-shadow(0 1px 2px rgba(0,0,0,
 .ply-frame iframe,.ply-frame video{position:absolute;inset:0;width:100%;height:100%;border:0}
 .ply-frame video{object-fit:cover;background:#000}
 
-/* ── Shorts feed ── */
-body.route-shorts{background:var(--bg);color:var(--ink);padding-bottom:0}
+/* ── Cortos: un reproductor + rejilla ── */
+body.route-shorts{background:var(--bg);color:var(--ink)}
 body.route-shorts .nav{background:rgba(243,239,230,.96)}
 body.route-shorts .footer{display:block}
-.feed{padding:calc(var(--nav-h) + 20px) var(--gut) 48px;background:var(--bg);color:var(--ink)}
-.short{position:relative;min-height:0;display:flex;align-items:center;justify-content:center;padding:28px 0 40px;background:var(--bg)}
+.shorts-page .phead{padding-top:calc(var(--nav-h) + clamp(28px,4vw,48px));padding-bottom:clamp(16px,2.4vw,28px)}
+.shorts-page .phead h1{font-size:clamp(1.7rem,3.2vw,2.55rem)}
+.shorts-page .phead .sub{margin-top:.7rem}
+.s-watch{padding-bottom:clamp(28px,4vw,48px)}
+.short{position:relative}
 .short>.bg,.short>picture.bg,.short>img.bg{display:none!important}
-.s-stage{width:min(1120px,100%);display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,.9fr);gap:clamp(24px,4vw,56px);align-items:center}
-.s-frame{position:relative;z-index:2;width:100%;height:auto;aspect-ratio:16/9;max-height:none;border:1px solid var(--hair-2);border-radius:6px;overflow:hidden;background:#111;justify-self:stretch}
+.s-stage{display:grid;grid-template-columns:minmax(0,420px) minmax(200px,1fr);gap:clamp(18px,3vw,36px);align-items:center;max-width:860px}
+.s-frame{position:relative;z-index:2;width:100%;aspect-ratio:16/9;border:1px solid var(--hair-2);border-radius:6px;overflow:hidden;background:#111}
 .s-frame img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s}
 .s-frame img.ld{opacity:1}
 .s-frame video,.s-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:var(--bg-3)}
 .s-frame video{object-fit:cover}
 .short.s-yt .s-big,.short.s-yt .s-prog,.short.s-yt [data-act="short-play"]{display:none}
-.s-frame .s-shade{display:none}
-.s-copy{max-width:36rem}
-.s-title{font-family:var(--serif);font-weight:500;font-size:clamp(1.55rem,2.4vw,2.15rem);line-height:1.16;margin-top:12px;letter-spacing:-.02em;color:var(--ink)}
-.s-sub{color:var(--silver);font-size:.98rem;line-height:1.55;margin-top:14px;max-width:42ch}
-.s-ctas{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+.s-copy{max-width:28rem}
+.s-title{font-family:var(--serif);font-weight:500;font-size:clamp(1.2rem,2vw,1.55rem);line-height:1.18;margin-top:10px;letter-spacing:-.02em;color:var(--ink)}
+.s-sub{color:var(--silver);font-size:.9rem;line-height:1.5;margin-top:10px;max-width:42ch}
+.s-ctas{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
 .s-cta{display:inline-flex}
-.s-rail{display:none}
 .s-prog{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(28,26,22,.12);z-index:4}
 .s-prog i{display:block;height:100%;width:0;background:var(--gold)}
 .short.playing .s-prog i{animation:sprog var(--sdur,40s) linear forwards}
@@ -383,18 +383,15 @@ body.route-shorts .footer{display:block}
 .s-frame:has(video) .s-prog i{animation:none!important}
 @keyframes sprog{to{width:100%}}
 .short.playing .s-big{opacity:0}
-.s-big{position:absolute;inset:0;margin:auto;width:78px;height:78px;border-radius:50%;background:rgba(243,239,230,.94);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:1.3rem;z-index:3;transition:opacity .3s,transform .3s;padding-left:5px}
-.feed-top{display:none}
-.feed-top a,.feed-top .fcount{pointer-events:auto}
-.fback{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;color:var(--silver);display:flex;gap:.6em;align-items:center}
-.fback:hover{color:var(--gold)}
-.fcount{color:var(--dim)}
-.feed-side{position:fixed;right:clamp(14px,2.4vw,34px);top:50%;transform:translateY(-50%);z-index:120;display:flex;flex-direction:column;align-items:center;gap:14px}
-.feed-side .hbtn{background:rgba(243,239,230,.92);color:var(--ink);border-color:var(--hair-2)}
-.feed-side .hbtn:hover{border-color:var(--gold);color:var(--gold)}
-.fdots{display:flex;flex-direction:column;gap:8px;padding:8px 0}
-.fdots i{width:5px;height:5px;border-radius:50%;background:var(--hair-2);transition:.3s;cursor:pointer}
-.fdots i.on{background:var(--gold);transform:scale(1.4)}
+.s-big{position:absolute;inset:0;margin:auto;width:56px;height:56px;border-radius:50%;background:rgba(243,239,230,.94);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:1.05rem;z-index:3;transition:opacity .3s;padding-left:4px}
+.s-catalog{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:18px 14px}
+.scat .frame{border:1px solid var(--hair)}
+.scat .chip{position:absolute;top:8px;left:8px;z-index:2}
+.scat h3{font-family:var(--serif);font-weight:500;font-size:.9rem;line-height:1.22;margin-top:8px}
+.scat .catlab{display:block;margin-top:6px}
+.scat.on .frame{outline:1px solid var(--gold);outline-offset:2px}
+.scat:hover h3{color:var(--gold-2)}
+.scat:hover .frame img.ld{transform:scale(1.045)}
 
 /* ── Buscador ── */
 .search-ov{position:fixed;inset:0;z-index:350;background:rgba(243,239,230,.97);opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s;overflow-y:auto}
@@ -494,9 +491,7 @@ body.route-shorts .footer{display:block}
   .cat-tiles{grid-template-columns:repeat(2,1fr)}
   .shorts-intro{grid-template-columns:1fr}
   .hero-side{display:none}
-  .feed-side{display:none}
-  .s-stage{grid-template-columns:1fr;justify-items:stretch;gap:22px}
-  .s-frame{height:auto;justify-self:stretch}
+  .s-stage{grid-template-columns:1fr;gap:16px;max-width:420px}
   .s-copy{width:100%;max-width:42rem;padding:0 2px}
   .rowbtns{display:none}
   .hero-copy{max-width:34rem}
@@ -1154,11 +1149,11 @@ const storyCard=(s,opts={})=>`
 </a>`;
 const shortCard=sh=>{const st=S[sh.story];return `
 <a class="shcard" data-rv href="#/shorts/${sh.slug}">
-  <div class="shcard-m frame ratio-34">${media('short-'+sh.slug,{w:486,h:648,alt:sh.title})}
+  <div class="shcard-m frame ratio-16">${media('short-'+sh.slug,{w:480,h:270,alt:sh.title})}
     <span class="chip mono">${sh.dur}S</span>
-    <div class="shcard-g"></div>
-    <div class="shcard-b"><span class="catlab">1 MIN · ${CATS[st.cat].name.toUpperCase()}</span><h3>${sh.title}</h3>${sh.views?'<span class="vm mono dim">'+fmtViews(sh.views)+' VIS.</span>':''}</div>
   </div>
+  <h3>${sh.title}</h3>
+  <span class="sh-meta mono">${CATS[st.cat].name.toUpperCase()}${sh.views?' · '+fmtViews(sh.views)+' VIS.':''}</span>
 </a>`};
 const trendItem=(s,i)=>`
 <a class="titem" data-rv href="#/historias/${s.slug}">
@@ -1389,51 +1384,54 @@ function buildPlayer(st){
 
 /* ── SHORTS ── */
 function viewShorts(param){
-  const start=Math.max(0,SHORTS.findIndex(s=>s.slug===param));
+  const found=SHORTS.findIndex(s=>s.slug===param);
+  const i=found<0?0:found;
+  const sh=SHORTS[i], st=S[sh.story];
+  const frame=sh.yt?`<iframe src="https://www.youtube-nocookie.com/embed/${sh.yt}?rel=0&modestbranding=1" title="${esc(sh.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`:sh.src?`<video src="${sh.src}" poster="${assetUrl('short-'+sh.slug,640,360)}" playsinline loop preload="auto" disablepictureinpicture></video>`:media('short-'+sh.slug,{w:640,h:360,alt:sh.title,eager:true});
   mount(`
-  <div class="feed-top"><a class="fback" href="#/">${ic('left')} SALIR DE CORTOS</a><span class="fcount mono" id="fcount">01 / ${String(SHORTS.length).padStart(2,'0')}</span></div>
-  <div class="feed" id="feed" tabindex="0" aria-label="Cortos: vídeos de un minuto">
-    ${SHORTS.map((sh,i)=>{const st=S[sh.story];const frame=sh.yt?`<iframe src="https://www.youtube-nocookie.com/embed/${sh.yt}?rel=0&modestbranding=1" title="${esc(sh.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`:sh.src?`<video src="${sh.src}" poster="${assetUrl('short-'+sh.slug,720,1280)}" playsinline loop preload="${i===start?'auto':'metadata'}" disablepictureinpicture></video>`:media('short-'+sh.slug,{w:720,h:1280,alt:sh.title,eager:i===start});return `
-    <article class="short${sh.yt?' s-yt':''}" data-si="${i}" style="--sdur:${sh.dur}s">
-      <div class="s-stage">
-        <div class="s-frame">${frame}
-          <button class="s-big" data-act="short-play" aria-label="Reproducir corto">${ic('play')}</button>
-          <div class="s-prog"><i></i></div>
-        </div>
-        <div class="s-copy">
-          <span class="catlab">1 MINUTO · ${CATS[st.cat].name.toUpperCase()} · ${sh.dur}S</span>
-          <h2 class="s-title">${sh.title}</h2>
-          <p class="s-sub">${sh.desc}</p>
-          <div class="s-ctas">
-            <a class="btn btn-gold s-cta" href="#/historias/${sh.story}" data-act="s2s">VER HISTORIA COMPLETA →</a>
-            <a class="btn btn-ghost s-cta" href="${ytShortHref(sh)}" target="_blank" rel="noopener">VER EN YOUTUBE</a>
-            <button class="btn btn-ghost s-cta" data-act="share" data-href="#/shorts/${sh.slug}">COMPARTIR</button>
+  <div class="wrap shorts-page">
+    <header class="phead" data-rv>
+      <span class="catlab">CORTOS · ${String(SHORTS.length).padStart(2,'0')}</span>
+      <h1>Un minuto</h1>
+      <p class="sub">En YouTube se llaman Shorts. Elige uno en la rejilla; el vídeo se abre aquí arriba.</p>
+    </header>
+    <section class="s-watch" id="feed" tabindex="0" aria-label="Corto seleccionado">
+      <article class="short${sh.yt?' s-yt':''}" data-si="${i}" style="--sdur:${sh.dur}s">
+        <div class="s-stage">
+          <div class="s-frame">${frame}
+            <button class="s-big" data-act="short-play" aria-label="Reproducir corto">${ic('play')}</button>
+            <div class="s-prog"><i></i></div>
+          </div>
+          <div class="s-copy">
+            <span class="catlab">1 MINUTO · ${CATS[st.cat].name.toUpperCase()} · ${sh.dur}S</span>
+            <h2 class="s-title">${sh.title}</h2>
+            <p class="s-sub">${sh.desc}</p>
+            <div class="s-ctas">
+              <a class="btn btn-gold s-cta" href="#/historias/${sh.story}" data-act="s2s">VER HISTORIA COMPLETA →</a>
+              <a class="btn btn-ghost s-cta" href="${ytShortHref(sh)}" target="_blank" rel="noopener">VER EN YOUTUBE</a>
+              <button class="btn btn-ghost s-cta" data-act="share" data-href="#/shorts/${sh.slug}">COMPARTIR</button>
+            </div>
           </div>
         </div>
+      </article>
+    </section>
+    <section class="section tight">
+      ${secHead('','Todos los cortos')}
+      <div class="s-catalog">${SHORTS.map((x,n)=>`
+        <a class="scat${n===i?' on':''}" href="#/shorts/${x.slug}" aria-current="${n===i?'true':'false'}">
+          <div class="frame ratio-16">${media('short-'+x.slug,{w:480,h:270,alt:x.title,eager:n===i})}
+            <span class="chip mono">${x.dur}S</span>
+          </div>
+          <h3>${x.title}</h3>
+          <span class="catlab">${CATS[S[x.story].cat].name.toUpperCase()}</span>
+        </a>`).join('')}
       </div>
-    </article>`}).join('')}
-  </div>
-  <div class="feed-side">
-    <button class="hbtn" data-act="feed-nav" data-dir="-1" aria-label="Corto anterior">${ic('up')}</button>
-    <div class="fdots">${SHORTS.map((_,i)=>'<i data-dot="'+i+'" class="'+(i===start?'on':'')+'" tabindex="0" role="button" aria-label="Ir al corto '+(i+1)+'"></i>').join('')}</div>
-    <button class="hbtn" data-act="feed-nav" data-dir="1" aria-label="Corto siguiente">${ic('down')}</button>
+    </section>
   </div>`,
-  {t:'Cortos — TRAMA',d:'Vídeos de un minuto de TRAMA. En YouTube se llaman Shorts. Cada uno abre la historia completa.',og:'trama'});
-  const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){const i=+x.target.dataset.si;
-    const fc=$('#fcount');if(fc)fc.textContent=String(i+1).padStart(2,'0')+' / '+String(SHORTS.length).padStart(2,'0');
-    document.querySelectorAll('.fdots i').forEach((d,di)=>d.classList.toggle('on',di===i));
-    document.querySelectorAll('.short').forEach(s=>{if(s!==x.target){s.classList.remove('playing','paused');const v=s.querySelector('video');if(v){v.pause();try{v.currentTime=0}catch(e){}}}});
-    x.target.querySelector('img:not(.bg)')?.classList.add('ld');
-    const vid=x.target.querySelector('video');
-    if(vid){playShortVid(vid);x.target.classList.add('playing');x.target.classList.remove('paused')}
-    Analytics.track('short_view',{slug:SHORTS[i].slug});
-  }}),{threshold:.55});
-  document.querySelectorAll('.short').forEach(s=>{
-    io.observe(s);
-    const vid=s.querySelector('video'), bar=s.querySelector('.s-prog i');
-    if(vid&&bar){vid.addEventListener('timeupdate',()=>{if(vid.duration)bar.style.width=(vid.currentTime/vid.duration*100)+'%'});bar.style.animation='none'}
-  });
-  if(start>0)document.querySelector('.short[data-si="'+start+'"]')?.scrollIntoView({block:'center'});
+  {t:sh.title+' — Cortos — TRAMA',d:sh.desc,og:'short-'+sh.slug});
+  const vid=document.querySelector('.short video'), bar=document.querySelector('.s-prog i');
+  if(vid&&bar){vid.addEventListener('timeupdate',()=>{if(vid.duration)bar.style.width=(vid.currentTime/vid.duration*100)+'%'});bar.style.animation='none'}
+  Analytics.track('short_view',{slug:sh.slug});
 }
 function playShortVid(vid){
   if(!vid)return;
@@ -1441,12 +1439,11 @@ function playShortVid(vid){
   const p=vid.play();
   if(p&&p.catch)p.catch(()=>{vid.muted=true;vid.play().catch(()=>{})});
 }
-function toggleShort(sh){const vid=sh.querySelector('video');const on=sh.classList.toggle('playing');sh.classList.remove('paused');if(!on){sh.classList.add('paused');if(vid)vid.pause()}else playShortVid(vid);Analytics.track(on?'short_play':'short_pause',{slug:SHORTS[+sh.dataset.si].slug})}
+function toggleShort(el){const vid=el.querySelector('video');const on=el.classList.toggle('playing');el.classList.remove('paused');if(!on){el.classList.add('paused');if(vid)vid.pause()}else playShortVid(vid);Analytics.track(on?'short_play':'short_pause',{slug:SHORTS[+el.dataset.si].slug})}
 function feedNav(dir){
-  const on=document.querySelector('.fdots i.on');
-  const i=on?[...document.querySelectorAll('.fdots i')].indexOf(on):0;
-  const nx=Math.max(0,Math.min(SHORTS.length-1,i+dir));
-  document.querySelector('.short[data-si="'+nx+'"]')?.scrollIntoView({behavior:RM?'auto':'smooth',block:'center'});
+  const i=Math.max(0,SHORTS.findIndex(s=>location.hash.indexOf(s.slug)>=0));
+  const nx=Math.max(0,Math.min(SHORTS.length-1,(i<0?0:i)+dir));
+  location.hash='#/shorts/'+SHORTS[nx].slug;
 }
 
 /* ── ENTIDADES ── */
@@ -1632,7 +1629,7 @@ document.addEventListener('click',e=>{
   let b;
   if(b=t.closest('[data-rowbtn]')){const track=b.closest('.row').querySelector('.row-track');track.scrollBy({left:track.clientWidth*.85*(+b.dataset.rowbtn),behavior:RM?'auto':'smooth'});return}
   if(b=t.closest('[data-list]')){toggleList(b.dataset.list);return}
-  if(b=t.closest('[data-dot]')){document.querySelector('.short[data-si="'+b.dataset.dot+'"]')?.scrollIntoView({behavior:RM?'auto':'smooth',block:'center'});return}
+  if(b=t.closest('[data-dot]')){const n=+b.dataset.dot;if(SHORTS[n])location.hash='#/shorts/'+SHORTS[n].slug;return}
   if(b=t.closest('[data-act]')){
     const act=b.dataset.act;
     if(act==='search-open')openSearch();
@@ -1676,7 +1673,7 @@ document.addEventListener('keydown',e=>{
   if(document.body.classList.contains('route-shorts')&&!typing){
     if(e.key==='ArrowDown'){e.preventDefault();feedNav(1)}
     if(e.key==='ArrowUp'){e.preventDefault();feedNav(-1)}
-    if(e.key===' '){e.preventDefault();const f=$('#feed');const i=Math.round(f.scrollTop/f.clientHeight);const sh=document.querySelector('.short[data-si="'+i+'"]');sh&&toggleShort(sh)}}
+    if(e.key===' '){e.preventDefault();const sh=document.querySelector('.short');sh&&toggleShort(sh)}}
 });
 let navTick=false;
 addEventListener('scroll',()=>{
