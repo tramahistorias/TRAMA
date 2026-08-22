@@ -61,18 +61,30 @@ Hueco del jueves 10: falta 1 Short de **otra** categoría (no Dinero). No subir 
 | Día | Carpeta | Formato | Categoría |
 |---|---|---|---|
 | Mar 8 | `subidas/2026-09-08_short-tulipanes` | Short | Dinero |
-| Jue 10 | *(pendiente)* | Short | no Dinero |
-| Sáb 12 | *(pendiente)* | Vídeo 16:9 >3 min | no Dinero |
+| Jue 10 | `subidas/2026-09-10_short-melaza` | Short | Historia |
+| Sáb 12 | `subidas/2026-09-12_video-radium` | Vídeo 16:9 >3 min | Personas |
 
 Woodland (Personas) ya está en web y en cola del 27 ago: no se rehace.
 
-## Semana 21–27 sep 2026 — EN CARPETA (Elvira)
+Montaje **en adelante** (cola nueva): cortes al habla, cama + ambiente, grade. **Sin** parallax de dos capas (doble imagen). Cámara Ken Burns simple (push/pull/rise/fall). Los vídeos 16:9 cierran con **endcard** y la URL de la web. No rehacer Petrov, Woodland, Cooper, tulipanes ni Enron.
+
+## Semana 14–20 sep 2026 — EN CARPETA (Álvaro)
 
 | Día | Carpeta | Formato | Categoría |
 |---|---|---|---|
-| Sáb 26 | `subidas/2026-09-26_video-enron` | Vídeo ~4 min (16:9) | Dinero |
+| Mar 15 | `subidas/2026-09-15_short-velcro` | Short | Inventos |
+| Jue 17 | `subidas/2026-09-17_short-ford` | Short | Empresas |
+| Sáb 19 | `subidas/2026-09-19_video-tambora` | Vídeo ~4 min (16:9) | Historia |
 
-Faltan los 2 Shorts de esa semana (categorías distintas a Dinero).
+## Semana 21–27 sep 2026 — EN CARPETA (Enron no se rehace)
+
+Los Shorts nuevos de esta tanda llevan Álvaro (indicación de Ramón). Enron sigue Elvira.
+
+| Día | Carpeta | Formato | Categoría |
+|---|---|---|---|
+| Mar 22 | `subidas/2026-09-22_short-wow` | Short | Misterios |
+| Jue 24 | `subidas/2026-09-24_short-lamarr` | Short | Personas |
+| Sáb 26 | `subidas/2026-09-26_video-enron` | Vídeo ~4 min (16:9) | Dinero |
 
 Un vídeo de TRAMA: **horizontal 16:9 y más de 3 minutos**. Por debajo es teaser (el hielo, 1 min). 8–12 min es el formato documental cuando haya montaje; no rellenar. 8 min solo hace falta para anuncios a mitad cuando el canal ya cobre.
 
@@ -94,4 +106,4 @@ El mismo día: TikTok + Instagram Reels (regla `trama-redes`). Render 9:16, `TEX
 - `subidas/` es cola local de YouTube: no va al sitio público.
 - Repo: `https://github.com/tramahistorias/TRAMA` (cuenta del canal, no `ramondelpozokids`).
 - GitHub Pages: `https://tramahistorias.github.io/TRAMA/`. Sin Vercel ni dominio de pago.
-- Calendario de subidas: `subidas/TRAMA-YouTube.ics` (25 Petrov, 27 Woodland, 29 Cooper, 1 microondas, 3 Semmelweis, 5 Harrison, 8 tulipanes; 10:00 Madrid).
+- Calendario de subidas: `subidas/TRAMA-YouTube.ics` (25 Petrov … 8 tulipanes, 10 melaza, 12 radium, 15 velcro, 17 Ford, 19 Tambora, 22 Wow, 24 Lamarr, 26 Enron; 10:00 Madrid).

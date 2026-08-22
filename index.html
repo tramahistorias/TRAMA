@@ -299,6 +299,12 @@ body.route-home .nav.scrolled .logo img{filter:drop-shadow(0 1px 2px rgba(0,0,0,
 .ply-soon-in p{color:rgba(243,240,233,.82);font-size:1.02rem;margin:10px 0 1.3rem;max-width:46ch}
 .contact-row a{color:var(--gold-2)}
 .contact-row a:hover{color:var(--ink)}
+.contact-form{display:flex;flex-direction:column;gap:12px;margin:1.4rem 0 1.8rem;max-width:32rem}
+.contact-form input,.contact-form textarea{background:var(--panel);border:1px solid var(--hair-2);border-radius:var(--rad);padding:14px 18px;color:var(--ink);font-size:.95rem;font-family:inherit}
+.contact-form textarea{min-height:140px;resize:vertical;line-height:1.5}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--gold);outline:none}
+.contact-actions{display:flex;flex-wrap:wrap;gap:10px}
+.contact-mail{font-size:1.05rem;letter-spacing:.02em}
 .story-body{max-width:760px}
 .story-body .kick{color:var(--gold);display:block;margin-bottom:2rem}
 .story-body p{font-family:var(--serif);font-weight:400;font-size:clamp(1.05rem,1.5vw,1.22rem);line-height:1.78;color:#2c2924;margin-bottom:1.7em}
@@ -663,6 +669,33 @@ const ASSET_MAP = {
   'ent-john-harrison': MEDIA_ROOT+'/stories/harrison/5.jpg',
   'ent-cronometro-marino': MEDIA_ROOT+'/stories/harrison/7.jpg',
   'ent-navegacion': MEDIA_ROOT+'/stories/harrison/1.jpg',
+  'story-el-alud-de-azucar': MEDIA_ROOT+'/stories/melaza/3.jpg',
+  'story-las-chicas-del-radio': MEDIA_ROOT+'/stories/radium/1.jpg',
+  'ent-grace-fryer': MEDIA_ROOT+'/stories/radium/2.jpg',
+  'ent-radio': MEDIA_ROOT+'/stories/radium/8.jpg',
+  'story-el-invento-que-salio-de-un-perro': MEDIA_ROOT+'/stories/velcro/2.jpg',
+  'ent-george-de-mestral': MEDIA_ROOT+'/stories/velcro/3.jpg',
+  'ent-velcro': MEDIA_ROOT+'/stories/velcro/4.jpg',
+  'story-el-minuto-que-abarato-el-mundo': MEDIA_ROOT+'/stories/ford/2.jpg',
+  'ent-henry-ford': MEDIA_ROOT+'/stories/ford/1.jpg',
+  'ent-cadena-de-montaje': MEDIA_ROOT+'/stories/ford/2.jpg',
+  'story-el-ano-sin-verano': MEDIA_ROOT+'/stories/tambora/1.jpg',
+  'ent-tambora': MEDIA_ROOT+'/stories/tambora/9.jpg',
+  'story-la-senal-que-no-volvio': MEDIA_ROOT+'/stories/wow/1.jpg',
+  'ent-senal-wow': MEDIA_ROOT+'/stories/wow/2.jpg',
+  'story-la-actriz-que-invento-el-salto': MEDIA_ROOT+'/stories/lamarr/1.jpg',
+  'ent-hedy-lamarr': MEDIA_ROOT+'/stories/lamarr/1.jpg',
+  'ent-salto-de-frecuencia': MEDIA_ROOT+'/stories/lamarr/2.jpg',
+  'ent-fryer': MEDIA_ROOT+'/stories/radium/2.jpg',
+  'ent-mestral': MEDIA_ROOT+'/stories/velcro/3.jpg',
+  'ent-ford': MEDIA_ROOT+'/stories/ford/1.jpg',
+  'ent-lamarr': MEDIA_ROOT+'/stories/lamarr/1.jpg',
+  'ent-line': MEDIA_ROOT+'/stories/ford/2.jpg',
+  'ent-fhss': MEDIA_ROOT+'/stories/lamarr/2.jpg',
+  'ent-radium': MEDIA_ROOT+'/stories/radium/8.jpg',
+  'ent-molasses': MEDIA_ROOT+'/stories/melaza/3.jpg',
+  'ent-tambora': MEDIA_ROOT+'/stories/tambora/9.jpg',
+  'ent-wow': MEDIA_ROOT+'/stories/wow/2.jpg',
   'cat-dinero': MEDIA_ROOT+'/stories/hielo/1.jpg',
   'cat-empresas': MEDIA_ROOT+'/stories/kodak/1.jpg',
   'cat-inventos': MEDIA_ROOT+'/stories/caja/5.jpg',
@@ -1028,7 +1061,154 @@ const STORIES = [
   {src:MEDIA_ROOT+'/stories/harrison/9.jpg', alt:'Reconstrucción visual. El puerto de llegada: millas, no océanos.'},
   {src:MEDIA_ROOT+'/stories/harrison/10.jpg', alt:'Reconstrucción visual. El meridiano: el tiempo convertido en lugar.'}
  ],
- timeline:[['1707','La flota de Shovell naufraga en las Sorlingas. Más de mil muertos.'],['1714','El Parlamento británico ofrece el Longitude Prize.'],['1761','El H4 viaja a Jamaica. El error es de millas.'],['DESPUÉS','Greenwich se fija como meridiano. El tiempo pasa a ser posición.']]}
+ timeline:[['1707','La flota de Shovell naufraga en las Sorlingas. Más de mil muertos.'],['1714','El Parlamento británico ofrece el Longitude Prize.'],['1761','El H4 viaja a Jamaica. El error es de millas.'],['DESPUÉS','Greenwich se fija como meridiano. El tiempo pasa a ser posición.']]},
+{slug:'el-alud-de-azucar', cat:'historia', title:'El alud de azúcar',
+ tagline:'En 1919 un tanque de melaza se partió en Boston. No fue un incendio. Fue un muro.',
+ desc:'Catorce mil toneladas. Una ola de ocho metros. Veintiuna personas muertas. La compañía habló de sabotaje. Los jueces, de un tanque mal remachado.',
+ durMin:1, durSec:45, date:'2026-09-10', views:0, yt:null,
+ flags:['new'], tags:['Boston','industria','siglo XX'], sources:['Puleo, «Dark Tide»','Sentencia del caso USIA, 1925'],
+ entities:['boston-melaza'],
+ body:[
+ 'En enero de 1919, en Boston, un tanque de catorce mil toneladas de melaza se partió. No fue un incendio. Fue un muro. Una ola de ocho metros, más densa que el agua, a cincuenta kilómetros por hora.',
+ 'Arrancó edificios. Volcó un tren. El invierno pegó el azúcar a las calles. Murieron veintiuna personas. El olor duró años.',
+ 'La compañía habló de sabotaje. Los jueces, de un tanque mal remachado. El barrio, de un alud que no debería existir.'],
+ quote:'No fue un incendio. Fue un muro.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son fotografías del desastre. Son reconstrucciones del tanque, la ola y el barrio. No representan un documento de archivo.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/melaza/1.jpg', alt:'Reconstrucción visual. El tanque sobre el barrio, antes de partirse.'},
+  {src:MEDIA_ROOT+'/stories/melaza/2.jpg', alt:'Reconstrucción visual. Una calle de Boston en invierno, pegajosa y quieta.'},
+  {src:MEDIA_ROOT+'/stories/melaza/3.jpg', alt:'Reconstrucción visual. El alud: más denso que el agua.'},
+  {src:MEDIA_ROOT+'/stories/melaza/4.jpg', alt:'Reconstrucción visual. Madera y acero retorcidos.'},
+  {src:MEDIA_ROOT+'/stories/melaza/5.jpg', alt:'Reconstrucción visual. Después: el olor que no se va.'}
+ ],
+ timeline:[['ENE 1919','El tanque de la USIA se parte en el North End de Boston.'],['1925','El juicio señala el tanque, no el sabotaje.'] ]},
+{slug:'las-chicas-del-radio', cat:'personas', title:'Las chicas del radio',
+ tagline:'No brillaban por fama. Brillaban porque se les había pedido que lo hicieran.',
+ desc:'Pintaban esferas de reloj con radio. Mojaban el pincel en los labios. Grace Fryer y otras compañeras llevaron el veneno a los tribunales.',
+ durMin:4, durSec:240, date:'2026-09-12', views:0, yt:null,
+ flags:['new','editors'], tags:['trabajo','industria','siglo XX'], sources:['Moore, «The Radium Girls»','Caso Fryer v. U.S. Radium, 1927–28'],
+ entities:['grace-fryer','radio'],
+ body:[
+ 'En Orange, Nueva Jersey, un grupo de jóvenes pintaba esferas de reloj con una pintura que relucía en la oscuridad. El truco se llamaba lip pointing: mojar el pincel en los labios.',
+ 'La empresa se protegía. Ellas, no. El polvo iba al pelo, a la comida, a los huesos. Primero se cayeron los dientes. Luego la mandíbula.',
+ 'Grace Fryer y otras compañeras demandaron. En 1928 el caso ya no cabía en una fábrica: cabía en los periódicos. El radio dejó de ser adorno.'],
+ quote:'El cuerpo también es un archivo.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son fotografías de las trabajadoras. Son reconstrucciones de la fábrica, el polvo y el tribunal. No representan un documento de archivo.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/radium/1.jpg', alt:'Reconstrucción visual. La fábrica de relojes al anochecer.'},
+  {src:MEDIA_ROOT+'/stories/radium/2.jpg', alt:'Reconstrucción visual. Bancos de esferas y polvo en el aire.'},
+  {src:MEDIA_ROOT+'/stories/radium/3.jpg', alt:'Reconstrucción visual. El pincel y el bote de pintura luminosa.'},
+  {src:MEDIA_ROOT+'/stories/radium/5.jpg', alt:'Reconstrucción visual. El laboratorio protegido y la sala que no lo estaba.'},
+  {src:MEDIA_ROOT+'/stories/radium/8.jpg', alt:'Reconstrucción visual. Un reloj que brilla en la mesilla.'}
+ ],
+ timeline:[['AÑOS 10–20','Pintoras de esferas en Nueva Jersey. Lip pointing.'],['1927–28','Demandas. El radio deja de ser milagro publicitario.'] ]},
+{slug:'el-invento-que-salio-de-un-perro', cat:'inventos', title:'El invento que salió de un perro',
+ tagline:'A George de Mestral se le llenó el perro de cardos. Vio un cierre.',
+ desc:'Bajo la lupa, cada gancho de la planta se clavaba y no soltaba. De ahí salió el Velcro.',
+ durMin:1, durSec:50, date:'2026-09-15', views:0, yt:null,
+ flags:['new'], tags:['naturaleza','cierre','siglo XX'], sources:['Patente Velcro, 1955'],
+ entities:['george-de-mestral','velcro'],
+ body:[
+ 'En 1941, a George de Mestral se le llenó el perro de cardos. Bajo la lupa, cada gancho se clavaba y no soltaba.',
+ 'Tardó años en copiarlo: una tira de ganchos, otra de bucles. El ejército lo entendió antes que la moda.',
+ 'No inventó un material. Inventó un gesto que la naturaleza ya había resuelto.'],
+ quote:'No inventó un material. Inventó un gesto.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son fotografías de archivo industrial. Son reconstrucciones del paseo, el cardo y el taller.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/velcro/1.jpg', alt:'Reconstrucción visual. Un perro en un campo de cardos.'},
+  {src:MEDIA_ROOT+'/stories/velcro/2.jpg', alt:'Reconstrucción visual. Los ganchos clavados en la lana.'},
+  {src:MEDIA_ROOT+'/stories/velcro/3.jpg', alt:'Reconstrucción visual. La lupa sobre la planta.'},
+  {src:MEDIA_ROOT+'/stories/velcro/4.jpg', alt:'Reconstrucción visual. Dos tiras sobre el banco.'},
+  {src:MEDIA_ROOT+'/stories/velcro/5.jpg', alt:'Reconstrucción visual. El cierre en el equipo, no en un escaparate.'}
+ ],
+ timeline:[['1941','De Mestral observa los cardos en el pelaje.'],['1955','Patente del cierre de ganchos y bucles.'] ]},
+{slug:'el-minuto-que-abarato-el-mundo', cat:'empresas', title:'El minuto que abarató el mundo',
+ tagline:'El Model T no abarató el mundo porque fuera bonito. Lo abarató porque dejó de ser un oficio.',
+ desc:'En 1913 Ford puso el chasis en movimiento. Doce horas cayeron a noventa y tres minutos. El jornal de cinco dólares vino después: para que quien fabricaba el coche pudiera comprarlo.',
+ durMin:1, durSec:50, date:'2026-09-17', views:0, yt:null,
+ flags:['new'], tags:['industria','automóvil','siglo XX'], sources:['Ford, «My Life and Work»','Hounshell, «From the American System to Mass Production»'],
+ entities:['henry-ford','cadena-de-montaje'],
+ body:[
+ 'En 1913, en Highland Park, Ford puso el chasis en movimiento. El coche ya no iba al obrero. El obrero esperaba al coche.',
+ 'Doce horas de montaje cayeron a noventa y tres minutos. Luego llegó el jornal de cinco dólares: no por bondad. Para que quien fabricaba el coche pudiera comprarlo.',
+ 'La cadena no inventó el automóvil. Inventó el minuto como mercancía.'],
+ quote:'La cadena inventó el minuto como mercancía.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son fotografías de Ford Motor. Son reconstrucciones de la planta y la línea. No hay logotipos de archivo.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/ford/1.jpg', alt:'Reconstrucción visual. Highland Park, ladrillo e invierno.'},
+  {src:MEDIA_ROOT+'/stories/ford/2.jpg', alt:'Reconstrucción visual. El chasis en movimiento.'},
+  {src:MEDIA_ROOT+'/stories/ford/3.jpg', alt:'Reconstrucción visual. El mismo gesto, una y otra vez.'},
+  {src:MEDIA_ROOT+'/stories/ford/4.jpg', alt:'Reconstrucción visual. El coche a medio hacer.'},
+  {src:MEDIA_ROOT+'/stories/ford/6.jpg', alt:'Reconstrucción visual. La ventanilla del jornal.'}
+ ],
+ timeline:[['1913','Línea en movimiento en Highland Park.'],['1914','Jornal de cinco dólares.'] ]},
+{slug:'el-ano-sin-verano', cat:'historia', title:'El año sin verano',
+ tagline:'El frío de 1816 no nació en Europa. Nació en una isla.',
+ desc:'El Tambora se abrió en 1815. La ceniza tapó el sol. Heló en junio. El trigo no maduró. Frankenstein nació, en parte, de aquella lluvia.',
+ durMin:4, durSec:240, date:'2026-09-19', views:0, yt:null,
+ flags:['new','editors'], tags:['clima','volcán','siglo XIX'], sources:['Oppenheimer, «Tambora 1815»','Wood, «Tambora»'],
+ entities:['tambora'],
+ body:[
+ 'En abril de 1815 el Tambora, en lo que hoy es Indonesia, se abrió. Pueblos enteros desaparecieron. El resto del planeta aún no sabía que le había tocado.',
+ 'La ceniza se quedó en la estratosfera. En 1816 heló en junio en Nueva Inglaterra. En Europa el trigo no maduró. Hubo hambruna. De una villa junto a un lago, bajo la lluvia, salió Frankenstein.',
+ 'El clima no pide permiso a las fronteras. Tambora lo demostró un siglo antes de los satélites.'],
+ quote:'El cielo es infraestructura. A veces falla a diez mil kilómetros.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son fotografías de 1815. Son reconstrucciones de la erupción, el cielo tapado y la cosecha perdida.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/tambora/1.jpg', alt:'Reconstrucción visual. La columna del Tambora.'},
+  {src:MEDIA_ROOT+'/stories/tambora/2.jpg', alt:'Reconstrucción visual. Un pueblo bajo la ceniza.'},
+  {src:MEDIA_ROOT+'/stories/tambora/3.jpg', alt:'Reconstrucción visual. Un sol débil.'},
+  {src:MEDIA_ROOT+'/stories/tambora/4.jpg', alt:'Reconstrucción visual. Helada en junio.'},
+  {src:MEDIA_ROOT+'/stories/tambora/7.jpg', alt:'Reconstrucción visual. La villa junto al lago, bajo la lluvia.'}
+ ],
+ timeline:[['ABR 1815','Erupción del Tambora.'],['1816','El año sin verano: heladas, hambruna, Frankenstein.'] ]},
+{slug:'la-senal-que-no-volvio', cat:'misterios', title:'La señal que no volvió',
+ tagline:'Setenta y dos segundos que no deberían existir.',
+ desc:'El 15 de agosto de 1977, el radiotelescopio Big Ear en Ohio registró una señal estrecha. Jerry Ehman anotó Wow. Nunca se repitió.',
+ durMin:1, durSec:45, date:'2026-09-22', views:0, yt:null,
+ flags:['new'], tags:['SETI','cielo','siglo XX'], sources:['Ohio State University · Big Ear archives'],
+ entities:['senal-wow','misterios'],
+ body:[
+ 'El quince de agosto de 1977, un radiotelescopio en Ohio escuchó setenta y dos segundos que no deberían existir. Jerry Ehman anotó a mano: Wow.',
+ 'Una señal estrecha, fuerte, en la frecuencia del hidrógeno. El Big Ear no volvió a oírla. Nadie la ha repetido.',
+ 'El universo a veces habla una vez. El resto es espera.'],
+ quote:'El universo a veces habla una vez.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son el listado original. Son reconstrucciones del telescopio, el papel y la noche.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/wow/1.jpg', alt:'Reconstrucción visual. El Big Ear en un campo de Ohio.'},
+  {src:MEDIA_ROOT+'/stories/wow/2.jpg', alt:'Reconstrucción visual. El papel y el círculo de tinta.'},
+  {src:MEDIA_ROOT+'/stories/wow/3.jpg', alt:'Reconstrucción visual. La sala de control, vacía.'},
+  {src:MEDIA_ROOT+'/stories/wow/4.jpg', alt:'Reconstrucción visual. El cielo sobre la antena.'},
+  {src:MEDIA_ROOT+'/stories/wow/5.jpg', alt:'Reconstrucción visual. El archivo que no se cierra.'}
+ ],
+ timeline:[['15 AGO 1977','La señal Wow. 72 segundos. No se repite.'] ]},
+{slug:'la-actriz-que-invento-el-salto', cat:'personas', title:'La actriz que inventó el salto',
+ tagline:'Hedy Lamarr era el cartel. También era el esquema.',
+ desc:'En 1942, con George Antheil, patentó el salto de frecuencia para que un torpedo no se dejara interferir. Décadas después esa idea está debajo del wifi.',
+ durMin:1, durSec:48, date:'2026-09-24', views:0, yt:null,
+ flags:['new'], tags:['radio','guerra','siglo XX'], sources:['Patente US 2.292.387, 1942'],
+ entities:['hedy-lamarr','salto-de-frecuencia'],
+ body:[
+ 'En 1942, Hedy Lamarr y el compositor George Antheil patentaron un sistema para que un torpedo no se dejara interferir: saltar de frecuencia, como un piano que no se queda en la misma tecla.',
+ 'Hollywood no lo produjo. La marina, al principio, tampoco. Décadas después, esa idea está debajo del wifi y del Bluetooth.',
+ 'La actriz no inventó el teléfono. Inventó que el enemigo no pudiera seguirlo.'],
+ quote:'Inventó que el enemigo no pudiera seguirlo.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son retratos. Son reconstrucciones del taller de radio, el rollo de piano y las antenas. No clonan a nadie.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/lamarr/1.jpg', alt:'Reconstrucción visual. El banco de radio de los años 40.'},
+  {src:MEDIA_ROOT+'/stories/lamarr/2.jpg', alt:'Reconstrucción visual. Un rollo de piano: el salto escrito en agujeros.'},
+  {src:MEDIA_ROOT+'/stories/lamarr/3.jpg', alt:'Reconstrucción visual. Papeles de patente, ilegibles a propósito.'},
+  {src:MEDIA_ROOT+'/stories/lamarr/4.jpg', alt:'Reconstrucción visual. Un cuerpo de torpedo en el almacén.'},
+  {src:MEDIA_ROOT+'/stories/lamarr/5.jpg', alt:'Reconstrucción visual. Mástiles de radio al atardecer.'}
+ ],
+ timeline:[['1942','Patente de salto de frecuencia. Lamarr y Antheil.'],['DESPUÉS','La idea reaparece bajo las redes inalámbricas.'] ]}
 ];
 const ENTITIES = [
  {type:'persona', slug:'steve-sasson', name:'Steve Sasson', era:'1950 —', seed:'ent-sasson', blurb:'Ingeniero de Kodak que construyó en 1975 uno de los primeros prototipos de cámara digital.'},
@@ -1046,6 +1226,10 @@ const ENTITIES = [
  {type:'persona', slug:'percy-spencer', name:'Percy Spencer', era:'1894 – 1970', seed:'ent-spencer', blurb:'Ingeniero de Raytheon. El magnetrón le derritió el chocolate y le abrió la cocina.'},
  {type:'persona', slug:'ignaz-semmelweis', name:'Ignaz Semmelweis', era:'1818 – 1865', seed:'ent-semmelweis', blurb:'Médico en Viena. Pidió lavarse las manos. Las muertes cayeron. A él lo apartaron.'},
  {type:'persona', slug:'john-harrison', name:'John Harrison', era:'1693 – 1776', seed:'ent-harrison', blurb:'Relojero. Resolvió la longitud metiendo un puerto en un cronómetro.'},
+ {type:'persona', slug:'grace-fryer', name:'Grace Fryer', era:'1899 – 1933', seed:'ent-fryer', blurb:'Pintora de esferas. Llevó el radio de la fábrica a los tribunales.'},
+ {type:'persona', slug:'george-de-mestral', name:'George de Mestral', era:'1907 – 1990', seed:'ent-mestral', blurb:'Ingeniero. Vio un cierre en los cardos de su perro.'},
+ {type:'persona', slug:'henry-ford', name:'Henry Ford', era:'1863 – 1947', seed:'ent-ford', blurb:'Puso el chasis en movimiento. El minuto se volvió mercancía.'},
+ {type:'persona', slug:'hedy-lamarr', name:'Hedy Lamarr', era:'1914 – 2000', seed:'ent-lamarr', blurb:'Actriz e inventora. El salto de frecuencia nació en un papel de 1942.'},
  {type:'empresa', slug:'kodak', name:'Kodak', era:'1888 —', seed:'ent-kodak', blurb:'De la fotografía química a la digital: ayudó a inventar piezas del futuro que no llegó a dominar.'},
  {type:'empresa', slug:'xerox', name:'Xerox', era:'1906 —', seed:'ent-xerox', blurb:'Dominó la fotocopia y financió PARC, el laboratorio que inventó el futuro que otros comercializaron.'},
  {type:'empresa', slug:'enron', name:'Enron', era:'1985 – 2001', seed:'ent-enron', blurb:'De compañía de gas a símbolo del fraude corporativo.'},
@@ -1060,6 +1244,9 @@ const ENTITIES = [
  {type:'invento', slug:'cadena-de-frio', name:'El comercio de hielo', era:'1806 —', seed:'ent-cold', blurb:'Antes de la máquina de frío: cortar, aislar y enviar el invierno como si fuera un producto.'},
  {type:'invento', slug:'horno-microondas', name:'El horno de microondas', era:'1945 —', seed:'ent-micro', blurb:'Un radar de guerra que acabó calentando la cena.'},
  {type:'invento', slug:'cronometro-marino', name:'El cronómetro marino', era:'1735 – 1761', seed:'ent-chrono', blurb:'El reloj que no se rindió al barco. La longitud dejó de ser un misterio.'},
+ {type:'invento', slug:'velcro', name:'Velcro', era:'1941 – 1955', seed:'ent-velcro', blurb:'Un cierre copiado de un cardo.'},
+ {type:'invento', slug:'cadena-de-montaje', name:'La cadena de montaje', era:'1913', seed:'ent-line', blurb:'El coche ya no iba al obrero. El obrero esperaba al coche.'},
+ {type:'invento', slug:'salto-de-frecuencia', name:'El salto de frecuencia', era:'1942', seed:'ent-fhss', blurb:'Una señal que no se deja seguir. Debajo del wifi hay una patente de guerra.'},
  {type:'tema', slug:'mary-celeste', name:'Mary Celeste', era:'1872', seed:'ent-celeste', blurb:'Bergantín encontrado vacío en el Atlántico. El caso no se cerró.'},
  {type:'tema', slug:'fotografia', name:'Fotografía', era:'Tema', seed:'ent-foto', blurb:'De la química a los sensores: la industria de la memoria.'},
  {type:'tema', slug:'energia', name:'Energía', era:'Tema', seed:'ent-energy', blurb:'Quién produce, quién distribuye y quién decide cómo se enciende el mundo.'},
@@ -1071,7 +1258,11 @@ const ENTITIES = [
  {type:'tema', slug:'gran-consumo', name:'Gran consumo', era:'Tema', seed:'ent-retail', blurb:'Supermercados, datos y la vida cotidiana de las cosas.'},
  {type:'tema', slug:'misterios', name:'Misterios sin resolver', era:'Tema', seed:'ent-mystery', blurb:'Expedientes que la historia dejó abiertos.'},
  {type:'tema', slug:'higiene', name:'Higiene', era:'Tema', seed:'ent-hygiene', blurb:'Cuando lavarse las manos dejó de ser urbanidad y se volvió infraestructura.'},
- {type:'tema', slug:'navegacion', name:'Navegación', era:'Tema', seed:'ent-nav', blurb:'Latitud, longitud y el precio de no saber dónde estás.'}
+ {type:'tema', slug:'navegacion', name:'Navegación', era:'Tema', seed:'ent-nav', blurb:'Latitud, longitud y el precio de no saber dónde estás.'},
+ {type:'tema', slug:'radio', name:'Radio (elemento)', era:'Tema', seed:'ent-radium', blurb:'De milagro luminoso a veneno con nombre.'},
+ {type:'tema', slug:'boston-melaza', name:'La inundación de melaza', era:'1919', seed:'ent-molasses', blurb:'Un tanque se parte. El barrio se queda pegado.'},
+ {type:'tema', slug:'tambora', name:'Tambora', era:'1815', seed:'ent-tambora', blurb:'Un volcán apaga el verano al otro lado del mundo.'},
+ {type:'tema', slug:'senal-wow', name:'La señal Wow', era:'1977', seed:'ent-wow', blurb:'Setenta y dos segundos. Nunca se repitieron.'}
 ];
 const SHORTS = [
  {slug:'la-vacuna-que-no-se-patento', story:'la-vacuna-que-no-se-patento', title:'La vacuna que no se patentó', desc:'Jonas Salk tenía la vacuna de la polio. Le preguntaron quién la poseía. Dijo que la gente. Como el sol.', dur:33, views:0, yt:'U4jWK8RC1bM'},
@@ -1579,8 +1770,28 @@ function viewAbout(){
     <p class="contact-row mono dim">YOUTUBE · <a href="${YT_CHANNEL}" target="_blank" rel="noopener">YOUTUBE.COM/@TRAMAHISTORIAS</a></p>
     <p class="contact-row mono dim" style="margin-top:.8rem">INSTAGRAM · <a href="${IG}" target="_blank" rel="noopener">INSTAGRAM.COM/TRAMAHISTORIAS</a></p>
     <p class="contact-row mono dim" style="margin-top:.8rem">TIKTOK · <a href="${TT}" target="_blank" rel="noopener">TIKTOK.COM/@TRAMAHISTORIAS</a></p>
-    <p class="contact-row mono dim" style="margin-top:.8rem">CORREO · <a href="mailto:${MAIL}">${MAIL}</a></p>
+    <p class="contact-row mono dim" style="margin-top:.8rem">CORREO · <a href="#/contacto">${MAIL}</a></p>
   </section></div>`,{t:'Sobre — TRAMA',d:'Qué es TRAMA y por qué existe.'});
+}
+function viewContact(){
+  mount(`<div class="wrap" style="max-width:760px"><header class="phead" data-rv>
+    <span class="catlab">TRAMA · CONTACTO</span>
+    <h1>Escríbenos</h1>
+    <p class="sub">No hay formulario en la nube: esta web no puede enviar correos sola. El botón abre Gmail con el mensaje listo, o copia la dirección si usas otro cliente.</p>
+  </header>
+  <section class="story-body legal-body" data-rv>
+    <p class="contact-row contact-mail mono">CORREO · <button type="button" class="btn btn-ghost" data-act="copy-mail" style="display:inline-flex;margin-left:.4rem">${MAIL}</button></p>
+    <form id="contactForm" class="contact-form" novalidate>
+      <input type="text" name="nombre" placeholder="Tu nombre" aria-label="Nombre" autocomplete="name">
+      <input type="email" name="email" placeholder="tu@correo.com" aria-label="Tu correo" autocomplete="email" required>
+      <textarea name="mensaje" placeholder="Qué quieres contar o preguntar" aria-label="Mensaje" required></textarea>
+      <div class="contact-actions">
+        <button class="btn btn-gold" type="submit">ABRIR GMAIL</button>
+        <button class="btn btn-ghost" type="button" data-act="copy-mail">COPIAR CORREO</button>
+      </div>
+    </form>
+    <p class="mono dim">También: YouTube, Instagram y TikTok @tramahistorias. Sin lista automática ni envíos masivos.</p>
+  </section></div>`,{t:'Contacto — TRAMA',d:'Escribe a TRAMA: tramahistorias@gmail.com'});
 }
 function viewLegal(page){
   const T={
@@ -1647,7 +1858,7 @@ function viewLegal(page){
 function viewSitemap(){
   const sm=(title,items)=>'<div><h2>'+title+'</h2>'+items.map(([h,l])=>'<a href="'+h+'"'+(String(h).indexOf('http')===0?' target="_blank" rel="noopener"':'')+'>'+l+'</a>').join('')+'</div>';
   const html='<div class="sitemap">'+[
-    sm('Sitio',[['#/','Inicio'],['#/historias','Historias'],['#/documentales','Documentales'],['#/shorts','Cortos (un minuto)'],['#/categorias','Categorías'],['#/mi-lista','Mi lista'],['#/sobre','Sobre nosotros']]),
+    sm('Sitio',[['#/','Inicio'],['#/historias','Historias'],['#/documentales','Documentales'],['#/shorts','Cortos (un minuto)'],['#/categorias','Categorías'],['#/mi-lista','Mi lista'],['#/sobre','Sobre nosotros'],['#/contacto','Contacto']]),
     sm('Categorías',Object.entries(CATS).map(([k,c])=>['#/categorias/'+k,c.name])),
     sm('Historias',STORIES.map(s=>['#/historias/'+s.slug,s.title])),
     sm('Cortos',SHORTS.map(s=>['#/shorts/'+s.slug,s.title])),
@@ -1699,6 +1910,7 @@ function route(){
   else if((m=path.match(/^\/(personas|empresas|inventos|temas)\/([\w-]+)$/)))viewEntity(m[1],m[2]);
   else if(path==='/mi-lista')viewMyList();
   else if(path==='/sobre')viewAbout();
+  else if(path==='/contacto')viewContact();
   else if(path==='/mapa-del-sitio')viewSitemap();
   else if((m=path.match(/^\/legal\/([\w-]+)$/)))viewLegal(m[1]);
   else view404();
@@ -1740,17 +1952,37 @@ document.addEventListener('click',e=>{
     if(act==='related')Analytics.track('related_story_click',{to:b.getAttribute('href')});
     if(act==='hero-down'){const hero=$('#hero');if(!hero)return;const navH=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'))||64;scrollTo({top:hero.getBoundingClientRect().bottom+scrollY-navH,behavior:RM?'auto':'smooth'})}
     if(act==='goto-news'){e.preventDefault();if(location.hash==='#/'||location.hash===''){$('#news').scrollIntoView({behavior:RM?'auto':'smooth'})}else{App.pendingScroll='news';location.hash='#/'}}
+    if(act==='copy-mail'){e.preventDefault();copyMail()}
     return;
   }
 });
+function copyMail(){
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(MAIL).then(()=>toast('Correo copiado: '+MAIL)).catch(()=>toast(MAIL));
+  }else toast(MAIL);
+}
+function openGmail(subject,body){
+  const g='https://mail.google.com/mail/?view=cm&fs=1&tf=1&to='+encodeURIComponent(MAIL)+'&su='+encodeURIComponent(subject||'TRAMA')+'&body='+encodeURIComponent(body||'');
+  const w=window.open(g,'_blank','noopener');
+  if(!w){
+    location.href='mailto:'+MAIL+'?subject='+encodeURIComponent(subject||'')+'&body='+encodeURIComponent(body||'');
+  }
+}
 document.addEventListener('submit',e=>{
   if(e.target.id==='newsForm'){e.preventDefault();
     const em=e.target.email.value.trim();
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){toast('Revisa el correo electrónico');return}
     store.set('newsletter',{email:em,at:Date.now()});
-    e.target.outerHTML='<p class="news-ok">Se ha abierto tu correo. Si no, escribe a '+MAIL+'.</p>';
-    location.href='mailto:'+MAIL+'?subject='+encodeURIComponent('Newsletter TRAMA')+'&body='+encodeURIComponent('Quiero recibir las historias de TRAMA.\n\nCorreo: '+em);
+    openGmail('TRAMA','Quiero escribir a TRAMA.\n\nCorreo: '+em);
+    e.target.outerHTML='<p class="news-ok">Se ha abierto Gmail. Si no, el correo es '+MAIL+'.</p>';
     Analytics.track('newsletter_submit')}
+  if(e.target.id==='contactForm'){e.preventDefault();
+    const f=e.target, nom=(f.nombre.value||'').trim(), em=(f.email.value||'').trim(), msg=(f.mensaje.value||'').trim();
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){toast('Revisa el correo electrónico');return}
+    if(!msg){toast('Escribe un mensaje');return}
+    openGmail('TRAMA — contacto',(nom?nom+'\n':'')+em+'\n\n'+msg);
+    toast('Abriendo Gmail…');
+    Analytics.track('contact_submit')}
 });
 let searchTmr=null;
 document.addEventListener('input',e=>{if(e.target.id==='searchInput'){clearTimeout(searchTmr);searchTmr=setTimeout(()=>renderSearch(e.target.value),90)}});
@@ -1774,9 +2006,9 @@ addEventListener('beforeunload',()=>{App.player&&App.player.save&&App.player.sav
 
 /* ── INIT ── */
 $('#catsPanel').innerHTML=Object.entries(CATS).map(([k,c])=>'<a role="menuitem" href="#/categorias/'+k+'"><span class="cn">'+c.name+'</span><span class="cd">'+c.desc+'</span></a>').join('');
-$('#menuLinks').innerHTML=[['#/','Inicio','01'],['#/historias','Historias','02'],['#/documentales','Documentales','03'],['#/shorts','Cortos','04'],['#/categorias','Categorías','05'],['#/mi-lista','Mi lista','06'],['#/sobre','Sobre','07']].map(l=>'<a class="ml" href="'+l[0]+'">'+l[1]+'<span class="mono">'+l[2]+'</span></a>').join('')+SOCIAL.map(s=>'<a class="ml" href="'+s[1]+'" target="_blank" rel="noopener">'+s[0]+'<span class="mono">↗</span></a>').join('');
+$('#menuLinks').innerHTML=[['#/','Inicio','01'],['#/historias','Historias','02'],['#/documentales','Documentales','03'],['#/shorts','Cortos','04'],['#/categorias','Categorías','05'],['#/mi-lista','Mi lista','06'],['#/sobre','Sobre','07'],['#/contacto','Contacto','08']].map(l=>'<a class="ml" href="'+l[0]+'">'+l[1]+'<span class="mono">'+l[2]+'</span></a>').join('')+SOCIAL.map(s=>'<a class="ml" href="'+s[1]+'" target="_blank" rel="noopener">'+s[0]+'<span class="mono">↗</span></a>').join('');
 (function(){const f=document.querySelector('.footer-html');if(!f)return})();
-document.body.insertAdjacentHTML('beforeend','<footer class="footer"><div class="wrap"><div class="f-top"><div><div class="f-mark"><picture><source type="image/webp" srcset="public/logo.webp"><img src="'+LOGO+'" width="120" height="140" alt="TRAMA"></picture></div><p class="f-claim">«'+CLAIM+'»</p></div><div class="f-cols"><div><h4>Explora</h4><a href="#/historias">Historias</a><a href="#/documentales">Documentales</a><a href="#/shorts">Cortos</a><a href="#/categorias">Categorías</a><a href="#/mi-lista">Mi lista</a></div><div><h4>Sobre</h4><a href="#/sobre">Sobre nosotros</a><a href="#/" data-act="goto-news">Escribir</a><a href="mailto:'+MAIL+'">Contacto</a></div><div><h4>Legal</h4><a href="#/legal/aviso">Aviso legal</a><a href="#/legal/privacidad">Privacidad</a><a href="#/legal/cookies">Cookies</a><a href="#/legal/terminos">Términos</a><a href="#/mapa-del-sitio">Mapa del sitio</a></div><div><h4>Social</h4>'+SOCIAL.map(s=>'<a href="'+s[1]+'" target="_blank" rel="noopener">'+s[0]+'</a>').join('')+'<a href="mailto:'+MAIL+'">'+MAIL+'</a></div></div></div><div class="f-bot"><span class="mono">© 2026 TRAMA — UN ARCHIVO VIVO DE HISTORIAS</span><span class="mono dim">'+PHILO.toUpperCase()+'</span></div></div></footer>');
+document.body.insertAdjacentHTML('beforeend','<footer class="footer"><div class="wrap"><div class="f-top"><div><div class="f-mark"><picture><source type="image/webp" srcset="public/logo.webp"><img src="'+LOGO+'" width="120" height="140" alt="TRAMA"></picture></div><p class="f-claim">«'+CLAIM+'»</p></div><div class="f-cols"><div><h4>Explora</h4><a href="#/historias">Historias</a><a href="#/documentales">Documentales</a><a href="#/shorts">Cortos</a><a href="#/categorias">Categorías</a><a href="#/mi-lista">Mi lista</a></div><div><h4>Sobre</h4><a href="#/sobre">Sobre nosotros</a><a href="#/contacto">Escribir</a><a href="#/contacto">Contacto</a></div><div><h4>Legal</h4><a href="#/legal/aviso">Aviso legal</a><a href="#/legal/privacidad">Privacidad</a><a href="#/legal/cookies">Cookies</a><a href="#/legal/terminos">Términos</a><a href="#/mapa-del-sitio">Mapa del sitio</a></div><div><h4>Social</h4>'+SOCIAL.map(s=>'<a href="'+s[1]+'" target="_blank" rel="noopener">'+s[0]+'</a>').join('')+'<a href="#/contacto">'+MAIL+'</a></div></div></div><div class="f-bot"><span class="mono">© 2026 TRAMA — UN ARCHIVO VIVO DE HISTORIAS</span><span class="mono dim">'+PHILO.toUpperCase()+'</span></div></div></footer>');
 if(innerWidth<=900)$('#menuBtn').style.display='inline-flex';
 addEventListener('resize',()=>{$('#menuBtn').style.display=innerWidth<=900?'inline-flex':'none'});
 route();
