@@ -640,6 +640,7 @@ const ASSET_MAP = {
   'story-mary-celeste-el-barco-que-llego-vacio': MEDIA_ROOT+'/stories/celeste/1.jpg',
   'ent-mary-celeste': MEDIA_ROOT+'/stories/celeste/2.jpg',
   'story-el-hombre-que-detuvo-el-mundo': MEDIA_ROOT+'/stories/petrov/1.jpg',
+  'short-cinco-misiles': MEDIA_ROOT+'/stories/petrov/1.jpg',
   'ent-stanislav-petrov': MEDIA_ROOT+'/stories/petrov/2.jpg',
   'ent-guerra-fria': MEDIA_ROOT+'/stories/petrov/3.jpg',
   'story-tulipanes-de-oro-la-primera-gran-burbuja': MEDIA_ROOT+'/stories/tulipanes/5.jpg',
@@ -649,6 +650,7 @@ const ASSET_MAP = {
   'ent-jeff-skilling': MEDIA_ROOT+'/stories/enron/5.jpg',
   'ent-fraude': MEDIA_ROOT+'/stories/enron/5.jpg',
   'story-las-rayas-que-gobiernan-el-mundo': MEDIA_ROOT+'/stories/woodland/1.jpg',
+  'short-lineas-en-la-arena': MEDIA_ROOT+'/stories/woodland/1.jpg',
   'ent-norman-woodland': MEDIA_ROOT+'/stories/woodland/2.jpg',
   'ent-codigo-de-barras': MEDIA_ROOT+'/stories/woodland/1.jpg',
   'ent-gran-consumo': MEDIA_ROOT+'/stories/woodland/3.jpg',
@@ -766,8 +768,8 @@ const STORIES = [
 {slug:'el-hombre-que-detuvo-el-mundo', cat:'historia', title:'El hombre que detuvo el mundo',
  tagline:'Veintiséis de septiembre de 1983. Cinco misiles en la pantalla. Y un solo hombre entre la pantalla y el botón.',
  desc:'Stanislav Petrov era el oficial de guardia del sistema de alerta nuclear soviético cuando el ordenador anunció un ataque estadounidense. Decidió no creer a la máquina.',
- durMin:6, durSec:360, date:'2026-02-26', views:0, yt:null,
- flags:['featured'], tags:['guerra fría','decisiones','nuclear'], sources:['Entrevistas S. Petrov, 2004–2013','Archivos desclasificados CIA'],
+ durMin:1, durSec:45, date:'2026-08-25', views:0, yt:'aiWhso5jI7U',
+ flags:['featured','new'], tags:['guerra fría','decisiones','nuclear'], sources:['Entrevistas S. Petrov, 2004–2013','Archivos desclasificados CIA'],
  entities:['stanislav-petrov','guerra-fria'],
  body:[
  'El protocolo era inequívoco: si el sistema de satélites detectaba lanzamiento de misiles, el oficial de guardia debía informar al Estado Mayor, y el Estado Mayor, recomendar la respuesta. Aquella noche, el sistema detectó uno. Luego dos. Luego cinco.',
@@ -860,8 +862,8 @@ const STORIES = [
 {slug:'las-rayas-que-gobiernan-el-mundo', cat:'personas', title:'Las rayas que gobiernan el mundo',
  tagline:'Nació en la arena, inspirado en código Morse. Hoy se escanea miles de millones de veces al día.',
  desc:'Norman Joseph Woodland dibujó en una playa de Florida las líneas que hoy leen el comercio entero. El código de barras parece trivial. Es una de las infraestructuras más poderosas del siglo XX.',
- durMin:6, durSec:360, date:'2026-08-18', views:0, yt:null,
- flags:['featured','editors'], tags:['retail','datos','automatización'], sources:['USPTO · Patente 2.612.994'],
+ durMin:1, durSec:45, date:'2026-08-27', views:0, yt:'tYlkXZETVfQ',
+ flags:['featured','editors','new'], tags:['retail','datos','automatización'], sources:['USPTO · Patente 2.612.994'],
  entities:['norman-woodland','codigo-de-barras','gran-consumo'],
  body:[
  'La semilla fue un encargo prosaico: un director de supermercado pidió un sistema para leer el producto en caja sin teclear nada. A Norman Joseph Woodland se le ocurrió la respuesta sentado en una playa de Florida: dibujó líneas en la arena, como un código Morse ensanchado.',
@@ -1265,6 +1267,8 @@ const ENTITIES = [
  {type:'tema', slug:'senal-wow', name:'La señal Wow', era:'1977', seed:'ent-wow', blurb:'Setenta y dos segundos. Nunca se repitieron.'}
 ];
 const SHORTS = [
+ {slug:'lineas-en-la-arena', story:'las-rayas-que-gobiernan-el-mundo', title:'Dibujó el código de barras en la arena', desc:'Norman Woodland ensanchó el Morse en una playa. Hoy esas rayas leen el comercio entero.', dur:45, views:0, yt:'tYlkXZETVfQ'},
+ {slug:'cinco-misiles', story:'el-hombre-que-detuvo-el-mundo', title:'Cinco misiles en la pantalla', desc:'El protocolo decía informe. Petrov esperó. Esa pausa fue la paz.', dur:45, views:0, yt:'aiWhso5jI7U'},
  {slug:'la-vacuna-que-no-se-patento', story:'la-vacuna-que-no-se-patento', title:'La vacuna que no se patentó', desc:'Jonas Salk tenía la vacuna de la polio. Le preguntaron quién la poseía. Dijo que la gente. Como el sol.', dur:33, views:0, yt:'U4jWK8RC1bM'},
  {slug:'edison-contra-tesla', story:'la-guerra-de-las-corrientes', title:'Edison contra Tesla: la guerra de las corrientes', desc:'Edison tenía la fama. Westinghouse tenía a Tesla. Y el mundo tuvo que elegir cómo iluminarse.', dur:50, views:0, yt:'vwVcmv6XShg'},
  {slug:'kodak-invento-la-camara-digital', story:'kodak-y-el-futuro-que-dejo-escapar', title:'Kodak inventó la cámara digital', desc:'1975. Un prototipo. 23 segundos. Y una pregunta que no era técnica: qué queda de Kodak si la foto deja de ser química.', dur:34, views:0, yt:'7JK106M1L6k'},
