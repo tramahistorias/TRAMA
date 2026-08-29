@@ -601,6 +601,14 @@ const LOGO = 'public/logo.png';
 const YT_CHANNEL = 'https://www.youtube.com/@TRAMAhistorias';
 const YT_SHORTS = YT_CHANNEL+'/shorts';
 const ytShortHref = sh => sh.yt ? 'https://www.youtube.com/shorts/'+sh.yt : YT_SHORTS;
+function ytEmbed(id, title){
+  const watch = 'https://www.youtube.com/watch?v='+id;
+  if(location.protocol==='file:'){
+    return '<div class="ply-soon ply-local"><div class="ply-soon-in"><span class="catlab">ABRE LA WEB PUBLICADA</span><p>YouTube no deja reproducir el embed si abres el archivo en el disco (file://). Error 150. Mira Cortos en la web de GitHub Pages o pulsa el enlace.</p><a class="btn btn-solid" href="'+SITE+'#/shorts" target="_blank" rel="noopener">VER EN LA WEB</a> <a class="btn btn-ghost" href="'+watch+'" target="_blank" rel="noopener">VER EN YOUTUBE</a></div></div>';
+  }
+  const origin = encodeURIComponent(location.origin);
+  return '<iframe src="https://www.youtube.com/embed/'+id+'?rel=0&modestbranding=1&origin='+origin+'" title="'+esc(title)+'" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+}
 const IG = 'https://www.instagram.com/tramahistorias/';
 const TT = 'https://www.tiktok.com/@tramahistorias';
 const MAIL = 'tramahistorias@gmail.com';
@@ -921,8 +929,8 @@ const STORIES = [
 {slug:'db-cooper-el-hombre-que-se-evaporo', cat:'misterios', title:'El hombre que se evaporó',
  tagline:'Secuestró un avión, pidió 200.000 dólares, saltó de noche sobre un bosque… y jamás volvió a existir.',
  desc:'El 24 de noviembre de 1971, un pasajero educado de traje oscuro hizo el atraco más elegante de la historia y desapareció. El FBI cerró el caso 45 años después sin un sospechoso firme.',
- durMin:4, durSec:233, date:'2026-08-29', views:0, yt:null,
- flags:['featured'], tags:['aviación','casos abiertos','EE. UU.'], sources:['FBI · Expediente NORJAK, cerrado 8 de julio de 2016'],
+ durMin:4, durSec:233, date:'2026-08-29', views:0, yt:'-Oe_hmY8Za4',
+ flags:['featured','new'], tags:['aviación','casos abiertos','EE. UU.'], sources:['FBI · Expediente NORJAK, cerrado 8 de julio de 2016'],
  entities:['d-b-cooper','misterios'],
  body:[
  'El 24 de noviembre de 1971, víspera de Acción de Gracias, un hombre pagó en efectivo un billete de Portland a Seattle. En el talón escribió un nombre corriente: Dan Cooper. Traje oscuro, corbata, maletín. Pidió un bourbon con soda. Nada en aquel gesto anunciaba un secuestro.',
@@ -1648,7 +1656,7 @@ function viewStory(slug){
 }
 function buildPlayer(st){
   const root=$('#playerBox');App.player=null;
-  if(st.yt){root.innerHTML='<div class="ply-frame"><iframe src="https://www.youtube-nocookie.com/embed/'+st.yt+'?rel=0" title="'+esc(st.title)+'" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';return}
+  if(st.yt){root.innerHTML='<div class="ply-frame">'+ytEmbed(st.yt,st.title)+'</div>';return}
   if(st.video){
     root.innerHTML='<div class="ply-frame"><video src="'+st.video+'" poster="'+assetUrl('story-'+st.slug,1600,900)+'" controls playsinline preload="metadata"></video></div>';
     const vid=root.querySelector('video');
@@ -1671,7 +1679,7 @@ function viewShorts(param){
   const found=SHORTS.findIndex(s=>s.slug===param);
   const i=found<0?0:found;
   const sh=SHORTS[i], st=S[sh.story];
-  const frame=sh.yt?`<iframe src="https://www.youtube-nocookie.com/embed/${sh.yt}?rel=0&modestbranding=1" title="${esc(sh.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`:sh.src?`<video src="${sh.src}" poster="${assetUrl('short-'+sh.slug,640,360)}" playsinline loop preload="auto" disablepictureinpicture></video>`:media('short-'+sh.slug,{w:640,h:360,alt:sh.title,eager:true});
+  const frame=sh.yt?ytEmbed(sh.yt,sh.title):sh.src?`<video src="${sh.src}" poster="${assetUrl('short-'+sh.slug,640,360)}" playsinline loop preload="auto" disablepictureinpicture></video>`:media('short-'+sh.slug,{w:640,h:360,alt:sh.title,eager:true});
   mount(`
   <div class="wrap shorts-page">
     <header class="phead" data-rv>
