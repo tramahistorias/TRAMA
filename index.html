@@ -1367,9 +1367,7 @@ function pic(src,w,h,alt,o={}){
   const onerror=o.onerror||'';
   const img='<img class="'+cls+'" src="'+src+'" width="'+w+'" height="'+h+'" alt="'+esc(alt||'')+'" loading="'+(eager?'eager':'lazy')+'" decoding="async"'+(eager?' fetchpriority="high"':'')+' onload="this.classList.add(\'ld\')"'+onerror+'>';
   if(/logo\.(png|webp)$/i.test(src)) return '<picture><source type="image/webp" srcset="public/logo.webp">'+img+'</picture>';
-  if(!/\.(jpe?g|png)$/i.test(src)) return img;
-  const p=webpPair(src);
-  return '<picture><source type="image/webp" srcset="'+p.sm+' 720w, '+p.full+' 1280w" sizes="'+sizes+'">'+img+'</picture>';
+  return img;
 }
 function media(key,o={}){
   const w=o.w||640,h=o.h||360,src=assetUrl(key,w,h);
