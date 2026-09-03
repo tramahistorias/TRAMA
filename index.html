@@ -695,6 +695,12 @@ const ASSET_MAP = {
   'story-la-senal-que-no-volvio': MEDIA_ROOT+'/stories/wow/1.jpg',
   'ent-senal-wow': MEDIA_ROOT+'/stories/wow/2.jpg',
   'story-la-actriz-que-invento-el-salto': MEDIA_ROOT+'/stories/lamarr/1.jpg',
+  'story-el-aparato-que-no-debia-existir': MEDIA_ROOT+'/stories/walkman/1.jpg',
+  'ent-akio-morita': MEDIA_ROOT+'/stories/walkman/3.jpg',
+  'ent-walkman': MEDIA_ROOT+'/stories/walkman/1.jpg',
+  'ent-sony': MEDIA_ROOT+'/stories/walkman/4.jpg',
+  'story-el-ordenador-que-nadie-debio-encontrar': MEDIA_ROOT+'/stories/anticitera/2.jpg',
+  'ent-anticitera': MEDIA_ROOT+'/stories/anticitera/2.jpg',
   'ent-hedy-lamarr': MEDIA_ROOT+'/stories/lamarr/1.jpg',
   'ent-salto-de-frecuencia': MEDIA_ROOT+'/stories/lamarr/2.jpg',
   'ent-fryer': MEDIA_ROOT+'/stories/radium/2.jpg',
@@ -1219,7 +1225,49 @@ const STORIES = [
   {src:MEDIA_ROOT+'/stories/lamarr/4.jpg', alt:'Reconstrucción visual. Un cuerpo de torpedo en el almacén.'},
   {src:MEDIA_ROOT+'/stories/lamarr/5.jpg', alt:'Reconstrucción visual. Mástiles de radio al atardecer.'}
  ],
- timeline:[['1942','Patente de salto de frecuencia. Lamarr y Antheil.'],['DESPUÉS','La idea reaparece bajo las redes inalámbricas.'] ]}
+ timeline:[['1942','Patente de salto de frecuencia. Lamarr y Antheil.'],['DESPUÉS','La idea reaparece bajo las redes inalámbricas.'] ]},
+{slug:'el-aparato-que-no-debia-existir', cat:'empresas', title:'El aparato que no debía existir',
+ tagline:'El Walkman no inventó el casete. Inventó escuchar solo.',
+ desc:'En 1979 Sony sacó un cassette sin altavoz. En la compañía muchos lo vieron inútil. Morita lo sacó igual. El auricular convirtió la calle en banda sonora privada.',
+ durMin:1, durSec:50, date:'2026-09-29', views:0, yt:null,
+ flags:['new'], tags:['Sony','casete','siglo XX'], sources:['Sony · TPS-L2, 1979','Du Gay et al., «Doing Cultural Studies: The Sony Walkman»'],
+ entities:['akio-morita','sony','walkman'],
+ body:[
+ 'El Walkman no inventó el casete. Inventó escuchar solo. En 1979 Sony sacó un aparato sin altavoz. En la compañía muchos lo vieron inútil: la música se oía en casa o en el coche. Un cassette que no llenaba la habitación no parecía un producto.',
+ 'Akio Morita lo sacó igual. El TPS-L2 cabía en la mano. Los auriculares cerraban el mundo. La calle dejó de ser ruido y se volvió banda sonora. Por primera vez podías ir andando y que nadie más oyera lo que oías tú.',
+ 'No era un tocadiscos diminuto. Era otra idea: la música ya no es pública. Es tuya. El Walkman no cambió el oído. Cambió la ciudad.'],
+ quote:'No cambió el oído. Cambió la ciudad.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son fotografías de archivo de Sony. Son reconstrucciones de la calle, el taller y el aparato. No hay logotipos.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/walkman/1.jpg', alt:'Reconstrucción visual. Un cassette portátil en la mano, de noche.'},
+  {src:MEDIA_ROOT+'/stories/walkman/2.jpg', alt:'Reconstrucción visual. La calle con auriculares: la ciudad se vuelve privada.'},
+  {src:MEDIA_ROOT+'/stories/walkman/3.jpg', alt:'Reconstrucción visual. El mecanismo abierto sobre el banco.'},
+  {src:MEDIA_ROOT+'/stories/walkman/4.jpg', alt:'Reconstrucción visual. El estereo de salón y, al lado, el aparato que cabe en un bolsillo.'},
+  {src:MEDIA_ROOT+'/stories/walkman/5.jpg', alt:'Reconstrucción visual. El casete a medio entrar, la lluvia en el cristal.'}
+ ],
+ timeline:[['1979','Sony lanza el TPS-L2: cassette portátil sin altavoz.'],['AÑOS 80','El auricular convierte la calle en banda sonora privada.']]},
+{slug:'el-ordenador-que-nadie-debio-encontrar', cat:'misterios', title:'El ordenador que nadie debió encontrar',
+ tagline:'Un bloque de bronce. Dentro, engranajes. El cielo, calculado.',
+ desc:'En 1901, esponjeros sacan de un pecio griego un mecanismo de bronce. Predice eclipses más de mil años antes de lo que la historia esperaba. El saber se perdió.',
+ durMin:1, durSec:45, date:'2026-10-01', views:0, yt:null,
+ flags:['new'], tags:['Grecia','engranajes','pecio'], sources:['Freeth et al., Nature, 2006','National Archaeological Museum, Athens'],
+ entities:['anticitera','misterios'],
+ body:[
+ 'En 1901, esponjeros sacan de un pecio griego un bloque de bronce. Parece basura de naufragio. Dentro hay engranajes.',
+ 'Es el mecanismo de Anticitera. Un aparato de hace más de dos mil años que predice eclipses y el ciclo de los Juegos. Un ordenador de cielo, de bronce y de silencio. Nadie en el siglo veinte esperaba encontrarlo.',
+ 'No es un misterio de platillos. Es peor: es historia. Alguien supo hacer eso. Y luego el saber se perdió. La pregunta no es si existió. Es cuántas veces el mundo ha sabido algo y lo ha olvidado.'],
+ quote:'La pregunta no es si existió. Es quién más lo sabía hacer.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son fotografías del pecio de 1901. Son reconstrucciones del bronce, los engranajes y el mar. No representan un documento de museo.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/anticitera/1.jpg', alt:'Reconstrucción visual. El bronce recién sacado del Egeo.'},
+  {src:MEDIA_ROOT+'/stories/anticitera/2.jpg', alt:'Reconstrucción visual. Dientes de engranaje bajo la pátina.'},
+  {src:MEDIA_ROOT+'/stories/anticitera/3.jpg', alt:'Reconstrucción visual. El mecanismo sobre la mesa, fragmentado.'},
+  {src:MEDIA_ROOT+'/stories/anticitera/4.jpg', alt:'Reconstrucción visual. El cielo sobre el mar: eclipses calculados en bronce.'},
+  {src:MEDIA_ROOT+'/stories/anticitera/5.jpg', alt:'Reconstrucción visual. El pecio: ánforas y un bulto oscuro en la arena.'}
+ ],
+ timeline:[['~100 a. C.','Se construye el mecanismo, según el análisis de los engranajes.'],['1901','Esponjeros lo sacan del pecio de Anticitera.'],['2006','Nature publica la reconstrucción: un ordenador astronómico de bronce.']]}
 ];
 const ENTITIES = [
  {type:'persona', slug:'steve-sasson', name:'Steve Sasson', era:'1950 —', seed:'ent-sasson', blurb:'Ingeniero de Kodak que construyó en 1975 uno de los primeros prototipos de cámara digital.'},
@@ -1273,7 +1321,11 @@ const ENTITIES = [
  {type:'tema', slug:'radio', name:'Radio (elemento)', era:'Tema', seed:'ent-radium', blurb:'De milagro luminoso a veneno con nombre.'},
  {type:'tema', slug:'boston-melaza', name:'La inundación de melaza', era:'1919', seed:'ent-molasses', blurb:'Un tanque se parte. El barrio se queda pegado.'},
  {type:'tema', slug:'tambora', name:'Tambora', era:'1815', seed:'ent-tambora', blurb:'Un volcán apaga el verano al otro lado del mundo.'},
- {type:'tema', slug:'senal-wow', name:'La señal Wow', era:'1977', seed:'ent-wow', blurb:'Setenta y dos segundos. Nunca se repitieron.'}
+ {type:'tema', slug:'senal-wow', name:'La señal Wow', era:'1977', seed:'ent-wow', blurb:'Setenta y dos segundos. Nunca se repitieron.'},
+ {type:'persona', slug:'akio-morita', name:'Akio Morita', era:'1921 – 1999', seed:'ent-morita', blurb:'Cofundador de Sony. Sacó un cassette sin altavoz cuando la compañía no lo veía.'},
+ {type:'empresa', slug:'sony', name:'Sony', era:'1946 —', seed:'ent-sony', blurb:'Del magnetófono al Walkman: la música dejó de ser un mueble.'},
+ {type:'invento', slug:'walkman', name:'Walkman', era:'1979', seed:'ent-walkman', blurb:'Un cassette portátil sin altavoz. Inventó escuchar solo.'},
+ {type:'tema', slug:'anticitera', name:'Mecanismo de Anticitera', era:'~100 a. C.', seed:'ent-anticitera', blurb:'Engranajes de bronce que predicen el cielo. El saber se perdió.'}
 ];
 const SHORTS = [
  {slug:'lavarse-las-manos', story:'el-medico-que-pidio-lavarse-las-manos', title:'El médico que pidió lavarse las manos', desc:'En una sala morían más. En la otra, menos. Semmelweis vio las uñas. Le costó la carrera.', dur:45, views:0, yt:'BI0cH7WVTuE'},

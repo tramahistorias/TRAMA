@@ -17,28 +17,20 @@ Lunes 17 ya salió. Mié 19, jue 20 y sáb 22 tapan el silencio hasta Petrov (25
 | El invento que no parece un invento | Short | Inventos | `JCf59aq_Q-w` |
 | El rey del hielo | Vídeo | Dinero | `VKikVkIX-wQ` |
 | Guerra de las corrientes | Short | Historia | `vwVcmv6XShg` |
-| La vacuna que no se patentó | Short | Personas | `subidas/2026-08-20_short-salk` |
-| Mary Celeste | Vídeo ~4 min, 10 stills | Misterios | `subidas/2026-08-22_video-celeste` |
-
-No adelantar Petrov, Woodland ni Cooper (Elvira, 25–29).
+| La vacuna que no se patentó | Short | Personas | `U4jWK8RC1bM` |
+| Mary Celeste | Vídeo ~4 min, 10 stills | Misterios | `BKaHcCAWJow` |
 
 ## Cómo elegir (rotar categorías)
 
-No repetir categoría en la misma semana. No repetir la misma historia. Cubrir huecos antes que twins (otro Kodak, otro contenedor).
+No repetir categoría en la misma semana. No repetir la misma historia. Cubrir huecos antes que twins.
 
-Hueco fuerte: **Personas** (0 piezas). Luego Historia y Misterios.
+## Semana 24–30 ago 2026 — Elvira
 
-Ya gastado en arranque: Empresas, Inventos, Dinero.
-
-## Semana 24–30 ago 2026 — EN CARPETA (no subir hasta el día)
-
-Piezas y texto de Studio en `subidas/AAAA-MM-DD_...`. El nombre de la carpeta es el día de publicación.
-
-| Día | Carpeta | Formato | Categoría |
-|---|---|---|---|
-| Mar 25 | `subidas/2026-08-25_short-petrov` | Short | Historia |
-| Jue 27 | `subidas/2026-08-27_short-woodland` | Short | Personas |
-| Sáb 29 | `subidas/2026-08-29_video-cooper` | Vídeo ~4 min (16:9) | Misterios |
+| Día | Carpeta | Formato | Categoría | YouTube |
+|---|---|---|---|---|
+| Mar 25 | `subidas/2026-08-25_short-petrov` | Short | Historia | `aiWhso5jI7U` |
+| Jue 27 | `subidas/2026-08-27_short-woodland` | Short | Personas | `tYlkXZETVfQ` |
+| Sáb 29 | `subidas/2026-08-29_video-cooper` | Vídeo ~4 min (16:9) | Misterios | `-Oe_hmY8Za4` |
 
 Voz de esa semana: **Elvira**. Si una pieza futura lleva dos voces, Álvaro + Elvira (regla `trama-voz`).
 
@@ -49,7 +41,7 @@ Tapa el hueco entre Cooper (29) y tulipanes (8). No Dinero (tulipanes es la sema
 | Día | Carpeta | Formato | Categoría |
 |---|---|---|---|
 | Mar 1 | `subidas/2026-09-01_short-microondas` | Short | Inventos |
-| Jue 3 | `subidas/2026-09-03_short-semmelweis` | Short | Personas |
+| Jue 3 | `subidas/2026-09-03_short-semmelweis` | Short | Personas | `BI0cH7WVTuE` |
 | Sáb 5 | `subidas/2026-09-05_video-harrison` | Vídeo ~4 min (16:9) | Historia |
 
 Voz: **Álvaro**. El vídeo cierra con el enlace de la web en pantalla. Cama instrumental baja; la VO por delante.
@@ -86,6 +78,16 @@ Los Shorts nuevos de esta tanda llevan Álvaro (indicación de Ramón). Enron si
 | Jue 24 | `subidas/2026-09-24_short-lamarr` | Short | Personas |
 | Sáb 26 | `subidas/2026-09-26_video-enron` | Vídeo ~4 min (16:9) | Dinero |
 
+## Semana 28 sep – 4 oct 2026 — EN CARPETA (Elvira)
+
+Hueco del sábado 3: falta 1 vídeo 16:9 >3 min (no Empresas, no Misterios).
+
+| Día | Carpeta | Formato | Categoría |
+|---|---|---|---|
+| Mar 29 | `subidas/2026-09-29_short-walkman` | Short | Empresas |
+| Jue 1 | `subidas/2026-10-01_short-anticitera` | Short | Misterios |
+| Sáb 3 | — | Vídeo | (hueco) |
+
 Un vídeo de TRAMA: **horizontal 16:9 y más de 3 minutos**. Por debajo es teaser (el hielo, 1 min). 8–12 min es el formato documental cuando haya montaje; no rellenar. 8 min solo hace falta para anuncios a mitad cuando el canal ya cobre.
 
 ## Cortos en la web — compactos (hecho 19 ago 2026)
@@ -106,4 +108,4 @@ El mismo día: TikTok + Instagram Reels (regla `trama-redes`). Render 9:16, `TEX
 - `subidas/` es cola local de YouTube: no va al sitio público.
 - Repo: `https://github.com/tramahistorias/TRAMA` (cuenta del canal, no `ramondelpozokids`).
 - GitHub Pages: `https://tramahistorias.github.io/TRAMA/`. Sin Vercel ni dominio de pago.
-- Calendario de subidas: `subidas/TRAMA-YouTube.ics` (25 Petrov … 8 tulipanes, 10 melaza, 12 radium, 15 velcro, 17 Ford, 19 Tambora, 22 Wow, 24 Lamarr, 26 Enron; 10:00 Madrid).
+- Calendario de subidas: `subidas/TRAMA-YouTube.ics` (25 Petrov … 26 Enron, 29 Walkman, 1 oct Anticitera; 10:00 Madrid). Sábado 3 oct: hueco de vídeo.
