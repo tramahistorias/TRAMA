@@ -673,6 +673,7 @@ const ASSET_MAP = {
   'ent-percy-spencer': MEDIA_ROOT+'/stories/microondas/1.jpg',
   'ent-horno-microondas': MEDIA_ROOT+'/stories/microondas/4.jpg',
   'story-el-medico-que-pidio-lavarse-las-manos': MEDIA_ROOT+'/stories/semmelweis/3.jpg',
+  'short-lavarse-las-manos': MEDIA_ROOT+'/stories/semmelweis/3.jpg',
   'ent-ignaz-semmelweis': MEDIA_ROOT+'/stories/semmelweis/3.jpg',
   'ent-higiene': MEDIA_ROOT+'/stories/semmelweis/3.jpg',
   'story-el-reloj-que-encontro-el-mar': MEDIA_ROOT+'/stories/harrison/7.jpg',
@@ -1026,7 +1027,7 @@ const STORIES = [
 {slug:'el-medico-que-pidio-lavarse-las-manos', cat:'personas', title:'El médico que pidió lavarse las manos',
  tagline:'En una sala morían más. En la otra, menos. Semmelweis vio las uñas. Le costó la carrera.',
  desc:'En 1847, en Viena, Ignaz Semmelweis ordenó lavarse las manos con cal clorada. Las muertes en el parto cayeron. No le creyeron. Pasteur y Lister, después, le dieron la razón.',
- durMin:1, durSec:45, date:'2026-09-03', views:0, yt:null,
+ durMin:1, durSec:45, date:'2026-09-03', views:0, yt:'BI0cH7WVTuE',
  flags:['new'], tags:['medicina','higiene','siglo XIX'], sources:['Semmelweis, «Die Ätiologie», 1861','WHO · higiene de manos'],
  entities:['ignaz-semmelweis','higiene'],
  body:[
@@ -1275,6 +1276,7 @@ const ENTITIES = [
  {type:'tema', slug:'senal-wow', name:'La señal Wow', era:'1977', seed:'ent-wow', blurb:'Setenta y dos segundos. Nunca se repitieron.'}
 ];
 const SHORTS = [
+ {slug:'lavarse-las-manos', story:'el-medico-que-pidio-lavarse-las-manos', title:'El médico que pidió lavarse las manos', desc:'En una sala morían más. En la otra, menos. Semmelweis vio las uñas. Le costó la carrera.', dur:45, views:0, yt:'BI0cH7WVTuE'},
  {slug:'lineas-en-la-arena', story:'las-rayas-que-gobiernan-el-mundo', title:'Dibujó el código de barras en la arena', desc:'Norman Woodland ensanchó el Morse en una playa. Hoy esas rayas leen el comercio entero.', dur:45, views:0, yt:'tYlkXZETVfQ'},
  {slug:'cinco-misiles', story:'el-hombre-que-detuvo-el-mundo', title:'Cinco misiles en la pantalla', desc:'El protocolo decía informe. Petrov esperó. Esa pausa fue la paz.', dur:45, views:0, yt:'aiWhso5jI7U'},
  {slug:'la-vacuna-que-no-se-patento', story:'la-vacuna-que-no-se-patento', title:'La vacuna que no se patentó', desc:'Jonas Salk tenía la vacuna de la polio. Le preguntaron quién la poseía. Dijo que la gente. Como el sol.', dur:33, views:0, yt:'U4jWK8RC1bM'},
