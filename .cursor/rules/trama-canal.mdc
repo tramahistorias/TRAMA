@@ -60,6 +60,8 @@ Woodland (Personas) ya está en web y en cola del 27 ago: no se rehace.
 
 Montaje **en adelante** (cola nueva): cortes al habla, cama + ambiente, grade. **Sin** parallax de dos capas (doble imagen). Cámara Ken Burns simple (push/pull/rise/fall). Los vídeos 16:9 cierran con **endcard** y la URL de la web. No rehacer Petrov, Woodland, Cooper, tulipanes ni Enron.
 
+**Mínimo 6 imágenes** por Short y por vídeo (stills en carpeta y en `images` de `index.html`). Si se puede, **12** (la rejilla de 3 columnas llena 4 filas y se ve mejor). Nunca menos de 6. Lo ya publicado con menos stills no se rehace salvo que Ramón lo pida.
+
 ## Semana 14–20 sep 2026 — EN CARPETA (Álvaro)
 
 | Día | Carpeta | Formato | Categoría |
@@ -96,7 +98,7 @@ Un reproductor 16:9 pequeño (ancho máx. ~420px) + texto; debajo rejilla `.s-ca
 
 ## Al publicar
 
-IDs reales en `index.html` (`yt`). Conservar voces e imágenes. Título YouTube con tilde correcta (`inventó`). No inventar vistas. No usar ramondelpozorott.es.
+IDs reales en `index.html` (`yt`). Conservar voces e imágenes. Pieza nueva: **mínimo 6** stills (12 si se puede). Título YouTube con tilde correcta (`inventó`). No inventar vistas. No usar ramondelpozorott.es.
 
 El mismo día: TikTok + Instagram Reels (regla `trama-redes`). Render 9:16, `TEXTOS.txt`, Chrome. Luego se puede borrar el `.mp4` de YouTube.
 
