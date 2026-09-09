@@ -652,6 +652,7 @@ const ASSET_MAP = {
   'ent-stanislav-petrov': MEDIA_ROOT+'/stories/petrov/2.jpg',
   'ent-guerra-fria': MEDIA_ROOT+'/stories/petrov/3.jpg',
   'story-tulipanes-de-oro-la-primera-gran-burbuja': MEDIA_ROOT+'/stories/tulipanes/5.jpg',
+  'short-tulipanes-de-oro': MEDIA_ROOT+'/stories/tulipanes/5.jpg',
   'ent-burbujas': MEDIA_ROOT+'/stories/tulipanes/5.jpg',
   'story-enron-los-arquitectos-del-humo': MEDIA_ROOT+'/stories/enron/5.jpg',
   'ent-enron': MEDIA_ROOT+'/stories/enron/5.jpg',
@@ -808,8 +809,8 @@ const STORIES = [
 {slug:'tulipanes-de-oro-la-primera-gran-burbuja', cat:'dinero', title:'Tulipanes de oro: la primera gran burbuja',
  tagline:'En 1637, un bulbo de tulipán llegó a costar lo mismo que una casa en Ámsterdam. Hasta que dejó de costarlo.',
  desc:'Holanda inventó el mercado financiero moderno y, de propina, su primera locura colectiva. La fiebre de los tulipanes sigue siendo el espejo de todas las burbujas posteriores.',
- durMin:1, durSec:52, date:'2026-09-08', views:0, yt:null,
- flags:['editors'], tags:['burbujas','especulación','Países Bajos'], sources:['Archivos notariales de Haarlem, 1636–1637'],
+ durMin:1, durSec:52, date:'2026-09-08', views:0, yt:'CnGa-s0j7b0',
+ flags:['editors','new'], tags:['burbujas','especulación','Países Bajos'], sources:['Archivos notariales de Haarlem, 1636–1637'],
  entities:['burbujas','comercio-global'],
  body:[
  'El tulipán llegó a Europa desde el Imperio otomano como una rareza botánica. En 1593 ya florecía en los jardines de Leiden. En la Holanda del siglo XVII —la nación más comercial del mundo— esa rareza dejó de ser un adorno y se convirtió en activo: los bulbos se compraban antes de florecer, se revendían sobre el papel y se negociaban en tabernas, fuera del horario de las bolsas oficiales.',
@@ -1362,6 +1363,7 @@ const ENTITIES = [
  {type:'tema', slug:'anticitera', name:'Mecanismo de Anticitera', era:'~100 a. C.', seed:'ent-anticitera', blurb:'Engranajes de bronce que predicen el cielo. El saber se perdió.'}
 ];
 const SHORTS = [
+ {slug:'tulipanes-de-oro', story:'tulipanes-de-oro-la-primera-gran-burbuja', title:'Tulipanes de oro: la primera gran burbuja', desc:'Holanda inventó el mercado financiero moderno y, de propina, su primera locura colectiva. La fiebre de los tulipanes sigue siendo el espejo de todas las burbujas posteriores.', dur:52, views:0, yt:'CnGa-s0j7b0'},
  {slug:'lavarse-las-manos', story:'el-medico-que-pidio-lavarse-las-manos', title:'El médico que pidió lavarse las manos', desc:'En una sala morían más. En la otra, menos. Semmelweis vio las uñas. Le costó la carrera.', dur:45, views:0, yt:'BI0cH7WVTuE'},
  {slug:'lineas-en-la-arena', story:'las-rayas-que-gobiernan-el-mundo', title:'Dibujó el código de barras en la arena', desc:'Norman Woodland ensanchó el Morse en una playa. Hoy esas rayas leen el comercio entero.', dur:45, views:0, yt:'tYlkXZETVfQ'},
  {slug:'cinco-misiles', story:'el-hombre-que-detuvo-el-mundo', title:'Cinco misiles en la pantalla', desc:'El protocolo decía informe. Petrov esperó. Esa pausa fue la paz.', dur:45, views:0, yt:'aiWhso5jI7U'},
