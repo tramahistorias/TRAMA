@@ -1,27 +1,40 @@
 ---
-description: Voces TRAMA: semanas Álvaro/Elvira; si hay dos voces en la pieza, las dos.
+description: Voces TRAMA: Álvaro, Elvira y Ximena, una por semana; diálogo Álvaro + Elvira.
 alwaysApply: true
 ---
 
 # TRAMA — voz de los vídeos
 
+Solo **tres** locutores Azure, español de España. Nada de Latinoamérica, Piper, ElevenLabs ni otras.
+
+| Voz | ID |
+|---|---|
+| Álvaro | `es-ES-AlvaroNeural` |
+| Elvira | `es-ES-ElviraNeural` |
+| Ximena | `es-ES-XimenaNeural` |
+
 ## Una voz (narrador)
 
-Por **semana de publicación** (lunes a domingo, Madrid). Arranque lunes **17 ago 2026** = semana 0.
+Por **semana de publicación** (lunes a domingo, Madrid). Arranque lunes **17 ago 2026** = semana 0. Ritmo `rate="-8%"`.
 
-| Semana | Fechas (2026) | Voz | Piezas |
-|---|---|---|---|
-| 0 par | 17–23 ago | Álvaro `es-ES-AlvaroNeural` | Kodak, contenedor, hielo |
-| 1 impar | 24–30 ago | Elvira `es-ES-ElviraNeural` | Petrov 25, Woodland 27, Cooper 29 |
-| 2 par | 31 ago – 6 sep | Álvaro | esa tanda |
-| 3 impar | 7–13 sep | Elvira | … |
+Hasta el 27 sep 2026: semana par **Álvaro** / impar **Elvira**. No rehacer lo ya locutado.
+
+Desde el **28 sep 2026**, en este orden (lun–dom Madrid):
+
+| Semana (índice) | Voz |
+|---|---|
+| 6, 9, 12… | Elvira |
+| 7, 10, 13… | Álvaro |
+| 8, 11, 14… | Ximena |
 
 No mezclar narradores distintos en piezas de una sola voz de la misma semana.
 
+**Semana 12–18 oct 2026 (índice 8):** Ximena en los 2 Shorts y el vídeo. Endcard Ximena. No montar hasta que Ramón lo pida.
+
+**Endcard:** la **misma voz** que narra. Álvaro cierra Álvaro. Elvira cierra Elvira. Ximena cierra Ximena. No mezclar.
+
 ## Dos voces (diálogo, dos personajes)
 
-En **el mismo** Short o vídeo: **Álvaro y Elvira**. No se busca una tercera voz. No se usa solo la de esa semana.
+En **el mismo** Short o vídeo: **Álvaro y Elvira**. No se usa solo la de esa semana.
 
-Helper: `subidas/_tts.py` — `voice_for_folder` (una voz) o `speak_duo` (las dos). Ritmo `rate="-8%"`.
-
-Referencia Elvira: `subidas/_voz/referencia-lse-es.mp3`. No clonar personas. No re-subir lo ya publicado.
+Helper: `subidas/_tts.py` — `voice_for_folder` (una voz) o `speak_duo`. Muestras: `subidas/_voz/`. No clonar personas. No re-subir lo ya publicado.

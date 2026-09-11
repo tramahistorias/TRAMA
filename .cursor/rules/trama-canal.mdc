@@ -50,17 +50,23 @@ Voz: **Álvaro**. El vídeo cierra con el enlace de la web en pantalla. Cama ins
 
 Hueco del jueves 10: falta 1 Short de **otra** categoría (no Dinero). No subir tulipanes y Enron la misma semana: las dos son Dinero.
 
-| Día | Carpeta | Formato | Categoría |
-|---|---|---|---|
-| Mar 8 | `subidas/2026-09-08_short-tulipanes` | Short | Dinero |
+| Día | Carpeta | Formato | Categoría | YouTube |
+|---|---|---|---|---|
+| Mar 8 | `subidas/2026-09-08_short-tulipanes` | Short | Dinero | `CnGa-s0j7b0` |
 | Jue 10 | `subidas/2026-09-10_short-melaza` | Short | Historia |
 | Sáb 12 | `subidas/2026-09-12_video-radium` | Vídeo 16:9 >3 min | Personas |
 
 Woodland (Personas) ya está en web y en cola del 27 ago: no se rehace.
 
-Montaje **en adelante** (cola nueva): cortes al habla, cama + ambiente, grade. **Sin** parallax de dos capas (doble imagen). Cámara Ken Burns simple (push/pull/rise/fall). Los vídeos 16:9 cierran con **endcard** y la URL de la web. No rehacer Petrov, Woodland, Cooper, tulipanes ni Enron.
+Montaje **en adelante** (cola nueva, referencia: melaza): tiene que parecer un plano de película, no un pase de fotos. Cámara que **cambia de gesto** (push, pull, rise, fall, diagonal) — no solo izquierda↔derecha. Varios stills por plano (`1a/1b/1c`) con `_render_vivo.py`. **Sin** parallax de dos capas (doble imagen). Cortes al habla, grade, grano suave.
 
-**Mínimo 6 imágenes** por Short y por vídeo (stills en carpeta y en `images` de `index.html`). Si se puede, **12** (la rejilla de 3 columnas llena 4 filas y se ve mejor). Nunca menos de 6. Lo ya publicado con menos stills no se rehace salvo que Ramón lo pida.
+**Audio:** cama real (Pixabay u otra licencia para YouTube/TikTok/IG), no drones de senos. VO por delante; la cama baja al hablar. Entra y **sale en fundido** (nada de corte seco). Carpeta `_musica/` + `cama.mp3` en la pieza. Oír la pista **antes** de montar.
+
+**Endcard: siempre**, en Short y en vídeo. Ficha + «suscríbete» + URL (`tramahistorias.github.io/TRAMA/`). Vídeo 16:9: `_endcard.jpg`. Short 9:16: `_endcard-9x16.jpg` (sin recortar la URL). **Misma voz que narra** (Álvaro cierra Álvaro, Elvira Elvira, Ximena Ximena). No montar una pieza sin cierre. Shorts: total **< 59 s** (la VO deja ~8 s para el endcard).
+
+No rehacer Petrov, Woodland, Cooper, tulipanes ni Enron.
+
+**Mínimo 6 imágenes** por Short y por vídeo (stills en carpeta y en `images` de `index.html`). Si se puede, **12**. Nunca menos de 6. Lo ya publicado no se rehace salvo que Ramón lo pida.
 
 ## Semana 14–20 sep 2026 — EN CARPETA (Álvaro)
 
@@ -82,13 +88,25 @@ Los Shorts nuevos de esta tanda llevan Álvaro (indicación de Ramón). Enron si
 
 ## Semana 28 sep – 4 oct 2026 — EN CARPETA (Elvira)
 
-Hueco del sábado 3: falta 1 vídeo 16:9 >3 min (no Empresas, no Misterios).
+Sábado 3: Post-it (Inventos). Anticitera ya en carpeta: no se rehace.
 
 | Día | Carpeta | Formato | Categoría |
 |---|---|---|---|
 | Mar 29 | `subidas/2026-09-29_short-walkman` | Short | Empresas |
 | Jue 1 | `subidas/2026-10-01_short-anticitera` | Short | Misterios |
-| Sáb 3 | — | Vídeo | (hueco) |
+| Sáb 3 | `subidas/2026-10-03_video-postit` | Vídeo 16:9 >3 min | Inventos |
+
+## Semana 5–11 oct 2026 — EN CARPETA (Álvaro)
+
+| Día | Carpeta | Formato | Categoría |
+|---|---|---|---|
+| Mar 6 | `subidas/2026-10-06_short-ponzi` | Short | Dinero |
+| Jue 8 | `subidas/2026-10-08_short-airlift` | Short | Historia |
+| Sáb 10 | `subidas/2026-10-10_video-snow` | Vídeo 16:9 >3 min | Personas |
+
+## Semana 12–18 oct 2026 — OTRO DÍA (Ximena)
+
+2 Shorts + 1 vídeo. Narrador y endcard: **Ximena**. No montar hasta que Ramón lo pida. Temas aún no cerrados. No rellenar. Rotar categorías (esta semana ya hubo Dinero, Historia, Personas).
 
 Un vídeo de TRAMA: **horizontal 16:9 y más de 3 minutos**. Por debajo es teaser (el hielo, 1 min). 8–12 min es el formato documental cuando haya montaje; no rellenar. 8 min solo hace falta para anuncios a mitad cuando el canal ya cobre.
 
@@ -98,7 +116,7 @@ Un reproductor 16:9 pequeño (ancho máx. ~420px) + texto; debajo rejilla `.s-ca
 
 ## Al publicar
 
-IDs reales en `index.html` (`yt`). Conservar voces e imágenes. Pieza nueva: **mínimo 6** stills (12 si se puede). Título YouTube con tilde correcta (`inventó`). No inventar vistas. No usar ramondelpozorott.es.
+IDs reales en `index.html` (`yt`). Conservar voces e imágenes. Pieza nueva: **mínimo 6** stills (12 si se puede), cama con fundido, cámara tipo película. Título YouTube con tilde correcta (`inventó`). No inventar vistas. No usar ramondelpozorott.es.
 
 El mismo día: TikTok + Instagram Reels (regla `trama-redes`). Render 9:16, `TEXTOS.txt`, Chrome. Luego se puede borrar el `.mp4` de YouTube.
 
@@ -110,4 +128,4 @@ El mismo día: TikTok + Instagram Reels (regla `trama-redes`). Render 9:16, `TEX
 - `subidas/` es cola local de YouTube: no va al sitio público.
 - Repo: `https://github.com/tramahistorias/TRAMA` (cuenta del canal, no `ramondelpozokids`).
 - GitHub Pages: `https://tramahistorias.github.io/TRAMA/`. Sin Vercel ni dominio de pago.
-- Calendario de subidas: `subidas/TRAMA-YouTube.ics` (25 Petrov … 26 Enron, 29 Walkman, 1 oct Anticitera; 10:00 Madrid). Sábado 3 oct: hueco de vídeo.
+- Calendario de subidas: `subidas/TRAMA-YouTube.ics` (25 Petrov … 10 oct Snow, 10:00 Madrid).
