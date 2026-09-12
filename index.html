@@ -1731,7 +1731,7 @@ function viewHome(){
   <section class="section wrap">${secHead('','Cortos','#/shorts','Ver todos')}
     <div class="shorts-intro" data-rv>
       <p class="big">Historias de un minuto.<br><em>La ficha completa está en el archivo.</em></p>
-      <p>En YouTube se llaman Shorts: vídeos verticales de un minuto. Aquí están Kodak, el contenedor y Edison contra Tesla. Cada uno abre la historia escrita.</p>
+      <p>Vídeos verticales de un minuto. Aquí están Kodak, el contenedor y Edison contra Tesla. Cada uno abre la historia escrita.</p>
     </div>
     ${row(SHORTS.map(shortCard).join(''))}
   </section>
@@ -1903,7 +1903,7 @@ function viewShorts(param){
     <header class="phead" data-rv>
       <span class="catlab">CORTOS · ${String(SHORTS.length).padStart(2,'0')}</span>
       <h1>Un minuto</h1>
-      <p class="sub">En YouTube se llaman Shorts. Elige uno en la rejilla; el vídeo se abre aquí arriba.</p>
+      <p class="sub">Elige uno en la rejilla; el vídeo se abre aquí arriba.</p>
     </header>
     <section class="s-watch" id="feed" tabindex="0" aria-label="Corto seleccionado">
       <article class="short${sh.yt?' s-yt':''}" data-si="${i}" style="--sdur:${sh.dur}s">
