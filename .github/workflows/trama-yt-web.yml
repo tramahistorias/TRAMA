@@ -1,0 +1,51 @@
+# Actualiza GitHub Pages cuando YouTube ya ha publicado el vídeo programado.
+# 10:20 Madrid (CEST = UTC+2) el 17 y el 19 sep. Cron sin año: solo toca esas fechas.
+name: TRAMA web tras YouTube
+
+on:
+  schedule:
+    - cron: "20 8 17 9 *"
+    - cron: "20 8 19 9 *"
+  workflow_dispatch:
+    inputs:
+      piece:
+        description: Pieza a publicar en la web
+        type: choice
+        options:
+          - ford
+          - tambora
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Elegir pieza
+        id: which
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "piece=${{ github.event.inputs.piece }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "20 8 17 9 *" ]; then
+            echo "piece=ford" >> "$GITHUB_OUTPUT"
+          else
+            echo "piece=tambora" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Escribir ID en index.html
+        run: python .github/scripts/apply_scheduled_yt.py "${{ steps.which.outputs.piece }}"
+      - name: Commit y push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --staged --quiet; then
+            echo "Nada que publicar"
+            exit 0
+          fi
+          git commit -m "Publicar en la web ${{ steps.which.outputs.piece }} (ID de YouTube programado)."
+          git push
