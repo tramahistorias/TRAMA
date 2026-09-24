@@ -1,11 +1,12 @@
 # Actualiza GitHub Pages cuando YouTube ya ha publicado el vídeo programado.
-# 10:20 Madrid (CEST = UTC+2) el 17 y el 19 sep. Cron sin año: solo toca esas fechas.
+# 10:20 Madrid (CEST = UTC+2).
 name: TRAMA web tras YouTube
 
 on:
   schedule:
     - cron: "20 8 17 9 *"
     - cron: "20 8 19 9 *"
+    - cron: "20 8 26 9 *"
   workflow_dispatch:
     inputs:
       piece:
@@ -14,6 +15,7 @@ on:
         options:
           - ford
           - tambora
+          - enron
 
 permissions:
   contents: write
@@ -33,8 +35,10 @@ jobs:
             echo "piece=${{ github.event.inputs.piece }}" >> "$GITHUB_OUTPUT"
           elif [ "${{ github.event.schedule }}" = "20 8 17 9 *" ]; then
             echo "piece=ford" >> "$GITHUB_OUTPUT"
-          else
+          elif [ "${{ github.event.schedule }}" = "20 8 19 9 *" ]; then
             echo "piece=tambora" >> "$GITHUB_OUTPUT"
+          else
+            echo "piece=enron" >> "$GITHUB_OUTPUT"
           fi
       - name: Escribir ID en index.html
         run: python .github/scripts/apply_scheduled_yt.py "${{ steps.which.outputs.piece }}"

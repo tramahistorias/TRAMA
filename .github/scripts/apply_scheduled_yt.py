@@ -27,6 +27,12 @@ PIECES = {
         "dur_sec": 240,
         "short": None,
     },
+    "enron": {
+        "slug": "enron-los-arquitectos-del-humo",
+        "yt": "74Tg6oeZUwg",
+        "dur_sec": 233,
+        "short": None,
+    },
 }
 
 
@@ -76,7 +82,7 @@ def apply(name: str) -> bool:
 def main() -> None:
     name = (sys.argv[1] if len(sys.argv) > 1 else os.environ.get("PIECE", "")).strip()
     if name not in PIECES:
-        raise SystemExit("uso: apply_scheduled_yt.py ford|tambora")
+        raise SystemExit("uso: apply_scheduled_yt.py ford|tambora|enron")
     apply(name)
 
 
