@@ -697,8 +697,10 @@ const ASSET_MAP = {
   'story-el-ano-sin-verano': MEDIA_ROOT+'/stories/tambora/1.jpg',
   'ent-tambora': MEDIA_ROOT+'/stories/tambora/9.jpg',
   'story-la-senal-que-no-volvio': MEDIA_ROOT+'/stories/wow/1.jpg',
+  'short-la-senal-que-no-volvio': MEDIA_ROOT+'/stories/wow/1.jpg',
   'ent-senal-wow': MEDIA_ROOT+'/stories/wow/2.jpg',
   'story-la-actriz-que-invento-el-salto': MEDIA_ROOT+'/stories/lamarr/1.jpg',
+  'short-la-actriz-que-invento-el-salto': MEDIA_ROOT+'/stories/lamarr/1.jpg',
   'story-el-aparato-que-no-debia-existir': MEDIA_ROOT+'/stories/walkman/1.jpg',
   'ent-akio-morita': MEDIA_ROOT+'/stories/walkman/3.jpg',
   'ent-walkman': MEDIA_ROOT+'/stories/walkman/1.jpg',
@@ -1234,7 +1236,7 @@ const STORIES = [
 {slug:'la-senal-que-no-volvio', cat:'misterios', title:'La señal que no volvió',
  tagline:'Setenta y dos segundos que no deberían existir.',
  desc:'El 15 de agosto de 1977, el radiotelescopio Big Ear en Ohio registró una señal estrecha. Jerry Ehman anotó Wow. Nunca se repitió.',
- durMin:1, durSec:45, date:'2026-09-22', views:0, yt:null,
+ durMin:1, durSec:53, date:'2026-09-22', views:0, yt:'xuFYTUIpZxM',
  flags:['new'], tags:['SETI','cielo','siglo XX'], sources:['Ohio State University · Big Ear archives'],
  entities:['senal-wow','misterios'],
  body:[
@@ -1256,7 +1258,7 @@ const STORIES = [
 {slug:'la-actriz-que-invento-el-salto', cat:'personas', title:'La actriz que inventó el salto',
  tagline:'Hedy Lamarr era el cartel. También era el esquema.',
  desc:'En 1942, con George Antheil, patentó el salto de frecuencia para que un torpedo no se dejara interferir. Décadas después esa idea está debajo del wifi.',
- durMin:1, durSec:48, date:'2026-09-24', views:0, yt:null,
+ durMin:1, durSec:52, date:'2026-09-24', views:0, yt:'n7uxchnJ-4Y',
  flags:['new'], tags:['radio','guerra','siglo XX'], sources:['Patente US 2.292.387, 1942'],
  entities:['hedy-lamarr','salto-de-frecuencia'],
  body:[
@@ -1492,6 +1494,8 @@ const ENTITIES = [
  {type:'tema', slug:'epidemiologia', name:'Epidemiología', era:'1854 —', seed:'ent-epidemiologia', blurb:'Contar muertes, marcar un mapa, quitar un mango. La prueba antes del bacilo.'}
 ];
 const SHORTS = [
+ {slug:'la-actriz-que-invento-el-salto', story:'la-actriz-que-invento-el-salto', title:'La actriz que inventó el salto', desc:'En 1942, Hedy Lamarr y George Antheil patentaron el salto de frecuencia. Décadas después esa idea está debajo del wifi.', dur:52, views:0, yt:'n7uxchnJ-4Y'},
+ {slug:'la-senal-que-no-volvio', story:'la-senal-que-no-volvio', title:'La señal que no volvió', desc:'El 15 de agosto de 1977, el radiotelescopio Big Ear en Ohio registró una señal estrecha. Jerry Ehman anotó Wow. Nunca se repitió.', dur:53, views:0, yt:'xuFYTUIpZxM'},
  {slug:'el-minuto-que-abarato-el-mundo', story:'el-minuto-que-abarato-el-mundo', title:'El minuto que abarató el mundo', desc:'En 1913 Ford puso el chasis en movimiento. Doce horas cayeron a noventa y tres minutos.', dur:55, views:0, yt:'gWqXk4PS-bU'},
  {slug:'el-invento-que-salio-de-un-perro', story:'el-invento-que-salio-de-un-perro', title:'El invento que salió de un perro', desc:'A George de Mestral se le llenó el perro de cardos. Bajo la lupa, cada gancho se clavaba y no soltaba. De ahí salió el Velcro.', dur:52, views:0, yt:'Te0hejh1zqE'},
  {slug:'el-puente-aereo-de-berlin', story:'el-puente-aereo-de-berlin', title:'El puente aéreo de Berlín', desc:'24 de junio de 1948. Cierran carreteras, vías y canales. Un aterrizaje cada minuto y medio. No fue un milagro. Fue una tabla de horarios.', dur:56, views:0, yt:null},
