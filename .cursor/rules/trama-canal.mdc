@@ -73,8 +73,8 @@ No rehacer Petrov, Woodland, Cooper, tulipanes ni Enron.
 | Día | Carpeta | Formato | Categoría |
 |---|---|---|---|
 | Mar 15 | `subidas/2026-09-15_short-velcro` | Short | Inventos | `Te0hejh1zqE` |
-| Jue 17 | `subidas/2026-09-17_short-ford` | Short | Empresas |
-| Sáb 19 | `subidas/2026-09-19_video-tambora` | Vídeo ~4 min (16:9) | Historia |
+| Jue 17 | `subidas/2026-09-17_short-ford` | Short | Empresas | `gWqXk4PS-bU` |
+| Sáb 19 | `subidas/2026-09-19_video-tambora` | Vídeo ~4 min (16:9) | Historia | `Xe7jQShYMqg` |
 
 ## Semana 21–27 sep 2026 — EN CARPETA (Enron no se rehace)
 
@@ -82,9 +82,9 @@ Los Shorts nuevos de esta tanda llevan Álvaro (indicación de Ramón). Enron si
 
 | Día | Carpeta | Formato | Categoría |
 |---|---|---|---|
-| Mar 22 | `subidas/2026-09-22_short-wow` | Short | Misterios |
-| Jue 24 | `subidas/2026-09-24_short-lamarr` | Short | Personas |
-| Sáb 26 | `subidas/2026-09-26_video-enron` | Vídeo ~4 min (16:9) | Dinero |
+| Mar 22 | `subidas/2026-09-22_short-wow` | Short | Misterios | `xuFYTUIpZxM` |
+| Jue 24 | `subidas/2026-09-24_short-lamarr` | Short | Personas | `n7uxchnJ-4Y` |
+| Sáb 26 | `subidas/2026-09-26_video-enron` | Vídeo ~4 min (16:9) | Dinero | `74Tg6oeZUwg` (público 26 sep 10:00) |
 
 ## Semana 28 sep – 4 oct 2026 — EN CARPETA (Elvira)
 
@@ -104,9 +104,33 @@ Sábado 3: Post-it (Inventos). Anticitera ya en carpeta: no se rehace.
 | Jue 8 | `subidas/2026-10-08_short-airlift` | Short | Historia |
 | Sáb 10 | `subidas/2026-10-10_video-snow` | Vídeo 16:9 >3 min | Personas |
 
-## Semana 12–18 oct 2026 — OTRO DÍA (Ximena)
+## Semana 12–18 oct 2026 — ÁLVARO (temas cerrados 15 sep 2026)
 
-2 Shorts + 1 vídeo. Narrador y endcard: **Ximena**. No montar hasta que Ramón lo pida. Temas aún no cerrados. No rellenar. Rotar categorías (esta semana ya hubo Dinero, Historia, Personas).
+La semana anterior ya es Dinero / Historia / Personas. Esta: Inventos, Empresas, Misterios. Endcard Álvaro. Montar antes del 10 oct.
+
+| Día | Carpeta | Formato | Categoría |
+|---|---|---|---|
+| Mar 13 | `subidas/2026-10-13_short-otis` | Short | Inventos |
+| Jue 15 | `subidas/2026-10-15_short-nintendo` | Short | Empresas |
+| Sáb 17 | `subidas/2026-10-17_video-tunguska` | Vídeo 16:9 >3 min | Misterios |
+
+- Otis: 1853, el freno del ascensor en el Crystal Palace (no “inventó el ascensor”).
+- Nintendo: 1889, naipes Hanafuda en Kioto; no adelantar consolas.
+- Tunguska: 30 jun 1908, Siberia; explosión sin cráter claro; no OVNI de relleno.
+
+## Semana 19–25 oct 2026 — Elvira
+
+La anterior es Inventos / Empresas / Misterios. Esta: Dinero / Historia / Personas. Endcard Elvira. Locución pendiente si edge-tts falla (403).
+
+| Día | Carpeta | Formato | Categoría |
+|---|---|---|---|
+| Mar 20 | `subidas/2026-10-20_short-yap` | Short | Dinero |
+| Jue 22 | `subidas/2026-10-22_short-mincemeat` | Short | Historia |
+| Sáb 24 | `subidas/2026-10-24_video-tharp` | Vídeo 16:9 >3 min | Personas |
+
+- Yap: piedras Rai; el valor es el dueño, no mover la piedra; una hundida sigue contando.
+- Carne Picada: 1943, Huelva, papeles falsos; no hinchar la victoria de Sicilia.
+- Tharp: cartografía de la dorsal; no la dejaron embarcar; no “inventó las placas”.
 
 Un vídeo de TRAMA: **horizontal 16:9 y más de 3 minutos**. Por debajo es teaser (el hielo, 1 min). 8–12 min es el formato documental cuando haya montaje; no rellenar. 8 min solo hace falta para anuncios a mitad cuando el canal ya cobre.
 
@@ -128,4 +152,4 @@ El mismo día: TikTok + Instagram Reels (regla `trama-redes`). Render 9:16, `TEX
 - `subidas/` es cola local de YouTube: no va al sitio público.
 - Repo: `https://github.com/tramahistorias/TRAMA` (cuenta del canal, no `ramondelpozokids`).
 - GitHub Pages: `https://tramahistorias.github.io/TRAMA/`. Sin Vercel ni dominio de pago.
-- Calendario de subidas: `subidas/TRAMA-YouTube.ics` (25 Petrov … 10 oct Snow, 10:00 Madrid).
+- Calendario de subidas: `subidas/TRAMA-YouTube.ics` (YouTube 10:00 Madrid + aviso Instagram/TikTok 10:45). Importar en el Google Calendar del móvil.
