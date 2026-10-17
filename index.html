@@ -1911,7 +1911,7 @@ function viewHome(){
   const cw=contList();cw.forEach(({s})=>used.add(s.slug));
   const primeras=take(['kodak-y-el-futuro-que-dejo-escapar','la-caja-que-encogio-el-mundo','el-rey-del-hielo'].map(sl=>S[sl]).filter(Boolean),3);
   const trend=[];
-  const destacados=take(STORIES.slice().sort((a,b)=>b.date.localeCompare(a.date)),3);
+  const destacados=take(STORIES.filter(s=>s.yt).sort((a,b)=>b.date.localeCompare(a.date)),3);
   const edBand=take(STORIES.filter(s=>s.flags.includes('editors')),1)[0];
   mount(`
   <section class="hero hero-brand" id="hero">
