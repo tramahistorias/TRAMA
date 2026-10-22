@@ -2,6 +2,9 @@
 .env
 .env.*
 .env.local
+client_secret*.json
+*googleusercontent.com.json
+**/youtube-oauth-*.json
 
 # Cola de YouTube (local). No es el sitio público.
 subidas/
