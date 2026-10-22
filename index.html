@@ -604,7 +604,8 @@ const ytShortHref = sh => sh.yt ? 'https://www.youtube.com/shorts/'+sh.yt : YT_S
 function ytEmbed(id, title){
   const watch = 'https://www.youtube.com/watch?v='+id;
   if(location.protocol==='file:'){
-    return '<div class="ply-soon ply-local"><div class="ply-soon-in"><span class="catlab">ABRE LA WEB PUBLICADA</span><p>YouTube no deja reproducir el embed si abres el archivo en el disco (file://). Error 150. Mira Cortos en la web de GitHub Pages o pulsa el enlace.</p><a class="btn btn-solid" href="'+SITE+'#/shorts" target="_blank" rel="noopener">VER EN LA WEB</a> <a class="btn btn-ghost" href="'+watch+'" target="_blank" rel="noopener">VER EN YOUTUBE</a></div></div>';
+    const here=SITE+(location.hash||'');
+    return '<div class="ply-soon ply-local"><div class="ply-soon-in"><span class="catlab">ABRE LA WEB PUBLICADA</span><p>YouTube no deja reproducir el embed si abres el archivo a doble clic (file://). Error 150. Ábrelo en GitHub Pages, o con ver-local.bat (http://127.0.0.1:8765).</p><a class="btn btn-solid" href="'+here+'" target="_blank" rel="noopener">VER EN LA WEB</a> <a class="btn btn-ghost" href="'+watch+'" target="_blank" rel="noopener">VER EN YOUTUBE</a></div></div>';
   }
   const origin = encodeURIComponent(location.origin);
   return '<iframe src="https://www.youtube.com/embed/'+id+'?rel=0&modestbranding=1&origin='+origin+'" title="'+esc(title)+'" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
@@ -745,6 +746,13 @@ const ASSET_MAP = {
   'story-el-suelo-del-atlantico': MEDIA_ROOT+'/stories/tharp/2.jpg',
   'ent-marie-tharp': MEDIA_ROOT+'/stories/tharp/2.jpg',
   'ent-dorsal-atlantica': MEDIA_ROOT+'/stories/tharp/9.jpg',
+  'story-el-libro-de-seis-peniques': MEDIA_ROOT+'/stories/penguin/5.jpg',
+  'short-el-libro-de-seis-peniques': MEDIA_ROOT+'/stories/penguin/5.jpg',
+  'ent-allen-lane': MEDIA_ROOT+'/stories/penguin/3.jpg',
+  'ent-penguin': MEDIA_ROOT+'/stories/penguin/10.jpg',
+  'story-los-tres-del-faro': MEDIA_ROOT+'/stories/flannan/1.jpg',
+  'ent-flannan': MEDIA_ROOT+'/stories/flannan/1.jpg',
+  'ent-eilean-mor': MEDIA_ROOT+'/stories/flannan/4.jpg',
   'ent-hedy-lamarr': MEDIA_ROOT+'/stories/lamarr/1.jpg',
   'ent-salto-de-frecuencia': MEDIA_ROOT+'/stories/lamarr/2.jpg',
   'ent-fryer': MEDIA_ROOT+'/stories/radium/2.jpg',
@@ -1530,7 +1538,7 @@ const STORIES = [
 {slug:'el-dinero-que-no-se-mueve', cat:'dinero', title:'El dinero que no se mueve',
  tagline:'En Yap el valor no está en llevarse la piedra. Está en que el pueblo sepa de quién es.',
  desc:'Discos de caliza más altos que un hombre. Se tallaban en Palau. Una se hundió y sigue contando. El dinero más pesado del Pacífico pesa reputación.',
- durMin:1, durSec:48, date:'2026-10-20', views:0, yt:null,
+ durMin:1, durSec:48, date:'2026-10-20', views:0, yt:'tV9373r32fY',
  flags:['new'], tags:['Yap','Pacífico','siglo XIX'], sources:['Furness, «The Island of Stone Money», 1910','Graeber, «Debt»'],
  entities:['yap','piedras-rai'],
  body:[
@@ -1558,7 +1566,7 @@ const STORIES = [
 {slug:'el-muerto-que-engano-a-berlin', cat:'historia', title:'El muerto que engañó a Berlín',
  tagline:'1943. Un cadáver frente a Huelva. Papeles falsos. Sicilia espera.',
  desc:'Operación Carne Picada: los aliados sueltan un cuerpo con identidad inventada para que Hitler mire a Grecia. El engaño llega a Berlín. Parte de la defensa mira a otro sitio.',
- durMin:1, durSec:45, date:'2026-10-22', views:0, yt:null,
+ durMin:1, durSec:45, date:'2026-10-22', views:0, yt:'OOHJAKYql9M',
  flags:['new'], tags:['1943','Huelva','Sicilia'], sources:['Macintyre, «Operation Mincemeat»','Archivo del Almirantazgo británico'],
  entities:['mincemeat','huelva-1943'],
  body:[
@@ -1623,7 +1631,78 @@ const STORIES = [
   {src:MEDIA_ROOT+'/stories/tharp/23.jpg', alt:'Reconstrucción visual. Dron sobre el río y el ladrillo.'},
   {src:MEDIA_ROOT+'/stories/tharp/24.jpg', alt:'Reconstrucción visual. La mesa vacía al anochecer.'}
  ],
- timeline:[['AÑOS 50','Tharp dibuja la dorsal y el rift con los ecos del sonar.'],['DESPUÉS','La tectónica de placas convierte aquella grieta en costura del planeta.']]}
+ timeline:[['AÑOS 50','Tharp dibuja la dorsal y el rift con los ecos del sonar.'],['DESPUÉS','La tectónica de placas convierte aquella grieta en costura del planeta.']]},
+{slug:'el-libro-de-seis-peniques', cat:'empresas', title:'El libro de seis peniques',
+ tagline:'No inventó el bolsillo. Lo puso en el andén, a precio de tabaco.',
+ desc:'1935. Allen Lane sale de Exeter sin un libro barato para el tren. Meses después saca novelas a seis peniques. El paperback ya existía. Él lo puso al lado del periódico.',
+ durMin:1, durSec:56, date:'2026-10-29', views:0, yt:null,
+ flags:['new'], tags:['Londres','libros','1935'], sources:['Morpurgo, «Allen Lane: King Penguin»','Penguin Collectors Society'],
+ entities:['allen-lane','penguin'],
+ body:[
+ 'En mil novecientos treinta y cinco, Allen Lane vuelve de un fin de semana en Devon. En la estación de Exeter quiere un libro para el tren. Hay revistas. Hay tomos caros. No hay nada que quepa en el bolsillo a precio de tabaco.',
+ 'Meses después saca diez novelas a seis peniques. Tapa de papel. Color por género. Naranja para la ficción. No inventó el libro de bolsillo. Lo puso en el andén, al lado del periódico.',
+ 'El negocio no era la tapa dura. Era que cualquiera pudiera comprar una historia y leerla antes de llegar.'],
+ quote:'No inventó el libro de bolsillo. Lo puso en el andén, al lado del periódico.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son archivo de Penguin. Son reconstrucciones del andén, el taller y las tapas naranjas. No hay logotipos.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/penguin/1.jpg', alt:'Reconstrucción visual. Quiosco de estación, revistas y tomos.'},
+  {src:MEDIA_ROOT+'/stories/penguin/2.jpg', alt:'Reconstrucción visual. Estante de tapa dura.'},
+  {src:MEDIA_ROOT+'/stories/penguin/3.jpg', alt:'Reconstrucción visual. Un hombre de espaldas en el andén.'},
+  {src:MEDIA_ROOT+'/stories/penguin/4.jpg', alt:'Reconstrucción visual. Cajas de tipos de plomo.'},
+  {src:MEDIA_ROOT+'/stories/penguin/5.jpg', alt:'Reconstrucción visual. Tapas naranjas y una moneda de seis peniques.'},
+  {src:MEDIA_ROOT+'/stories/penguin/6.jpg', alt:'Reconstrucción visual. La rotativa.'},
+  {src:MEDIA_ROOT+'/stories/penguin/7.jpg', alt:'Reconstrucción visual. Un viajero lee hacia la ventana.'},
+  {src:MEDIA_ROOT+'/stories/penguin/8.jpg', alt:'Reconstrucción visual. Cajones de papel naranja.'},
+  {src:MEDIA_ROOT+'/stories/penguin/9.jpg', alt:'Reconstrucción visual. Almacén de cajas.'},
+  {src:MEDIA_ROOT+'/stories/penguin/10.jpg', alt:'Reconstrucción visual. Seis peniques sobre la tapa.'},
+  {src:MEDIA_ROOT+'/stories/penguin/11.jpg', alt:'Reconstrucción visual. Andén de noche, un libro en el banco.'},
+  {src:MEDIA_ROOT+'/stories/penguin/12.jpg', alt:'Reconstrucción visual. El quiosco cerrado al anochecer.'}
+ ],
+ timeline:[['1935','Lane no encuentra un libro barato en Exeter. Poco después saca diez títulos a seis peniques.'],['DESPUÉS','El andén se llena de tapas de papel. El tomo caro deja de ser la única opción.']]},
+{slug:'los-tres-del-faro', cat:'misterios', title:'Los tres del faro',
+ tagline:'1900. Eilean Mòr. El faro sigue. Los tres fareros no están.',
+ desc:'El 26 de diciembre de 1900 el Hesperus llega a las Flannan. No hay bandera. El reloj está parado. Faltan Ducat, Marshall y MacArthur. El informe de Muirhead habla de temporal, no de fantasmas.',
+ durMin:3, durSec:207, date:'2026-10-31', views:0, yt:null,
+ flags:['new'], tags:['Escocia','1900','faro'], sources:['Robert Muirhead, informe al Northern Lighthouse Board, enero 1901','Northern Lighthouse Board · archivo Flannan'],
+ entities:['flannan','eilean-mor'],
+ body:[
+ 'El veintiséis de diciembre de mil novecientos el vapor Hesperus llega a Eilean Mòr, en las Flannan, al oeste de Lewis. El faro debería estar vivo. No hay bandera. Nadie baja a recibir el relevo.',
+ 'Joseph Moore sube. La puerta cerrada. El reloj parado. Un juego de ropa de agua. El desembarco de poniente destrozado. Faltan James Ducat, Thomas Marshall y Donald MacArthur.',
+ 'Robert Muirhead escribe en enero. No habla de fantasmas. Habla de un temporal del oeste y de un reglamento: uno de los tres debía haberse quedado en el faro. Esa noche, al parecer, no se quedó nadie.',
+ 'El faro era nuevo. Se había encendido el año anterior. Faltaban dos juegos de ropa de agua. Quedaba uno. Muirhead lo lee como oficio: dos salen al desembarco, el tercero los sigue.',
+ 'La crónica posterior llenó el silencio con un diario imposible. El expediente es más seco. Tres fareros, un golpe de mar, un faro que sigue girando.',
+ 'Los cuerpos no aparecieron. El misterio no es un platillo. Es lo que el mar se lleva cuando tres hombres bajan al desembarco y el agua sube más alto que el oficio.'],
+ quote:'El misterio no es un platillo. Es lo que el mar se lleva.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son el expediente de 1900. Son reconstrucciones de la isla, el faro y el desembarco. No hay fantasmas.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/flannan/1.jpg', alt:'Reconstrucción visual. Eilean Mòr al amanecer, el faro vacío.'},
+  {src:MEDIA_ROOT+'/stories/flannan/2.jpg', alt:'Reconstrucción visual. El Atlántico contra la roca.'},
+  {src:MEDIA_ROOT+'/stories/flannan/3.jpg', alt:'Reconstrucción visual. Un vapor de relevo se acerca.'},
+  {src:MEDIA_ROOT+'/stories/flannan/4.jpg', alt:'Reconstrucción visual. El desembarco de poniente, destrozado.'},
+  {src:MEDIA_ROOT+'/stories/flannan/5.jpg', alt:'Reconstrucción visual. La cocina: el reloj parado.'},
+  {src:MEDIA_ROOT+'/stories/flannan/6.jpg', alt:'Reconstrucción visual. Un chubasquero en el clavo.'},
+  {src:MEDIA_ROOT+'/stories/flannan/7.jpg', alt:'Reconstrucción visual. Tres literas vacías.'},
+  {src:MEDIA_ROOT+'/stories/flannan/8.jpg', alt:'Reconstrucción visual. La linterna, el mar negro.'},
+  {src:MEDIA_ROOT+'/stories/flannan/9.jpg', alt:'Reconstrucción visual. El temporal contra el acantilado.'},
+  {src:MEDIA_ROOT+'/stories/flannan/10.jpg', alt:'Reconstrucción visual. El libro de bitácora cerrado.'},
+  {src:MEDIA_ROOT+'/stories/flannan/11.jpg', alt:'Reconstrucción visual. El desembarco de levante, entero.'},
+  {src:MEDIA_ROOT+'/stories/flannan/12.jpg', alt:'Reconstrucción visual. El haz del faro sobre un horizonte vacío.'},
+  {src:MEDIA_ROOT+'/stories/flannan/13.jpg', alt:'Reconstrucción visual. Cuerda y herrajes en la granito mojada.'},
+  {src:MEDIA_ROOT+'/stories/flannan/14.jpg', alt:'Reconstrucción visual. Lluvia en el cristal de la linterna.'},
+  {src:MEDIA_ROOT+'/stories/flannan/15.jpg', alt:'Reconstrucción visual. El almacén: aceite y mechas.'},
+  {src:MEDIA_ROOT+'/stories/flannan/16.jpg', alt:'Reconstrucción visual. La mesa del parte, vacía.'},
+  {src:MEDIA_ROOT+'/stories/flannan/17.jpg', alt:'Reconstrucción visual. El sendero al faro, sin nadie.'},
+  {src:MEDIA_ROOT+'/stories/flannan/18.jpg', alt:'Reconstrucción visual. El mástil sin bandera.'},
+  {src:MEDIA_ROOT+'/stories/flannan/19.jpg', alt:'Reconstrucción visual. El infiernillo y el cobre.'},
+  {src:MEDIA_ROOT+'/stories/flannan/20.jpg', alt:'Reconstrucción visual. La escalera de caracol, mojada.'},
+  {src:MEDIA_ROOT+'/stories/flannan/21.jpg', alt:'Reconstrucción visual. El catalejo mira al mar vacío.'},
+  {src:MEDIA_ROOT+'/stories/flannan/22.jpg', alt:'Reconstrucción visual. El cabrestante roto en el desembarco.'},
+  {src:MEDIA_ROOT+'/stories/flannan/23.jpg', alt:'Reconstrucción visual. Lewis a lo lejos, invierno.'},
+  {src:MEDIA_ROOT+'/stories/flannan/24.jpg', alt:'Reconstrucción visual. El amanecer después del temporal.'}
+ ],
+ timeline:[['15 DIC 1900','Un vapor ve que la luz no encendía.'],['26 DIC 1900','El Hesperus llega. El faro está vacío.'],['ENE 1901','Muirhead informa: temporal, desembarco, no fantasmas.']]}
 ];
 const ENTITIES = [
  {type:'persona', slug:'steve-sasson', name:'Steve Sasson', era:'1950 —', seed:'ent-sasson', blurb:'Ingeniero de Kodak que construyó en 1975 uno de los primeros prototipos de cámara digital.'},
@@ -1701,9 +1780,15 @@ const ENTITIES = [
  {type:'tema', slug:'mincemeat', name:'Operación Carne Picada', era:'1943', seed:'ent-mincemeat', blurb:'Un cadáver, papeles falsos, Huelva. Berlín mira a Grecia.'},
  {type:'tema', slug:'huelva-1943', name:'Huelva, 1943', era:'1943', seed:'ent-huelva-1943', blurb:'La costa donde aparece el cuerpo que no es quien dice ser.'},
  {type:'persona', slug:'marie-tharp', name:'Marie Tharp', era:'1920 – 2003', seed:'ent-marie-tharp', blurb:'Cartógrafa. Dibujó la dorsal atlántica desde tierra. No la dejaron embarcar.'},
- {type:'tema', slug:'dorsal-atlantica', name:'Dorsal atlántica', era:'mapeada años 50', seed:'ent-dorsal-atlantica', blurb:'La costura del océano. Un valle donde la corteza se aparta.'}
+ {type:'tema', slug:'dorsal-atlantica', name:'Dorsal atlántica', era:'mapeada años 50', seed:'ent-dorsal-atlantica', blurb:'La costura del océano. Un valle donde la corteza se aparta.'},
+ {type:'persona', slug:'allen-lane', name:'Allen Lane', era:'1902 – 1970', seed:'ent-allen-lane', blurb:'Editor. En 1935 puso la novela a seis peniques, en el andén.'},
+ {type:'empresa', slug:'penguin', name:'Penguin', era:'1935 —', seed:'ent-penguin', blurb:'Empezó con diez títulos de papel. No inventó el bolsillo. Lo puso al lado del periódico.'},
+ {type:'tema', slug:'flannan', name:'Islas Flannan', era:'1900', seed:'ent-flannan', blurb:'Tres fareros. Un faro que sigue. El mar no pide permiso.'},
+ {type:'tema', slug:'eilean-mor', name:'Eilean Mòr', era:'Hébridas', seed:'ent-eilean-mor', blurb:'La isla del faro. Poniente destrozado. Levante entero.'}
 ];
 const SHORTS = [
+ {slug:'el-muerto-que-engano-a-berlin', story:'el-muerto-que-engano-a-berlin', title:'El muerto que engañó a Berlín', desc:'1943. Un cadáver frente a Huelva. Papeles falsos. Sicilia espera. Parte de la defensa mira a Grecia.', dur:45, views:0, yt:'OOHJAKYql9M'},
+ {slug:'el-dinero-que-no-se-mueve', story:'el-dinero-que-no-se-mueve', title:'El dinero que no se mueve', desc:'En Yap el dinero son discos de piedra. Una se hundió. Sigue contando. El pueblo recuerda al dueño.', dur:48, views:0, yt:'tV9373r32fY'},
  {slug:'los-naipes-de-kioto', story:'los-naipes-de-kioto', title:'Los naipes de Kioto', desc:'1889. Fusajiro Yamauchi abre un taller de Hanafuda. Nintendo nace de ese papel. No hay consola. Hay un oficio.', dur:40, views:0, yt:'XPuVm0Dqvq8'},
  {slug:'el-freno-que-hizo-subir-las-ciudades', story:'el-freno-que-hizo-subir-las-ciudades', title:'El freno que hizo subir las ciudades', desc:'1853. Crystal Palace. Otis corta el cable a propósito. El freno muerde. No inventó el ascensor. Inventó que se pudiera subir.', dur:42, views:0, yt:'wA5aLgI6d-Y'},
  {slug:'el-ordenador-que-nadie-debio-encontrar', story:'el-ordenador-que-nadie-debio-encontrar', title:'El ordenador que nadie debió encontrar', desc:'En 1901, esponjeros sacan de un pecio griego un bloque de bronce. Dentro hay engranajes. El mecanismo de Anticitera predice eclipses más de mil años antes de lo esperado.', dur:45, views:0, yt:'jPeXyk6Rj3A'},
