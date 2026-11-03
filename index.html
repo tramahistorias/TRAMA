@@ -158,7 +158,7 @@ body.route-home .nav.scrolled .logo img{filter:drop-shadow(0 1px 2px rgba(0,0,0,
 .hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem;opacity:0;animation:fadeUp .8s var(--ease) .6s forwards}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .hero-side{position:absolute;right:clamp(16px,3.5vw,52px);bottom:clamp(60px,10vh,106px);z-index:3;display:flex;flex-direction:column;align-items:flex-end;gap:15px}
-.hero-count{color:var(--silver)}
+.hero-count{color:var(--silver);margin-top:1.15rem;letter-spacing:.16em;font-size:.72rem;opacity:0;animation:fadeUp .8s var(--ease) .48s forwards}
 .hero-count b{color:var(--cream);font-weight:500}
 .hero-nav{display:flex;gap:8px}
 .hbtn{width:42px;height:42px;border:1px solid var(--hair-2);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--silver);transition:.25s;font-size:.88rem}
@@ -1885,6 +1885,11 @@ const SHORTS = [
 /* ═══════════ DATA / SERVICES ═══════════ */
 const S = Object.fromEntries(STORIES.map(s=>[s.slug,s]));
 const E = Object.fromEntries(ENTITIES.map(e=>[e.slug,e]));
+const SHORT_STORY = new Set(SHORTS.map(sh=>sh.story));
+const ytStories = () => STORIES.filter(s=>s.yt);
+const ytShorts = () => SHORTS.filter(sh=>sh.yt);
+const ytVideos = () => STORIES.filter(s=>s.yt && !SHORT_STORY.has(s.slug));
+const tallyCanal = (shortsN, videosN) => shortsN+' SHORTS · '+videosN+' VÍDEOS';
 const ENT_PATH = {persona:'personas', empresa:'empresas', invento:'inventos', tema:'temas'};
 const ENT_LBL = {persona:'Persona', empresa:'Empresa', invento:'Invento', tema:'Tema'};
 const CATALOG = {}; (function(){ let n=0; STORIES.forEach(s=>CATALOG['story-'+s.slug]=String(++n).padStart(3,'0')); SHORTS.forEach(s=>CATALOG['short-'+s.slug]=String(++n).padStart(3,'0')); ENTITIES.forEach(e=>CATALOG['ent-'+e.slug]=String(++n).padStart(3,'0')); })();
@@ -2078,6 +2083,7 @@ function viewHome(){
         <p class="hero-mark">TRAMA</p>
         <h1 class="hero-title" id="heroTitle">Hay una historia detrás de todo.</h1>
         <p class="hero-tag">Descubre las historias que cambiaron empresas, inventaron el futuro y transformaron el mundo.</p>
+        <p class="hero-count mono">${tallyCanal(ytShorts().length, ytVideos().length)}</p>
         <div class="hero-cta">
           <a class="btn btn-solid" href="#/historias">DESCUBRIR HISTORIAS</a>
         </div>
@@ -2118,7 +2124,7 @@ function viewHome(){
   <section class="section wrap">${secHead('','Explorar por tema','#/categorias','Todas')}
     <div class="cat-tiles">${Object.entries(CATS).map(([k,c])=>`
     <a class="cat-tile ratio-45" data-rv href="#/categorias/${k}">${media('cat-'+k,{w:560,h:700,alt:c.name})}<div class="ov"></div>
-    <div class="tb"><span class="catlab">${STORIES.filter(s=>s.cat===k).length} HISTORIAS</span><h3>${c.name}</h3><p>${c.desc}</p></div></a>`).join('')}</div>
+    <div class="tb"><span class="catlab">${ytStories().filter(s=>s.cat===k).length} HISTORIAS</span><h3>${c.name}</h3><p>${c.desc}</p></div></a>`).join('')}</div>
   </section>
 
   ${edBand?`<section class="section wrap">${secHead('','Elección del editor')}
@@ -2162,7 +2168,7 @@ function viewArchive(mode){
   mount(`<div class="wrap"><header class="phead" data-rv>
     <span class="catlab">ARCHIVO${mode==='doc'?' · INVESTIGACIÓN':''}</span>
     <h1>${mode==='doc'?'Documentales':'Historias'}</h1>
-    <p class="sub">${mode==='doc'?'Investigaciones largas del archivo. El texto está aquí; el vídeo se añade cuando sale en el canal.':'Todo el archivo de TRAMA: cada historia, cada categoría, cada hilo del relato.'}</p>
+    <p class="sub">${mode==='doc'?'Los vídeos largos del canal, los mismos que en YouTube.':'Los Shorts y los vídeos del canal. La cifra es la de YouTube: cortos de un minuto y piezas largas.'}</p>
     <div class="chips" id="archChips" role="tablist" aria-label="Filtrar por categoría"></div>
     <span class="count mono" id="archCount"></span>
   </header>
@@ -2173,10 +2179,11 @@ function viewArchive(mode){
 function renderArchive(){
   const st=App.archState,cats=['todas',...Object.keys(CATS)];
   $('#archChips').innerHTML=cats.map(c=>'<button data-act="chip" data-cat="'+c+'" class="'+(st.cat===c?'on':'')+'" role="tab" aria-selected="'+(st.cat===c)+'">'+(c==='todas'?'Todas':CATS[c].name)+'</button>').join('');
-  let list=[...STORIES].sort((a,b)=>b.date.localeCompare(a.date));
+  let list=ytStories().sort((a,b)=>b.date.localeCompare(a.date));
   if(st.cat!=='todas')list=list.filter(s=>s.cat===st.cat);
-  if(st.fmt==='largo')list=list.filter(s=>(s.body&&s.body.length>=4));
-  $('#archCount').textContent=list.length+' PIEZAS EN EL ARCHIVO';
+  if(st.fmt==='largo')list=list.filter(s=>!SHORT_STORY.has(s.slug));
+  const nS=list.filter(s=>SHORT_STORY.has(s.slug)).length, nV=list.filter(s=>!SHORT_STORY.has(s.slug)).length;
+  $('#archCount').textContent=st.fmt==='largo'?nV+' VÍDEOS':tallyCanal(nS,nV);
   $('#archGrid').innerHTML=list.length?list.map(s=>storyCard(s)).join(''):'<div class="empty" style="grid-column:1/-1"><span class="serif">Nada por aquí… todavía.</span><p>Prueba con otra categoría.</p></div>';
   revealInit();
 }
@@ -2186,13 +2193,14 @@ function viewCatIndex(){
   mount(`<div class="wrap"><header class="phead" data-rv><span class="catlab">CLASIFICACIÓN</span><h1>Categorías</h1><p class="sub">Seis maneras de entrar en el archivo. Elige un hilo y tira de él.</p></header>
   <section class="section tight"><div class="cat-tiles">${Object.entries(CATS).map(([k,c])=>`
     <a class="cat-tile ratio-45" data-rv href="#/categorias/${k}">${media('cat-'+k,{w:560,h:700,alt:c.name})}<div class="ov"></div>
-    <div class="tb"><span class="catlab">${STORIES.filter(s=>s.cat===k).length} HISTORIAS</span><h3>${c.name}</h3><p>${c.desc}</p></div></a>`).join('')}</div></section></div>`,
+    <div class="tb"><span class="catlab">${ytStories().filter(s=>s.cat===k).length} HISTORIAS</span><h3>${c.name}</h3><p>${c.desc}</p></div></a>`).join('')}</div></section></div>`,
   {t:'Categorías — TRAMA',d:'Dinero, empresas, inventos, personas, historia y misterios.',og:'trama'});
 }
 function viewCategory(slug){
   const c=CATS[slug];if(!c)return view404();
-  const list=STORIES.filter(s=>s.cat===slug).sort((a,b)=>b.date.localeCompare(a.date)),sh=catShorts(slug);
-  mount(`<div class="wrap"><header class="phead" data-rv><span class="catlab">CATEGORÍA</span><h1>${c.name}</h1><p class="sub">${c.desc}</p><span class="count mono">${list.length} PIEZAS</span></header>
+  const list=ytStories().filter(s=>s.cat===slug).sort((a,b)=>b.date.localeCompare(a.date)),sh=catShorts(slug);
+  const nS=list.filter(s=>SHORT_STORY.has(s.slug)).length, nV=list.filter(s=>!SHORT_STORY.has(s.slug)).length;
+  mount(`<div class="wrap"><header class="phead" data-rv><span class="catlab">CATEGORÍA</span><h1>${c.name}</h1><p class="sub">${c.desc}</p><span class="count mono">${tallyCanal(nS,nV)}</span></header>
   <section class="section tight"><div class="sgrid g3">${list.length?list.map(s=>storyCard(s)).join(''):'<div class="empty" style="grid-column:1/-1"><span class="serif">Nada por aquí… todavía.</span><p>Esta categoría se irá llenando con las piezas del canal.</p></div>'}</div></section>
   ${sh.length?'<section class="section tight">'+secHead('','Cortos de '+c.name,'#/shorts')+row(sh.map(shortCard).join(''))+'</section>':''}</div>`,
   {t:c.name+' — TRAMA',d:c.desc,og:'cat-'+slug});
@@ -2280,7 +2288,7 @@ function viewShorts(param){
   mount(`
   <div class="wrap shorts-page">
     <header class="phead" data-rv>
-      <span class="catlab">CORTOS · ${String(SHORTS.length).padStart(2,'0')}</span>
+      <span class="catlab">${ytShorts().length} SHORTS · ${ytVideos().length} VÍDEOS</span>
       <h1>Un minuto</h1>
       <p class="sub">Elige uno en la rejilla; el vídeo se abre aquí arriba.</p>
     </header>
