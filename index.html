@@ -768,6 +768,8 @@ const ASSET_MAP = {
   'short-el-cierre-que-no-era-un-cierre': MEDIA_ROOT+'/stories/cremallera/1.jpg',
   'story-el-taller-de-billund': MEDIA_ROOT+'/stories/lego/1.jpg',
   'short-el-taller-de-billund': MEDIA_ROOT+'/stories/lego/1.jpg',
+  'story-armstrong-aterrizo-a-mano': MEDIA_ROOT+'/stories/armstrong/1.jpg',
+  'short-armstrong-aterrizo-a-mano': MEDIA_ROOT+'/stories/armstrong/1.jpg',
   'ent-hedy-lamarr': MEDIA_ROOT+'/stories/lamarr/1.jpg',
   'ent-salto-de-frecuencia': MEDIA_ROOT+'/stories/lamarr/2.jpg',
   'ent-fryer': MEDIA_ROOT+'/stories/radium/2.jpg',
@@ -1885,7 +1887,35 @@ const STORIES = [
   {src:MEDIA_ROOT+'/stories/lego/11.jpg', alt:'Reconstrucción visual. El taller al atardecer.'},
   {src:MEDIA_ROOT+'/stories/lego/12.jpg', alt:'Reconstrucción visual. El oficio que se niega a parar.'}
  ],
- timeline:[['1932','Ole Kirk talla juguetes de madera en Billund.'],['DESPUÉS','El nombre llega. El plástico, décadas más tarde.']]}
+ timeline:[['1932','Ole Kirk talla juguetes de madera en Billund.'],['DESPUÉS','El nombre llega. El plástico, décadas más tarde.']]},
+{slug:'armstrong-aterrizo-a-mano', cat:'historia', title:'Armstrong aterrizó a mano',
+ tagline:'1969. El ordenador del Eagle se satura. El sitio marcado está lleno de rocas. Armstrong coge el mando.',
+ desc:'Alarma 1202. Houston dice sigue. El combustible se acaba. El polvo se queda quieto. No fue un milagro. Fue un piloto y un aviso a tiempo.',
+ durMin:1, durSec:54, date:'2026-11-15', views:0, yt:null,
+ flags:['new'], tags:['1969','Apolo 11','Luna'], sources:['NASA, Apollo 11 Mission Report','Armstrong, Aldrin, Collins · transcripciones de voz'],
+ entities:[],
+ body:[
+ 'En mil novecientos sesenta y nueve, Armstrong no baja con margen. El ordenador suelta una alarma. Código mil doscientos dos. El aparato se satura de datos del radar.',
+ 'Houston dice sigue. Armstrong mira por la ventanilla. El sitio marcado está lleno de rocas. Coge el mando. Vuela a mano sobre la Luna. El combustible de aterrizaje se acaba. El Eagle toca. El polvo se queda quieto.',
+ 'No fue un milagro. Fue un piloto que no se fió del sitio previsto y un aviso que llegó a tiempo.'],
+ quote:'No fue un milagro. Fue un piloto que no se fió del sitio previsto.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son el metraje de la NASA. Son reconstrucciones del Eagle, Houston y 1969. No hay logotipos modernos.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/armstrong/1.jpg', alt:'Reconstrucción visual. El módulo lunar desciende hacia la Luna.'},
+  {src:MEDIA_ROOT+'/stories/armstrong/2.jpg', alt:'Reconstrucción visual. El panel DSKY, la alarma encendida.'},
+  {src:MEDIA_ROOT+'/stories/armstrong/3.jpg', alt:'Reconstrucción visual. El cockpit saturado de datos.'},
+  {src:MEDIA_ROOT+'/stories/armstrong/4.jpg', alt:'Reconstrucción visual. Houston, las consolas, 1969.'},
+  {src:MEDIA_ROOT+'/stories/armstrong/5.jpg', alt:'Reconstrucción visual. Por la ventanilla: un campo de rocas.'},
+  {src:MEDIA_ROOT+'/stories/armstrong/6.jpg', alt:'Reconstrucción visual. El guante en el mando.'},
+  {src:MEDIA_ROOT+'/stories/armstrong/7.jpg', alt:'Reconstrucción visual. El Eagle vuela bajo sobre la Luna.'},
+  {src:MEDIA_ROOT+'/stories/armstrong/8.jpg', alt:'Reconstrucción visual. El combustible de aterrizaje se acaba.'},
+  {src:MEDIA_ROOT+'/stories/armstrong/9.jpg', alt:'Reconstrucción visual. En tierra cuentan los segundos.'},
+  {src:MEDIA_ROOT+'/stories/armstrong/10.jpg', alt:'Reconstrucción visual. El contacto: el polvo se levanta.'},
+  {src:MEDIA_ROOT+'/stories/armstrong/11.jpg', alt:'Reconstrucción visual. El polvo se queda quieto.'},
+  {src:MEDIA_ROOT+'/stories/armstrong/12.jpg', alt:'Reconstrucción visual. El casco de espaldas, la Luna fuera.'}
+ ],
+ timeline:[['20 JUL 1969','Alarma 1202. Armstrong vuela a mano. El Eagle toca.'],['DESPUÉS','El aterrizaje queda como oficio, no como milagro.']]}
 ];
 const ENTITIES = [
  {type:'persona', slug:'steve-sasson', name:'Steve Sasson', era:'1950 —', seed:'ent-sasson', blurb:'Ingeniero de Kodak que construyó en 1975 uno de los primeros prototipos de cámara digital.'},
@@ -1974,6 +2004,7 @@ const ENTITIES = [
  {type:'tema', slug:'londres-1720', name:'Londres, 1720', era:'1720', seed:'ent-londres-1720', blurb:'Papel, fe y un Pacífico que casi no se toca.'}
 ];
 const SHORTS = [
+ {slug:'armstrong-aterrizo-a-mano', story:'armstrong-aterrizo-a-mano', title:'Armstrong aterrizó a mano', desc:'1969. Alarma 1202. El sitio marcado está lleno de rocas. Armstrong vuela a mano. No fue un milagro.', dur:54, views:0, yt:null},
  {slug:'el-taller-de-billund', story:'el-taller-de-billund', title:'LEGO no nació en un molde', desc:'1932. Billund. Ole Kirk talla juguetes de madera. El nombre llega después. No hay minifigura.', dur:54, views:0, yt:'SMhiHkBk5J0'},
  {slug:'el-cierre-que-no-era-un-cierre', story:'el-cierre-que-no-era-un-cierre', title:'La cremallera no nació de un milagro', desc:'1913. Sundback deja dientes que se abrazan. El invento no es el diente. Es que dos orillas coincidan.', dur:50, views:0, yt:'RTuP4dgWmo0'},
  {slug:'el-telegrama-que-entro-en-guerra', story:'el-telegrama-que-entro-en-guerra', title:'El telegrama que empujó a América', desc:'1917. Alemania propone a México atacar el sur. Gran Bretaña intercepta. Washington se entera.', dur:49, views:0, yt:'16qvAqucc1E'},
