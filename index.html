@@ -770,6 +770,10 @@ const ASSET_MAP = {
   'short-el-taller-de-billund': MEDIA_ROOT+'/stories/lego/1.jpg',
   'story-armstrong-aterrizo-a-mano': MEDIA_ROOT+'/stories/armstrong/1.jpg',
   'short-armstrong-aterrizo-a-mano': MEDIA_ROOT+'/stories/armstrong/1.jpg',
+  'story-fleming-el-plato-sucio': MEDIA_ROOT+'/stories/fleming/1.jpg',
+  'short-fleming-el-plato-sucio': MEDIA_ROOT+'/stories/fleming/1.jpg',
+  'ent-alexander-fleming': MEDIA_ROOT+'/stories/fleming/6.jpg',
+  'ent-penicilina': MEDIA_ROOT+'/stories/fleming/5.jpg',
   'ent-hedy-lamarr': MEDIA_ROOT+'/stories/lamarr/1.jpg',
   'ent-salto-de-frecuencia': MEDIA_ROOT+'/stories/lamarr/2.jpg',
   'ent-fryer': MEDIA_ROOT+'/stories/radium/2.jpg',
@@ -1915,7 +1919,35 @@ const STORIES = [
   {src:MEDIA_ROOT+'/stories/armstrong/11.jpg', alt:'Reconstrucción visual. El polvo se queda quieto.'},
   {src:MEDIA_ROOT+'/stories/armstrong/12.jpg', alt:'Reconstrucción visual. El casco de espaldas, la Luna fuera.'}
  ],
- timeline:[['20 JUL 1969','Alarma 1202. Armstrong vuela a mano. El Eagle toca.'],['DESPUÉS','El aterrizaje queda como oficio, no como milagro.']]}
+ timeline:[['20 JUL 1969','Alarma 1202. Armstrong vuela a mano. El Eagle toca.'],['DESPUÉS','El aterrizaje queda como oficio, no como milagro.']]},
+{slug:'fleming-el-plato-sucio', cat:'inventos', title:'Fleming no fabricó la penicilina. Vio un plato sucio.',
+ tagline:'1928. Un cultivo sucio. El moho deja un anillo vacío. Fleming lo nombra y lo deja.',
+ desc:'El zumo del hongo mata estafilococos. Lo llama penicilina. El medicamento lo sacan Florey y Chain años después. No fue un milagro de un día.',
+ durMin:0, durSec:49, date:'2026-11-16', views:0, yt:'RDxdnGVeAPc',
+ flags:['new'], tags:['1928','Fleming','penicilina'], sources:['Fleming, British Journal of Experimental Pathology, 1929','Nobel Prize, Fleming, Chain, Florey 1945'],
+ entities:['alexander-fleming','penicilina'],
+ body:[
+ 'En mil novecientos veintiocho, Fleming no fabrica un medicamento. Vuelve de vacaciones. Un plato de cultivo está sucio. Hay moho. Alrededor, las bacterias no crecen.',
+ 'Él anota lo que ve. El zumo del hongo mata estafilococos. Lo llama penicilina. Y lo deja. No lo convierte en inyección. No llena un hospital.',
+ 'Diez años después, Florey y Chain sacan el fármaco de ese apunte. Fleming no inventó la cura en un día. Vio un plato que no debía estar sucio.'],
+ quote:'Fleming no inventó la cura en un día. Vio un plato que no debía estar sucio.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son el archivo de St Mary’s. Son reconstrucciones del laboratorio, el plato y 1928. No hay logotipos modernos.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/fleming/1.jpg', alt:'Reconstrucción visual. El laboratorio de St Mary’s, 1928.'},
+  {src:MEDIA_ROOT+'/stories/fleming/2.jpg', alt:'Reconstrucción visual. Platos de cultivo apilados.'},
+  {src:MEDIA_ROOT+'/stories/fleming/3.jpg', alt:'Reconstrucción visual. El laboratorio vacío tras las vacaciones.'},
+  {src:MEDIA_ROOT+'/stories/fleming/4.jpg', alt:'Reconstrucción visual. El moho en el plato.'},
+  {src:MEDIA_ROOT+'/stories/fleming/5.jpg', alt:'Reconstrucción visual. El anillo vacío alrededor del moho.'},
+  {src:MEDIA_ROOT+'/stories/fleming/6.jpg', alt:'Reconstrucción visual. Un hombre mira el plato a la ventana.'},
+  {src:MEDIA_ROOT+'/stories/fleming/7.jpg', alt:'Reconstrucción visual. El cuaderno cerrado, la pluma.'},
+  {src:MEDIA_ROOT+'/stories/fleming/8.jpg', alt:'Reconstrucción visual. El extracto en un matraz.'},
+  {src:MEDIA_ROOT+'/stories/fleming/9.jpg', alt:'Reconstrucción visual. Un pasillo de hospital vacío.'},
+  {src:MEDIA_ROOT+'/stories/fleming/10.jpg', alt:'Reconstrucción visual. Florey y Chain, de espaldas, en el banco.'},
+  {src:MEDIA_ROOT+'/stories/fleming/11.jpg', alt:'Reconstrucción visual. Frascos y jeringa, años cuarenta.'},
+  {src:MEDIA_ROOT+'/stories/fleming/12.jpg', alt:'Reconstrucción visual. El plato sucio, otra vez.'}
+ ],
+ timeline:[['1928','Fleming ve el plato sucio. Nombra la penicilina y lo deja.'],['1939–','Florey y Chain sacan el fármaco de ese apunte.']]}
 ];
 const ENTITIES = [
  {type:'persona', slug:'steve-sasson', name:'Steve Sasson', era:'1950 —', seed:'ent-sasson', blurb:'Ingeniero de Kodak que construyó en 1975 uno de los primeros prototipos de cámara digital.'},
@@ -2001,9 +2033,12 @@ const ENTITIES = [
  {type:'invento', slug:'afsluitdijk', name:'Afsluitdijk', era:'1932', seed:'ent-afsluitdijk', blurb:'Treinta y dos kilómetros. El Zuiderzee deja de ser mar.'},
  {type:'tema', slug:'paises-bajos', name:'Países Bajos', era:'Tema', seed:'ent-paises-bajos', blurb:'Un país que negocia con la marea. El dique es oficio, no milagro.'},
  {type:'empresa', slug:'south-sea', name:'Compañía de los Mares del Sur', era:'1711 – 1853', seed:'ent-south-sea', blurb:'Vendió un comercio lejano. El precio subió porque el vecino compraba.'},
- {type:'tema', slug:'londres-1720', name:'Londres, 1720', era:'1720', seed:'ent-londres-1720', blurb:'Papel, fe y un Pacífico que casi no se toca.'}
+ {type:'tema', slug:'londres-1720', name:'Londres, 1720', era:'1720', seed:'ent-londres-1720', blurb:'Papel, fe y un Pacífico que casi no se toca.'},
+ {type:'persona', slug:'alexander-fleming', name:'Alexander Fleming', era:'1881 – 1955', seed:'ent-alexander-fleming', blurb:'Bacteriólogo. En 1928 ve un plato sucio. Nombra la penicilina. No fabrica el medicamento.'},
+ {type:'invento', slug:'penicilina', name:'Penicilina', era:'1928 —', seed:'ent-penicilina', blurb:'El zumo de un hongo. Fleming lo anota. Florey y Chain lo convierten en fármaco.'}
 ];
 const SHORTS = [
+ {slug:'fleming-el-plato-sucio', story:'fleming-el-plato-sucio', title:'Fleming no fabricó la penicilina. Vio un plato sucio.', desc:'1928. Un cultivo sucio. El moho deja un anillo vacío. Fleming lo nombra y lo deja. El fármaco llega después.', dur:49, views:0, yt:'RDxdnGVeAPc'},
  {slug:'armstrong-aterrizo-a-mano', story:'armstrong-aterrizo-a-mano', title:'Armstrong aterrizó a mano', desc:'1969. Alarma 1202. El sitio marcado está lleno de rocas. Armstrong vuela a mano. No fue un milagro.', dur:54, views:0, yt:null},
  {slug:'el-taller-de-billund', story:'el-taller-de-billund', title:'LEGO no nació en un molde', desc:'1932. Billund. Ole Kirk talla juguetes de madera. El nombre llega después. No hay minifigura.', dur:54, views:0, yt:'SMhiHkBk5J0'},
  {slug:'el-cierre-que-no-era-un-cierre', story:'el-cierre-que-no-era-un-cierre', title:'La cremallera no nació de un milagro', desc:'1913. Sundback deja dientes que se abrazan. El invento no es el diente. Es que dos orillas coincidan.', dur:50, views:0, yt:'RTuP4dgWmo0'},
