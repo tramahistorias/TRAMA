@@ -768,6 +768,8 @@ const ASSET_MAP = {
   'short-el-cierre-que-no-era-un-cierre': MEDIA_ROOT+'/stories/cremallera/1.jpg',
   'story-el-taller-de-billund': MEDIA_ROOT+'/stories/lego/1.jpg',
   'short-el-taller-de-billund': MEDIA_ROOT+'/stories/lego/1.jpg',
+  'story-el-manuscrito-que-nadie-lee': MEDIA_ROOT+'/stories/voynich/1.jpg',
+  'ent-voynich': MEDIA_ROOT+'/stories/voynich/1.jpg',
   'story-armstrong-aterrizo-a-mano': MEDIA_ROOT+'/stories/armstrong/1.jpg',
   'short-armstrong-aterrizo-a-mano': MEDIA_ROOT+'/stories/armstrong/1.jpg',
   'story-fleming-el-plato-sucio': MEDIA_ROOT+'/stories/fleming/1.jpg',
@@ -1910,10 +1912,38 @@ const STORIES = [
   {src:MEDIA_ROOT+'/stories/lego/12.jpg', alt:'Reconstrucción visual. El oficio que se niega a parar.'}
  ],
  timeline:[['1932','Ole Kirk talla juguetes de madera en Billund.'],['DESPUÉS','El nombre llega. El plástico, décadas más tarde.']]},
+{slug:'el-manuscrito-que-nadie-lee', cat:'misterios', title:'Voynich: el libro que nadie ha podido leer',
+ tagline:'Un códice del siglo XV. En 1912 Voynich lo compra. Las plantas no coinciden. El texto no se abre.',
+ desc:'No hace falta un platillo. Hace falta un libro que se resiste y un librero que lo compró sin poder leerlo.',
+ durMin:3, durSec:181, date:'2026-11-14', views:0, yt:'ux3OCm7aCXw',
+ flags:['new'], tags:['1912','manuscrito','siglo XV'], sources:['Yale, Beinecke MS 408','Wilfrid Voynich, 1912'],
+ entities:['voynich'],
+ body:[
+ 'En mil novecientos doce, Wilfrid Voynich compra un manuscrito que nadie sabe leer. El pergamino es del siglo quince. Hay plantas que no coinciden con un herbario. Hay círculos. Hay un texto que no abre ninguna lengua conocida.',
+ 'Voynich no lo inventa. Lo encuentra y le pone su apellido. Los descifradores llegan después. El libro sigue cerrado.',
+ 'No hace falta un platillo. Hace falta un códice que se resiste y un siglo que aún no ha encontrado la llave.'],
+ quote:'No hace falta un platillo. Hace falta un libro que se resiste.',
+ imagesTitle:'Reconstrucciones visuales',
+ imagesNote:'Estas imágenes no son el Beinecke MS 408. Son reconstrucciones del códice, 1912 y el pergamino. No hay alienígenas.',
+ images:[
+  {src:MEDIA_ROOT+'/stories/voynich/1.jpg', alt:'Reconstrucción visual. El manuscrito sobre una mesa, 1912.'},
+  {src:MEDIA_ROOT+'/stories/voynich/2.jpg', alt:'Reconstrucción visual. Plantas que no coinciden con un herbario.'},
+  {src:MEDIA_ROOT+'/stories/voynich/3.jpg', alt:'Reconstrucción visual. Círculos en el pergamino.'},
+  {src:MEDIA_ROOT+'/stories/voynich/4.jpg', alt:'Reconstrucción visual. Voynich de espaldas, el libro en la mano.'},
+  {src:MEDIA_ROOT+'/stories/voynich/5.jpg', alt:'Reconstrucción visual. Un texto que no abre ninguna lengua.'},
+  {src:MEDIA_ROOT+'/stories/voynich/6.jpg', alt:'Reconstrucción visual. Una mesa de biblioteca, la lupa.'},
+  {src:MEDIA_ROOT+'/stories/voynich/7.jpg', alt:'Reconstrucción visual. El lomo del códice, el hilo.'},
+  {src:MEDIA_ROOT+'/stories/voynich/8.jpg', alt:'Reconstrucción visual. Un pasillo, 1912.'},
+  {src:MEDIA_ROOT+'/stories/voynich/9.jpg', alt:'Reconstrucción visual. La cubierta de cuero, sin título.'},
+  {src:MEDIA_ROOT+'/stories/voynich/10.jpg', alt:'Reconstrucción visual. El escritorio vacío, el libro abierto.'},
+  {src:MEDIA_ROOT+'/stories/voynich/11.jpg', alt:'Reconstrucción visual. Un folio del siglo quince.'},
+  {src:MEDIA_ROOT+'/stories/voynich/12.jpg', alt:'Reconstrucción visual. El manuscrito se cierra. Sigue sin leerse.'}
+ ],
+ timeline:[['s. XV','Se fabrica el códice.'],['1912','Voynich lo compra. El apellido se queda. El texto, no.']]},
 {slug:'armstrong-aterrizo-a-mano', cat:'historia', title:'Armstrong aterrizó a mano',
  tagline:'1969. El ordenador del Eagle se satura. El sitio marcado está lleno de rocas. Armstrong coge el mando.',
  desc:'Alarma 1202. Houston dice sigue. El combustible se acaba. El polvo se queda quieto. No fue un milagro. Fue un piloto y un aviso a tiempo.',
- durMin:1, durSec:54, date:'2026-11-15', views:0, yt:null,
+ durMin:1, durSec:54, date:'2026-11-15', views:0, yt:'MKgup0UIFCM',
  flags:['new'], tags:['1969','Apolo 11','Luna'], sources:['NASA, Apollo 11 Mission Report','Armstrong, Aldrin, Collins · transcripciones de voz'],
  entities:[],
  body:[
@@ -2253,7 +2283,8 @@ const ENTITIES = [
  {type:'tema', slug:'fision', name:'Fisión', era:'1938 —', seed:'ent-fision', blurb:'El núcleo se parte. La cuenta se hace en Suecia. El laboratorio estaba en Berlín.'},
  {type:'invento', slug:'transistor', name:'Transistor', era:'1947 —', seed:'ent-transistor', blurb:'Bell Labs. Un grano de germanio. No inventó el ordenador.'},
  {type:'persona', slug:'mercedes-gleitze', name:'Mercedes Gleitze', era:'1900 – 1981', seed:'ent-mercedes-gleitze', blurb:'Nadó el Canal en 1927. El Oyster llegó andando. La hazaña es de ella.'},
- {type:'tema', slug:'roanoke', name:'Roanoke', era:'1587 – 1590', seed:'ent-roanoke', blurb:'Una colonia. Tres años. Una palabra: CROATOAN. No hay platillo.'}
+ {type:'tema', slug:'roanoke', name:'Roanoke', era:'1587 – 1590', seed:'ent-roanoke', blurb:'Una colonia. Tres años. Una palabra: CROATOAN. No hay platillo.'},
+ {type:'tema', slug:'voynich', name:'Manuscrito Voynich', era:'s. XV / 1912', seed:'ent-voynich', blurb:'Un códice que nadie lee. Voynich lo compra en 1912. No hay alienígenas.'}
 ];
 const SHORTS = [
  {slug:'el-reloj-que-cruzo-el-canal', story:'el-reloj-que-cruzo-el-canal', title:'El Oyster no nació en un escaparate.', desc:'1926. La caja Oyster. 1927. Gleitze cruza el Canal. El reloj llega andando. Sin logotipo.', dur:53, views:0, yt:'ZCWdDo-gbxo'},
@@ -2261,7 +2292,7 @@ const SHORTS = [
  {slug:'el-muro-que-salio-de-noche', story:'el-muro-que-salio-de-noche', title:'El muro no cayó del cielo.', desc:'12 al 13 de agosto de 1961. Berlín, alambre y soldados. El muro sale de una madrugada. No adelantar 1989.', dur:53, views:0, yt:'KObgqIYjoAk'},
  {slug:'el-dia-que-el-dolar-dejo-el-oro', story:'el-dia-que-el-dolar-dejo-el-oro', title:'Nixon no acabó el dinero.', desc:'15 de agosto de 1971. Nixon cierra la ventana del oro. No acabó el dinero. Acabó una promesa de posguerra.', dur:51, views:0, yt:'FfjUXGSDx4E'},
  {slug:'fleming-el-plato-sucio', story:'fleming-el-plato-sucio', title:'Fleming no fabricó la penicilina. Vio un plato sucio.', desc:'1928. Un cultivo sucio. El moho deja un anillo vacío. Fleming lo nombra y lo deja. El fármaco llega después.', dur:49, views:0, yt:'RDxdnGVeAPc'},
- {slug:'armstrong-aterrizo-a-mano', story:'armstrong-aterrizo-a-mano', title:'Armstrong aterrizó a mano', desc:'1969. Alarma 1202. El sitio marcado está lleno de rocas. Armstrong vuela a mano. No fue un milagro.', dur:54, views:0, yt:null},
+ {slug:'armstrong-aterrizo-a-mano', story:'armstrong-aterrizo-a-mano', title:'Armstrong aterrizó a mano', desc:'1969. Alarma 1202. El sitio marcado está lleno de rocas. Armstrong vuela a mano. No fue un milagro.', dur:54, views:0, yt:'MKgup0UIFCM'},
  {slug:'el-taller-de-billund', story:'el-taller-de-billund', title:'LEGO no nació en un molde', desc:'1932. Billund. Ole Kirk talla juguetes de madera. El nombre llega después. No hay minifigura.', dur:54, views:0, yt:'SMhiHkBk5J0'},
  {slug:'el-cierre-que-no-era-un-cierre', story:'el-cierre-que-no-era-un-cierre', title:'La cremallera no nació de un milagro', desc:'1913. Sundback deja dientes que se abrazan. El invento no es el diente. Es que dos orillas coincidan.', dur:50, views:0, yt:'RTuP4dgWmo0'},
  {slug:'el-telegrama-que-entro-en-guerra', story:'el-telegrama-que-entro-en-guerra', title:'El telegrama que empujó a América', desc:'1917. Alemania propone a México atacar el sur. Gran Bretaña intercepta. Washington se entera.', dur:49, views:0, yt:'16qvAqucc1E'},
@@ -2724,7 +2755,7 @@ function viewShorts(param){
     </section>
     <section class="section tight">
       ${secHead('','Todos los cortos')}
-      <div class="s-catalog">${SHORTS.map((x,n)=>`
+      <div class="s-catalog">${ytShorts().map((x,n)=>`
         <a class="scat${n===i?' on':''}" href="#/shorts/${x.slug}" aria-current="${n===i?'true':'false'}">
           <div class="frame ratio-16">${media('short-'+x.slug,{w:480,h:270,alt:x.title,eager:n===i})}
             <span class="chip mono">${x.dur}S</span>
