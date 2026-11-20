@@ -58,7 +58,7 @@ Hueco del jueves 10: falta 1 Short de **otra** categoría (no Dinero). No subir 
 
 Woodland (Personas) ya está en web y en cola del 27 ago: no se rehace.
 
-Montaje **en adelante** (cola nueva, referencia: melaza): tiene que parecer un plano de película, no un pase de fotos. Cámara que **cambia de gesto** (push, pull, rise, fall, diagonal) — no solo izquierda↔derecha. Varios stills por plano (`1a/1b/1c`) con `_render_vivo.py`. **Sin** parallax de dos capas (doble imagen). Cortes al habla, grade, grano suave.
+Montaje **en adelante** (cola nueva, referencia: melaza + método letra 2026-11-08): tiene que parecer un plano de película, no un pase de fotos. **Cada still nace de la frase que se oye** (regla `trama-historias-letra`). Cámara que **cambia de gesto** (push, pull, rise, fall, diagonal) — no solo izquierda↔derecha. Varios stills por plano (`1a/1b/1c`) con `_render_vivo.py`. **Sin** parallax de dos capas (doble imagen). Cortes al habla, grade, grano suave.
 
 **Audio:** cama real (Pixabay u otra licencia para YouTube/TikTok/IG), no drones de senos. VO por delante; la cama baja al hablar. Entra y **sale en fundido** (nada de corte seco). Carpeta `_musica/` + `cama.mp3` en la pieza. Oír la pista **antes** de montar.
 
@@ -178,9 +178,9 @@ Tras 26 oct–1 nov (Inventos / Empresas / Misterios) las semanas alternan Diner
 
 | Día | Carpeta | Formato | Categoría |
 |---|---|---|---|
-| Mar 17 | `subidas/2026-11-17_short-nixon` | Short | Dinero |
-| Jue 19 | `subidas/2026-11-19_short-muro` | Short | Historia |
-| Sáb 21 | `subidas/2026-11-21_video-meitner` | Vídeo 16:9 >3 min | Personas |
+| Vie 20 | `subidas/2026-11-17_short-nixon` | Short | Dinero |
+| Sáb 21 | `subidas/2026-11-19_short-muro` | Short | Historia |
+| Dom 22 | `subidas/2026-11-21_video-meitner` | Vídeo 16:9 >3 min | Personas |
 
 - Nixon: 15 ago 1971, cierra la ventana del oro. No “acabó el dinero”.
 - Muro: noche 12–13 ago 1961, alambre y luego muro. No “Reagan lo tiró”.
